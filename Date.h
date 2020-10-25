@@ -15,11 +15,11 @@ public:
     Date();
     Date(unsigned int year, unsigned int month, unsigned int day);
     unsigned int getYear() const;
-    void setYear(unsigned int year) const;
+    void setYear(unsigned int year);
     unsigned int getMonth() const;
-    void setMonth(unsigned int month) const;
+    void setMonth(unsigned int month);
     unsigned int getDay() const;
-    void setDay(unsigned int day) const;
+    void setDay(unsigned int day);
     void show() const;
 };
 

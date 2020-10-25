@@ -1,4 +1,5 @@
 #include "Date.h"
+#include <iomanip>      // std::setw
 
 using namespace std;
 
@@ -13,15 +14,15 @@ unsigned int Date::getMonth() const { return month; }
 
 unsigned int Date::getDay() const { return day; }
 
-void Date::setDay(unsigned int day) const {
+void Date::setDay(unsigned int day) {
     this->day = day;
 }
 
-void Date::setMonth(unsigned int month) const {
+void Date::setMonth(unsigned int month) {
     this->month = month;
 }
 
-void Date::setYear(unsigned int year) const {
+void Date::setYear(unsigned int year) {
     this->year = year;
 }
 

@@ -67,10 +67,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto"
+CMAKE_SOURCE_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto\cmake-build-debug"
+CMAKE_BINARY_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto\cmake-build-debug\CMakeFiles" "D:\2 ano\AEDA\CLionProjects\Projeto\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles" "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -142,6 +142,168 @@ Projeto/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/build
 .PHONY : Projeto/fast
 
+BuyNow.obj: BuyNow.cpp.obj
+
+.PHONY : BuyNow.obj
+
+# target to build an object file
+BuyNow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/BuyNow.cpp.obj
+.PHONY : BuyNow.cpp.obj
+
+BuyNow.i: BuyNow.cpp.i
+
+.PHONY : BuyNow.i
+
+# target to preprocess a source file
+BuyNow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/BuyNow.cpp.i
+.PHONY : BuyNow.cpp.i
+
+BuyNow.s: BuyNow.cpp.s
+
+.PHONY : BuyNow.s
+
+# target to generate assembly for a file
+BuyNow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/BuyNow.cpp.s
+.PHONY : BuyNow.cpp.s
+
+BuyNowUI.obj: BuyNowUI.cpp.obj
+
+.PHONY : BuyNowUI.obj
+
+# target to build an object file
+BuyNowUI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj
+.PHONY : BuyNowUI.cpp.obj
+
+BuyNowUI.i: BuyNowUI.cpp.i
+
+.PHONY : BuyNowUI.i
+
+# target to preprocess a source file
+BuyNowUI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/BuyNowUI.cpp.i
+.PHONY : BuyNowUI.cpp.i
+
+BuyNowUI.s: BuyNowUI.cpp.s
+
+.PHONY : BuyNowUI.s
+
+# target to generate assembly for a file
+BuyNowUI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/BuyNowUI.cpp.s
+.PHONY : BuyNowUI.cpp.s
+
+CartaoCredito.obj: CartaoCredito.cpp.obj
+
+.PHONY : CartaoCredito.obj
+
+# target to build an object file
+CartaoCredito.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj
+.PHONY : CartaoCredito.cpp.obj
+
+CartaoCredito.i: CartaoCredito.cpp.i
+
+.PHONY : CartaoCredito.i
+
+# target to preprocess a source file
+CartaoCredito.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/CartaoCredito.cpp.i
+.PHONY : CartaoCredito.cpp.i
+
+CartaoCredito.s: CartaoCredito.cpp.s
+
+.PHONY : CartaoCredito.s
+
+# target to generate assembly for a file
+CartaoCredito.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/CartaoCredito.cpp.s
+.PHONY : CartaoCredito.cpp.s
+
+Categoria.obj: Categoria.cpp.obj
+
+.PHONY : Categoria.obj
+
+# target to build an object file
+Categoria.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Categoria.cpp.obj
+.PHONY : Categoria.cpp.obj
+
+Categoria.i: Categoria.cpp.i
+
+.PHONY : Categoria.i
+
+# target to preprocess a source file
+Categoria.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Categoria.cpp.i
+.PHONY : Categoria.cpp.i
+
+Categoria.s: Categoria.cpp.s
+
+.PHONY : Categoria.s
+
+# target to generate assembly for a file
+Categoria.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Categoria.cpp.s
+.PHONY : Categoria.cpp.s
+
+Cliente.obj: Cliente.cpp.obj
+
+.PHONY : Cliente.obj
+
+# target to build an object file
+Cliente.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Cliente.cpp.obj
+.PHONY : Cliente.cpp.obj
+
+Cliente.i: Cliente.cpp.i
+
+.PHONY : Cliente.i
+
+# target to preprocess a source file
+Cliente.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Cliente.cpp.i
+.PHONY : Cliente.cpp.i
+
+Cliente.s: Cliente.cpp.s
+
+.PHONY : Cliente.s
+
+# target to generate assembly for a file
+Cliente.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Cliente.cpp.s
+.PHONY : Cliente.cpp.s
+
+ClienteRegistado.obj: ClienteRegistado.cpp.obj
+
+.PHONY : ClienteRegistado.obj
+
+# target to build an object file
+ClienteRegistado.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/ClienteRegistado.cpp.obj
+.PHONY : ClienteRegistado.cpp.obj
+
+ClienteRegistado.i: ClienteRegistado.cpp.i
+
+.PHONY : ClienteRegistado.i
+
+# target to preprocess a source file
+ClienteRegistado.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/ClienteRegistado.cpp.i
+.PHONY : ClienteRegistado.cpp.i
+
+ClienteRegistado.s: ClienteRegistado.cpp.s
+
+.PHONY : ClienteRegistado.s
+
+# target to generate assembly for a file
+ClienteRegistado.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/ClienteRegistado.cpp.s
+.PHONY : ClienteRegistado.cpp.s
+
 Date.obj: Date.cpp.obj
 
 .PHONY : Date.obj
@@ -168,6 +330,195 @@ Date.s: Date.cpp.s
 Date.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Date.cpp.s
 .PHONY : Date.cpp.s
+
+Fornecedor.obj: Fornecedor.cpp.obj
+
+.PHONY : Fornecedor.obj
+
+# target to build an object file
+Fornecedor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Fornecedor.cpp.obj
+.PHONY : Fornecedor.cpp.obj
+
+Fornecedor.i: Fornecedor.cpp.i
+
+.PHONY : Fornecedor.i
+
+# target to preprocess a source file
+Fornecedor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Fornecedor.cpp.i
+.PHONY : Fornecedor.cpp.i
+
+Fornecedor.s: Fornecedor.cpp.s
+
+.PHONY : Fornecedor.s
+
+# target to generate assembly for a file
+Fornecedor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Fornecedor.cpp.s
+.PHONY : Fornecedor.cpp.s
+
+LojaFisica.obj: LojaFisica.cpp.obj
+
+.PHONY : LojaFisica.obj
+
+# target to build an object file
+LojaFisica.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/LojaFisica.cpp.obj
+.PHONY : LojaFisica.cpp.obj
+
+LojaFisica.i: LojaFisica.cpp.i
+
+.PHONY : LojaFisica.i
+
+# target to preprocess a source file
+LojaFisica.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/LojaFisica.cpp.i
+.PHONY : LojaFisica.cpp.i
+
+LojaFisica.s: LojaFisica.cpp.s
+
+.PHONY : LojaFisica.s
+
+# target to generate assembly for a file
+LojaFisica.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/LojaFisica.cpp.s
+.PHONY : LojaFisica.cpp.s
+
+LojaOnline.obj: LojaOnline.cpp.obj
+
+.PHONY : LojaOnline.obj
+
+# target to build an object file
+LojaOnline.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/LojaOnline.cpp.obj
+.PHONY : LojaOnline.cpp.obj
+
+LojaOnline.i: LojaOnline.cpp.i
+
+.PHONY : LojaOnline.i
+
+# target to preprocess a source file
+LojaOnline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/LojaOnline.cpp.i
+.PHONY : LojaOnline.cpp.i
+
+LojaOnline.s: LojaOnline.cpp.s
+
+.PHONY : LojaOnline.s
+
+# target to generate assembly for a file
+LojaOnline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/LojaOnline.cpp.s
+.PHONY : LojaOnline.cpp.s
+
+MbWay.obj: MbWay.cpp.obj
+
+.PHONY : MbWay.obj
+
+# target to build an object file
+MbWay.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/MbWay.cpp.obj
+.PHONY : MbWay.cpp.obj
+
+MbWay.i: MbWay.cpp.i
+
+.PHONY : MbWay.i
+
+# target to preprocess a source file
+MbWay.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/MbWay.cpp.i
+.PHONY : MbWay.cpp.i
+
+MbWay.s: MbWay.cpp.s
+
+.PHONY : MbWay.s
+
+# target to generate assembly for a file
+MbWay.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/MbWay.cpp.s
+.PHONY : MbWay.cpp.s
+
+Multibanco.obj: Multibanco.cpp.obj
+
+.PHONY : Multibanco.obj
+
+# target to build an object file
+Multibanco.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Multibanco.cpp.obj
+.PHONY : Multibanco.cpp.obj
+
+Multibanco.i: Multibanco.cpp.i
+
+.PHONY : Multibanco.i
+
+# target to preprocess a source file
+Multibanco.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Multibanco.cpp.i
+.PHONY : Multibanco.cpp.i
+
+Multibanco.s: Multibanco.cpp.s
+
+.PHONY : Multibanco.s
+
+# target to generate assembly for a file
+Multibanco.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Multibanco.cpp.s
+.PHONY : Multibanco.cpp.s
+
+Produto.obj: Produto.cpp.obj
+
+.PHONY : Produto.obj
+
+# target to build an object file
+Produto.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Produto.cpp.obj
+.PHONY : Produto.cpp.obj
+
+Produto.i: Produto.cpp.i
+
+.PHONY : Produto.i
+
+# target to preprocess a source file
+Produto.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Produto.cpp.i
+.PHONY : Produto.cpp.i
+
+Produto.s: Produto.cpp.s
+
+.PHONY : Produto.s
+
+# target to generate assembly for a file
+Produto.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Produto.cpp.s
+.PHONY : Produto.cpp.s
+
+Transacao.obj: Transacao.cpp.obj
+
+.PHONY : Transacao.obj
+
+# target to build an object file
+Transacao.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Transacao.cpp.obj
+.PHONY : Transacao.cpp.obj
+
+Transacao.i: Transacao.cpp.i
+
+.PHONY : Transacao.i
+
+# target to preprocess a source file
+Transacao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Transacao.cpp.i
+.PHONY : Transacao.cpp.i
+
+Transacao.s: Transacao.cpp.s
+
+.PHONY : Transacao.s
+
+# target to generate assembly for a file
+Transacao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Transacao.cpp.s
+.PHONY : Transacao.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -205,9 +556,48 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Projeto
+	@echo ... BuyNow.obj
+	@echo ... BuyNow.i
+	@echo ... BuyNow.s
+	@echo ... BuyNowUI.obj
+	@echo ... BuyNowUI.i
+	@echo ... BuyNowUI.s
+	@echo ... CartaoCredito.obj
+	@echo ... CartaoCredito.i
+	@echo ... CartaoCredito.s
+	@echo ... Categoria.obj
+	@echo ... Categoria.i
+	@echo ... Categoria.s
+	@echo ... Cliente.obj
+	@echo ... Cliente.i
+	@echo ... Cliente.s
+	@echo ... ClienteRegistado.obj
+	@echo ... ClienteRegistado.i
+	@echo ... ClienteRegistado.s
 	@echo ... Date.obj
 	@echo ... Date.i
 	@echo ... Date.s
+	@echo ... Fornecedor.obj
+	@echo ... Fornecedor.i
+	@echo ... Fornecedor.s
+	@echo ... LojaFisica.obj
+	@echo ... LojaFisica.i
+	@echo ... LojaFisica.s
+	@echo ... LojaOnline.obj
+	@echo ... LojaOnline.i
+	@echo ... LojaOnline.s
+	@echo ... MbWay.obj
+	@echo ... MbWay.i
+	@echo ... MbWay.s
+	@echo ... Multibanco.obj
+	@echo ... Multibanco.i
+	@echo ... Multibanco.s
+	@echo ... Produto.obj
+	@echo ... Produto.i
+	@echo ... Produto.s
+	@echo ... Transacao.obj
+	@echo ... Transacao.i
+	@echo ... Transacao.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
