@@ -1,0 +1,148 @@
+http://www.plantuml.com/plantuml/uml/jLPHJjmm4FtFAVo54WGtG1NgKhuAL81QzTCR3wcBrqQsizKAbUlq13q15sliJ8P9l8AgKdzOvxtdcV6RUC9fYDB7VcEgriWGnFj-T-b-YCTAY8_kkppNGRTI65eYVcMDjY0CBGTy2srqNfoiZ0ORuV2TQFEASxTUsY1RwGOsvlNph-VV40Q9jb64wDhxgtl-TA7jy5W9hAnkXkKJMs-TLa8gXLbh_1K7c9mq7ZPk2vCiHAzj9wpRG8FfEeWtO_ww4Qsp8J82Io46WuQNFRqDkhEW-44QfgCGSo6YJVMpmXQGHxaBGia8wK-o7dqy-UITwcCoyM5SXQnq_Tg0s4hZ_AsBqYGGGfHHXwXR6Ue7vuM2EssrRnA9Rb2Z4aRfwonvMZnJzUZCLv2UkLBm5yx6Rwy9pkIEqMWNnfrfTmFIC0c6dcas2UAY57ukKNB7pBxeJTHhQLkNpCu23tVWmROwESv3NHDHptNDjBNZ8ZeL9Lj97wLRUL0wZlcCirtUQVlDo2RqJCRSHgsaWefqcE5oafQsSR8CFVFbCuQl5K_MKFgEIUWWasdhBtANwyVujs3oxJAZOwnIOifY5_mo56jIAYYdAzu71h8NWA7KysewMTtGgWXtj2VOKH7glzy3EZcRmOzlNdzoLYg5YXf_nG4ActrHKdPy24K9RDo_NGAIvPHl7OJgjGAfFdPP8dJEw_7aR5uJaN36fHUEq-KRDmhux6Vvi99bDeGJIlCwTsGEZGujft35BiFDoywoiZczIDJCeb2oCigSNjJM55xHuSf8Stg_OVZnM1h6niBAsG5VztgGxM_MN_LeFb5uq79xAIbhsNE8Q-XqY5BDsWyRgKrPzuS4bvadWczcYSwTjz22Shumx1zjIR7ntxN3usCsAXZARk-4kW6bEy91j891hEYAjcHYkXKluJDC5x-YLQfY_60iCFunBFJqLMP4If36TiLtCXZhJm6AjbQdO5M_CNy0
+
+Codigo:
+
+@startuml
+class BuyNow {
+  LojaFisica lojaFisica
+  LojaOnline lojaOnline
+  vector <Cliente*> cliente
+  vector <Transacao*> transações
+  int stockOk
+  int stockMin
+  
+  BuyNow()
+  ~BuyNow()
+  void addCliente(Cliente &cliente)
+  void removeCliente(string nome)
+  int getStockOk() const
+  int getStockMin() const
+  void setStockOk(unsigned int stockOk)
+  void setStockMin(unsigned int stockMin)
+}
+
+class Transacao {
+   date data
+   vector<Produto*> produtos
+   double valorTotal
+   estatisticas(por definir)
+   Cliente cliente
+
+   Transacao()
+   ~Transacao()
+   unsigned int getYear() const
+   unsigned int getMonth() const
+   unsigned int getDay() const
+   void setYear(unsigned int year)
+   void setMonth(unsigned int month)
+   void setDay(unsigned int day)
+}
+
+class Multibanco{
+   int referencia
+  
+   void setReferencia(int referencia)
+   int getReferencia() const
+}
+
+class CartaoCredito{
+   long int numCartao
+   Date validade
+
+   long int getNumCartao() const
+   void setNumCartao(long int numCartao)
+   void setValidade(date validade)
+   Date getValidade() const
+}
+class MbWay{
+   int numTelemovel
+  
+   int getNumTelemovel() const
+   void setNumTelemovel(int numTelemovel)
+}
+
+class Date{
+   unsigned int year
+   unsigned int month
+   unsigned int day
+
+   Date()
+   Date(unsigned int year, unsigned int month, unsigned int day)
+   unsigned int getYear() const
+   unsigned int getMonth() const
+   unsigned int getDay() const
+}
+
+class LojaFisica{
+   vector<Produto*> produtos
+   
+   void addProduto(Produto &produto)
+   vector<Produto*> getProdutos() const
+}
+
+class LojaOnline{
+   vector<Produto*> produtos
+   vector<Transacao*> transacoes
+
+   void addProduto(Produto produto)
+}
+
+class Categoria{
+   string nomeCategoria
+   
+   string getNomeCategoria() const
+   void setNome(string nome)
+}
+
+class Produto{
+   string nomeProduto
+   int stockFisico
+   int stockOnline
+   double valor
+
+   int getStockFisico() const
+   void setStockFisico(int stockFisico)
+   int getStockOnline() const
+   void setStockOnline(int stockOnline) 
+   string getNomeProduto() const
+   void setNomeProduto(string nome)
+}
+
+class Cliente{
+   string nome
+   int numContribuinte
+   
+   string getNome() const
+   void setNome(string nome)
+   int getNumContribuinte() const
+   void setNumContribuinte(int numContribuinte)
+}
+
+class ClienteRegistado{
+   string email
+   
+   string getEmail() const
+   void setEmail(string email)
+}
+
+class Fornecedor{
+   string nome
+
+   string getNome() const
+   void setNome(string nome)
+}
+
+BuyNow *-- LojaFisica
+BuyNow *-- LojaOnline
+BuyNow o-- Categoria
+BuyNow o-- Cliente
+BuyNow o-- Fornecedor
+Categoria o-- Produto
+LojaOnline o-- Transacao
+Transacao *-- MbWay
+Transacao *-- CartaoCredito
+Transacao *-- Multibanco
+Transacao o-- Date
+CartaoCredito o-- Date
+Cliente *-- ClienteRegistado
+@enduml
