@@ -1,12 +1,18 @@
 #ifndef AEDA_TRANSACAO_H
 #define AEDA_TRANSACAO_H
 
+#include <iostream>
+#include "Date.h"
+#include "Produto.h"
+#include "Cliente.h"
+
+using namespace std;
 
 class Transacao {
 private:
-    date data;
+    Date data;
     vector<Produto*> produtos;
-    double ;
+    double valorTotal;
     //estatisticas(por definir)
     Cliente cliente;
 
@@ -19,7 +25,7 @@ public:
     void setYear(unsigned int year);
     void setMonth(unsigned int month);
     void setDay(unsigned int day);
-}
+};
 
 
 #endif //AEDA_TRANSACAO_H

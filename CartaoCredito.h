@@ -1,6 +1,8 @@
 #ifndef AEDA_CARTAOCREDITO_H
 #define AEDA_CARTAOCREDITO_H
 
+#include "Transacao.h"
+#include "Date.h"
 
 class CartaoCredito: public Transacao{
 private:
@@ -9,9 +11,9 @@ private:
 public:
     long int getNumCartao() const;
     void setNumCartao(long int numCartao);
-    void setValidade(date validade);
+    void setValidade(Date validade);
     Date getValidade() const;
-}
+};
 
 
 #endif //AEDA_CARTAOCREDITO_H

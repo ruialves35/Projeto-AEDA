@@ -1,6 +1,9 @@
 #ifndef AEDA_PRODUTO_H
 #define AEDA_PRODUTO_H
 
+#include <iostream>
+
+using namespace std;
 
 class Produto{
 private:
@@ -15,8 +18,6 @@ public:
     void setStockOnline(int stockOnline);
     string getNomeProduto() const;
     void setNomeProduto(string nome);
-}
-
-
+};
 
 #endif //AEDA_PRODUTO_H

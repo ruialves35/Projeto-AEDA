@@ -1,6 +1,8 @@
 #ifndef AEDA_MULTIBANCO_H
 #define AEDA_MULTIBANCO_H
 
+#include <iostream>
+#include "Transacao.h"
 
 class Multibanco: public Transacao {
 private:

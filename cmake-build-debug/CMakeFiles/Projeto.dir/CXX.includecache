@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CartaoCredito.cpp
+CartaoCredito.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CartaoCredito.h
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CartaoCredito.h
+Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+Date.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Cliente.h
+iostream
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
+iostream
+-
+string
+-
+vector
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.h
+iostream
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+iostream
+-
+Date.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
+Produto.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.h
+Cliente.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Cliente.h
+

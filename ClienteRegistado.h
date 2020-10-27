@@ -1,10 +1,9 @@
-//
-// Created by ruial on 24/10/2020.
-//
-
 #ifndef AEDA_CLIENTEREGISTADO_H
 #define AEDA_CLIENTEREGISTADO_H
 
+#include <iostream>
+#include "Cliente.h"
+using namespace std;
 
 class ClienteRegistado : public Cliente {
 private:

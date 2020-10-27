@@ -1,13 +1,19 @@
 #ifndef AEDA_BUYNOW_H
 #define AEDA_BUYNOW_H
 
-
+#include <iostream>
+#include "LojaFisica.h"
+#include "LojaOnline.h"
+#include "Cliente.h"
+#include "Transacao.h"
+#include <vector>
+using namespace std;
 class BuyNow {
 private:
     LojaFisica lojaFisica;
     LojaOnline lojaOnline;
     vector <Cliente*> cliente;
-    vector <Transacao*> transações;
+    vector <Transacao*> transacoes;
     int stockOk;
     int stockMin;
 public:
@@ -19,7 +25,7 @@ public:
     int getStockMin() const;
     void setStockOk(unsigned int stockOk);
     void setStockMin(unsigned int stockMin);
-}
+};
 
 
 
