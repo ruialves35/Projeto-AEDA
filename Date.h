@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 using namespace std;
 
 class Date{
@@ -11,15 +12,21 @@ private:
     unsigned int year;
     unsigned int month;
     unsigned int day;
+    map<int, int> months_map;
+
 public:
     Date();
     Date(unsigned int year, unsigned int month, unsigned int day);
+    void setMap();
+    bool isValid();
+    bool isLeap() const;
+    map<int, int> getMap() const;
     unsigned int getYear() const;
-    void setYear(unsigned int year);
+    void setYear(int year);
     unsigned int getMonth() const;
-    void setMonth(unsigned int month);
+    void setMonth(int month);
     unsigned int getDay() const;
-    void setDay(unsigned int day);
+    void setDay(int day);
     void show() const;
 };
 
