@@ -2,9 +2,11 @@
 #define AEDA_DATE_H
 
 #include <iostream>
+#include <iomanip> //std::setw
 #include <string>
 #include <vector>
 #include <map>
+
 using namespace std;
 
 class Date{
@@ -27,7 +29,7 @@ public:
     void setMonth(int month);
     unsigned int getDay() const;
     void setDay(int day);
-    void show() const;
+    friend ostream& operator << (ostream& o, const Date &d);
 };
 
 

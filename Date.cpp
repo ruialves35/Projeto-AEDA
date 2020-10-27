@@ -95,12 +95,12 @@ void Date::setYear(int year) {
     setMap();
 }
 
-void Date::show() const {
-    cout << setw(2) << setfill('0') << day << "/" << setw(2) << setfill('0') <<
-         month << "/" << setw(4) << setfill('0') << year << endl;
+
+ostream & operator<<(ostream & o, const Date & d)
+{
+    o << setw(2) << setfill('0') << d.day << "/" << setw(2) << setfill('0') <<
+      d.month << "/" << setw(4) << setfill('0') << d.year << endl;
+    return o;
 }
-
-
-
 
 
