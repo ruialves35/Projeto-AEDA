@@ -10,7 +10,9 @@ class Pagamento {
 public:
     Pagamento();
     Pagamento(double valorTotal);
-    virtual void show() const;
+    void setValor(double val);
+    double getValor() const;
+    virtual string getInfo() const;
 };
 
 

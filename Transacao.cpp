@@ -21,6 +21,8 @@ Transacao::Transacao(Cliente *c, Date &d): cliente(c), data(d), valorTotal(0){}
  */
 Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): cliente(c), data(d), produtos(v), valorTotal(0){}
 
+
+
 /**
  * Sets a Cliente to the Transcacao
  * @param c new Client of Transacao
@@ -37,6 +39,8 @@ Cliente* Transacao::getCliente() const {
     return cliente;
 }
 
+
+
 /**
  * Gets the Date of Transacao
  * @return Date of Transacao
@@ -52,6 +56,8 @@ Date Transacao::getDate() const {
 void Transacao::setDate(Date &d) {
     data = d;
 }
+
+
 
 /**
  * Add a Produto to Transacao.
@@ -83,6 +89,26 @@ void Transacao::addProduto(Produto *p, int quantidade) {
     }
     valorTotal += p.getValor() * quantidade;
 }
+
+
+
+/**
+ * Sets a type of payment
+ * @param p Type of Payment
+ */
+void Transacao::setPagamento(Pagamento* p) {
+    tipoPagamento = p;
+}
+
+/**
+ * Gets the type of payment
+ * @return Type of payment (MbWay, Multibanco, CartaoCredito)
+ */
+Pagamento * Transacao::getPagamento() const {
+    return tipoPagamento;
+}
+
+
 
 /**
  * Removes 1 Produto in the Transacao (quantity removed is one)
@@ -120,6 +146,8 @@ void Transacao::removeProduto(Produto *p, int quantidade){
     }
 }
 
+
+
 /**
  * Gets a quantity of a Produto in the Transacao
  * @param p Produto of which we want the quantity
@@ -134,6 +162,7 @@ int Transacao::getQuantidade(Produto *p) const {
 }
 
 
+
 /**
  * Overloading of operator << that shows the Nome of the Cliente of the Transacao,
  * the Data of the Transacao, All Products of Transacao (including each value, quantity and total Value);
@@ -146,6 +175,7 @@ ostream & operator<<(ostream & o, const Transacao &t)
     o << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
     o << "Nome: " << t.cliente->getNome() << endl;
     o << "Data: " << t.data << endl;
+    o << "Pagamento: " << t.tipoPagamento->getInfo() << endl << endl;
     o << setw(10) <<  "Produto " << setw(10) << "Valor" << setw(10) << "Quantidade" << setw(10) << "Total" << endl;
     for (auto i : t.produtos){
         map<Produto*, int>::const_iterator it = t.quantidade.find(i);

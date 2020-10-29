@@ -11,6 +11,9 @@
 
 using namespace std;
 
+/**
+ * Exception
+ */
 class ProductDoesNotExist{
 public:
     Produto p;
@@ -28,7 +31,7 @@ private:
     double valorTotal;
     //estatisticas(por definir)
     Cliente* cliente;
-    Pagamento tipoPagamento;
+    Pagamento* tipoPagamento;
 
 public:
     Transacao();
@@ -43,6 +46,8 @@ public:
     void removeProduto(Produto *p);
     void removeProduto(Produto *p, int quantidade);
     int getQuantidade(Produto *p) const;
+    void setPagamento(Pagamento* p);
+    Pagamento* getPagamento() const;
     friend ostream& operator << (ostream &o, const Transacao &t);
 };
 

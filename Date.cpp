@@ -1,6 +1,7 @@
 #include "Date.h"
 #include <iomanip>      // std::setw
-
+#include <string>
+#include <sstream>  //ostreams
 using namespace std;
 
 Date::Date(): day(0), month(0), year(0){ setMap(); }
@@ -95,6 +96,25 @@ void Date::setYear(int year) {
     setMap();
 }
 
+string Date::getInfo() const{
+    string info= "";
+    if (day < 10) {
+        info += "0"+ day;
+        info += "/";
+    }
+    else info += day + "/";
+    if (month < 10){
+        info += "0" + month;
+        info += "/";
+    }
+    else info += month + "/";
+    if (year < 1000 && year > 100){
+        info += "0" + year;
+    }
+    else if (year < 100 & year > 10) info += "00" + year;
+    else info += "000" + year;
+    return info;
+}
 
 ostream & operator<<(ostream & o, const Date & d)
 {

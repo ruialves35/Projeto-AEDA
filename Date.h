@@ -29,6 +29,7 @@ public:
     void setMonth(int month);
     unsigned int getDay() const;
     void setDay(int day);
+    string getInfo() const;
     friend ostream& operator << (ostream& o, const Date &d);
 };
 

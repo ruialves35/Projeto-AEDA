@@ -6,13 +6,15 @@
 
 using namespace std;
 
-class MbWay: public Transacao{
+class MbWay: public Pagamento{
 private:
     int numTelemovel;
 public:
     MbWay();
+    MbWay(double valor, int num);
     int getNumTelemovel() const;
-    void setNumTelemovel(int numTelemovel);
+    void setNumTelemovel(int num);
+    string getInfo() const;
 };
 
 
