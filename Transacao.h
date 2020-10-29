@@ -11,17 +11,6 @@
 
 using namespace std;
 
-/**
- * Exception
- */
-class ProductDoesNotExist{
-public:
-    Produto p;
-    ProductDoesNotExist(Produto p){
-        this -> p = p;
-    }
-    Produto getProduto(){ return p; }
-};
 
 class Transacao {
 private:

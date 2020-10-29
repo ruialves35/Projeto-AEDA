@@ -6,6 +6,50 @@
 
 #IncludeRegexTransform: 
 
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/BuyNow.cpp
+BuyNow.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/BuyNow.h
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/BuyNow.h
+iostream
+-
+LojaFisica.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/LojaFisica.h
+LojaOnline.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/LojaOnline.h
+Cliente.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Cliente.h
+Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+vector
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CartaoCredito.cpp
+CartaoCredito.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CartaoCredito.h
+string
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CartaoCredito.h
+Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+Date.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Cliente.h
+iostream
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.cpp
+Date.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
+iomanip
+-
+string
+-
+sstream
+-
+
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
 iostream
 -
@@ -18,9 +62,91 @@ vector
 map
 -
 
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/LojaFisica.h
+iostream
+-
+vector
+-
+Produto.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.h
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/LojaOnline.cpp
+LojaOnline.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/LojaOnline.h
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/LojaOnline.h
+iostream
+-
+Produto.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.h
+Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+vector
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/MbWay.cpp
+MbWay.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/MbWay.h
+string
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/MbWay.h
+iostream
+-
+Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Multibanco.cpp
+Multibanco.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Multibanco.h
+string
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Multibanco.h
+iostream
+-
+Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Pagamento.cpp
+Pagamento.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Pagamento.h
+string
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Pagamento.h
+iostream
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.h
+iostream
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.cpp
+Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+algorithm
+-
+
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+iostream
+-
+algorithm
+-
+Date.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
+Produto.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.h
+Cliente.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Cliente.h
+Pagamento.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Pagamento.h
+
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/main.cpp
 iostream
 -
 Date.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
+Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
 

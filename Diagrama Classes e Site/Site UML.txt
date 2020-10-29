@@ -1,4 +1,4 @@
-http://www.plantuml.com/plantuml/uml/jLPHJjmm4FtFAVo54WGtG1NgKhuAL81QzTCR3wcBrqQsizKAbUlq13q15sliJ8P9l8AgKdzOvxtdcV6RUC9fYDB7VcEgriWGnFj-T-b-YCTAY8_kkppNGRTI65eYVcMDjY0CBGTy2srqNfoiZ0ORuV2TQFEASxTUsY1RwGOsvlNph-VV40Q9jb64wDhxgtl-TA7jy5W9hAnkXkKJMs-TLa8gXLbh_1K7c9mq7ZPk2vCiHAzj9wpRG8FfEeWtO_ww4Qsp8J82Io46WuQNFRqDkhEW-44QfgCGSo6YJVMpmXQGHxaBGia8wK-o7dqy-UITwcCoyM5SXQnq_Tg0s4hZ_AsBqYGGGfHHXwXR6Ue7vuM2EssrRnA9Rb2Z4aRfwonvMZnJzUZCLv2UkLBm5yx6Rwy9pkIEqMWNnfrfTmFIC0c6dcas2UAY57ukKNB7pBxeJTHhQLkNpCu23tVWmROwESv3NHDHptNDjBNZ8ZeL9Lj97wLRUL0wZlcCirtUQVlDo2RqJCRSHgsaWefqcE5oafQsSR8CFVFbCuQl5K_MKFgEIUWWasdhBtANwyVujs3oxJAZOwnIOifY5_mo56jIAYYdAzu71h8NWA7KysewMTtGgWXtj2VOKH7glzy3EZcRmOzlNdzoLYg5YXf_nG4ActrHKdPy24K9RDo_NGAIvPHl7OJgjGAfFdPP8dJEw_7aR5uJaN36fHUEq-KRDmhux6Vvi99bDeGJIlCwTsGEZGujft35BiFDoywoiZczIDJCeb2oCigSNjJM55xHuSf8Stg_OVZnM1h6niBAsG5VztgGxM_MN_LeFb5uq79xAIbhsNE8Q-XqY5BDsWyRgKrPzuS4bvadWczcYSwTjz22Shumx1zjIR7ntxN3usCsAXZARk-4kW6bEy91j891hEYAjcHYkXKluJDC5x-YLQfY_60iCFunBFJqLMP4If36TiLtCXZhJm6AjbQdO5M_CNy0
+http://www.plantuml.com/plantuml/uml/dLTTZjis47xNAVXaI8Q37C2BHT1D0nJ8Rj9qqQ9FnLYQLTb8f4jIBen5UvsUe2V8nIfJey5GLBP6dqnzyyq_VyPlV00NXhuhwWwyLzyCvmVxXtekb7flVuDtskiQLCTBmZ-OJXjK7Iz7_8Hri4xTt7KQJS3jhQhZIieU7HWFDTXH6kBwozzV_a4_KhG9oWTRV_xmMNxTQpD-5eeYAwjn-PTOdwnk53GDUItfLst8ENCSzlQ4Cyq7fqshZEsn8dSjXXyc_sMbQcjy408AXILar2Fh3CRhrc0Z4wcO9qoaH4Ahui-2Mi0rYbrGgeVZpKTdco7OxUwYTAj-7y04tK23-qXv2m5L0m7Y9rMRbMxLSLhvITpOuT2XEa5dtQCDq4tmwzVe0mJjWwx1bqVhL8DFscXNHVdSLsehkVu8BVHeHZSgwAFbptqHnPnCMUrJW3krhNTJ0flc6iukJ-zKYJAq62w_SwUYX9f04dQMYCYLS4a4phjbKcASjo05LCw1gMFrNuJOJz5ELk0Dkz1Hs-CLd7Mxl9k_ProehDQBsrdIIgObe5PI4qjFJgDfbFN18VGRPO_e8Du5DweaL6tiRj8HctyJHZTyAEw7BkW3cDe-5vI8moTqQ6eDqmMX18bscqIoNRzRM5diXqyiA3CUrrBIqhpfWXaPtvadhed8w0vS07ldiD5XIafrrhJHhXdwISpxEWPE9pvYKftJbM2QyMx5-8uDapfHObuFCslj84bnRdTHo1yfy3998psoJBgsYBGh3Z_1ETQE0dZ4Bfw8ZhR4nA3oq4TQ5b9Cc_eWBAtcdpBOnbMTZpbF3K-UWZE2s-TmRqtuTGLluBpdzs44w6c8TF_B2EuBhZ0LO5fdJdSh3dUPiqLNx-4uMprOsodjOmiNs7iSQLo1FDfsD1G3lfUyBDUHzZE2Msi5IUPSgboRdQogauWJ_ug1jt1ULOy2MQ6y_rVVXepoRSWl5MyUCPKz5oyzzHTXyVMtHss8MArPYVSv6PeJu1340FXo24AOptsrHL-y52379sxCWArrUifSJ70ieAH52nwac5FX_as4T1faVnJ9qXl1XH9JQkn82l5SdCnRCMKUAbapZomLBnnLYHLsbbj9nOlOggnMd5nkAHMl5uocesN1nFryPys87uRn4zURTLsFagjQ6itLSyfAB7aIdx3LFa2Jj1zxq5qUzxSNUCKp2QIoSFJEEeCrDjPb1Vk_PM7RF8mzPnC_FGlCA9VJN3ufvG-wTSnYCG4j4HRNfNPXWEwbnv7-UcvVlHANt1AbKqMe7L4-tHAa9Wf8bBjWbIYOppERnmZpbLLmPSOWfXaYXUJKjMJp_5cmlMZzShCl85Oif451fwHYBPQxj7Y3fXdwxby0
 
 Codigo:
 
@@ -22,25 +22,169 @@ class BuyNow {
 }
 
 class Transacao {
-   date data
-   vector<Produto*> produtos
-   double valorTotal
-   estatisticas(por definir)
-   Cliente cliente
+    map<Produto*, int> quantidade;
+    Date data;
+    vector<Produto*> produtos;
+    double valorTotal;
+    //estatisticas(por definir)
+    Cliente* cliente;
+    Pagamento* tipoPagamento;
 
-   Transacao()
-   ~Transacao()
-   unsigned int getYear() const
-   unsigned int getMonth() const
-   unsigned int getDay() const
-   void setYear(unsigned int year)
-   void setMonth(unsigned int month)
-   void setDay(unsigned int day)
+    Transacao();
+    Transacao(Cliente *c, Date &d);
+    Transacao(Cliente *c, Date &d, vector<Produto*> v);
+    Date getDate() const;
+    void setDate(Date &d);
+    void setCliente(Cliente *c);
+    Cliente* getCliente() const;
+    void addProduto(Produto* p);
+    void addProduto(Produto* p, int quantidade);
+    void removeProduto(Produto *p);
+    void removeProduto(Produto *p, int quantidade);
+    int getQuantidade(Produto *p) const;
+    void setPagamento(Pagamento* p);
+    Pagamento* getPagamento() const;
+    friend ostream& operator << (ostream &o, const Transacao &t);
 }
 
 class Multibanco{
    int referencia
   
+    Multibanco();
+    Multibanco(double valorTotal, int referencia);
+    void setReferencia(int referencia);
+    int getReferencia() const;
+    string getInfo() const;
+}
+
+class CartaoCredito{
+    long int numCartao;
+    Date validade;
+
+    CartaoCredito();
+    CartaoCredito(double valor, long int numCartao, Date val);
+    long int getNumCartao() const;
+    void setNumCartao(long int numCartao);
+    void setValidade(Date validade);
+    Date getValidade() const;
+    string getInfo() const;
+}
+class MbWay{
+   int numTelemovel
+  
+    MbWay();
+    MbWay(double valor, int num);
+    int getNumTelemovel() const;
+    void setNumTelemovel(int num);
+    string getInfo() const;
+}
+
+class Date{
+    unsigned int year;
+    unsigned int month;
+    unsigned int day;
+    map<int, int> months_map;
+
+    Date();
+    Date(unsigned int year, unsigned int month, unsigned int day);
+    void setMap();
+    bool isValid();
+    bool isLeap() const;
+    map<int, int> getMonthsMap() const;
+    unsigned int getYear() const;
+    void setYear(int year);
+    unsigned int getMonth() const;
+    void setMonth(int month);
+    unsigned int getDay() const;
+    void setDay(int day);
+    string getInfo() const;
+    friend ostream& operator << (ostream& o, const Date &d);
+}
+
+class LojaFisica{
+   vector<Produto*> produtos
+   
+   void addProduto(Produto &produto)
+   vector<Produto*> getProdutos() const
+}
+
+class LojaOnline{
+   vector<Produto*> produtos
+   vector<Transacao*> transacoes
+
+   void addProduto(Produto produto)
+}
+
+class Categoria{
+   string nomeCategoria
+   
+   string getNomeCategoria() const
+   void setNome(string nome)
+}
+
+class Produto{
+   string nomeProduto
+   int stockFisico
+   int stockOnline
+   double valor
+
+   int getStockFisico() const
+   void setStockFisico(int stockFisico)
+   int getStockOnline() const
+   void setStockOnline(int stockOnline) 
+   string getNomeProduto() const
+   void setNomeProduto(string nome)
+}
+
+class Cliente{
+   string nome
+   int numContribuinte
+   
+   string getNome() const
+   void setNome(string nome)
+   int getNumContribuinte() const
+   void setNumContribuinte(int numContribuinte)
+}
+
+class ClienteRegistado{
+   string email
+   
+   string getEmail() const
+   void setEmail(string email)
+}
+
+class Fornecedor{
+   string nome
+
+   string getNome() const
+   void setNome(string nome)
+}
+
+class Pagamento{
+    double valor;
+
+    Pagamento();
+    Pagamento(double valorTotal);
+    void setValor(double val);
+    double getValor() const;
+    virtual string getInfo() const;
+}
+
+BuyNow *-- LojaFisica
+BuyNow *-- LojaOnline
+BuyNow o-- Categoria
+BuyNow o-- Cliente
+BuyNow o-- Fornecedor
+Categoria o-- Produto
+LojaOnline o-- Transacao
+Pagamento*-- MbWay
+Pagamento*-- CartaoCredito
+Pagamento*-- Multibanco
+Transacao o-- Date
+Transacao o-- Pagamento
+CartaoCredito o-- Date
+Cliente *-- ClienteRegistado
+@enduml
    void setReferencia(int referencia)
    int getReferencia() const
 }

@@ -7,6 +7,7 @@ CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Cliente.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Date.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../LojaFisica.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../LojaOnline.h
+CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Pagamento.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Transacao.h
 
@@ -17,6 +18,7 @@ CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../CartaoCredito.cpp
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../CartaoCredito.h
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../Cliente.h
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../Date.h
+CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../Pagamento.h
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../Transacao.h
 
@@ -44,6 +46,7 @@ CMakeFiles/Projeto.dir/LojaOnline.cpp.obj: ../Cliente.h
 CMakeFiles/Projeto.dir/LojaOnline.cpp.obj: ../Date.h
 CMakeFiles/Projeto.dir/LojaOnline.cpp.obj: ../LojaOnline.cpp
 CMakeFiles/Projeto.dir/LojaOnline.cpp.obj: ../LojaOnline.h
+CMakeFiles/Projeto.dir/LojaOnline.cpp.obj: ../Pagamento.h
 CMakeFiles/Projeto.dir/LojaOnline.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/LojaOnline.cpp.obj: ../Transacao.h
 
@@ -51,6 +54,7 @@ CMakeFiles/Projeto.dir/MbWay.cpp.obj: ../Cliente.h
 CMakeFiles/Projeto.dir/MbWay.cpp.obj: ../Date.h
 CMakeFiles/Projeto.dir/MbWay.cpp.obj: ../MbWay.cpp
 CMakeFiles/Projeto.dir/MbWay.cpp.obj: ../MbWay.h
+CMakeFiles/Projeto.dir/MbWay.cpp.obj: ../Pagamento.h
 CMakeFiles/Projeto.dir/MbWay.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/MbWay.cpp.obj: ../Transacao.h
 
@@ -58,18 +62,27 @@ CMakeFiles/Projeto.dir/Multibanco.cpp.obj: ../Cliente.h
 CMakeFiles/Projeto.dir/Multibanco.cpp.obj: ../Date.h
 CMakeFiles/Projeto.dir/Multibanco.cpp.obj: ../Multibanco.cpp
 CMakeFiles/Projeto.dir/Multibanco.cpp.obj: ../Multibanco.h
+CMakeFiles/Projeto.dir/Multibanco.cpp.obj: ../Pagamento.h
 CMakeFiles/Projeto.dir/Multibanco.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/Multibanco.cpp.obj: ../Transacao.h
+
+CMakeFiles/Projeto.dir/Pagamento.cpp.obj: ../Pagamento.cpp
+CMakeFiles/Projeto.dir/Pagamento.cpp.obj: ../Pagamento.h
 
 CMakeFiles/Projeto.dir/Produto.cpp.obj: ../Produto.cpp
 CMakeFiles/Projeto.dir/Produto.cpp.obj: ../Produto.h
 
 CMakeFiles/Projeto.dir/Transacao.cpp.obj: ../Cliente.h
 CMakeFiles/Projeto.dir/Transacao.cpp.obj: ../Date.h
+CMakeFiles/Projeto.dir/Transacao.cpp.obj: ../Pagamento.h
 CMakeFiles/Projeto.dir/Transacao.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/Transacao.cpp.obj: ../Transacao.cpp
 CMakeFiles/Projeto.dir/Transacao.cpp.obj: ../Transacao.h
 
+CMakeFiles/Projeto.dir/main.cpp.obj: ../Cliente.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Date.h
+CMakeFiles/Projeto.dir/main.cpp.obj: ../Pagamento.h
+CMakeFiles/Projeto.dir/main.cpp.obj: ../Produto.h
+CMakeFiles/Projeto.dir/main.cpp.obj: ../Transacao.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../main.cpp
 

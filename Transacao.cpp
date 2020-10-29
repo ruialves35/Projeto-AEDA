@@ -72,6 +72,7 @@ void Transacao::addProduto(Produto *p) {
         quantidade[p] += 1;
     }
     valorTotal += p.getValor();
+    tipoPagamento->setValor(valorTotal);
 }
 
 /**
@@ -88,6 +89,7 @@ void Transacao::addProduto(Produto *p, int quantidade) {
         this->quantidade[p] += quantidade;  //ja esta nos produtos, é so acrescentar a quantidade.
     }
     valorTotal += p.getValor() * quantidade;
+    tipoPagamento->setValor(valorTotal);
 }
 
 
@@ -98,6 +100,7 @@ void Transacao::addProduto(Produto *p, int quantidade) {
  */
 void Transacao::setPagamento(Pagamento* p) {
     tipoPagamento = p;
+    tipoPagamento->setValor(valorTotal);
 }
 
 /**
