@@ -11,9 +11,26 @@ using namespace std;
 class LojaOnline{
 private:
     vector<Produto*> produtos;
-    vector<Transacao*> transacoes;
+    vector<Transacao*> transacoesCompletas; //ja pagou
+    vector<Transacao*> transacoes;  //por completar
+    vector<Cliente *> clientes;
+    unsigned int stockMin;
 public:
+    void showAllProdutos() const;
+    void reporStock();
     void addProduto(Produto produto);
+    void addCliente(Cliente *c);
+    Cliente& getCliente(Cliente *c);
+    Cliente& getCliente(int pos);
+    void removeCliente(Cliente *c);
+    void buyProduto(Cliente *c, Produto* p);
+    void addProdutoToTransacao(Transacao* t, Produto* p);
+    void removeProdutoOfTransacao(Transacao* t, Produto* p);
+    void removeProdutoOfTransacao(Transacao* t, Produto* p, int quantidade);
+    void completeTransacao(Transacao* t);
+    void showAllTransacoes() const;
+    void showAllTransacoesCompletas() const;
+    friend ostream& operator << (ostream &o, const LojaOnline);
 };
 
 
