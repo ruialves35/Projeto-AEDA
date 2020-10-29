@@ -2,6 +2,8 @@
 #define AEDA_TRANSACAO_H
 
 #include <iostream>
+#include <algorithm>
+
 #include "Date.h"
 #include "Produto.h"
 #include "Cliente.h"
@@ -18,13 +20,11 @@ private:
 
 public:
     Transacao();
-    ~Transacao();
-    unsigned int getYear() const;
-    unsigned int getMonth() const;
-    unsigned int getDay() const;
-    void setYear(unsigned int year);
-    void setMonth(unsigned int month);
-    void setDay(unsigned int day);
+    Date getDate() const;
+    void setDate(Date &d);
+    void addProduto(Produto* p);
+    void removeProduto(Produto *p);
+    friend ostream& operator << (ostream &o, const Transacao &t);
 };
 
 

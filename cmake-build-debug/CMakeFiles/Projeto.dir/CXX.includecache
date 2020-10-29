@@ -6,39 +6,21 @@
 
 #IncludeRegexTransform: 
 
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CartaoCredito.cpp
-CartaoCredito.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CartaoCredito.h
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CartaoCredito.h
-Transacao.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
-Date.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Cliente.h
 iostream
 -
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
-iostream
+iomanip
 -
 string
 -
 vector
 -
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.h
-iostream
+map
 -
 
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/main.cpp
 iostream
 -
 Date.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Date.h
-Produto.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.h
-Cliente.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Cliente.h
 

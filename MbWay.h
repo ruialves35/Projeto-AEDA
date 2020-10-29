@@ -10,6 +10,7 @@ class MbWay: public Transacao{
 private:
     int numTelemovel;
 public:
+    MbWay();
     int getNumTelemovel() const;
     void setNumTelemovel(int numTelemovel);
 };
