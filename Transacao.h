@@ -7,23 +7,42 @@
 #include "Date.h"
 #include "Produto.h"
 #include "Cliente.h"
+#include "Pagamento.h"
 
 using namespace std;
 
+class ProductDoesNotExist{
+public:
+    Produto p;
+    ProductDoesNotExist(Produto p){
+        this -> p = p;
+    }
+    Produto getProduto(){ return p; }
+};
+
 class Transacao {
 private:
+    map<Produto*, int> quantidade;
     Date data;
     vector<Produto*> produtos;
     double valorTotal;
     //estatisticas(por definir)
-    Cliente cliente;
+    Cliente* cliente;
+    Pagamento tipoPagamento;
 
 public:
     Transacao();
+    Transacao(Cliente *c, Date &d);
+    Transacao(Cliente *c, Date &d, vector<Produto*> v);
     Date getDate() const;
     void setDate(Date &d);
+    void setCliente(Cliente *c);
+    Cliente* getCliente() const;
     void addProduto(Produto* p);
+    void addProduto(Produto* p, int quantidade);
     void removeProduto(Produto *p);
+    void removeProduto(Produto *p, int quantidade);
+    int getQuantidade(Produto *p) const;
     friend ostream& operator << (ostream &o, const Transacao &t);
 };
 

@@ -56,7 +56,7 @@ bool Date::isLeap() const {
     else return false;
 }
 
-map<int, int> Date::getMap() const {
+map<int, int> Date::getMonthsMap() const {
     return months_map;
 }
 

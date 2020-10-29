@@ -22,7 +22,7 @@ public:
     void setMap();
     bool isValid();
     bool isLeap() const;
-    map<int, int> getMap() const;
+    map<int, int> getMonthsMap() const;
     unsigned int getYear() const;
     void setYear(int year);
     unsigned int getMonth() const;

@@ -142,6 +142,19 @@ Projeto/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/build
 .PHONY : Projeto/fast
 
+#=============================================================================
+# Target rules for targets named Doxygen
+
+# Build rule for target.
+Doxygen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Doxygen
+.PHONY : Doxygen
+
+# fast build rule for target.
+Doxygen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Doxygen.dir\build.make CMakeFiles/Doxygen.dir/build
+.PHONY : Doxygen/fast
+
 BuyNow.obj: BuyNow.cpp.obj
 
 .PHONY : BuyNow.obj
@@ -466,6 +479,33 @@ Multibanco.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Multibanco.cpp.s
 .PHONY : Multibanco.cpp.s
 
+Pagamento.obj: Pagamento.cpp.obj
+
+.PHONY : Pagamento.obj
+
+# target to build an object file
+Pagamento.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Pagamento.cpp.obj
+.PHONY : Pagamento.cpp.obj
+
+Pagamento.i: Pagamento.cpp.i
+
+.PHONY : Pagamento.i
+
+# target to preprocess a source file
+Pagamento.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Pagamento.cpp.i
+.PHONY : Pagamento.cpp.i
+
+Pagamento.s: Pagamento.cpp.s
+
+.PHONY : Pagamento.s
+
+# target to generate assembly for a file
+Pagamento.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Pagamento.cpp.s
+.PHONY : Pagamento.cpp.s
+
 Produto.obj: Produto.cpp.obj
 
 .PHONY : Produto.obj
@@ -555,6 +595,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Doxygen
 	@echo ... Projeto
 	@echo ... BuyNow.obj
 	@echo ... BuyNow.i
@@ -592,6 +633,9 @@ help:
 	@echo ... Multibanco.obj
 	@echo ... Multibanco.i
 	@echo ... Multibanco.s
+	@echo ... Pagamento.obj
+	@echo ... Pagamento.i
+	@echo ... Pagamento.s
 	@echo ... Produto.obj
 	@echo ... Produto.i
 	@echo ... Produto.s

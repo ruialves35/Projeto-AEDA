@@ -5,7 +5,7 @@
 		<Option title="Projeto"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\docs\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug"/>
@@ -64,6 +64,16 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projeto/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Doxygen">
+				<Option working_dir="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Doxygen"/>
 					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -152,6 +162,12 @@
 		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Multibanco.h">
 			<Option target="Projeto"/>
 		</Unit>
+		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Pagamento.cpp">
+			<Option target="Projeto"/>
+		</Unit>
+		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Pagamento.h">
+			<Option target="Projeto"/>
+		</Unit>
 		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.cpp">
 			<Option target="Projeto"/>
 		</Unit>
@@ -169,6 +185,9 @@
 		</Unit>
 		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/docs/Doxyfile">
+			<Option virtualFolder="CMake Files\docs\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
