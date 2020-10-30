@@ -7,9 +7,11 @@ using namespace std;
 
 class Fornecedor{
 private:
-    string nome;
+    string nomeFornecedor;
 public:
-    string getNome() const;
+    Fornecedor();
+    Fornecedor(string nome);
+    string getNomeFornecedor() const;
     void setNome(string nome);
 };
 

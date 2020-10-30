@@ -7,6 +7,8 @@ using namespace std;
 
 class Produto{
 private:
+    Produto();
+    Produto(string nome, int fisico, int online, double val);
     string nomeProduto;
     int stockFisico;
     int stockOnline;

@@ -9,6 +9,8 @@ class Categoria{
 private:
     string nomeCategoria;
 public:
+    Categoria();
+    Categoria(string nome);
     string getNomeCategoria() const;
     void setNome(string nome);
 };
