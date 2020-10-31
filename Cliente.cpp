@@ -3,6 +3,8 @@
 //
 
 #include "Cliente.h"
+#include "../Projeto AEDA - Usar/Cliente.h"
+
 #include <iostream>
 
 string Cliente::getNome() const{
@@ -19,4 +21,8 @@ int Cliente::getNumContribuinte() const{
 
 void Cliente::setNumContribuinte(int numContribuinte){
     numContribuinteCliente=numContribuinte;
+}
+
+Cliente::Cliente() {
+
 }

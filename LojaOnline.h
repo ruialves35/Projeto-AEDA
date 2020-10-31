@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Produto.h"
 #include "Transacao.h"
+#include "BuyNow.h"
 #include <vector>
 
 using namespace std;
@@ -15,22 +16,18 @@ private:
     vector<Cliente *> clientes;
     unsigned int stockMin;
 public:
+    LojaOnline();
     void showAllProdutos() const;
+    void showAllTransacoes() const;
     void reporStock();
-    void addProduto(Produto produto);
+    void addProduto(Produto *p);
     void addCliente(Cliente *c);
     void addTransacao(Transacao *t);    //incrementar o numberOfTransacoes;
     Cliente& getCliente(Cliente *c);
-    Cliente& getCliente(int pos);
     void removeCliente(Cliente *c);
-    void buyProduto(Cliente *c, Produto* p);
     void addProdutoToTransacao(Transacao* t, Produto* p);
     void removeProdutoOfTransacao(Transacao* t, Produto* p);
     void removeProdutoOfTransacao(Transacao* t, Produto* p, int quantidade);
-    void completeTransacao(Transacao* t);
-    void showAllTransacoes() const;
-    void showAllTransacoesCompletas() const;
-    friend ostream& operator << (ostream &o, const LojaOnline);
 };
 
 
