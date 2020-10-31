@@ -2,36 +2,17 @@
 #define AEDA_CLIENTE_H
 
 #include <iostream>
-
 using namespace std;
 
 class Cliente{
 private:
-    string nome;
-    int numContribuinte;
+    string nomeCliente;
+    int numContribuinteCliente;
 public:
-    string getNome(){
-        return nome;
-    }
-
-    void setNome(string nome){
-        this->nome=nome;
-    }
-
-    int getNumContribuinte(){
-        return numContribuinte;
-    }
-
-    void setNumContribuinte(int numContribuinte){
-        this->numContribuinte=numContribuinte;
-    }
-
-    Cliente(string nome, int numContribuinte);
-};
-
-Cliente::Cliente(string nome, int numContribuinte){
-    this->nome=nome;
-    this->numContribuinte=numContribuinte;
+    string getNome() const;
+    void setNome(string nome);
+    int getNumContribuinte() const;
+    void setNumContribuinte(int numContribuinte);
 }
 
 
