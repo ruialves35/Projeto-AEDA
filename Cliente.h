@@ -10,11 +10,31 @@ private:
     string nome;
     int numContribuinte;
 public:
-    string getNome() const;
-    void setNome(string nome);
-    int getNumContribuinte() const;
-    void setNumContribuinte(int numContribuinte);
+    string getNome(){
+        return nome;
+    }
+
+    void setNome(string nome){
+        this->nome=nome;
+    }
+
+    int getNumContribuinte(){
+        return numContribuinte;
+    }
+
+    void setNumContribuinte(int numContribuinte){
+        this->numContribuinte=numContribuinte;
+    }
+
+    Cliente(string nome, int numContribuinte);
 };
+
+Cliente::Cliente(string nome, int numContribuinte){
+    this->nome=nome;
+    this->numContribuinte=numContribuinte;
+}
+
 
 
 #endif //AEDA_CLIENTE_H
+

@@ -62,10 +62,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar"
+CMAKE_SOURCE_DIR = C:\Users\Sara\Documents\GitHub\Projeto-AEDA
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Projeto.dir/depend.make
@@ -78,224 +78,224 @@ include CMakeFiles/Projeto.dir/flags.make
 
 CMakeFiles/Projeto.dir/main.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Projeto.dir/main.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\main.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Projeto.dir/main.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\main.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\main.cpp
 
 CMakeFiles/Projeto.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/main.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\main.cpp" > CMakeFiles\Projeto.dir\main.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\main.cpp > CMakeFiles\Projeto.dir\main.cpp.i
 
 CMakeFiles/Projeto.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/main.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\main.cpp" -o CMakeFiles\Projeto.dir\main.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\main.cpp -o CMakeFiles\Projeto.dir\main.cpp.s
 
 CMakeFiles/Projeto.dir/Date.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/Date.cpp.obj: ../Date.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Projeto.dir/Date.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Date.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Date.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Projeto.dir/Date.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Date.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Date.cpp
 
 CMakeFiles/Projeto.dir/Date.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/Date.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Date.cpp" > CMakeFiles\Projeto.dir\Date.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Date.cpp > CMakeFiles\Projeto.dir\Date.cpp.i
 
 CMakeFiles/Projeto.dir/Date.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/Date.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Date.cpp" -o CMakeFiles\Projeto.dir\Date.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Date.cpp -o CMakeFiles\Projeto.dir\Date.cpp.s
 
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../BuyNowUI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\BuyNowUI.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\BuyNowUI.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\BuyNowUI.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\BuyNowUI.cpp
 
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/BuyNowUI.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\BuyNowUI.cpp" > CMakeFiles\Projeto.dir\BuyNowUI.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\BuyNowUI.cpp > CMakeFiles\Projeto.dir\BuyNowUI.cpp.i
 
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/BuyNowUI.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\BuyNowUI.cpp" -o CMakeFiles\Projeto.dir\BuyNowUI.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\BuyNowUI.cpp -o CMakeFiles\Projeto.dir\BuyNowUI.cpp.s
 
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../BuyNow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Projeto.dir/BuyNow.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\BuyNow.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\BuyNow.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Projeto.dir/BuyNow.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\BuyNow.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\BuyNow.cpp
 
 CMakeFiles/Projeto.dir/BuyNow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/BuyNow.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\BuyNow.cpp" > CMakeFiles\Projeto.dir\BuyNow.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\BuyNow.cpp > CMakeFiles\Projeto.dir\BuyNow.cpp.i
 
 CMakeFiles/Projeto.dir/BuyNow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/BuyNow.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\BuyNow.cpp" -o CMakeFiles\Projeto.dir\BuyNow.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\BuyNow.cpp -o CMakeFiles\Projeto.dir\BuyNow.cpp.s
 
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../CartaoCredito.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\CartaoCredito.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\CartaoCredito.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\CartaoCredito.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\CartaoCredito.cpp
 
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/CartaoCredito.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\CartaoCredito.cpp" > CMakeFiles\Projeto.dir\CartaoCredito.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\CartaoCredito.cpp > CMakeFiles\Projeto.dir\CartaoCredito.cpp.i
 
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/CartaoCredito.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\CartaoCredito.cpp" -o CMakeFiles\Projeto.dir\CartaoCredito.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\CartaoCredito.cpp -o CMakeFiles\Projeto.dir\CartaoCredito.cpp.s
 
 CMakeFiles/Projeto.dir/Categoria.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/Categoria.cpp.obj: ../Categoria.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Projeto.dir/Categoria.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Categoria.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Categoria.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Projeto.dir/Categoria.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Categoria.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Categoria.cpp
 
 CMakeFiles/Projeto.dir/Categoria.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/Categoria.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Categoria.cpp" > CMakeFiles\Projeto.dir\Categoria.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Categoria.cpp > CMakeFiles\Projeto.dir\Categoria.cpp.i
 
 CMakeFiles/Projeto.dir/Categoria.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/Categoria.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Categoria.cpp" -o CMakeFiles\Projeto.dir\Categoria.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Categoria.cpp -o CMakeFiles\Projeto.dir\Categoria.cpp.s
 
 CMakeFiles/Projeto.dir/Cliente.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/Cliente.cpp.obj: ../Cliente.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Projeto.dir/Cliente.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Cliente.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Cliente.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Projeto.dir/Cliente.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Cliente.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Cliente.cpp
 
 CMakeFiles/Projeto.dir/Cliente.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/Cliente.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Cliente.cpp" > CMakeFiles\Projeto.dir\Cliente.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Cliente.cpp > CMakeFiles\Projeto.dir\Cliente.cpp.i
 
 CMakeFiles/Projeto.dir/Cliente.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/Cliente.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Cliente.cpp" -o CMakeFiles\Projeto.dir\Cliente.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Cliente.cpp -o CMakeFiles\Projeto.dir\Cliente.cpp.s
 
 CMakeFiles/Projeto.dir/ClienteRegistado.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/ClienteRegistado.cpp.obj: ../ClienteRegistado.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Projeto.dir/ClienteRegistado.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\ClienteRegistado.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\ClienteRegistado.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Projeto.dir/ClienteRegistado.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\ClienteRegistado.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\ClienteRegistado.cpp
 
 CMakeFiles/Projeto.dir/ClienteRegistado.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/ClienteRegistado.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\ClienteRegistado.cpp" > CMakeFiles\Projeto.dir\ClienteRegistado.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\ClienteRegistado.cpp > CMakeFiles\Projeto.dir\ClienteRegistado.cpp.i
 
 CMakeFiles/Projeto.dir/ClienteRegistado.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/ClienteRegistado.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\ClienteRegistado.cpp" -o CMakeFiles\Projeto.dir\ClienteRegistado.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\ClienteRegistado.cpp -o CMakeFiles\Projeto.dir\ClienteRegistado.cpp.s
 
 CMakeFiles/Projeto.dir/Fornecedor.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/Fornecedor.cpp.obj: ../Fornecedor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Projeto.dir/Fornecedor.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Fornecedor.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Fornecedor.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Projeto.dir/Fornecedor.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Fornecedor.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Fornecedor.cpp
 
 CMakeFiles/Projeto.dir/Fornecedor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/Fornecedor.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Fornecedor.cpp" > CMakeFiles\Projeto.dir\Fornecedor.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Fornecedor.cpp > CMakeFiles\Projeto.dir\Fornecedor.cpp.i
 
 CMakeFiles/Projeto.dir/Fornecedor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/Fornecedor.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Fornecedor.cpp" -o CMakeFiles\Projeto.dir\Fornecedor.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Fornecedor.cpp -o CMakeFiles\Projeto.dir\Fornecedor.cpp.s
 
 CMakeFiles/Projeto.dir/LojaOnline.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/LojaOnline.cpp.obj: ../LojaOnline.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Projeto.dir/LojaOnline.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\LojaOnline.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\LojaOnline.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Projeto.dir/LojaOnline.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\LojaOnline.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\LojaOnline.cpp
 
 CMakeFiles/Projeto.dir/LojaOnline.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/LojaOnline.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\LojaOnline.cpp" > CMakeFiles\Projeto.dir\LojaOnline.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\LojaOnline.cpp > CMakeFiles\Projeto.dir\LojaOnline.cpp.i
 
 CMakeFiles/Projeto.dir/LojaOnline.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/LojaOnline.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\LojaOnline.cpp" -o CMakeFiles\Projeto.dir\LojaOnline.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\LojaOnline.cpp -o CMakeFiles\Projeto.dir\LojaOnline.cpp.s
 
 CMakeFiles/Projeto.dir/LojaFisica.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/LojaFisica.cpp.obj: ../LojaFisica.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Projeto.dir/LojaFisica.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\LojaFisica.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\LojaFisica.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Projeto.dir/LojaFisica.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\LojaFisica.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\LojaFisica.cpp
 
 CMakeFiles/Projeto.dir/LojaFisica.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/LojaFisica.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\LojaFisica.cpp" > CMakeFiles\Projeto.dir\LojaFisica.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\LojaFisica.cpp > CMakeFiles\Projeto.dir\LojaFisica.cpp.i
 
 CMakeFiles/Projeto.dir/LojaFisica.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/LojaFisica.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\LojaFisica.cpp" -o CMakeFiles\Projeto.dir\LojaFisica.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\LojaFisica.cpp -o CMakeFiles\Projeto.dir\LojaFisica.cpp.s
 
 CMakeFiles/Projeto.dir/MbWay.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/MbWay.cpp.obj: ../MbWay.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Projeto.dir/MbWay.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\MbWay.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\MbWay.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Projeto.dir/MbWay.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\MbWay.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\MbWay.cpp
 
 CMakeFiles/Projeto.dir/MbWay.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/MbWay.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\MbWay.cpp" > CMakeFiles\Projeto.dir\MbWay.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\MbWay.cpp > CMakeFiles\Projeto.dir\MbWay.cpp.i
 
 CMakeFiles/Projeto.dir/MbWay.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/MbWay.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\MbWay.cpp" -o CMakeFiles\Projeto.dir\MbWay.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\MbWay.cpp -o CMakeFiles\Projeto.dir\MbWay.cpp.s
 
 CMakeFiles/Projeto.dir/Multibanco.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/Multibanco.cpp.obj: ../Multibanco.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Projeto.dir/Multibanco.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Multibanco.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Multibanco.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Projeto.dir/Multibanco.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Multibanco.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Multibanco.cpp
 
 CMakeFiles/Projeto.dir/Multibanco.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/Multibanco.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Multibanco.cpp" > CMakeFiles\Projeto.dir\Multibanco.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Multibanco.cpp > CMakeFiles\Projeto.dir\Multibanco.cpp.i
 
 CMakeFiles/Projeto.dir/Multibanco.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/Multibanco.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Multibanco.cpp" -o CMakeFiles\Projeto.dir\Multibanco.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Multibanco.cpp -o CMakeFiles\Projeto.dir\Multibanco.cpp.s
 
 CMakeFiles/Projeto.dir/Produto.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/Produto.cpp.obj: ../Produto.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Projeto.dir/Produto.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Produto.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Produto.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Projeto.dir/Produto.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Produto.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Produto.cpp
 
 CMakeFiles/Projeto.dir/Produto.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/Produto.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Produto.cpp" > CMakeFiles\Projeto.dir\Produto.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Produto.cpp > CMakeFiles\Projeto.dir\Produto.cpp.i
 
 CMakeFiles/Projeto.dir/Produto.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/Produto.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Produto.cpp" -o CMakeFiles\Projeto.dir\Produto.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Produto.cpp -o CMakeFiles\Projeto.dir\Produto.cpp.s
 
 CMakeFiles/Projeto.dir/Transacao.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/Transacao.cpp.obj: ../Transacao.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Projeto.dir/Transacao.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Transacao.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Transacao.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Projeto.dir/Transacao.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Transacao.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Transacao.cpp
 
 CMakeFiles/Projeto.dir/Transacao.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/Transacao.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Transacao.cpp" > CMakeFiles\Projeto.dir\Transacao.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Transacao.cpp > CMakeFiles\Projeto.dir\Transacao.cpp.i
 
 CMakeFiles/Projeto.dir/Transacao.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/Transacao.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Transacao.cpp" -o CMakeFiles\Projeto.dir\Transacao.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Transacao.cpp -o CMakeFiles\Projeto.dir\Transacao.cpp.s
 
 CMakeFiles/Projeto.dir/Pagamento.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/Pagamento.cpp.obj: ../Pagamento.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Projeto.dir/Pagamento.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Pagamento.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Pagamento.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Projeto.dir/Pagamento.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\Pagamento.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Pagamento.cpp
 
 CMakeFiles/Projeto.dir/Pagamento.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/Pagamento.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Pagamento.cpp" > CMakeFiles\Projeto.dir\Pagamento.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Pagamento.cpp > CMakeFiles\Projeto.dir\Pagamento.cpp.i
 
 CMakeFiles/Projeto.dir/Pagamento.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/Pagamento.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\Pagamento.cpp" -o CMakeFiles\Projeto.dir\Pagamento.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\Pagamento.cpp -o CMakeFiles\Projeto.dir\Pagamento.cpp.s
 
 CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.obj: CMakeFiles/Projeto.dir/flags.make
 CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.obj: ../NumeroTransacoes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\NumeroTransacoes.cpp.obj -c "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\NumeroTransacoes.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Projeto.dir\NumeroTransacoes.cpp.obj -c C:\Users\Sara\Documents\GitHub\Projeto-AEDA\NumeroTransacoes.cpp
 
 CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\NumeroTransacoes.cpp" > CMakeFiles\Projeto.dir\NumeroTransacoes.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Sara\Documents\GitHub\Projeto-AEDA\NumeroTransacoes.cpp > CMakeFiles\Projeto.dir\NumeroTransacoes.cpp.i
 
 CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\NumeroTransacoes.cpp" -o CMakeFiles\Projeto.dir\NumeroTransacoes.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Sara\Documents\GitHub\Projeto-AEDA\NumeroTransacoes.cpp -o CMakeFiles\Projeto.dir\NumeroTransacoes.cpp.s
 
 # Object files for target Projeto
 Projeto_OBJECTS = \
@@ -341,7 +341,7 @@ Projeto.exe: CMakeFiles/Projeto.dir/build.make
 Projeto.exe: CMakeFiles/Projeto.dir/linklibs.rsp
 Projeto.exe: CMakeFiles/Projeto.dir/objects1.rsp
 Projeto.exe: CMakeFiles/Projeto.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Projeto.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Projeto.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Projeto.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -354,6 +354,6 @@ CMakeFiles/Projeto.dir/clean:
 .PHONY : CMakeFiles/Projeto.dir/clean
 
 CMakeFiles/Projeto.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar" "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar" "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug" "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug" "D:\2 ano\AEDA\CLionProjects\Projeto AEDA - Usar\cmake-build-debug\CMakeFiles\Projeto.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Sara\Documents\GitHub\Projeto-AEDA C:\Users\Sara\Documents\GitHub\Projeto-AEDA C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles\Projeto.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Projeto.dir/depend
 
