@@ -1,4 +1,4 @@
-http://www.plantuml.com/plantuml/uml/dLTTRjms47xNAVYqa1OASe0rZA1E0nI8xJGrMlIfu4gpAXk9L4bgYuNHNgSdw0boiMgfqNX4qVOYJqlEVFC_6iw-SrvQFtHjLhNIEV7TSBepVud7J8YFvW_vGJbLIT7I4UdtkbKQH4l7aNw4oXihhcvQ1Th3zbfKuSHv3rPg9ojfHguFvw__VlqFt0XHsWldJVNb_Wk_tIezNZE1dkN5UFo7dOz6rKBMDLhDyLTiq3XXB7Jc23FCUQjq8xJfe41p3VYV9ljv8IgZdMSCT8KugDGzoGpQgKP3pGCfE0vLH42a5jdV6PQ0SXIg84Gd-wjFrjI3DzloB7Gj_XoazggMDUm2vBtq86hfPRXYjadeMlJJoKtisWpx5iHHjiO-62_RYVpsBJWllN9ULTBblR6YXeFIoXQ1FzSLougcFyb6Tg17CyAhtj1rbmKs1PCNkoM1AhMjoYc0JNq9fbo7TonO6Xhmvz-vKe63HK0ECyPOQ8gPH035tH0eKeujY0xbisEYBru3X7goSf80DMma8xRz1PYqNkhc7udEH9BvedBcUE9XCLB3eGjD1wj0ry8uRq5s6s5wi3BCWYkH8rLiJ3d9iERV-D4CVHItG-lLNkhAF6OOY8K3MD2LajE040o4tSOfgwul8orHFtmcHhx6KIuvR14t3fWHyOC-i9nGH3VIUcbkBDJAJq69rkWcwDL3Dx6fhuFZ-CK76XV7S6CYZxXCA2z9COeZ9CHrDwDI7n9dh_L6YVmP7SyNOKIVB84kJ29snVuNUGgvGmSUe0rVH8ijCI4mFNXPfWK5bqMzOvfIyKS8qd5HvKFCKy4NJy49fDsjoPtH_lS4lPQd7RqF8m6VXW1tlut4NKOPnWHCvvNHCc6mN1cBgdeh-rdhtfXMA1TA6D4-Wknv0cDlcr5HSFWsnf5vBCcl86sg5CYPOodMqcGaAOui2lmP1U_bAIaU69YXTFqlduP4fMb8BnKr3zlA7hENdlepCtl-xH4R11OfBM6Uew8v0EO2RNslku3CzTvN6N3PImwIVsnYUcYCLLFaR8CZ1WRDId37sHGArIy0ecsGxA4diJKaPu9jgQ4YInBknT6-5KAcfP8aKvvnTcIeYBIWiQGMnevyArQvek1IcZYR9omUziQo4JjnyTuWVzrIk5V5gMQJ_SReaRuVnYkaotnPTVcGvqhJuX4auKkn2k8pDCfvMIyQ1pgfshNVtv_92Sl8uCBCq0TZDLHG6xjAsBUcXNJJ6lUu-g-03meXydWFNEzOY7YsEtOljGVAAki7sRx-h8x50ciUQBfC0M39zc3l3qyy32KMmOXMzEY5fpJ6UcCWTLgCI_-1U45VY1F_d6_Vl67FG4p5kODKCr9f_d4YDYiZiRRAI2Gmvedtf3wGQQX7Z3Xx6JN8wEEqX2r9YxKrGjC2dv6viutmD4Oa4inY3yHsuIwtnxHXIW8u_fQpTw3heMl_1m00
+http://www.plantuml.com/plantuml/uml/jLXTZjis47xNAVXaI8Q374318ksc0G9aiscwQD6dWfPeXOb4gYIrWM6qr-a9Ue9Sh3Gr7eqeHbwqw9F8cM-6ypCaXtff7JTkwDgiQhcrxFlX-4v_OQUCiRVw4tyjhQmuQt48z7lLIYLOYqDFVnILquQzk6sbK4viRrWLHfJtOBYolEBQSrqOV_thwz_24iXhRPIeHAsDnnnmSeP8vPXrklfy_vdExgJoK--8arMWgg4JHeCTjlJCZ85dUU67VvBnevOrutKDw1o-R0F68yQ8JZ-A2ymw8rN3bEv40ROqmlqq6fSNhDBAEi80Ev43IkqaCoWh6oLgwcL1SQ0Y0WAL6F5kvZsk-4S6ASOSX2opIyJsmfHXtl7-nNkZwy7fxUxClM6_3rmvMVDQZ91Nt0bMSyV355A7GZUi7qTsPDTwsBU2FV9McmVjU3kIdpyN8MVMfutRlDU6rU8WbJH5u5_g2Ce8bdxF6zxvgTuo9tkDqp8BR7GkByev0JExhNQZ0vlwAPZTqht7WeJ1H_pylSGvS21fm26B4HOiHPO40FhT82XI3YKB1kKNmrXVN0E4V99qeW0MU2J3jlqJC6czM94_8fs89EE5wSnXHDqYf8P2PveEHWfLCssT4RpRCDqBmyF1yeBbG6KRlHjbo6ROkAASDidTq3gvvwhIfmmSCU8WZ52LvEE1mWW8gerI5bM_YxH4zV016VaIXx6ai9dVS21vn1jr8351ZswvSLpV6b5BDph5MkqbOFkFRAphO3Zi-42Zuk1kJAGUxnBATwWOn042fnQWaXk9i9Tweq3-38RdCpUYBOkW9mOHgcB_2p-6s8413w8DEwA5aXWHOtXW4eK5104nEO-QKlv72AhZUkQ3psF2PrV7KN1JBicTLkvZWbxputG_U09S3G5kV_D4A9JnC2odyMBHNMB1tMAnAAjtlBzetMlTCcb32YFQMy5x6i3OsiOh2WRVKTp2Lm_xLN2JIWLmBhuKIsbS92aEB7Jy6mfUyMDIF30mGclvltuQ8XLFGxofi7X85tZArgxwCpFxzjt3DW0iabgyyJ2nn87LImSLegsaCprTxqkGlUn9AotihUxwLZXkIz-eVEAivuqUhekLpCFFhKm5yeRAu5sFlJ6OakpfpYoI-u_wotTjcmeJnial7Dh4VBqHkCGXGYqxaWWmzKauObjNb6Ct9rNbC-KbkM4QEihxmyCK6jhTR5YptWB5e53qlRRBRcJTxFrm1AzdpTsrdkb1BvtrQ1TB9ciKlVw_XDVQE2WyaTO2I5fHc26igJKCxel_qdQHdLhCMXGd6ctaUDIG9nOoplI95wvEoiR73feV0D5p3TU3WCQh0TbJf-qOZi0v2Hw-qGF7poS_M8M6KvCcUoVafkAG7AIDvOzO6czyLg9fATSfE_AaYBI0DqajX1qvNyJ9mEWbxQ5icf6uVTE6D4qZ5-ODy9UlMjZSSIv9htQhbQVl1pyLwJfwMldGjeqgJOj7aAKjeI0ZBpw8Hbh7w-dn8MjYhkYuR9Sk_70c9um01XMcNhofbpA12hQI3JFzcrd4-Tz64tNZU-wq-6a0dIKYylX1k7niUSHgKPLhLGMoqhY1jzVxw_67otH4HhzLeaimC6CHy6X1Zrfz36EiDmPYWSQuz9-4LNtUJ_Whk7tsZFI34HNESqh5iuiIeSG9YPHLXY9CUyRb99xK1p9UQ14ZZbw61U9N6LzZCzBy_HgXyIMVuN9XyNEF795GC8ijODkPkNGzeWr24i3n2P2z5AeUklOV
 
 @startuml
 class BuyNow {
@@ -6,8 +6,10 @@ class BuyNow {
   LojaOnline lojaOnline
   vector <Cliente*> cliente
   vector <Transacao*> transações
+  vector <Fornecedor*> fornecedors
   int stockOk
   int stockMin
+  static int numeroClientes;
   
   BuyNow()
   ~BuyNow()
@@ -17,9 +19,11 @@ class BuyNow {
   int getStockMin() const
   void setStockOk(unsigned int stockOk)
   void setStockMin(unsigned int stockMin)
+  int getNumeroClientes() const
 }
 
 class Transacao {
+    int number;
     map<Produto*, int> quantidade;
     Date data;
     vector<Produto*> produtos;
@@ -103,14 +107,33 @@ class LojaFisica{
    vector<Produto*> produtos
    
    void addProduto(Produto &produto)
-   vector<Produto*> getProdutos() const
+   vector<Produto*> getProdutos() const;
+   void removeProduto(Produto &produto)
 }
 
 class LojaOnline{
-   vector<Produto*> produtos
-   vector<Transacao*> transacoes
-
-   void addProduto(Produto produto)
+    vector<Produto*> produtos;
+    vector<Transacao*> transacoesCompletas; //ja pagou
+    vector<Transacao*> transacoes;  //por completar
+    vector<Cliente *> clientes;
+    unsigned int stockMin;
+  
+    void showAllProdutos() const;
+    void reporStock();
+    void addProduto(Produto produto);
+    void addCliente(Cliente *c);
+    void addTransacao(Transacao *t);    //incrementar o numberOfTransacoes;
+    Cliente& getCliente(Cliente *c);
+    Cliente& getCliente(int pos);
+    void removeCliente(Cliente *c);
+    void buyProduto(Cliente *c, Produto* p);
+    void addProdutoToTransacao(Transacao* t, Produto* p);
+    void removeProdutoOfTransacao(Transacao* t, Produto* p);
+    void removeProdutoOfTransacao(Transacao* t, Produto* p, int quantidade);
+    void completeTransacao(Transacao* t);
+    void showAllTransacoes() const;
+    void showAllTransacoesCompletas() const;
+    friend ostream& operator << (ostream &o, const LojaOnline);
 }
 
 class Categoria{
@@ -125,7 +148,10 @@ class Produto{
    int stockFisico
    int stockOnline
    double valor
+   Categoria categoria
 
+   void setCategoria(Categoria &cat);
+   Categoria& getCategoria() const;
    int getStockFisico() const
    void setStockFisico(int stockFisico)
    int getStockOnline() const
@@ -146,11 +172,15 @@ class Cliente{
    void setNumContribuinte(int numContribuinte)
 }
 
+
 class ClienteRegistado{
+   int id
    string email
    
    string getEmail() const
    void setEmail(string email)
+   int getId() const
+   void setId(int num)
 }
 
 class Fornecedor{
@@ -182,9 +212,9 @@ class NumeroTransacoes{
 
 BuyNow *-- LojaFisica
 BuyNow *-- LojaOnline
-BuyNow o-- Categoria
-BuyNow o-- Cliente
-BuyNow o-- Fornecedor
+BuyNow *-- Categoria
+BuyNow *-- Cliente
+BuyNow *-- Fornecedor
 Categoria o-- Produto
 LojaOnline o-- Transacao
 LojaOnline o--NumeroTransacoes
