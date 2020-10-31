@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(Projeto main.cpp Date.cpp Date.h BuyNowUI.cpp BuyNowUI.h BuyNow.cpp BuyNow.h CartaoCredito.cpp CartaoCredito.h
         Categoria.cpp Categoria.h Cliente.cpp Cliente.h ClienteRegistado.cpp ClienteRegistado.h Fornecedor.cpp Fornecedor.h
         LojaOnline.cpp LojaOnline.h LojaFisica.cpp LojaFisica.h MbWay.cpp MbWay.h Multibanco.cpp Multibanco.h
-        Produto.cpp Produto.h Transacao.cpp Transacao.h Pagamento.cpp Pagamento.h)
+        Produto.cpp Produto.h Transacao.cpp Transacao.h Pagamento.cpp Pagamento.h NumeroTransacoes.cpp NumeroTransacoes.h)
 
 find_package(Doxygen)
 if(DOXYGEN_FOUND)

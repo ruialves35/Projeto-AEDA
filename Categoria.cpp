@@ -12,10 +12,11 @@ Categoria::Categoria(string nome): nomeCategoria(nome){};
 /**
  * sets nome
  */
-
-void Categoria::setNome(string nome): nomeCategoria(nome){};
+void Categoria::setNome(string nome) {
+    nomeCategoria = nome;
+}
 
 /**
  * @return nome nomeCategoria
  */
-string Categoria::getNomeCategoria() const {return nomeCategoria};
+string Categoria::getNomeCategoria() const {return nomeCategoria; }

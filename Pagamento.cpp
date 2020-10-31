@@ -1,5 +1,6 @@
 #include "Pagamento.h"
 #include <string> //std::to_string
+#include <sstream>
 
 Pagamento::Pagamento(): valor(-1){}
 
@@ -13,9 +14,9 @@ Pagamento::Pagamento(double valorTotal) {
     }
 }
 
-string Pagamento::getInfo() const {
-    string info = "Valor: " + to_string(valor);
-    return info;
+ostream& Pagamento::getInfo(ostream& o) const {
+    o << "Valor: " << to_string(valor);
+    return o;
 }
 
 double Pagamento::getValor() const {return valor;}

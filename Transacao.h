@@ -8,12 +8,14 @@
 #include "Produto.h"
 #include "Cliente.h"
 #include "Pagamento.h"
+#include "NumeroTransacoes.h"
 
 using namespace std;
 
 
-class Transacao {
+class Transacao: public NumeroTransacoes {
 private:
+    int number;
     map<Produto*, int> quantidade;
     Date data;
     vector<Produto*> produtos;
@@ -37,7 +39,9 @@ public:
     int getQuantidade(Produto *p) const;
     void setPagamento(Pagamento* p);
     Pagamento* getPagamento() const;
+    int getNumber() const;
     friend ostream& operator << (ostream &o, const Transacao &t);
+    friend bool operator == (const Transacao &t1, const Transacao &t2);
 };
 
 

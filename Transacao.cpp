@@ -4,14 +4,18 @@
 /**
  * Transacao empty constructor. Sets valorTotal to 0 and data 00/00/0000
  */
-Transacao::Transacao() : valorTotal(0), data(){}
+Transacao::Transacao(): NumeroTransacoes(), valorTotal(0), data(){
+    number = getNumberOfTransacoes();
+}
 
 /**
  * Contructor of Transacao. Sets cliente to c, data to d and valorTotal to 0
  * @param c receives the client of Transacao
  * @param d receives the data of Transacao
  */
-Transacao::Transacao(Cliente *c, Date &d): cliente(c), data(d), valorTotal(0){}
+Transacao::Transacao(Cliente *c, Date &d): NumeroTransacoes(), cliente(c), data(d), valorTotal(0){
+    number = getNumberOfTransacoes();
+}
 
 /**
  * Contructor of Transacao. Sets cliente to c, data to d, vector of all products to v and valorTotal to 0
@@ -19,8 +23,17 @@ Transacao::Transacao(Cliente *c, Date &d): cliente(c), data(d), valorTotal(0){}
  * @param d Data of Transacao
  * @param v All products of transacao
  */
-Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): cliente(c), data(d), produtos(v), valorTotal(0){}
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes(), cliente(c),data(d), produtos(v), valorTotal(0){
+    number = getNumberOfTransacoes();
+}
 
+
+/**
+ * @return the number of the transacao
+ */
+int Transacao::getNumber() const {
+    return number;
+}
 
 
 /**
@@ -71,7 +84,7 @@ void Transacao::addProduto(Produto *p) {
     else{
         quantidade[p] += 1;
     }
-    valorTotal += p.getValor();
+    valorTotal += p->getValor();
     tipoPagamento->setValor(valorTotal);
 }
 
@@ -88,7 +101,7 @@ void Transacao::addProduto(Produto *p, int quantidade) {
     else{
         this->quantidade[p] += quantidade;  //ja esta nos produtos, é so acrescentar a quantidade.
     }
-    valorTotal += p.getValor() * quantidade;
+    valorTotal += p->getValor() * quantidade;
     tipoPagamento->setValor(valorTotal);
 }
 
@@ -126,7 +139,7 @@ void Transacao::removeProduto(Produto *p) {
         else{   //quantidade desse produto era > 1, só tiramos 1 e ficamos com os restantes
             quantidade[p]--;
         }
-        valorTotal -= p.getValor();
+        valorTotal -= p->getValor();
     }
     cout << "The product wasn't in the Transaction already." << endl;
 }
@@ -145,7 +158,7 @@ void Transacao::removeProduto(Produto *p, int quantidade){
         else{
             this->quantidade[p] -= quantidade;
         }
-        valorTotal -= p.getValor() * quantidade;
+        valorTotal -= p->getValor() * quantidade;
     }
 }
 
@@ -178,7 +191,10 @@ ostream & operator<<(ostream & o, const Transacao &t)
     o << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
     o << "Nome: " << t.cliente->getNome() << endl;
     o << "Data: " << t.data << endl;
-    o << "Pagamento: " << t.tipoPagamento->getInfo() << endl << endl;
+    o << "Transacao nº " << t.number << endl;
+    o << "Pagamento: ";
+    t.tipoPagamento->getInfo(o);
+    o << endl << endl;
     o << setw(10) <<  "Produto " << setw(10) << "Valor" << setw(10) << "Quantidade" << setw(10) << "Total" << endl;
     for (auto i : t.produtos){
         map<Produto*, int>::const_iterator it = t.quantidade.find(i);
@@ -188,4 +204,9 @@ ostream & operator<<(ostream & o, const Transacao &t)
     o << "Valor Total: " << t.valorTotal;
     o << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
     return o;
+}
+
+bool operator == (const Transacao &t1, const Transacao &t2){
+    if (t1.number == t2.number) return true;
+    return false;
 }

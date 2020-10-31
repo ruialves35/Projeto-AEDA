@@ -479,6 +479,33 @@ Multibanco.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Multibanco.cpp.s
 .PHONY : Multibanco.cpp.s
 
+NumeroTransacoes.obj: NumeroTransacoes.cpp.obj
+
+.PHONY : NumeroTransacoes.obj
+
+# target to build an object file
+NumeroTransacoes.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.obj
+.PHONY : NumeroTransacoes.cpp.obj
+
+NumeroTransacoes.i: NumeroTransacoes.cpp.i
+
+.PHONY : NumeroTransacoes.i
+
+# target to preprocess a source file
+NumeroTransacoes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.i
+.PHONY : NumeroTransacoes.cpp.i
+
+NumeroTransacoes.s: NumeroTransacoes.cpp.s
+
+.PHONY : NumeroTransacoes.s
+
+# target to generate assembly for a file
+NumeroTransacoes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.s
+.PHONY : NumeroTransacoes.cpp.s
+
 Pagamento.obj: Pagamento.cpp.obj
 
 .PHONY : Pagamento.obj
@@ -633,6 +660,9 @@ help:
 	@echo ... Multibanco.obj
 	@echo ... Multibanco.i
 	@echo ... Multibanco.s
+	@echo ... NumeroTransacoes.obj
+	@echo ... NumeroTransacoes.i
+	@echo ... NumeroTransacoes.s
 	@echo ... Pagamento.obj
 	@echo ... Pagamento.i
 	@echo ... Pagamento.s

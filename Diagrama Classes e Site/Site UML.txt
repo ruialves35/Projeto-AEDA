@@ -1,6 +1,4 @@
-http://www.plantuml.com/plantuml/uml/dLTTZjis47xNAVXaI8Q37C2BHT1D0nJ8Rj9qqQ9FnLYQLTb8f4jIBen5UvsUe2V8nIfJey5GLBP6dqnzyyq_VyPlV00NXhuhwWwyLzyCvmVxXtekb7flVuDtskiQLCTBmZ-OJXjK7Iz7_8Hri4xTt7KQJS3jhQhZIieU7HWFDTXH6kBwozzV_a4_KhG9oWTRV_xmMNxTQpD-5eeYAwjn-PTOdwnk53GDUItfLst8ENCSzlQ4Cyq7fqshZEsn8dSjXXyc_sMbQcjy408AXILar2Fh3CRhrc0Z4wcO9qoaH4Ahui-2Mi0rYbrGgeVZpKTdco7OxUwYTAj-7y04tK23-qXv2m5L0m7Y9rMRbMxLSLhvITpOuT2XEa5dtQCDq4tmwzVe0mJjWwx1bqVhL8DFscXNHVdSLsehkVu8BVHeHZSgwAFbptqHnPnCMUrJW3krhNTJ0flc6iukJ-zKYJAq62w_SwUYX9f04dQMYCYLS4a4phjbKcASjo05LCw1gMFrNuJOJz5ELk0Dkz1Hs-CLd7Mxl9k_ProehDQBsrdIIgObe5PI4qjFJgDfbFN18VGRPO_e8Du5DweaL6tiRj8HctyJHZTyAEw7BkW3cDe-5vI8moTqQ6eDqmMX18bscqIoNRzRM5diXqyiA3CUrrBIqhpfWXaPtvadhed8w0vS07ldiD5XIafrrhJHhXdwISpxEWPE9pvYKftJbM2QyMx5-8uDapfHObuFCslj84bnRdTHo1yfy3998psoJBgsYBGh3Z_1ETQE0dZ4Bfw8ZhR4nA3oq4TQ5b9Cc_eWBAtcdpBOnbMTZpbF3K-UWZE2s-TmRqtuTGLluBpdzs44w6c8TF_B2EuBhZ0LO5fdJdSh3dUPiqLNx-4uMprOsodjOmiNs7iSQLo1FDfsD1G3lfUyBDUHzZE2Msi5IUPSgboRdQogauWJ_ug1jt1ULOy2MQ6y_rVVXepoRSWl5MyUCPKz5oyzzHTXyVMtHss8MArPYVSv6PeJu1340FXo24AOptsrHL-y52379sxCWArrUifSJ70ieAH52nwac5FX_as4T1faVnJ9qXl1XH9JQkn82l5SdCnRCMKUAbapZomLBnnLYHLsbbj9nOlOggnMd5nkAHMl5uocesN1nFryPys87uRn4zURTLsFagjQ6itLSyfAB7aIdx3LFa2Jj1zxq5qUzxSNUCKp2QIoSFJEEeCrDjPb1Vk_PM7RF8mzPnC_FGlCA9VJN3ufvG-wTSnYCG4j4HRNfNPXWEwbnv7-UcvVlHANt1AbKqMe7L4-tHAa9Wf8bBjWbIYOppERnmZpbLLmPSOWfXaYXUJKjMJp_5cmlMZzShCl85Oif451fwHYBPQxj7Y3fXdwxby0
-
-Codigo:
+http://www.plantuml.com/plantuml/uml/dLTTRjms47xNAVYqa1OASe0rZA1E0nI8xJGrMlIfu4gpAXk9L4bgYuNHNgSdw0boiMgfqNX4qVOYJqlEVFC_6iw-SrvQFtHjLhNIEV7TSBepVud7J8YFvW_vGJbLIT7I4UdtkbKQH4l7aNw4oXihhcvQ1Th3zbfKuSHv3rPg9ojfHguFvw__VlqFt0XHsWldJVNb_Wk_tIezNZE1dkN5UFo7dOz6rKBMDLhDyLTiq3XXB7Jc23FCUQjq8xJfe41p3VYV9ljv8IgZdMSCT8KugDGzoGpQgKP3pGCfE0vLH42a5jdV6PQ0SXIg84Gd-wjFrjI3DzloB7Gj_XoazggMDUm2vBtq86hfPRXYjadeMlJJoKtisWpx5iHHjiO-62_RYVpsBJWllN9ULTBblR6YXeFIoXQ1FzSLougcFyb6Tg17CyAhtj1rbmKs1PCNkoM1AhMjoYc0JNq9fbo7TonO6Xhmvz-vKe63HK0ECyPOQ8gPH035tH0eKeujY0xbisEYBru3X7goSf80DMma8xRz1PYqNkhc7udEH9BvedBcUE9XCLB3eGjD1wj0ry8uRq5s6s5wi3BCWYkH8rLiJ3d9iERV-D4CVHItG-lLNkhAF6OOY8K3MD2LajE040o4tSOfgwul8orHFtmcHhx6KIuvR14t3fWHyOC-i9nGH3VIUcbkBDJAJq69rkWcwDL3Dx6fhuFZ-CK76XV7S6CYZxXCA2z9COeZ9CHrDwDI7n9dh_L6YVmP7SyNOKIVB84kJ29snVuNUGgvGmSUe0rVH8ijCI4mFNXPfWK5bqMzOvfIyKS8qd5HvKFCKy4NJy49fDsjoPtH_lS4lPQd7RqF8m6VXW1tlut4NKOPnWHCvvNHCc6mN1cBgdeh-rdhtfXMA1TA6D4-Wknv0cDlcr5HSFWsnf5vBCcl86sg5CYPOodMqcGaAOui2lmP1U_bAIaU69YXTFqlduP4fMb8BnKr3zlA7hENdlepCtl-xH4R11OfBM6Uew8v0EO2RNslku3CzTvN6N3PImwIVsnYUcYCLLFaR8CZ1WRDId37sHGArIy0ecsGxA4diJKaPu9jgQ4YInBknT6-5KAcfP8aKvvnTcIeYBIWiQGMnevyArQvek1IcZYR9omUziQo4JjnyTuWVzrIk5V5gMQJ_SReaRuVnYkaotnPTVcGvqhJuX4auKkn2k8pDCfvMIyQ1pgfshNVtv_92Sl8uCBCq0TZDLHG6xjAsBUcXNJJ6lUu-g-03meXydWFNEzOY7YsEtOljGVAAki7sRx-h8x50ciUQBfC0M39zc3l3qyy32KMmOXMzEY5fpJ6UcCWTLgCI_-1U45VY1F_d6_Vl67FG4p5kODKCr9f_d4YDYiZiRRAI2Gmvedtf3wGQQX7Z3Xx6JN8wEEqX2r9YxKrGjC2dv6viutmD4Oa4inY3yHsuIwtnxHXIW8u_fQpTw3heMl_1m00
 
 @startuml
 class BuyNow {
@@ -134,6 +132,8 @@ class Produto{
    void setStockOnline(int stockOnline) 
    string getNomeProduto() const
    void setNomeProduto(string nome)
+    void setValor(double val)
+    double getValor() const
 }
 
 class Cliente{
@@ -170,6 +170,16 @@ class Pagamento{
     virtual string getInfo() const;
 }
 
+class NumeroTransacoes{
+    int numberOfTransacoes;
+
+    NumeroTransacoes();
+    NumeroTransacoes(int num);
+    void setNumberOfTransacoes(int num);
+    int getNumberOfTransacoes() const;
+    void addNumberOfTransacoes(int num);
+}
+
 BuyNow *-- LojaFisica
 BuyNow *-- LojaOnline
 BuyNow o-- Categoria
@@ -177,116 +187,13 @@ BuyNow o-- Cliente
 BuyNow o-- Fornecedor
 Categoria o-- Produto
 LojaOnline o-- Transacao
+LojaOnline o--NumeroTransacoes
 Pagamento*-- MbWay
 Pagamento*-- CartaoCredito
 Pagamento*-- Multibanco
 Transacao o-- Date
 Transacao o-- Pagamento
-CartaoCredito o-- Date
-Cliente *-- ClienteRegistado
-@enduml
-   void setReferencia(int referencia)
-   int getReferencia() const
-}
-
-class CartaoCredito{
-   long int numCartao
-   Date validade
-
-   long int getNumCartao() const
-   void setNumCartao(long int numCartao)
-   void setValidade(date validade)
-   Date getValidade() const
-}
-class MbWay{
-   int numTelemovel
-  
-   int getNumTelemovel() const
-   void setNumTelemovel(int numTelemovel)
-}
-
-class Date{
-   unsigned int year
-   unsigned int month
-   unsigned int day
-
-   Date()
-   Date(unsigned int year, unsigned int month, unsigned int day)
-   unsigned int getYear() const
-   unsigned int getMonth() const
-   unsigned int getDay() const
-}
-
-class LojaFisica{
-   vector<Produto*> produtos
-   
-   void addProduto(Produto &produto)
-   vector<Produto*> getProdutos() const
-}
-
-class LojaOnline{
-   vector<Produto*> produtos
-   vector<Transacao*> transacoes
-
-   void addProduto(Produto produto)
-}
-
-class Categoria{
-   string nomeCategoria
-   
-   string getNomeCategoria() const
-   void setNome(string nome)
-}
-
-class Produto{
-   string nomeProduto
-   int stockFisico
-   int stockOnline
-   double valor
-
-   int getStockFisico() const
-   void setStockFisico(int stockFisico)
-   int getStockOnline() const
-   void setStockOnline(int stockOnline) 
-   string getNomeProduto() const
-   void setNomeProduto(string nome)
-}
-
-class Cliente{
-   string nome
-   int numContribuinte
-   
-   string getNome() const
-   void setNome(string nome)
-   int getNumContribuinte() const
-   void setNumContribuinte(int numContribuinte)
-}
-
-class ClienteRegistado{
-   string email
-   
-   string getEmail() const
-   void setEmail(string email)
-}
-
-class Fornecedor{
-   string nome
-
-   string getNome() const
-   void setNome(string nome)
-}
-
-BuyNow *-- LojaFisica
-BuyNow *-- LojaOnline
-BuyNow o-- Categoria
-BuyNow o-- Cliente
-BuyNow o-- Fornecedor
-Categoria o-- Produto
-LojaOnline o-- Transacao
-Transacao *-- MbWay
-Transacao *-- CartaoCredito
-Transacao *-- Multibanco
-Transacao o-- Date
+NumeroTransacoes *-- Transacao
 CartaoCredito o-- Date
 Cliente *-- ClienteRegistado
 @enduml

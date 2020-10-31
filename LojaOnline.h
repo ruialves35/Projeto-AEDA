@@ -20,6 +20,7 @@ public:
     void reporStock();
     void addProduto(Produto produto);
     void addCliente(Cliente *c);
+    void addTransacao(Transacao *t);    //incrementar o numberOfTransacoes;
     Cliente& getCliente(Cliente *c);
     Cliente& getCliente(int pos);
     void removeCliente(Cliente *c);

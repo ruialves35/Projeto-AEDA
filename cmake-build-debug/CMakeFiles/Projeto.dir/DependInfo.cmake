@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/LojaOnline.cpp" "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/CMakeFiles/Projeto.dir/LojaOnline.cpp.obj"
   "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/MbWay.cpp" "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/CMakeFiles/Projeto.dir/MbWay.cpp.obj"
   "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Multibanco.cpp" "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/CMakeFiles/Projeto.dir/Multibanco.cpp.obj"
+  "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/NumeroTransacoes.cpp" "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.obj"
   "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Pagamento.cpp" "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/CMakeFiles/Projeto.dir/Pagamento.cpp.obj"
   "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Produto.cpp" "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/CMakeFiles/Projeto.dir/Produto.cpp.obj"
   "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Transacao.cpp" "D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/cmake-build-debug/CMakeFiles/Projeto.dir/Transacao.cpp.obj"

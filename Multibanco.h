@@ -29,7 +29,7 @@ public:
     Multibanco(double valorTotal, int referencia);
     void setReferencia(int referencia);
     int getReferencia() const;
-    string getInfo() const;
+    ostream& getInfo(ostream &o) const;
 };
 
 

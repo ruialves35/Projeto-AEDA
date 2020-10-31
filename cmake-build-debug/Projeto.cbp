@@ -162,6 +162,12 @@
 		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Multibanco.h">
 			<Option target="Projeto"/>
 		</Unit>
+		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/NumeroTransacoes.cpp">
+			<Option target="Projeto"/>
+		</Unit>
+		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/NumeroTransacoes.h">
+			<Option target="Projeto"/>
+		</Unit>
 		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA - Usar/Pagamento.cpp">
 			<Option target="Projeto"/>
 		</Unit>
