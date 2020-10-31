@@ -11,7 +11,6 @@ using namespace std;
 class LojaOnline{
 private:
     vector<Produto*> produtos;
-    vector<Transacao*> transacoesCompletas; //ja pagou
     vector<Transacao*> transacoes;  //por completar
     vector<Cliente *> clientes;
     unsigned int stockMin;
