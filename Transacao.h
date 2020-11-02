@@ -40,6 +40,16 @@ public:
     void setPagamento(Pagamento* p);
     Pagamento* getPagamento() const;
     int getNumber() const;
+    struct compareValorProdutos{
+        bool operator()(const Produto* p1, const Produto* p2){
+            return (*p1).getValor() < (*p2).getValor();
+        }
+    };
+    struct compareProdutosById{
+        bool operator()(const Produto* p1, const Produto *p2){
+            return (*p1).getId() == (*p2).getId();
+        }
+    };
     friend ostream& operator << (ostream &o, const Transacao &t);
     friend bool operator == (const Transacao &t1, const Transacao &t2);
 };

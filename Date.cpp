@@ -99,20 +99,24 @@ void Date::setYear(int year) {
 string Date::getInfo() const{
     string info= "";
     if (day < 10) {
-        info += "0"+ day;
+        info += "0"+ to_string(day);
         info += "/";
     }
-    else info += day + "/";
+    else info += to_string(day) + "/";
+
     if (month < 10){
-        info += "0" + month;
+        info += "0" + to_string(month);
         info += "/";
     }
-    else info += month + "/";
-    if (year < 1000 && year > 100){
-        info += "0" + year;
+    else info += to_string(month) + "/";
+
+    if (year > 1000) info += to_string(year);
+    else if (year < 1000 && year > 100){
+        info += "0" + to_string(year);
     }
-    else if (year < 100 & year > 10) info += "00" + year;
-    else info += "000" + year;
+    else if (year < 100 && year > 10) info += "00" + to_string(year);
+    else info += "000" + to_string(year);
+
     return info;
 }
 

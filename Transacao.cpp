@@ -131,7 +131,7 @@ Pagamento * Transacao::getPagamento() const {
  * @param p Produto to be removed
  */
 void Transacao::removeProduto(Produto *p) {
-    vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), *p);
+    vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), p);
     if (it != produtos.end()){
         if (quantidade[p] == 1) {   //so tinha 1 produto, eliminar
             produtos.erase(it);
@@ -150,7 +150,7 @@ void Transacao::removeProduto(Produto *p) {
  * @param quantidade Quantity of the product removed
  */
 void Transacao::removeProduto(Produto *p, int quantidade){
-    vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), *p);
+    vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), p);
     if (it != produtos.end()){
         if (this->quantidade[p] - quantidade == 0){
             produtos.erase(it);
@@ -191,7 +191,7 @@ ostream & operator<<(ostream & o, const Transacao &t)
     o << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
     o << "Nome: " << t.cliente->getNome() << endl;
     o << "Data: " << t.data << endl;
-    o << "Transacao nº " << t.number << endl;
+    o << "Transacao n: " << t.number << endl;
     o << "Pagamento: ";
     t.tipoPagamento->getInfo(o);
     o << endl << endl;

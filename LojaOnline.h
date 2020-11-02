@@ -4,7 +4,6 @@
 #include <iostream>
 #include "Produto.h"
 #include "Transacao.h"
-#include "BuyNow.h"
 #include <vector>
 
 using namespace std;
@@ -12,7 +11,7 @@ using namespace std;
 class LojaOnline{
 private:
     vector<Produto*> produtos;
-    vector<Transacao*> transacoes;  //por completar
+    vector<Transacao*> transacoes;
     vector<Cliente *> clientes;
     unsigned int stockMin;
 public:
