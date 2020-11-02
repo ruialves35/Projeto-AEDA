@@ -28,6 +28,7 @@ public:
     Transacao();
     Transacao(Cliente *c, Date &d);
     Transacao(Cliente *c, Date &d, vector<Produto*> v);
+    Transacao(Cliente *c, Date &d, vector<Produto*> v, Pagamento *p);
     Date getDate() const;
     void setDate(Date &d);
     void setCliente(Cliente *c);

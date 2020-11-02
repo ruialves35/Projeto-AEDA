@@ -24,9 +24,8 @@ Transacao::Transacao(Cliente *c, Date &d): NumeroTransacoes(), cliente(c), data(
  * @param d Data of Transacao
  * @param v All products of transacao
  */
-Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes(), cliente(c), data(d), produtos(v), valorTotal(0){
-    number = getNumberOfTransacoes();
-    int j = 0;
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes(), cliente(c), data(d), produtos(v),
+                                                                valorTotal(0), number(getNumberOfTransacoes()){
     for (auto i : produtos){
         if (quantidade.find(i) == quantidade.end() ) quantidade[i] = 1;
         else quantidade[i]++;
@@ -34,6 +33,15 @@ Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes
     }
 }
 
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v, Pagamento *p):NumeroTransacoes(), cliente(c), data(d), produtos(v),
+                                                                             valorTotal(0), tipoPagamento(p), number(getNumberOfTransacoes()){
+    for (auto i : produtos){
+        if (quantidade.find(i) == quantidade.end() ) quantidade[i] = 1;
+        else quantidade[i]++;
+        valorTotal += i->getValor();
+    }
+    p->setValor(valorTotal);
+}
 
 /**
  * @return the number of the transacao
