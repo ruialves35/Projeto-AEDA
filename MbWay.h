@@ -11,10 +11,11 @@ private:
     int numTelemovel;
 public:
     MbWay();
+    MbWay(int num);
     MbWay(double valor, int num);
     int getNumTelemovel() const;
     void setNumTelemovel(int num);
-    string getInfo() const;
+    void getInfo(ostream& o) const;
 };
 
 

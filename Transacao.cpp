@@ -1,6 +1,6 @@
 #include "Transacao.h"
 #include <algorithm>
-
+#include <iomanip>
 /**
  * Transacao empty constructor. Sets valorTotal to 0 and data 00/00/0000
  */
@@ -15,6 +15,7 @@ Transacao::Transacao(): NumeroTransacoes(), valorTotal(0), data(){
  */
 Transacao::Transacao(Cliente *c, Date &d): NumeroTransacoes(), cliente(c), data(d), valorTotal(0){
     number = getNumberOfTransacoes();
+
 }
 
 /**
@@ -23,8 +24,14 @@ Transacao::Transacao(Cliente *c, Date &d): NumeroTransacoes(), cliente(c), data(
  * @param d Data of Transacao
  * @param v All products of transacao
  */
-Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes(), cliente(c),data(d), produtos(v), valorTotal(0){
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes(), cliente(c), data(d), produtos(v), valorTotal(0){
     number = getNumberOfTransacoes();
+    int j = 0;
+    for (auto i : produtos){
+        if (quantidade.find(i) == quantidade.end() ) quantidade[i] = 1;
+        else quantidade[i]++;
+        valorTotal += i->getValor();
+    }
 }
 
 
@@ -177,7 +184,19 @@ int Transacao::getQuantidade(Produto *p) const {
     return 0;
 }
 
+/**
+ * sort Produtos by name
+ */
+void Transacao::sortByName() {
+    sort(produtos.begin(), produtos.end(), compareProdutosByName());
+}
 
+/**
+ * sort Produtos by value
+ */
+void Transacao::sortByValue() {
+    sort(produtos.begin(), produtos.end(), compareProdutosByValue());
+}
 
 /**
  * Overloading of operator << that shows the Nome of the Cliente of the Transacao,
@@ -188,21 +207,23 @@ int Transacao::getQuantidade(Produto *p) const {
  */
 ostream & operator<<(ostream & o, const Transacao &t)
 {
-    o << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
-    o << "Nome: " << t.cliente->getNome() << endl;
+    o << "---------------------------------------------------------------------------------------------------------" << endl;
+    o << "Nome Cliente: " << t.cliente->getNome() << endl;
+    o << "Numero de Contribuinte: " << t.cliente->getNumContribuinte() << endl;
     o << "Data: " << t.data << endl;
     o << "Transacao n: " << t.number << endl;
     o << "Pagamento: ";
     t.tipoPagamento->getInfo(o);
-    o << endl << endl;
-    o << setw(10) <<  "Produto " << setw(10) << "Valor" << setw(10) << "Quantidade" << setw(10) << "Total" << endl;
+    o << endl;
+    o << "Produto " << "          " << "Preco" << "          " << "Quantidade" << "          " << "Total" << endl;
     for (auto i : t.produtos){
         map<Produto*, int>::const_iterator it = t.quantidade.find(i);
-        o << i->getNomeProduto() << setw(10)<< i->getValor() << setw(10) << it->second
-          << setw(10) << i->getValor()* it->second << endl;
+        o << " " << i->getNomeProduto() << "          " << i->getValor() << "          " << t.getQuantidade(i)
+          << "          " << i->getValor()* t.getQuantidade(i) << endl;
     }
-    o << "Valor Total: " << t.valorTotal;
-    o << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
+    o << endl;
+    o << "TOTAL: " << t.valorTotal << endl;
+    o << "------------------------------------------------------------------------------------------------------" << endl;
     return o;
 }
 

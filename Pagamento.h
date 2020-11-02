@@ -12,7 +12,7 @@ public:
     Pagamento(double valorTotal);
     void setValor(double val);
     double getValor() const;
-    virtual ostream& getInfo(ostream &o) const;
+    virtual void getInfo(ostream &o) const;
 };
 
 

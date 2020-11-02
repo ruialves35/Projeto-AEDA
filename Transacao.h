@@ -40,7 +40,9 @@ public:
     void setPagamento(Pagamento* p);
     Pagamento* getPagamento() const;
     int getNumber() const;
-    struct compareValorProdutos{
+    void sortByValue();
+    void sortByName();
+    struct compareProdutosByValue{
         bool operator()(const Produto* p1, const Produto* p2){
             return (*p1).getValor() < (*p2).getValor();
         }
@@ -48,6 +50,11 @@ public:
     struct compareProdutosById{
         bool operator()(const Produto* p1, const Produto *p2){
             return (*p1).getId() == (*p2).getId();
+        }
+    };
+    struct compareProdutosByName{
+        bool operator()(const Produto* p1, const Produto *p2){
+            return (*p1).getNomeProduto() < (*p2).getNomeProduto();
         }
     };
     friend ostream& operator << (ostream &o, const Transacao &t);

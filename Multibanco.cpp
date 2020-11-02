@@ -44,7 +44,6 @@ void Multibanco::setReferencia(int referencia) {
  * This information is of the form "Multibanco. Referencia: .... "
  * @return string with information
  */
-ostream& Multibanco::getInfo(ostream& o) const {
+void Multibanco::getInfo(ostream& o) const {
     o << "Multibanco\nReferencia: " + to_string(referencia) + "\n" + "\n";
-    return o;
 }

@@ -15,7 +15,7 @@ public:
     void setNumCartao(long int numCartao);
     void setValidade(Date validade);
     Date getValidade() const;
-    ostream& getInfo(ostream& o) const;
+    void getInfo(ostream& o) const;
 };
 
 

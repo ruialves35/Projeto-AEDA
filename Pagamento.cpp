@@ -14,9 +14,8 @@ Pagamento::Pagamento(double valorTotal) {
     }
 }
 
-ostream& Pagamento::getInfo(ostream& o) const {
+void Pagamento::getInfo(ostream& o) const {
     o << "Valor: " << to_string(valor);
-    return o;
 }
 
 double Pagamento::getValor() const {return valor;}

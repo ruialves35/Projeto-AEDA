@@ -4,9 +4,16 @@
 
 /**
  * Constructor of derived Class
- * Sets to 0 the numTelemovel
+ * Sets to 0 the numTelemovel and value of payment
  */
 MbWay::MbWay(): Pagamento(), numTelemovel(0) {}
+
+/**
+ * Constructor of derived Class.
+ * Set to 0 the value of payment and numTelemovel to a number
+ * @param num number to set numTelemovel
+ */
+MbWay::MbWay(int num): Pagamento(), numTelemovel(num) {}
 
 /**
  * Constructor of derived Class, sets valorTotal and numTelemovel
@@ -35,8 +42,7 @@ void MbWay::setNumTelemovel(int num) {
  * Info is of the form "MbWay\n Numero de Telemovel: ..."
  * @return string with the information
  */
-string MbWay::getInfo() const {
-    string info = "MbWay\n";
-    info += "Numero de Telemovel: " + to_string(numTelemovel);
-    return info;
+void MbWay::getInfo(ostream& o) const {
+    o << "MbWay\n";
+    o << "Numero de Telemovel: " + to_string(numTelemovel);
 }

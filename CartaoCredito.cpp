@@ -54,8 +54,7 @@ Date CartaoCredito::getValidade() const {return validade;}
  * This information is of the form "Cartao de Credito\n. Numero do Cartao: ....\n. Validade: .....\n."
  * @return string with information
  */
-ostream& CartaoCredito::getInfo(ostream& o) const {
+void CartaoCredito::getInfo(ostream& o) const {
     o << "Cartao de Credito.\nNumero do Cartao: " + numCartao;
     o << "\nValidade: " + validade.getInfo() + "\n";
-    return o;
 }
