@@ -30,6 +30,7 @@ public:
     void setReferencia(int referencia);
     int getReferencia() const;
     void getInfo(ostream &o) const;
+
 };
 
 

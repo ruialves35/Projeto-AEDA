@@ -4,10 +4,8 @@ class BuyNow {
   LojaOnline lojaOnline
   vector <Cliente*> cliente
   vector <Transacao*> transações
-  vector <Fornecedor*> fornecedors
   int stockOk
   int stockMin
-  static int numeroClientes;
   
   BuyNow()
   ~BuyNow()
@@ -17,11 +15,9 @@ class BuyNow {
   int getStockMin() const
   void setStockOk(unsigned int stockOk)
   void setStockMin(unsigned int stockMin)
-  int getNumeroClientes() const
 }
 
 class Transacao {
-    int number;
     map<Produto*, int> quantidade;
     Date data;
     vector<Produto*> produtos;
@@ -105,33 +101,14 @@ class LojaFisica{
    vector<Produto*> produtos
    
    void addProduto(Produto &produto)
-   vector<Produto*> getProdutos() const;
-   void removeProduto(Produto &produto)
+   vector<Produto*> getProdutos() const
 }
 
 class LojaOnline{
-    vector<Produto*> produtos;
-    vector<Transacao*> transacoesCompletas; //ja pagou
-    vector<Transacao*> transacoes;  //por completar
-    vector<Cliente *> clientes;
-    unsigned int stockMin;
-  
-    void showAllProdutos() const;
-    void reporStock();
-    void addProduto(Produto produto);
-    void addCliente(Cliente *c);
-    void addTransacao(Transacao *t);    //incrementar o numberOfTransacoes;
-    Cliente& getCliente(Cliente *c);
-    Cliente& getCliente(int pos);
-    void removeCliente(Cliente *c);
-    void buyProduto(Cliente *c, Produto* p);
-    void addProdutoToTransacao(Transacao* t, Produto* p);
-    void removeProdutoOfTransacao(Transacao* t, Produto* p);
-    void removeProdutoOfTransacao(Transacao* t, Produto* p, int quantidade);
-    void completeTransacao(Transacao* t);
-    void showAllTransacoes() const;
-    void showAllTransacoesCompletas() const;
-    friend ostream& operator << (ostream &o, const LojaOnline);
+   vector<Produto*> produtos
+   vector<Transacao*> transacoes
+
+   void addProduto(Produto produto)
 }
 
 class Categoria{
@@ -146,10 +123,7 @@ class Produto{
    int stockFisico
    int stockOnline
    double valor
-   Categoria categoria
 
-   void setCategoria(Categoria &cat);
-   Categoria& getCategoria() const;
    int getStockFisico() const
    void setStockFisico(int stockFisico)
    int getStockOnline() const
@@ -163,27 +137,18 @@ class Produto{
 class Cliente{
    string nome
    int numContribuinte
-   vector<Produtos*> produtos;
    
    string getNome() const
    void setNome(string nome)
    int getNumContribuinte() const
    void setNumContribuinte(int numContribuinte)
-   void addProduto(Produto *p);
-   void removeProduto(Produto *p);
-   void addProduto(Produto *p, int quantidade);
-   void removeProduto(Produto *p, int quantidade);
 }
 
-
 class ClienteRegistado{
-   int id
    string email
    
    string getEmail() const
    void setEmail(string email)
-   int getId() const
-   void setId(int num)
 }
 
 class Fornecedor{
@@ -213,20 +178,20 @@ class NumeroTransacoes{
     void addNumberOfTransacoes(int num);
 }
 
-BuyNow *-- LojaFisica
-BuyNow *-- LojaOnline
-BuyNow *-- Categoria
-BuyNow *-- Cliente
-BuyNow *-- Fornecedor
-Categoria o-- Produto
-LojaOnline o-- Transacao
-LojaOnline o--NumeroTransacoes
-Pagamento*-- MbWay
-Pagamento*-- CartaoCredito
-Pagamento*-- Multibanco
-Transacao o-- Date
-Transacao o-- Pagamento
-NumeroTransacoes *-- Transacao
-CartaoCredito o-- Date
-Cliente *-- ClienteRegistado
+BuyNow -- LojaFisica
+BuyNow -- LojaOnline
+BuyNow -- Categoria
+BuyNow -- Cliente
+BuyNow -- Fornecedor
+Categoria -- Produto
+LojaOnline -- Transacao
+LojaOnline --NumeroTransacoes
+Pagamento <|-- MbWay
+Pagamento <|-- CartaoCredito
+Pagamento <|-- Multibanco
+Transacao -- Date
+Transacao -- Pagamento
+NumeroTransacoes <|-- Transacao
+CartaoCredito -- Date
+Cliente <|-- ClienteRegistado
 @enduml

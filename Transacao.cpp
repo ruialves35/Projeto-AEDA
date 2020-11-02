@@ -1,6 +1,7 @@
 #include "Transacao.h"
 #include <algorithm>
 #include <iomanip>
+
 /**
  * Transacao empty constructor. Sets valorTotal to 0 and data 00/00/0000
  */
@@ -202,14 +203,14 @@ int Transacao::getQuantidade(Produto *p) const {
  * sort Produtos by name
  */
 void Transacao::sortByName() {
-    sort(produtos.begin(), produtos.end(), compareProdutosByName());
+    sort(produtos.begin(), produtos.end(), compareProdutosByName);
 }
 
 /**
  * sort Produtos by value
  */
 void Transacao::sortByValue() {
-    sort(produtos.begin(), produtos.end(), compareProdutosByValue());
+    sort(produtos.begin(), produtos.end(), compareProdutosByValue);
 }
 
 /**
@@ -228,12 +229,12 @@ ostream & operator<<(ostream & o, const Transacao &t)
     o << "Transacao n: " << t.number << endl;
     o << "Pagamento: ";
     t.tipoPagamento->getInfo(o);
-    o << endl;
-    o << "Produto " << "          " << "Preco" << "          " << "Quantidade" << "          " << "Total" << endl;
+    o << endl << endl;
+    o << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << setfill(' ') << setw(15) << "Quantidade" << setfill(' ') << setw(15) << "Total" << endl;
     for (auto i : t.produtos){
         map<Produto*, int>::const_iterator it = t.quantidade.find(i);
-        o << " " << i->getNomeProduto() << "          " << i->getValor() << "          " << t.getQuantidade(i)
-          << "          " << i->getValor()* t.getQuantidade(i) << endl;
+        o << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << setfill(' ') << setw(15) << t.getQuantidade(i)
+          << setfill(' ') << setw(15) << i->getValor()* t.getQuantidade(i) << endl;
     }
     o << endl;
     o << "TOTAL: " << t.valorTotal << endl;

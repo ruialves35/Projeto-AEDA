@@ -8,13 +8,13 @@
 #include "Produto.h"
 #include "Cliente.h"
 #include "Pagamento.h"
-#include "NumeroTransacoes.h"
 
 using namespace std;
 
 
-class Transacao: public NumeroTransacoes {
+class Transacao{
 private:
+    static int numberOfTransacoes;
     int number;
     map<Produto*, int> quantidade;
     Date data;
@@ -44,21 +44,19 @@ public:
     double getValorTotal() const;
     void sortByValue();
     void sortByName();
-    struct compareProdutosByValue{
-        bool operator()(const Produto* p1, const Produto* p2){
-            return (*p1).getValor() < (*p2).getValor();
-        }
-    };
-    struct compareProdutosById{
-        bool operator()(const Produto* p1, const Produto *p2){
-            return (*p1).getId() == (*p2).getId();
-        }
-    };
-    struct compareProdutosByName{
-        bool operator()(const Produto* p1, const Produto *p2){
-            return (*p1).getNomeProduto() < (*p2).getNomeProduto();
-        }
-    };
+
+    static bool compareProdutosByValue(const Produto* p1, const Produto* p2){
+        return (*p1).getValor() < (*p2).getValor();
+    }
+
+    static bool compareProdutosById(const Produto* p1, const Produto *p2){
+        return (*p1).getId() == (*p2).getId();
+    }
+
+    static bool compareProdutosByName(const Produto* p1, const Produto *p2){
+        return (*p1).getNomeProduto() < (*p2).getNomeProduto();
+    }
+
     friend ostream& operator << (ostream &o, const Transacao &t);
     friend bool operator == (const Transacao &t1, const Transacao &t2);
 };

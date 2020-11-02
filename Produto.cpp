@@ -46,6 +46,7 @@ double Produto::getValor() const {
     return valor;
 }
 
+
 bool operator == (const Produto &p1, const Produto &p2){
     return p1.id == p2.id;
 }

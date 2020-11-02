@@ -18,7 +18,7 @@ private:
 
 public:
     Date();
-    Date(unsigned int year, unsigned int month, unsigned int day);
+    Date(unsigned int day, unsigned int month, unsigned int year);
     void setMap();
     bool isValid();
     bool isLeap() const;
