@@ -23,7 +23,7 @@ Transacao::Transacao(Cliente *c, Date &d): NumeroTransacoes(), cliente(c), data(
  * @param d Data of Transacao
  * @param v All products of transacao
  */
-Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes(), cliente(c), data(d), produtos(v), valorTotal(0){
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes(), cliente(c),data(d), produtos(v), valorTotal(0){
     number = getNumberOfTransacoes();
 }
 
@@ -199,13 +199,19 @@ ostream & operator<<(ostream & o, const Transacao &t)
     for (auto i : t.produtos){
         map<Produto*, int>::const_iterator it = t.quantidade.find(i);
         o << i->getNomeProduto() << setw(10)<< i->getValor() << setw(10) << it->second
-             << setw(10) << i->getValor()* it->second << endl;
+          << setw(10) << i->getValor()* it->second << endl;
     }
     o << "Valor Total: " << t.valorTotal;
     o << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
     return o;
 }
 
+/**
+ * operator == that says if a transacao is equal to another
+ * @param t1 one Transacao to compare
+ * @param t2 the other Transacao to compare
+ * @return true if Transacao are the same(same identifier number), false otherwise
+ */
 bool operator == (const Transacao &t1, const Transacao &t2){
     if (t1.number == t2.number) return true;
     return false;
