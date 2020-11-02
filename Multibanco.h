@@ -14,12 +14,12 @@ public:
         this->referencia = referencia;
     }
 };
-
+/*
 ostream& operator << (ostream& o, const WrongReferencia ref){
     o << "Referencia Inválida. A referencia tem de ter 9 digitos." << endl;
     return o;
 }
-
+*/
 
 class Multibanco: public Pagamento {
 private:

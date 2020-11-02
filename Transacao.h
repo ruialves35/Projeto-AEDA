@@ -41,6 +41,7 @@ public:
     void setPagamento(Pagamento* p);
     Pagamento* getPagamento() const;
     int getNumber() const;
+    double getValorTotal() const;
     void sortByValue();
     void sortByName();
     struct compareProdutosByValue{

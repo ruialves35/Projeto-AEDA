@@ -15,7 +15,6 @@ Transacao::Transacao(): NumeroTransacoes(), valorTotal(0), data(){
  */
 Transacao::Transacao(Cliente *c, Date &d): NumeroTransacoes(), cliente(c), data(d), valorTotal(0){
     number = getNumberOfTransacoes();
-
 }
 
 /**
@@ -92,7 +91,12 @@ void Transacao::setDate(Date &d) {
  * @param p Product to be added
  */
 void Transacao::addProduto(Produto *p) {
-    if ( find(produtos.begin(), produtos.end(), p) == produtos.end()){
+    if (produtos.size() == 0){
+        produtos.push_back(p);
+        quantidade[p] = 1;
+    }
+    else if ( find(produtos.begin(), produtos.end(), p) == produtos.end()){
+        cout <<"here2" << endl;
         produtos.push_back(p);
         quantidade[p] = 1;  //nao esta na transacao
     }
@@ -100,7 +104,6 @@ void Transacao::addProduto(Produto *p) {
         quantidade[p] += 1;
     }
     valorTotal += p->getValor();
-    tipoPagamento->setValor(valorTotal);
 }
 
 /**
@@ -117,7 +120,6 @@ void Transacao::addProduto(Produto *p, int quantidade) {
         this->quantidade[p] += quantidade;  //ja esta nos produtos, é so acrescentar a quantidade.
     }
     valorTotal += p->getValor() * quantidade;
-    tipoPagamento->setValor(valorTotal);
 }
 
 
@@ -139,7 +141,11 @@ Pagamento * Transacao::getPagamento() const {
     return tipoPagamento;
 }
 
-
+/**
+ * gets the total value of Transacao
+ * @return valorTotal
+ */
+double Transacao::getValorTotal() const { return valorTotal; }
 
 /**
  * Removes 1 Produto in the Transacao (quantity removed is one)
