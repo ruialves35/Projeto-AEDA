@@ -2,10 +2,13 @@
 #include <algorithm>
 #include <iomanip>
 
+int Transacao::numberOfTransacoes = 0;
+
 /**
  * Transacao empty constructor. Sets valorTotal to 0 and data 00/00/0000
  */
-Transacao::Transacao(): NumeroTransacoes(), valorTotal(0), data(){
+Transacao::Transacao(): valorTotal(0), data(){
+    numberOfTransacoes++;
     number = getNumberOfTransacoes();
 }
 
@@ -14,8 +17,9 @@ Transacao::Transacao(): NumeroTransacoes(), valorTotal(0), data(){
  * @param c receives the client of Transacao
  * @param d receives the data of Transacao
  */
-Transacao::Transacao(Cliente *c, Date &d): NumeroTransacoes(), cliente(c), data(d), valorTotal(0){
-    number = getNumberOfTransacoes();
+Transacao::Transacao(Cliente *c, Date &d):  cliente(c), data(d), valorTotal(0){
+    numberOfTransacoes++;
+    number = numberOfTransacoes;
 }
 
 /**
@@ -24,8 +28,10 @@ Transacao::Transacao(Cliente *c, Date &d): NumeroTransacoes(), cliente(c), data(
  * @param d Data of Transacao
  * @param v All products of transacao
  */
-Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes(), cliente(c), data(d), produtos(v),
-                                                                valorTotal(0), number(getNumberOfTransacoes()){
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): cliente(c), data(d), produtos(v),
+                                                                valorTotal(0){
+    numberOfTransacoes++;
+    number = numberOfTransacoes;
     for (auto i : produtos){
         if (quantidade.find(i) == quantidade.end() ) quantidade[i] = 1;
         else quantidade[i]++;
@@ -33,8 +39,10 @@ Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): NumeroTransacoes
     }
 }
 
-Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v, Pagamento *p):NumeroTransacoes(), cliente(c), data(d), produtos(v),
-                                                                             valorTotal(0), tipoPagamento(p), number(getNumberOfTransacoes()){
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v, Pagamento *p): cliente(c), data(d), produtos(v),
+                                                                              valorTotal(0), tipoPagamento(p){
+    numberOfTransacoes++;
+    number = numberOfTransacoes;
     for (auto i : produtos){
         if (quantidade.find(i) == quantidade.end() ) quantidade[i] = 1;
         else quantidade[i]++;
@@ -50,6 +58,12 @@ int Transacao::getNumber() const {
     return number;
 }
 
+/**
+ * @return the number of Transacoes created
+ */
+int Transacao::getNumberOfTransacoes() const {
+    return numberOfTransacoes;
+}
 
 /**
  * Sets a Cliente to the Transcacao

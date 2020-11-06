@@ -20,7 +20,6 @@ private:
     Date data;
     vector<Produto*> produtos;
     double valorTotal;
-    //estatisticas(por definir)
     Cliente* cliente;
     Pagamento* tipoPagamento;
 
@@ -44,6 +43,7 @@ public:
     double getValorTotal() const;
     void sortByValue();
     void sortByName();
+    int getNumberOfTransacoes() const;
 
     static bool compareProdutosByValue(const Produto* p1, const Produto* p2){
         return (*p1).getValor() < (*p2).getValor();
