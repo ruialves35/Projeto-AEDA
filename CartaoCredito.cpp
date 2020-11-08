@@ -13,14 +13,14 @@ CartaoCredito::CartaoCredito(): Pagamento(), numCartao(0), validade(Date()) {}
  * @param numCartao Numero do Cartao de Credito de onde vai pagar
  * @param val Validade do cartao de credito
  */
-CartaoCredito::CartaoCredito(double valor, long numCartao, Date val): Pagamento(valor), numCartao(numCartao), validade(val) {}
+CartaoCredito::CartaoCredito(double valor, long long int numCartao, Date val): Pagamento(valor), numCartao(numCartao), validade(val) {}
 
 /**
  * Constructor of Cartao Credito
  * @param numCartao numero do Cartao de Credito de onde vai pagar
  * @param val Validade do cartao de credito
  */
-CartaoCredito::CartaoCredito(long numCartao, Date val): Pagamento(), numCartao(numCartao), validade(val) {}
+CartaoCredito::CartaoCredito(long long int numCartao, Date val): Pagamento(), numCartao(numCartao), validade(val) {}
 
 /**
  * Gets the number of card
@@ -61,6 +61,6 @@ Date CartaoCredito::getValidade() const {return validade;}
  * @return string with information
  */
 void CartaoCredito::getInfo(ostream& o) const {
-    o << "Cartao de Credito.\nNumero do Cartao: " + numCartao;
+    o << "Cartao de Credito.\nNumero do Cartao: " << numCartao;
     o << "\nValidade: " + validade.getInfo() + "\n";
 }

@@ -111,7 +111,6 @@ void Transacao::addProduto(Produto *p) {
         quantidade[p] = 1;
     }
     else if ( find(produtos.begin(), produtos.end(), p) == produtos.end()){
-        cout <<"here2" << endl;
         produtos.push_back(p);
         quantidade[p] = 1;  //nao esta na transacao
     }
@@ -188,7 +187,7 @@ void Transacao::removeProduto(Produto *p) {
 void Transacao::removeProduto(Produto *p, int quantidade){
     vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), p);
     if (it != produtos.end()){
-        if (this->quantidade[p] - quantidade == 0){
+        if (this->quantidade[p] - quantidade <= 0){
             produtos.erase(it);
         }
         else{
@@ -250,7 +249,7 @@ ostream & operator<<(ostream & o, const Transacao &t)
     o << "Transacao n: " << t.number << endl;
     o << "Pagamento: ";
     t.tipoPagamento->getInfo(o);
-    o << endl << endl;
+    o << endl;
     o << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << setfill(' ') << setw(15) << "Quantidade" << setfill(' ') << setw(15) << "Total" << endl;
     for (auto i : t.produtos){
         map<Produto*, int>::const_iterator it = t.quantidade.find(i);

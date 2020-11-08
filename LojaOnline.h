@@ -16,13 +16,12 @@ public:
     ClienteDoesNotExist(Cliente* cl){
         c = cl;
     }
-    ostream& operator << (ostream& out){
-        out << "O seguinte cliente nao existe: Nome: " << c->getNome() << "Numero de Contribuinte: " << c->getNumContribuinte() << endl;
-        out << "You should first register in our system." << endl;
-        return out;
-    }
 };
 
+std::ostream& operator<<(std::ostream &out, const ClienteDoesNotExist &cl){
+    out << "O seguinte cliente nao existe na nossa base de dados: Nome" << cl.c->getNome() << " NumeroContribuinte: " << cl.c->getNumContribuinte() << endl;
+    return out;
+}
 
 //-------------------------------------------------------------------
 
