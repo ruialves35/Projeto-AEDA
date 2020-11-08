@@ -9,12 +9,14 @@ private:
     string nomeCliente;
     int numContribuinteCliente;
 public:
+    Cliente();
+    Cliente(string nome, int num);
     string getNome() const;
     void setNome(string nome);
     int getNumContribuinte() const;
     void setNumContribuinte(int numContribuinte);
-}
-
+    friend bool operator == (Cliente& c1, Cliente& c2);
+};
 
 
 #endif //AEDA_CLIENTE_H
