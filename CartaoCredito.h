@@ -10,6 +10,7 @@ private:
     Date validade;
 public:
     CartaoCredito();
+    CartaoCredito(long int numCartao, Date val);
     CartaoCredito(double valor, long int numCartao, Date val);
     long int getNumCartao() const;
     void setNumCartao(long int numCartao);

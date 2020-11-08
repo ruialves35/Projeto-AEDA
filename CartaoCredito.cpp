@@ -15,6 +15,12 @@ CartaoCredito::CartaoCredito(): Pagamento(), numCartao(0), validade(Date()) {}
  */
 CartaoCredito::CartaoCredito(double valor, long numCartao, Date val): Pagamento(valor), numCartao(numCartao), validade(val) {}
 
+/**
+ * Constructor of Cartao Credito
+ * @param numCartao numero do Cartao de Credito de onde vai pagar
+ * @param val Validade do cartao de credito
+ */
+CartaoCredito::CartaoCredito(long numCartao, Date val): Pagamento(), numCartao(numCartao), validade(val) {}
 
 /**
  * Gets the number of card

@@ -26,6 +26,7 @@ private:
     int referencia;
 public:
     Multibanco();
+    Multibanco(int referencia);
     Multibanco(double valorTotal, int referencia);
     void setReferencia(int referencia);
     int getReferencia() const;

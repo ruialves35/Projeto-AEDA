@@ -16,6 +16,11 @@ Multibanco::Multibanco(): Pagamento(), referencia(0){}
  */
 Multibanco::Multibanco(double valorTotal, int referencia): Pagamento(valorTotal), referencia(referencia){}
 
+/**
+ * Constructor of Derived Class Multibanco.
+ * @param referencia Referencia of Multibanco
+ */
+Multibanco::Multibanco(int referencia): Pagamento(), referencia(referencia) {}
 
 
 /**
