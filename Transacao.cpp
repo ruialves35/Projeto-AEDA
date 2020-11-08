@@ -214,14 +214,21 @@ int Transacao::getQuantidade(Produto *p) const {
 }
 
 /**
- * sort Produtos by name
+ * sort Produtos of Transacao by name
  */
 void Transacao::sortByName() {
     sort(produtos.begin(), produtos.end(), compareProdutosByName);
 }
 
 /**
- * sort Produtos by value
+ * sort Produtos of Transacao by Id
+ */
+void Transacao::sortById() {
+    sort(produtos.begin(), produtos.end(), compareProdutosById);
+}
+
+/**
+ * sort Produtos of Transacao by value
  */
 void Transacao::sortByValue() {
     sort(produtos.begin(), produtos.end(), compareProdutosByValue);

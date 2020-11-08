@@ -43,6 +43,7 @@ public:
     double getValorTotal() const;
     void sortByValue();
     void sortByName();
+    void sortById();
     int getNumberOfTransacoes() const;
 
     static bool compareProdutosByValue(const Produto* p1, const Produto* p2){
