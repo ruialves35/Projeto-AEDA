@@ -8,6 +8,24 @@
 
 using namespace std;
 
+//exception ClienteDoesNotExist
+
+class ClienteDoesNotExist{
+public:
+    Cliente* c;
+    ClienteDoesNotExist(Cliente* cl){
+        c = cl;
+    }
+    ostream& operator << (ostream& out){
+        out << "O seguinte cliente nao existe: Nome: " << c->getNome() << "Numero de Contribuinte: " << c->getNumContribuinte() << endl;
+        out << "You should first register in our system." << endl;
+        return out;
+    }
+};
+
+
+//-------------------------------------------------------------------
+
 class LojaOnline{
 private:
     vector<Produto*> produtos;
@@ -15,18 +33,36 @@ private:
     vector<Cliente *> clientes;
     unsigned int stockMin;
 public:
-    LojaOnline();
-    void showAllProdutos() const;
-    void showAllTransacoes() const;
-    void reporStock();
-    void addProduto(Produto *p);
-    void addCliente(Cliente *c);
-    void addTransacao(Transacao *t);    //incrementar o numberOfTransacoes;
-    Cliente& getCliente(Cliente *c);
-    void removeCliente(Cliente *c);
-    void addProdutoToTransacao(Transacao* t, Produto* p);
-    void removeProdutoOfTransacao(Transacao* t, Produto* p);
-    void removeProdutoOfTransacao(Transacao* t, Produto* p, int quantidade);
+    LojaOnline(); //ta
+    LojaOnline(vector<Produto*> p, vector<Transacao*> t, vector<Cliente*> c);//ta
+    void showAllProdutos() const; //ta
+    void showAllTransacoes() const; //ta
+    void addProduto(Produto *p, int quantidade = 1); //ta
+    void addCliente(Cliente *c); //ta
+    void addTransacao(Transacao *t); //ta
+    Cliente* getCliente(Cliente *c);  //ta
+    void removeCliente(Cliente *c); //ta
+    void addProdutoToTransacao(Transacao* t, Produto* p, int quantidade = 1);   //ta
+    void removeProdutoOfTransacao(Transacao* t, Produto* p, int quantidade = 1);    //ta
+    void sortProdutosByValue();
+    void sortProdutosByName();
+    void sortProdutosById();
+    void sortTransacaoByDate();
+    static bool compareProdutosByValue(const Produto* p1, const Produto* p2){
+        return (*p1).getValor() < (*p2).getValor();
+    }
+
+    static bool compareProdutosById(const Produto* p1, const Produto *p2){
+        return (*p1).getId() == (*p2).getId();
+    }
+
+    static bool compareProdutosByName(const Produto* p1, const Produto *p2){
+        return (*p1).getNomeProduto() < (*p2).getNomeProduto();
+    }
+    static bool compareTransacoesByDate(const Transacao* t1, const Transacao *t2){
+        return (*t1).getDate() < (*t2).getDate();
+    }
+    friend ostream& operator << (ostream &o, const LojaOnline);
 };
 
 

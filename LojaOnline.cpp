@@ -1,41 +1,149 @@
 #include "LojaOnline.h"
 #include <algorithm>
+#include <vector>
 using namespace std;
 
 LojaOnline::LojaOnline() {}
 
 /**
- * displays all product available in the store, each quantity and price
+ * Constructor of LojaOnline
+ * @param p vector of the Products of the shop
+ * @param t vector of Transacoes done by the shop
+ * @param c vector of Clients of the shop
  */
-void LojaOnline::showAllProdutos() const {
-    cout << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << "Nome do Produto" << setw(10) << "Quantidade Disponivel" << setw(10) << "Preco" << endl << endl;
-    for (auto i : produtos){
-        cout << i->getNomeProduto() << setw(10)<< i->getStockOnline() << setw(10) << i->getValor() << endl;
+LojaOnline::LojaOnline(vector<Produto *> p, vector<Transacao *> t, vector<Cliente *> c):
+        produtos(p), transacoes(t), clientes(c) {}
+
+
+
+/**
+ * Adds a quantity of a Product to the LojaOnline stock
+ * @param p product to be added
+ * @param quantidade quantity of the product
+ */
+void LojaOnline::addProduto(Produto *p, int quantidade) {
+    vector<Produto*>::iterator iter = find(produtos.begin(), produtos.end(), p);
+    if (iter == produtos.end()){
+        p->setStockOnline(quantidade);
+        produtos.push_back(p);
     }
-    cout << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
+    else{
+        (*iter)->setStockOnline(p->getStockOnline()+quantidade);
+    }
 }
 
-
-void LojaOnline::addProduto(Produto *p) {
-    produtos.push_back(p);
-}
-
+/**
+ * Add a client to the Online Shop
+ * @param c client to be added
+ */
 void LojaOnline::addCliente(Cliente *c) {
-    clientes.push_back(c);
+    vector<Cliente*>::iterator it = find(clientes.begin(), clientes.end(), c);
+    if (it == clientes.end()){
+        clientes.push_back(c);
+    }
 }
 
+/**
+ * Adds a Transacao to the Online Shop
+ * @param t Transacao to be added
+ */
 void LojaOnline::addTransacao(Transacao *t) {
-    transacoes.push_back(t);
+    vector<Transacao*>::iterator it = find(transacoes.begin(), transacoes.end(), t);
+    if (it == transacoes.end()) {
+        transacoes.push_back(t);
+    }
 }
 
+/**
+ * Removes a client from the Online Shop
+ * @param c client to be removed
+ */
 void LojaOnline::removeCliente(Cliente *c) {
     vector<Cliente*>::iterator it = find(clientes.begin(), clientes.end(), c);
-    clientes.erase(it);
+    if (it != clientes.end()) {
+        clientes.erase(it);
+    }
 }
 
+/**
+ * Displays all Transacoes of the Online Shop
+ */
 void LojaOnline::showAllTransacoes() const {
     for (auto i : transacoes){
         cout << i << endl;
     }
+}
+
+/**
+ * displays all products available in the store, each quantity and price
+ */
+void LojaOnline::showAllProdutos() const {
+    cout << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "Nome do Produto" << setfill(' ') << setw(15) << "Quantidade Disponivel" << setfill(' ') << setw(15) << "Preco" << endl << endl;
+    for (auto i : produtos){
+        cout << i->getNomeProduto() << setfill(' ') << setw(15)<< i->getStockOnline() << setfill(' ') << setw(15) << i->getValor() << endl;
+    }
+    cout << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
+}
+
+/**
+ * Gets a Cliente of LojaOnline. Throws an error if Cliente is not in data base of Loja Online.
+ * @param c client to be getted
+ * @return
+ */
+Cliente* LojaOnline::getCliente(Cliente *c) {
+    vector<Cliente*>::iterator it = find(clientes.begin(), clientes.end(), c);
+    if (it == clientes.end()){
+        throw ClienteDoesNotExist(c);
+    }
+
+    return (*it);
+}
+
+/**
+ * Adds a quantity of a Product to a Transacao of Online Shop
+ * @param t Transacao to be changed
+ * @param p Product to be added
+ * @param quantidade quantity of the product to be added
+ */
+void LojaOnline::addProdutoToTransacao(Transacao *t, Produto *p, int quantidade) {
+    t->addProduto(p, quantidade);
+}
+
+/**
+ * Removes a quantity of a Produto presented in Transacao of Online Shop
+ * @param t
+ * @param p
+ * @param quantidade
+ */
+void LojaOnline::removeProdutoOfTransacao(Transacao *t, Produto *p, int quantidade) {
+    t->removeProduto(p, quantidade);
+}
+
+/**
+ * Sort Produtos of the Online Shop by id
+ */
+void LojaOnline::sortProdutosById() {
+    sort(produtos.begin(), produtos.end(), compareProdutosById);
+}
+
+/**
+ * Sort Produtos of the Online Shop by name
+ */
+void LojaOnline::sortProdutosByName() {
+    sort(produtos.begin(), produtos.end(), compareProdutosByName);
+}
+
+/**
+ * Sort Produtos of the Online Shop by value
+ */
+void LojaOnline::sortProdutosByValue() {
+    sort(produtos.begin(), produtos.end(), compareProdutosByValue);
+}
+
+/**
+ * Sort Transacoes of the Online Shop by Date
+ */
+void LojaOnline::sortTransacaoByDate() {
+    sort(transacoes.begin(), transacoes.end(), compareTransacoesByDate);
 }

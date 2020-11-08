@@ -31,6 +31,7 @@ public:
     void setDay(int day);
     string getInfo() const;
     friend ostream& operator << (ostream& o, const Date &d);
+    friend bool operator < (const Date &d1, const Date &d2);
 };
 
 
