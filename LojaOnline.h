@@ -29,6 +29,7 @@ std::ostream& operator<<(std::ostream &out, const ClienteDoesNotExist &cl){
 
 class LojaOnline{
 private:
+    map<Produto*, int> stockOnline;
     vector<Produto*> produtos;
     vector<Transacao*> transacoes;
     vector<Cliente *> clientes;
@@ -40,7 +41,8 @@ public:
     void showAllTransacoes() const; //ta
     void showClients() const;
     void addProduto(Produto *p, int quantidade = 1); //ta
-    void removeProduto(Produto *p, int quantidade = 1);
+    void removeProduto(Produto *p);
+    void removeProduto(Produto *p, int quantidade);
     void addCliente(Cliente *c); //ta
     void addTransacao(Transacao *t); //ta
     Cliente* getCliente(Cliente *c);  //ta

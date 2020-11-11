@@ -39,6 +39,14 @@ Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): cliente(c), data
     }
 }
 
+/**
+ * Constructor of Transacao. Sets cliente to c, data to d, vector of all products to v, valorTotal
+ * to 0 and tipoPagamento to p
+ * @param c
+ * @param d
+ * @param v
+ * @param p
+ */
 Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v, Pagamento *p): cliente(c), data(d), produtos(v),
                                                                               valorTotal(0), tipoPagamento(p){
     numberOfTransacoes++;
@@ -106,11 +114,7 @@ void Transacao::setDate(Date &d) {
  * @param p Product to be added
  */
 void Transacao::addProduto(Produto *p) {
-    if (produtos.size() == 0){
-        produtos.push_back(p);
-        quantidade[p] = 1;
-    }
-    else if ( find(produtos.begin(), produtos.end(), p) == produtos.end()){
+    if ( find(produtos.begin(), produtos.end(), p) == produtos.end()){
         produtos.push_back(p);
         quantidade[p] = 1;  //nao esta na transacao
     }
@@ -198,7 +202,6 @@ void Transacao::removeProduto(Produto *p, int quantidade){
 }
 
 
-
 /**
  * Gets a quantity of a Produto in the Transacao
  * @param p Produto of which we want the quantity
@@ -240,7 +243,7 @@ void Transacao::sortByValue() {
  * @param t Transacao of which we want to get the Information
  * @return ostream with all the information
  */
-ostream & operator<<(ostream & o, const Transacao &t)
+ostream & operator<<(ostream &o, const Transacao &t)
 {
     o << "---------------------------------------------------------------------------------------------------------" << endl;
     o << "Nome Cliente: " << t.cliente->getNome() << endl;
@@ -272,3 +275,4 @@ bool operator == (const Transacao &t1, const Transacao &t2){
     if (t1.number == t2.number) return true;
     return false;
 }
+

@@ -9,17 +9,17 @@ class Produto{
 private:
     int id;
     string nomeProduto;
-    int stockFisico;
-    int stockOnline;
+    //int stockFisico;
+    //int stockOnline;
     double valor;
 public:
     Produto();
-    Produto(string nome, int id, int fisico, int online, double val);
-    int getStockFisico() const;
-    void setStockFisico(int stockFisico);
-    int getStockOnline() const;
+    Produto(string nome, int id, double val);
+    //int getStockFisico() const;
+    //void setStockFisico(int stockFisico);
+    //int getStockOnline() const;
+    //void setStockOnline(int stockOnline);
     int getId() const;
-    void setStockOnline(int stockOnline);
     void setId(int newId);
     string getNomeProduto() const;
     void setNomeProduto(string nome);

@@ -11,8 +11,12 @@ LojaOnline::LojaOnline() {}
  * @param t vector of Transacoes done by the shop
  * @param c vector of Clients of the shop
  */
-LojaOnline::LojaOnline(vector<Produto *> p, vector<Transacao *> t, vector<Cliente *> c):
-        produtos(p), transacoes(t), clientes(c) {}
+LojaOnline::LojaOnline(vector<Produto *> p, vector<Transacao *> t, vector<Cliente *> c):produtos(p), transacoes(t), clientes(c) {
+    for (auto i : produtos){
+        if ( stockOnline.find(i) == stockOnline.end() ) stockOnline[i] = 1;
+        else stockOnline[i]++;
+    }
+}
 
 
 
@@ -24,11 +28,22 @@ LojaOnline::LojaOnline(vector<Produto *> p, vector<Transacao *> t, vector<Client
 void LojaOnline::addProduto(Produto *p, int quantidade) {
     vector<Produto*>::iterator iter = find(produtos.begin(), produtos.end(), p);
     if (iter == produtos.end()){
-        p->setStockOnline(quantidade);
+        stockOnline[p] = quantidade;
         produtos.push_back(p);
     }
     else{
-        (*iter)->setStockOnline(p->getStockOnline()+quantidade);
+        stockOnline[p] += quantidade;
+    }
+}
+
+/**
+ * Removes a product from LojaOnline
+ * @param p Product to be removed
+ */
+void LojaOnline::removeProduto(Produto *p) {
+    vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), p);
+    if (it != produtos.end()){
+        produtos.erase(it);
     }
 }
 
@@ -41,8 +56,8 @@ void LojaOnline::addProduto(Produto *p, int quantidade) {
 void LojaOnline::removeProduto(Produto *p, int quantidade) {
     vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), p);
     if (it != produtos.end()){
-        if ((*it)->getStockOnline() < quantidade) produtos.erase(it);
-        else (*it)->setStockOnline( (*it)->getStockOnline() - quantidade);
+        if (stockOnline[p] < quantidade) produtos.erase(it);
+        else stockOnline[p] -= quantidade;
     }
 }
 

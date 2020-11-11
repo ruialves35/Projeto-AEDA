@@ -2,37 +2,37 @@
 
 /**
  * Default Constructor of Produto
- * Sets to "" the nomeProduto and sets to 0 the stockFisico, stockOnline and valor
+ * Sets to "" the nomeProduto and sets to 0 the value of the Produto
  */
 
-Produto::Produto(): nomeProduto(""), stockFisico(0), stockOnline(0), valor(0) {}
+Produto::Produto(): nomeProduto(""), valor(0) {}
 
 /**
  * Constructor of Produto
  * @param nome name of Produto
  * @param id identification of Produto (to be set by the Shop Owner)
- * @param fisico stock fisico of Produto
- * @param online stock online of Produto
  * @param val value of Produto
  */
-Produto::Produto(string nome, int id, int fisico, int online, double val): nomeProduto(nome),
-                                                                           stockFisico(fisico), stockOnline(online), valor(val), id(id){}
-
+Produto::Produto(string nome, int id, double val): nomeProduto(nome), valor(val), id(id){}
+/*
 /**
  * sets Stock Fisico of Produto
  * @param fisico new stock fisico
  */
+/*
 void Produto::setStockFisico(int fisico){
     stockFisico = fisico;
-}
+}*/
 
+/*
 /**
  * sets Stock Online of Produto
  * @param online new stock online
  */
+/*
 void Produto::setStockOnline(int online){
     stockOnline = online;
-}
+}*/
 
 /**
  * sets Nome of Produto
@@ -60,15 +60,17 @@ int Produto::getId() const { return id; }
  */
 string Produto::getNomeProduto() const {return nomeProduto; }
 
+/*
 /**
  * @return Produto's id
  */
-int Produto::getStockFisico() const {return stockFisico;}
+//int Produto::getStockFisico() const {return stockFisico;}
 
+/*
 /**
  * @return stock of Produto in the Online Shop
  */
-int Produto::getStockOnline() const {return stockOnline;}
+//int Produto::getStockOnline() const {return stockOnline;}
 
 /**
  * @return value of Produto
@@ -85,8 +87,7 @@ double Produto::getValor() const {
  * @return True if they are the same, false otherwise
  */
 bool operator == (const Produto &p1, const Produto &p2){
-    return p1.id == p2.id && p1.nomeProduto == p2.nomeProduto && p1.stockOnline == p2.stockOnline &&
-           p1.stockFisico == p2.stockFisico && p1.valor == p2.valor;
+    return p1.id == p2.id && p1.nomeProduto == p2.nomeProduto && p1.valor == p2.valor;
 }
 
 /**

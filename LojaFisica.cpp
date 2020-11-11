@@ -13,20 +13,49 @@ LojaFisica::LojaFisica(){}
  */
 LojaFisica::LojaFisica(vector<Produto*> &p) {
     produtos = p;
+    for (auto i : produtos){
+        if (stockFisico.find(i) == stockFisico.end() ) stockFisico[i] = 1;
+        else stockFisico[i]++;
+    }
 }
 
 /**
- * Adds a Produto to vector of Produto of the LojaFisica
- * @param produto
+ * Adds a quantity of a Produto to vector of Produto of the LojaFisica
+ * @param produto Product that will be added to Loja Fisica
+ * @param quantidade Quantity of the Produto
  */
 void LojaFisica::addProduto(Produto *produto, int quantidade) {
     vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), produto);
     if ( it == produtos.end()) {
-        produto->setStockFisico(quantidade);
         produtos.push_back(produto);
+        stockFisico[produto] = quantidade;
     }
     else{
-        (*it)->setStockFisico((*it)->getStockFisico() + quantidade);
+        stockFisico[produto] += quantidade;
+    }
+}
+
+/**
+ * Removes a Product from LojaFisica
+ * @param produto Product to be removed
+ */
+void LojaFisica::removeProduto(Produto *produto) {
+    vector<Produto*>::iterator it =find(produtos.begin(), produtos.end(), produto);
+    if (it != produtos.end()){
+        produtos.erase(it);
+    }
+}
+
+/**
+ * Removes a Product from vector of LojaFisica
+ * @param produto Product to be removed
+ * @param quantidade Quantity to be removed
+ */
+void LojaFisica::removeProduto(Produto *produto, int quantidade) {
+    vector<Produto*>::iterator it =find(produtos.begin(), produtos.end(), produto);
+    if (it != produtos.end()){
+        if (stockFisico[produto] < quantidade) produtos.erase(it);
+        else stockFisico[produto] -= quantidade;
     }
 }
 
