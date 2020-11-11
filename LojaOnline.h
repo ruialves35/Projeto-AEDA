@@ -18,10 +18,12 @@ public:
     }
 };
 
+/*
 std::ostream& operator<<(std::ostream &out, const ClienteDoesNotExist &cl){
     out << "O seguinte cliente nao existe na nossa base de dados: Nome" << cl.c->getNome() << " NumeroContribuinte: " << cl.c->getNumContribuinte() << endl;
     return out;
 }
+*/
 
 //-------------------------------------------------------------------
 
@@ -37,6 +39,7 @@ public:
     void showAllProdutos() const; //ta
     void showAllTransacoes() const; //ta
     void addProduto(Produto *p, int quantidade = 1); //ta
+    void removeProduto(Produto *p, int quantidade = 1);
     void addCliente(Cliente *c); //ta
     void addTransacao(Transacao *t); //ta
     Cliente* getCliente(Cliente *c);  //ta

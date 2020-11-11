@@ -33,6 +33,20 @@ void LojaOnline::addProduto(Produto *p, int quantidade) {
 }
 
 /**
+ * Removes a quantity of a Product to the LojaOnline stock
+ * If doesnt put a quantity, it is set to 1 by default (check .h file)
+ * @param p product to be added
+ * @param quantidade quantity of the product
+ */
+void LojaOnline::removeProduto(Produto *p, int quantidade) {
+    vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), p);
+    if (it != produtos.end()){
+        if ((*it)->getStockOnline() < quantidade) produtos.erase(it);
+        else (*it)->setStockOnline( (*it)->getStockOnline() - quantidade);
+    }
+}
+
+/**
  * Add a client to the Online Shop
  * @param c client to be added
  */
@@ -78,12 +92,12 @@ void LojaOnline::showAllTransacoes() const {
  * displays all products available in the store, each quantity and price
  */
 void LojaOnline::showAllProdutos() const {
-    cout << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << "Nome do Produto" << setfill(' ') << setw(15) << "Quantidade Disponivel" << setfill(' ') << setw(15) << "Preco" << endl << endl;
+    cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << setfill(' ') << setw(15) << "Produto" << setfill(' ') << setw(15) << "Quantidade " << setfill(' ') << setw(15) << "Preco" << endl << endl;
     for (auto i : produtos){
-        cout << i->getNomeProduto() << setfill(' ') << setw(15)<< i->getStockOnline() << setfill(' ') << setw(15) << i->getValor() << endl;
+        cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15)<< i->getStockOnline() << setfill(' ') << setw(15) << i->getValor() << endl;
     }
-    cout << "------------------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
 }
 
 /**
