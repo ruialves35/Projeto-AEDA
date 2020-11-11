@@ -60,3 +60,18 @@ string ClienteRegistado::getEmail() const {return email;}
 void ClienteRegistado::setEmail(string email) {
     this->email= email;
 }
+
+/**
+ * Gets the information of a ClienteRegistado (nome, numero contribuinte, id, email)
+ * @return string with the information
+ */
+string ClienteRegistado::getInfo() const {
+    string info = "Nome: ";
+    info += getNome() + "\n" + "Numero de Contribuinte: ";
+    info += getNumContribuinte() + "\n";
+    info += "Id: ";
+    info += id + "\n";
+    info += "Email: ";
+    info += email;
+    return info;
+}

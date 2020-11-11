@@ -17,6 +17,7 @@ public:
     int getId() const;
     string getEmail() const;
     void setEmail(string email);
+    string getInfo() const;
     void setNumeroClientesRegistados(int ncr);
     int getNumeroClientesRegistados() const;
 };
