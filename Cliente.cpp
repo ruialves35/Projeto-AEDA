@@ -69,7 +69,7 @@ bool operator == (Cliente &c1, Cliente &c2){
 string Cliente::getInfo() const {
     string info = "Nome: ";
     info += nomeCliente + "\n" + "Numero de Contribuinte: ";
-    info += numContribuinteCliente + "\n";
+    info += to_string(numContribuinteCliente) +"\n";
     return info;
 }
 /**

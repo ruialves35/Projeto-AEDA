@@ -38,6 +38,7 @@ public:
     LojaOnline(vector<Produto*> p, vector<Transacao*> t, vector<Cliente*> c);//ta
     void showAllProdutos() const; //ta
     void showAllTransacoes() const; //ta
+    void showClients() const;
     void addProduto(Produto *p, int quantidade = 1); //ta
     void removeProduto(Produto *p, int quantidade = 1);
     void addCliente(Cliente *c); //ta
@@ -64,7 +65,6 @@ public:
     static bool compareTransacoesByDate(const Transacao* t1, const Transacao *t2){
         return (*t1).getDate() < (*t2).getDate();
     }
-    friend ostream& operator << (ostream &o, const LojaOnline);
 };
 
 

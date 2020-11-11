@@ -7,7 +7,7 @@ int ClienteRegistado::numeroClientesRegistados = 0;
 /**
  * Default constructor of a ClienteRegistado. Sets nome of Cliente to "", id to 0, numContribuinte to 0 and email to ""
  */
-ClienteRegistado::ClienteRegistado(): Cliente(), id(0), email("") {
+ClienteRegistado::ClienteRegistado(): Cliente(), id(1), email("") {
     numeroClientesRegistados++;
 }
 
@@ -20,6 +20,7 @@ ClienteRegistado::ClienteRegistado(): Cliente(), id(0), email("") {
 ClienteRegistado::ClienteRegistado(string nome, int numContribuinte, string email): Cliente(nome, numContribuinte),
                                                                                     email(email){
     numeroClientesRegistados++;
+    id = numeroClientesRegistados;
 }
 
 /**
@@ -68,9 +69,9 @@ void ClienteRegistado::setEmail(string email) {
 string ClienteRegistado::getInfo() const {
     string info = "Nome: ";
     info += getNome() + "\n" + "Numero de Contribuinte: ";
-    info += getNumContribuinte() + "\n";
+    info += to_string(getNumContribuinte()) + "\n";
     info += "Id: ";
-    info += id + "\n";
+    info += to_string(id) + "\n";
     info += "Email: ";
     info += email;
     return info;

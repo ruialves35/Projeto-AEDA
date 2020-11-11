@@ -89,6 +89,15 @@ void LojaOnline::showAllTransacoes() const {
 }
 
 /**
+ * displays all clients of LojaOnline
+ */
+void LojaOnline::showClients() const {
+    for (auto i: clientes){
+        cout << i->getInfo() << endl;
+    }
+}
+
+/**
  * displays all products available in the store, each quantity and price
  */
 void LojaOnline::showAllProdutos() const {
@@ -161,3 +170,4 @@ void LojaOnline::sortProdutosByValue() {
 void LojaOnline::sortTransacaoByDate() {
     sort(transacoes.begin(), transacoes.end(), compareTransacoesByDate);
 }
+
