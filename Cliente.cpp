@@ -65,3 +65,16 @@ bool operator == (Cliente &c1, Cliente &c2){
     }
     return false;
 }
+
+/**
+ * Overloading operator << to get to a ostream the information of a Client.
+ * This information is his Name and Numero de Contribuinte
+ * @param o
+ * @param c1
+ * @return
+ */
+ostream& operator << (ostream& o, Cliente &c1){
+    o << "Nome: " << c1.nomeCliente << endl;
+    o << "Numero de Contribuinte: " << c1.numContribuinteCliente << endl;
+    return o;
+}

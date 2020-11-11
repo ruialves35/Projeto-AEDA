@@ -16,6 +16,7 @@ public:
     int getNumContribuinte() const;
     void setNumContribuinte(int numContribuinte);
     friend bool operator == (Cliente& c1, Cliente& c2);
+    friend ostream& operator << (ostream &o, Cliente &c1);
 };
 
 
