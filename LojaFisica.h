@@ -11,7 +11,9 @@ class LojaFisica{
 private:
     vector<Produto*> produtos;
 public:
-    void addProduto(Produto &produto);
+    LojaFisica();
+    LojaFisica(vector<Produto*> &p);
+    void addProduto(Produto* produto, int quantidade = 1);
     vector<Produto*> getProdutos() const;
 };
 
