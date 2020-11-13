@@ -67,10 +67,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Sara\Documents\GitHub\Projeto-AEDA
+CMAKE_SOURCE_DIR = C:\Users\Sara\Desktop\AEDATreino
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Sara\Desktop\AEDATreino\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Desktop\AEDATreino\cmake-build-debug\CMakeFiles C:\Users\Sara\Desktop\AEDATreino\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Desktop\AEDATreino\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -466,33 +466,6 @@ Multibanco.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Multibanco.cpp.s
 .PHONY : Multibanco.cpp.s
 
-NumeroTransacoes.obj: NumeroTransacoes.cpp.obj
-
-.PHONY : NumeroTransacoes.obj
-
-# target to build an object file
-NumeroTransacoes.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.obj
-.PHONY : NumeroTransacoes.cpp.obj
-
-NumeroTransacoes.i: NumeroTransacoes.cpp.i
-
-.PHONY : NumeroTransacoes.i
-
-# target to preprocess a source file
-NumeroTransacoes.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.i
-.PHONY : NumeroTransacoes.cpp.i
-
-NumeroTransacoes.s: NumeroTransacoes.cpp.s
-
-.PHONY : NumeroTransacoes.s
-
-# target to generate assembly for a file
-NumeroTransacoes.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/NumeroTransacoes.cpp.s
-.PHONY : NumeroTransacoes.cpp.s
-
 Pagamento.obj: Pagamento.cpp.obj
 
 .PHONY : Pagamento.obj
@@ -646,9 +619,6 @@ help:
 	@echo ... Multibanco.obj
 	@echo ... Multibanco.i
 	@echo ... Multibanco.s
-	@echo ... NumeroTransacoes.obj
-	@echo ... NumeroTransacoes.i
-	@echo ... NumeroTransacoes.s
 	@echo ... Pagamento.obj
 	@echo ... Pagamento.i
 	@echo ... Pagamento.s

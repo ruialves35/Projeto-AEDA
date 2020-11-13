@@ -4,6 +4,11 @@
 
 class BuyNowUI {
 
+public:
+    BuyNowUI();
+    void UI();
+    void Cliente();
+    void Administrador();
 };
 
 

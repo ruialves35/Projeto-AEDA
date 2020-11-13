@@ -116,13 +116,14 @@ void LojaOnline::showClients() const {
  * displays all products available in the store, each quantity and price
  */
 void LojaOnline::showAllProdutos() const {
-    cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
+    /*cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
     cout << setfill(' ') << setw(15) << "Produto" << setfill(' ') << setw(15) << "Quantidade " << setfill(' ') << setw(15) << "Preco" << endl << endl;
     for (auto i : produtos){
         cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15)<< i->getStockOnline() << setfill(' ') << setw(15) << i->getValor() << endl;
     }
     cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
-}
+*/
+     }
 
 /**
  * Gets a Cliente of LojaOnline. Throws an error if Cliente is not in data base of Loja Online.

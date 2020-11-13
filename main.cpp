@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Date.h"
 #include "Transacao.h"
+#include "BuyNowUI.h"
 
 void testDate(){
     Date d1(29,2,2020);
@@ -10,7 +11,9 @@ void testDate(){
 
 
 int main() {
-    testDate();
+    BuyNowUI teste;
+
+    //testDate();
     return 0;
 }
 

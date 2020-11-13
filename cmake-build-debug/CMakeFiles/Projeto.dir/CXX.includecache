@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Sara/Desktop/AEDATreino/BuyNowUI.cpp
+BuyNowUI.h
+C:/Users/Sara/Desktop/AEDATreino/BuyNowUI.h
+iostream
+-
+
+C:/Users/Sara/Desktop/AEDATreino/BuyNowUI.h
+
