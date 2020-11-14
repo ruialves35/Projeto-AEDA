@@ -8,6 +8,7 @@
 #include "Produto.h"
 #include "Cliente.h"
 #include "Pagamento.h"
+#include "Fornecedor.h"
 
 using namespace std;
 
@@ -26,14 +27,13 @@ private:
 public:
     Transacao();
     Transacao(Cliente *c, Date &d);
-    Transacao(Cliente *c, Date &d, vector<Produto*> v);
-    Transacao(Cliente *c, Date &d, vector<Produto*> v, Pagamento *p);
+    Transacao(Cliente *c, Date &d, vector<Produto*> &v);
+    Transacao(Cliente *c, Date &d, vector<Produto*> &v, Pagamento *p);
     Date getDate() const;
     void setDate(Date &d);
     void setCliente(Cliente *c);
     Cliente* getCliente() const;
-    void addProduto(Produto* p);
-    void addProduto(Produto* p, int quantidade);
+    void addProduto(Produto* p, int quantidade = 1);
     void removeProduto(Produto *p);
     void removeProduto(Produto *p, int quantidade);
     int getQuantidade(Produto *p) const;

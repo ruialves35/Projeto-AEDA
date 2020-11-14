@@ -12,6 +12,7 @@ Transacao::Transacao(): valorTotal(0), data(){
     number = getNumberOfTransacoes();
 }
 
+
 /**
  * Contructor of Transacao. Sets cliente to c, data to d and valorTotal to 0
  * @param c receives the client of Transacao
@@ -28,8 +29,8 @@ Transacao::Transacao(Cliente *c, Date &d):  cliente(c), data(d), valorTotal(0){
  * @param d Data of Transacao
  * @param v All products of transacao
  */
-Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): cliente(c), data(d), produtos(v),
-                                                                valorTotal(0){
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> &v): cliente(c), data(d), produtos(v),
+                                                                 valorTotal(0){
     numberOfTransacoes++;
     number = numberOfTransacoes;
     for (auto i : produtos){
@@ -47,8 +48,8 @@ Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v): cliente(c), data
  * @param v
  * @param p
  */
-Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> v, Pagamento *p): cliente(c), data(d), produtos(v),
-                                                                              valorTotal(0), tipoPagamento(p){
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> &v, Pagamento *p): cliente(c), data(d), produtos(v),
+                                                                               valorTotal(0), tipoPagamento(p){
     numberOfTransacoes++;
     number = numberOfTransacoes;
     for (auto i : produtos){
@@ -92,6 +93,7 @@ Cliente* Transacao::getCliente() const {
 
 
 /**
+/**
  * Gets the Date of Transacao
  * @return Date of Transacao
  */
@@ -109,10 +111,10 @@ void Transacao::setDate(Date &d) {
 
 
 
-/**
+/*
  * Add a Produto to Transacao.
  * @param p Product to be added
- */
+
 void Transacao::addProduto(Produto *p) {
     if ( find(produtos.begin(), produtos.end(), p) == produtos.end()){
         produtos.push_back(p);
@@ -123,11 +125,12 @@ void Transacao::addProduto(Produto *p) {
     }
     valorTotal += p->getValor();
 }
+*/
 
 /**
  * Add a Quantity of a Produto to Transacao.
  * @param p Product to be added
- * @param quantidade Quantity of Product
+ * @param quantidade Quantity of Product (predefinition 1)
  */
 void Transacao::addProduto(Produto *p, int quantidade) {
     if (find(produtos.begin(), produtos.end(), p) == produtos.end()){
@@ -253,9 +256,8 @@ ostream & operator<<(ostream &o, const Transacao &t)
     o << "Pagamento: ";
     t.tipoPagamento->getInfo(o);
     o << endl;
-    o << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << setfill(' ') << setw(15) << "Quantidade" << setfill(' ') << setw(15) << "Total" << endl;
+    o << setfill(' ') << setw(15) << "Produto" << setfill(' ') << setw(15) << "Preco" << setfill(' ') << setw(15) << "Quantidade" << setfill(' ') << setw(15) << "Total" << endl;
     for (auto i : t.produtos){
-        map<Produto*, int>::const_iterator it = t.quantidade.find(i);
         o << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << setfill(' ') << setw(15) << t.getQuantidade(i)
           << setfill(' ') << setw(15) << i->getValor()* t.getQuantidade(i) << endl;
     }

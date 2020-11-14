@@ -9,16 +9,19 @@ using namespace std;
 
 class LojaFisica{
 private:
+    string localidade;
     map<Produto*, int> stockFisico;
     vector<Produto*> produtos;
 public:
     LojaFisica();
-    LojaFisica(vector<Produto*> &p);
+    LojaFisica(vector<Produto*> &p, string localidade);
     void addProduto(Produto* produto, int quantidade = 1);
     vector<Produto*> getProdutos() const;
+    void setProdutos(vector <Produto*> produtos);
     int getStockFisico(Produto *p);
-    void removeProduto(Produto *produto);
-    void removeProduto(Produto *produto, int quantidade);
+    void removeProduto(Produto *produto, int quantidade = 1);
+    void showProdutos();
+    bool operator == (const LojaFisica &l2);
 };
 
 

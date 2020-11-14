@@ -5,35 +5,35 @@
  * Constructor of Cartao Credito.
  * Sets Payment value to 0, number of card to 0 and Date of the payment to 00/00/0000
  */
-CartaoCredito::CartaoCredito(): Pagamento(), numCartao(0), validade(Date()) {}
+CartaoCredito::CartaoCredito(): Pagamento(), numCartao(""), validade(Date()) {}
 
 /**
  * Constructor of Cartao Credito
  * @param valor valor do Pagamento
- * @param numCartao Numero do Cartao de Credito de onde vai pagar
+ * @param numCartao Numero do Cartao de Credito de onde vai pagar (string with length 16)
  * @param val Validade do cartao de credito
  */
-CartaoCredito::CartaoCredito(double valor, long long int numCartao, Date val): Pagamento(valor), numCartao(numCartao), validade(val) {}
+CartaoCredito::CartaoCredito(double valor, string numCartao, Date val): Pagamento(valor), numCartao(numCartao), validade(val) {}
 
 /**
  * Constructor of Cartao Credito
  * @param numCartao numero do Cartao de Credito de onde vai pagar
  * @param val Validade do cartao de credito
  */
-CartaoCredito::CartaoCredito(long long int numCartao, Date val): Pagamento(), numCartao(numCartao), validade(val) {}
+CartaoCredito::CartaoCredito(string numCartao, Date val): Pagamento(), numCartao(numCartao), validade(val) {}
 
 /**
  * Gets the number of card
- * @return number of card as long int
+ * @return number of card as string
  */
-long CartaoCredito::getNumCartao() const {return numCartao;}
+string CartaoCredito::getNumCartao() const {return numCartao;}
 
 /**
  * Sets the number of card
  * @param numCartao new card number
  */
-void CartaoCredito::setNumCartao(long numCartao) {
-    if (to_string(numCartao).length() != 15 && to_string(numCartao).length() != 16){
+void CartaoCredito::setNumCartao(string numCartao) {
+    if (numCartao.length() != 15 && numCartao.length() != 16){
         cout << "Wrong numCartao." << endl;
     }
     else this->numCartao = numCartao;

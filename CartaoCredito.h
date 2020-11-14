@@ -6,14 +6,14 @@
 
 class CartaoCredito: public Pagamento{
 private:
-    long int numCartao;
+    string numCartao;
     Date validade;
 public:
     CartaoCredito();
-    CartaoCredito(long long int numCartao, Date val);
-    CartaoCredito(double valor, long long int numCartao, Date val);
-    long int getNumCartao() const;
-    void setNumCartao(long int numCartao);
+    CartaoCredito(string numCartao, Date val);
+    CartaoCredito(double valor, string numCartao, Date val);
+    string getNumCartao() const;
+    void setNumCartao(string numCartao);
     void setValidade(Date validade);
     Date getValidade() const;
     void getInfo(ostream& o) const;

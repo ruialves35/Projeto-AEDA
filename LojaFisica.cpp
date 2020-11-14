@@ -1,17 +1,19 @@
 #include "LojaFisica.h"
 #include <algorithm>
+#include <iomanip>
 
 using namespace std;
 /**
  * Default constructor, doesnt do anything
  */
-LojaFisica::LojaFisica(){}
+LojaFisica::LojaFisica(){ localidade = ""; }
 
 /**
  * Constructor with vector of Produto* already done
  * @param p vector of Produto*
  */
-LojaFisica::LojaFisica(vector<Produto*> &p) {
+LojaFisica::LojaFisica(vector<Produto*> &p, string localidade) {
+    this->localidade = localidade;
     produtos = p;
     for (auto i : produtos){
         if (stockFisico.find(i) == stockFisico.end() ) stockFisico[i] = 1;
@@ -35,16 +37,17 @@ void LojaFisica::addProduto(Produto *produto, int quantidade) {
     }
 }
 
-/**
+/*
  * Removes a Product from LojaFisica
  * @param produto Product to be removed
- */
+
 void LojaFisica::removeProduto(Produto *produto) {
     vector<Produto*>::iterator it =find(produtos.begin(), produtos.end(), produto);
     if (it != produtos.end()){
         produtos.erase(it);
     }
 }
+*/
 
 /**
  * Removes a Product from vector of LojaFisica
@@ -64,4 +67,37 @@ void LojaFisica::removeProduto(Produto *produto, int quantidade) {
  */
 vector<Produto *> LojaFisica::getProdutos() const {
     return produtos;
+}
+
+/**
+ * Gets the StockFisico of a Produto
+ * @param p Produto to get StockFisico
+ * @return 0 if there is no product, stock of Produto otherwise
+ */
+int LojaFisica::getStockFisico(Produto *p) {
+    if (find(produtos.begin(), produtos.end(), p) != produtos.end()) return stockFisico[p];
+    return 0;
+}
+
+/**
+ * Sets produtos of LojaFisica
+ * @param produtos Vector with Produtos of LojaFisica
+ */
+void LojaFisica::setProdutos(vector<Produto *> produtos) {
+    this->produtos = produtos;
+}
+
+/**
+ * Displays Produtos of LojaFisica
+ */
+void LojaFisica::showProdutos() {
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+    cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << endl;
+    for (auto i: produtos){
+        cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
+    }
+}
+
+bool LojaFisica::operator==(const LojaFisica &l2) {
+    return this->localidade == l2.localidade;
 }

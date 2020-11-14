@@ -35,20 +35,27 @@ private:
     vector<Cliente *> clientes;
     unsigned int stockMin;
 public:
-    LojaOnline(); //ta
-    LojaOnline(vector<Produto*> p, vector<Transacao*> t, vector<Cliente*> c);//ta
-    void showAllProdutos() const; //ta
-    void showAllTransacoes() const; //ta
+    LojaOnline();
+    LojaOnline(vector<Produto*> p, vector<Transacao*> t, vector<Cliente*> c);
+    void showAllProdutos();
+    void showAllTransacoes() const;
     void showClients() const;
-    void addProduto(Produto *p, int quantidade = 1); //ta
+    void addProduto(Produto *p, int quantidade = 1);
     void removeProduto(Produto *p);
+    int getStockOnline(Produto* p);
+    void addStockOnline(Produto* p, int quantidade = 1);
+    vector<Produto*> getProdutos() const;
+    vector<Cliente*> getClientes() const;
+    vector<Transacao*> getTransacoes() const;
+    void setProdutos(vector<Produto*> produtos);
     void removeProduto(Produto *p, int quantidade);
-    void addCliente(Cliente *c); //ta
-    void addTransacao(Transacao *t); //ta
-    Cliente* getCliente(Cliente *c);  //ta
-    void removeCliente(Cliente *c); //ta
-    void addProdutoToTransacao(Transacao* t, Produto* p, int quantidade = 1);   //ta
-    void removeProdutoOfTransacao(Transacao* t, Produto* p, int quantidade = 1);    //ta
+    void addCliente(Cliente *c);
+    void addTransacao(Transacao *t);
+    void removeTransacao(Transacao *t);
+    Cliente* getCliente(Cliente *c);
+    void removeCliente(Cliente *c);
+    void addProdutoToTransacao(Transacao* t, Produto* p, int quantidade = 1);
+    void removeProdutoOfTransacao(Transacao* t, Produto* p, int quantidade = 1);
     void sortProdutosByValue();
     void sortProdutosByName();
     void sortProdutosById();

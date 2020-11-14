@@ -18,7 +18,46 @@ LojaOnline::LojaOnline(vector<Produto *> p, vector<Transacao *> t, vector<Client
     }
 }
 
+/**
+ * gets the products of a LojaOnline
+ * @return vector with pointers to the produtos
+ */
+vector<Produto *> LojaOnline::getProdutos() const {
+    return this->produtos;
+}
 
+/**
+ * Gets the stock Online of a Produto
+ * @param p Produto to get Stock
+ * @return int stockOnline
+ */
+int LojaOnline::getStockOnline(Produto *p) {
+    for (auto i:produtos){
+        if (i == p) return stockOnline[i];
+    }
+}
+
+/**
+ * Adds a quantity of a Produto
+ * @param p Produto to be added
+ * @param quantidade Quantity of Produto to be added (predefinition = 1)
+ */
+void LojaOnline::addStockOnline(Produto *p, int quantidade) {
+    if (find(produtos.begin(), produtos.end(), p) != produtos.end())
+        stockOnline[p] += quantidade;
+    else{
+        produtos.push_back(p);
+        stockOnline[p] = quantidade;
+    }
+}
+
+/**
+ *
+ * @param produtos
+ */
+void LojaOnline::setProdutos(vector<Produto *> produtos) {
+    this->produtos = produtos;
+}
 
 /**
  * Adds a quantity of a Product to the LojaOnline stock
@@ -84,6 +123,28 @@ void LojaOnline::addTransacao(Transacao *t) {
 }
 
 /**
+ *  Removes a Transacao from database of LojaOnline(vector)
+ * @param t transacao to be removed
+ */
+void LojaOnline::removeTransacao(Transacao *t) {
+    vector<Transacao*>::iterator it = find(transacoes.begin(), transacoes.end(), t);
+    if (it != transacoes.end()) transacoes.erase(it);
+    //eventually throw exception in an else
+}
+
+/**
+ * Gets the Clientes of LojaOnline
+ * @return vector with clientes of LojaOnline
+ */
+vector<Cliente *> LojaOnline::getClientes() const { return clientes;}
+
+/**
+ * Gets Transacoes of LojaOnline(BuyNow)
+ * @return vector with Transacoes
+ */
+vector<Transacao *> LojaOnline::getTransacoes() const { return transacoes;}
+
+/**
  * Removes a client from the Online Shop
  * @param c client to be removed
  */
@@ -92,6 +153,7 @@ void LojaOnline::removeCliente(Cliente *c) {
     if (it != clientes.end()) {
         clientes.erase(it);
     }
+    //Eventually throw exception
 }
 
 /**
@@ -115,15 +177,14 @@ void LojaOnline::showClients() const {
 /**
  * displays all products available in the store, each quantity and price
  */
-void LojaOnline::showAllProdutos() const {
-    /*cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << setfill(' ') << setw(15) << "Produto" << setfill(' ') << setw(15) << "Quantidade " << setfill(' ') << setw(15) << "Preco" << endl << endl;
+void LojaOnline::showAllProdutos() {
+    cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << setfill(' ') << setw(15) << "Produto" << setfill(' ') << setw(15) << "Quantidade " << setfill(' ') << setw(15) << "Preco" << endl;
     for (auto i : produtos){
-        cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15)<< i->getStockOnline() << setfill(' ') << setw(15) << i->getValor() << endl;
+        cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15)<< getStockOnline(i) << setfill(' ') << setw(15) << i->getValor() << endl;
     }
     cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
-*/
-     }
+}
 
 /**
  * Gets a Cliente of LojaOnline. Throws an error if Cliente is not in data base of Loja Online.
