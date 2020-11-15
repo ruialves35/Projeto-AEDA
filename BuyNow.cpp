@@ -304,6 +304,59 @@ void BuyNow::removeProdutoLojaFisica(LojaFisica &lf, Produto *p, int quantidade)
 }
 
 /**
+ * Adds a Categoria to BuyNow database(vector)
+ * @param c Categoria to be added
+ */
+void BuyNow::addCategoria(Categoria &c) {
+    vector<Categoria>::iterator it = find(categorias.begin(), categorias.end(), c);
+    if (it == categorias.end())
+        categorias.push_back(c);
+}
+
+/**
+ * Checks if a Cliente is already in DataBase
+ * @param cliente Cliente to check
+ * @return true if already exists, false otherwise
+ */
+bool BuyNow::checkCliente(Cliente &cliente) {
+    for (auto i : clientes){
+        if ((*i) == cliente) return true;
+    }
+    return false;
+}
+
+/**
+ * Shows Transacoes of LojaOnline of BuyNow
+ */
+void BuyNow::showTransacoes() {
+    lojaOnline.showAllTransacoes();
+}
+
+/**
+ * Removes a Categoria of BuyNow
+ * @param c Categoria
+ */
+void BuyNow::removeCategoria(Categoria &c) {
+    vector<Categoria>::iterator it = find(categorias.begin(), categorias.end(), c);
+    if (it != categorias.end())
+        categorias.erase(it);
+}
+/**
+ * Shows Produto of a Categoria
+ * @param cat Categoria to show produto
+ */
+void BuyNow::showProdutosCategoria(Categoria &c) {
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+    cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << endl;
+    for (auto i: produtos){
+        if (i->getCategoria() == c){
+            cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
+        }
+    }
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+}
+
+/**
  * Displays all Produtos of BuyNow and each price
  */
 void BuyNow::showProdutos() {
@@ -312,5 +365,5 @@ void BuyNow::showProdutos() {
     for (auto i : produtos){
         cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
     }
-
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
 }

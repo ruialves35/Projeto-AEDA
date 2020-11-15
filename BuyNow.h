@@ -29,8 +29,13 @@ public:
     BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin);
     BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia*> tranferencias, int stockOk, int stockMin);
     ~BuyNow();
+    void addCategoria(Categoria &c);
+    void removeCategoria(Categoria &c);
+    Fornecedor getFornecedor() const;
+    void setFornecedor(Fornecedor &f);
     void addCliente(Cliente *cliente);
     void removeCliente(Cliente *cliente);
+    bool checkCliente(Cliente &cliente);
     void addTransacao(Transacao *t);
     void removeTransacao(Transacao *t);
     void addProduto(Produto* p);
@@ -53,7 +58,9 @@ public:
     vector<Transacao*> getTransacoes() const;
     vector<Transferencia*> getTransferencias() const;
     void reporStock();
+    void showTransacoes();
     void showProdutos();
+    void showProdutosCategoria(Categoria &c);
 
     //void showAllProdutosOnline();
     //void showAllProdutosFisico();
