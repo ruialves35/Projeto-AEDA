@@ -29,12 +29,14 @@ Transacao::Transacao(Cliente *c, Date &d):  cliente(c), data(d), valorTotal(0){
  * @param d Data of Transacao
  * @param v All products of transacao
  */
-Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> &v): cliente(c), data(d), produtos(v),
-                                                                 valorTotal(0){
+Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> &v): cliente(c), data(d), valorTotal(0){
     numberOfTransacoes++;
     number = numberOfTransacoes;
-    for (auto i : produtos){
-        if (quantidade.find(i) == quantidade.end() ) quantidade[i] = 1;
+    for (auto i : v){
+        if (find(produtos.begin(), produtos.end(), i) == produtos.end()) {
+            produtos.push_back(i);
+            quantidade[i] = 1;
+        }
         else quantidade[i]++;
         valorTotal += i->getValor();
     }

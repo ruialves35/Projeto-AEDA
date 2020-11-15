@@ -20,8 +20,10 @@ BuyNow::~BuyNow() {
  * Constructor with all the information
  * @param lf vector with all the LojaFisicas
  * @param lo LojaOnline
+ * @param stockOk stockOk of Produtos of
  */
-BuyNow::BuyNow(vector<LojaFisica> &lf, LojaOnline &lo): lojasFisicas(lf), lojaOnline(lo){}
+BuyNow::BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin):
+        lojasFisicas(lf), lojaOnline(lo), stockOk(stockOk), stockMin(stockMin){}
 
 
 /**
@@ -30,16 +32,16 @@ BuyNow::BuyNow(vector<LojaFisica> &lf, LojaOnline &lo): lojasFisicas(lf), lojaOn
  * @param lo LojaOnline
  * @param tranferencias vector with all Transferencias Between Fornecedores and buyNow
  */
-BuyNow::BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia *> tranferencias):
-        lojasFisicas(lf), lojaOnline(lo) {
-    this->transferencias = tranferencias;
-}
+BuyNow::BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia *> tranferencias, int stockOk, int stockMin):
+        lojasFisicas(lf), lojaOnline(lo), transferencias(tranferencias),stockOk(stockOk), stockMin(stockMin) {}
+
 /**
  * Adds a cliente to Clientes of BuyNow
  * @param cliente Cliente to add
  */
 void BuyNow::addCliente(Cliente *cliente) {
-    lojaOnline.addCliente(cliente);
+    if (find(clientes.begin(), clientes.end(), cliente) == clientes.end())
+        clientes.push_back(cliente);
 }
 
 /**
@@ -47,7 +49,8 @@ void BuyNow::addCliente(Cliente *cliente) {
  * @param cliente Cliente to be removed
  */
 void BuyNow::removeCliente(Cliente *cliente) {
-    lojaOnline.removeCliente(cliente);
+    vector<Cliente*>::iterator it = find(clientes.begin(), clientes.end(), cliente);
+    if (it != clientes.end()) clientes.erase(it);
 }
 
 /**
@@ -65,6 +68,47 @@ void BuyNow::addTransacao(Transacao *t) {
 void BuyNow::removeTransacao(Transacao *t) {
     lojaOnline.removeTransacao(t);
     //throw exception
+}
+
+/**
+ * Adds a lojaFisica to BuyNow
+ * @param lf LojaFisica to be added
+ */
+void BuyNow::addLojaFisica(LojaFisica &lf) {
+    if (find(lojasFisicas.begin(), lojasFisicas.end(), lf) == lojasFisicas.end())
+        lojasFisicas.push_back(lf);
+}
+
+/**
+ * Removes a Loja Fisica from BuyNow
+ * @param lf LojaFisica to be removed
+ */
+void BuyNow::removeLojaFisica(LojaFisica &lf) {
+    for (int i = 0; i < lojasFisicas.size(); i++){
+        if (lojasFisicas[i] == lf) {
+            lojasFisicas.erase(lojasFisicas.begin() + i);
+            return;
+        }
+    }
+    //throw excecao LojaFisica does not exist
+}
+
+/**
+ * Adds a Produto to LojaOnline
+ * @param p Produto
+ * @param quantidade Quantity of Produto
+ */
+void BuyNow::addProdutoOnline(Produto *p, int quantidade) {
+    lojaOnline.addProduto(p, quantidade);
+}
+
+/**
+ * Removes a Produto of LojaOnline
+ * @param p Produto
+ * @param quantidade Quantity of Produto
+ */
+void BuyNow::removeProdutoOnline(Produto *p, int quantidade) {
+    lojaOnline.removeProduto(p, quantidade);
 }
 
 /**
@@ -96,27 +140,6 @@ void BuyNow::setStockMin(unsigned int stockMin) {
     this->stockMin = stockMin;
 }
 
-/**
- * Adds a lojaFisica to BuyNow
- * @param lf LojaFisica to be added
- */
-void BuyNow::addLojaFisica(LojaFisica &lf) {
-    if (find(lojasFisicas.begin(), lojasFisicas.end(), lf) == lojasFisicas.end()) lojasFisicas.push_back(lf);
-}
-
-/**
- * Removes a Loja Fisica from BuyNow
- * @param lf LojaFisica to be removed
- */
-void BuyNow::removeLojaFisica(LojaFisica &lf) {
-    for (int i = 0; i < lojasFisicas.size(); i++){
-        if (lojasFisicas[i] == lf) {
-            lojasFisicas.erase(lojasFisicas.begin() + i);
-            return;
-        }
-    }
-    //throw excecao
-}
 
 /**
  * Adds a transferencia to vector of all transferencias of BuyNow
@@ -154,7 +177,7 @@ LojaOnline BuyNow::getLojaOnline() const { return lojaOnline;}
  * Get Clientes of BuyNow(stored in LojaOnline)
  * @return vector with clientes of BuyNow
  */
-vector<Cliente *> BuyNow::getClientes() const { return lojaOnline.getClientes(); }
+vector<Cliente *> BuyNow::getClientes() const { return clientes; }
 
 
 /**
@@ -176,7 +199,6 @@ vector<Transferencia *> BuyNow::getTransferencias() const { return transferencia
  * Caso n encontre nenhuma loja vai buscar ao Fornecedor
  */
 void BuyNow::reporStock() {
-    vector<Produto*> produtos = lojaOnline.getProdutos();
     for (auto i : produtos){
         if (lojaOnline.getStockOnline(i) < stockMin){
             int repor = stockMin - lojaOnline.getStockOnline(i);   //quantidade que temos de repor
@@ -201,29 +223,94 @@ void BuyNow::reporStock() {
     }
 }
 
-/**
+/*
  * Displays All Produtos Available in LojasFisicas
- */
 void BuyNow::showAllProdutosFisico() {
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
     cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << setfill(' ') << setw(15) << "Quantidade" << endl;
-    for (auto i : lojasFisicas){//percorrer lojas
-        vector<Produto*> produtos = i.getProdutos();
-        for (auto j : produtos) { //percorrer produtos de cada loja
-            cout << setfill(' ') << setw(15) << j->getNomeProduto() << setfill(' ') << setw(15) << j->getValor() << setfill(' ') << setw(15) << i.getStockFisico(j) << endl;
+    for (auto i : produtos){
+        for (auto j : lojasFisicas){
+            if (j.getStockFisico(i) > 0){
+                cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << setfill(' ') << setw(15) << lojaOnline.getStockOnline(i) << endl;
+            }
         }
     }
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
-}
+}*/
 
-/**
+/*
  * Displays All Produtos Available in LojaOnline, including price and quantity
- */
 void BuyNow::showAllProdutosOnline() {
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
     cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << setfill(' ') << setw(15) << "Quantidade" << endl;
-    for (auto i: lojaOnline.getProdutos()){
+    for (auto i: produtos){
         cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << setfill(' ') << setw(15) << lojaOnline.getStockOnline(i) << endl;
     }
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
+}*/
+
+/**
+ * Adds a Produto to BuyNow (Now they are selling this Produto)
+ * @param p Produto to be added
+ */
+void BuyNow::addProduto(Produto *p) {
+    if (find(produtos.begin(), produtos.end(), p) == produtos.end())
+        produtos.push_back(p);
+}
+
+/**
+ * Removes a Produto of BuyNow (Now they don't sell this Produto anymore)
+ * Goes to all LojasFisicas and delete the product from there
+ * Goes to LojaOnline and delete the product from there
+ * @param p Product to be removed
+ */
+void BuyNow::removeProduto(Produto *p) {
+    vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), p);
+    if (it != produtos.end()){
+        produtos.erase(it); //remove da loja
+        for (auto i : lojasFisicas){
+            i.removeProduto(p, i.getStockFisico(p)); //tira das lojas fisicas
+        }
+        lojaOnline.removeProduto(p, lojaOnline.getStockOnline(p)); //tira da loja Online
+    }
+}
+
+/**
+ * Adds a Produto to a specific LojaFisica
+ * @param lf LojaFisica that will get the Produto
+ * @param p Produto
+ * @param quantidade Quantity of Produto
+ */
+void BuyNow::addProdutoLojaFisica(LojaFisica &lf, Produto *p, int quantidade) {
+    for (auto i: lojasFisicas){
+        if (i == lf){
+            i.addProduto(p, quantidade);
+        }
+    }
+}
+
+/**
+ * Removes a Produto to a specific LojaFisica
+ * @param lf LojaFisica from which we want to remove the Produto
+ * @param p Produto
+ * @param quantidade Quantity of Produto
+ */
+void BuyNow::removeProdutoLojaFisica(LojaFisica &lf, Produto *p, int quantidade) {
+    for (auto i: lojasFisicas){
+        if (i == lf){
+            i.removeProduto(p, quantidade);
+        }
+    }
+}
+
+/**
+ * Displays all Produtos of BuyNow and each price
+ */
+void BuyNow::showProdutos() {
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+    cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << endl;
+    for (auto i : produtos){
+        cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
+    }
+
 }

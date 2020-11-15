@@ -9,10 +9,15 @@
 #include <vector>
 #include "Fornecedor.h"
 #include "Transferencia.h"
+#include "Categoria.h"
 using namespace std;
 
 class BuyNow {
 private:
+    vector<Produto *> produtos;
+    vector<Cliente *> clientes;
+    vector<Categoria> categorias;
+
     vector<LojaFisica> lojasFisicas;
     LojaOnline lojaOnline;
     Fornecedor fornecedor;
@@ -21,15 +26,21 @@ private:
     vector<Transferencia*> transferencias;  //entre Fornecedor e loja
 public:
     BuyNow();
-    BuyNow(vector<LojaFisica> &lf, LojaOnline &lo);
-    BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia*> tranferencias);
+    BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin);
+    BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia*> tranferencias, int stockOk, int stockMin);
     ~BuyNow();
     void addCliente(Cliente *cliente);
     void removeCliente(Cliente *cliente);
     void addTransacao(Transacao *t);
     void removeTransacao(Transacao *t);
+    void addProduto(Produto* p);
+    void removeProduto(Produto* p);
     void addLojaFisica(LojaFisica &lf);
     void removeLojaFisica(LojaFisica &lf);
+    void addProdutoLojaFisica(LojaFisica &lf, Produto* p, int quantidade = 1);
+    void removeProdutoLojaFisica(LojaFisica &lf, Produto* p, int quantidade = 1);
+    void addProdutoOnline(Produto* p, int quantidade = 1);
+    void removeProdutoOnline(Produto* p, int quantidade = 1);
     int getStockOk() const;
     int getStockMin() const;
     void setStockOk(unsigned int stockOk);
@@ -39,11 +50,13 @@ public:
     vector<LojaFisica> getLojasFisicas() const;
     vector<Cliente*> getClientes() const;
     LojaOnline getLojaOnline() const;
-    vector<Transacao*>getTransacoes() const;
-    vector<Transferencia*>getTransferencias() const;
+    vector<Transacao*> getTransacoes() const;
+    vector<Transferencia*> getTransferencias() const;
     void reporStock();
-    void showAllProdutosOnline();
-    void showAllProdutosFisico();
+    void showProdutos();
+
+    //void showAllProdutosOnline();
+    //void showAllProdutosFisico();
 };
 
 

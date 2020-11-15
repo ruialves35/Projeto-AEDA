@@ -9,9 +9,8 @@ Fornecedor::Fornecedor(): nomeFornecedor(""){}
 Fornecedor::Fornecedor(string nome): nomeFornecedor(nome){}
 
 /**
- * sets nome
+ * sets nome of Fornecedor
  */
-
 void Fornecedor::setNome(string nome){
     nomeFornecedor = nome;
 }
@@ -19,5 +18,4 @@ void Fornecedor::setNome(string nome){
 /**
  * @return nome nomeFornecedor
  */
-
 string Fornecedor::getNomeFornecedor() const {return nomeFornecedor; }

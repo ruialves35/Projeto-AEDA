@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "Categoria.h"
+
 using namespace std;
 
 class Produto{
@@ -12,9 +14,11 @@ private:
     //int stockFisico;
     //int stockOnline;
     double valor;
+    Categoria categoria;
+
 public:
     Produto();
-    Produto(string nome, int id, double val);
+    Produto(string nome, int id, double val, Categoria categoria);
     //int getStockFisico() const;
     //void setStockFisico(int stockFisico);
     //int getStockOnline() const;
@@ -23,8 +27,10 @@ public:
     void setId(int newId);
     string getNomeProduto() const;
     void setNomeProduto(string nome);
-    void setValor(double val);
     double getValor() const;
+    void setValor(double val);
+    Categoria getCategoria() const;
+    void setCategoria(Categoria &cat);
     friend bool operator < (const Produto &p1, const Produto &p2);
     friend bool operator == (const Produto &p1, const Produto &p2);
 };

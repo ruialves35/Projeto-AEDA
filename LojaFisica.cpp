@@ -6,30 +6,16 @@ using namespace std;
 /**
  * Default constructor, doesnt do anything
  */
-LojaFisica::LojaFisica(){ localidade = ""; }
+LojaFisica::LojaFisica(): localidade("") { }
 
 /**
- * Constructor with vector of Produto* already done
- * @param p vector of Produto*
+ * Constructor of LojaFisica
+ * @param localidade Location of LojaFisica
  */
-LojaFisica::LojaFisica(vector<Produto*> &p, string localidade) {
-    this->localidade = localidade;
-    produtos = p;
-    for (auto i : produtos){
-        if (stockFisico.find(i) == stockFisico.end() ) stockFisico[i] = 1;
-        else stockFisico[i]++;
-    }
-}
+LojaFisica::LojaFisica(string localidade): localidade(localidade) {}
 
-/**
- * Adds a quantity of a Produto to vector of Produto of the LojaFisica
- * @param produto Product that will be added to Loja Fisica
- * @param quantidade Quantity of the Produto
- */
 void LojaFisica::addProduto(Produto *produto, int quantidade) {
-    vector<Produto*>::iterator it = find(produtos.begin(), produtos.end(), produto);
-    if ( it == produtos.end()) {
-        produtos.push_back(produto);
+    if (stockFisico.find(produto) == stockFisico.end()){
         stockFisico[produto] = quantidade;
     }
     else{
@@ -37,37 +23,36 @@ void LojaFisica::addProduto(Produto *produto, int quantidade) {
     }
 }
 
-/*
- * Removes a Product from LojaFisica
- * @param produto Product to be removed
-
-void LojaFisica::removeProduto(Produto *produto) {
-    vector<Produto*>::iterator it =find(produtos.begin(), produtos.end(), produto);
-    if (it != produtos.end()){
-        produtos.erase(it);
-    }
-}
-*/
-
 /**
+ * Removes a Quantity of Produto of LojaFisica
+ * @param produto Produto to be removed
+ * @param quantidade Quantity of produto
+ */
+void LojaFisica::removeProduto(Produto *produto, int quantidade) {
+    if (stockFisico.find(produto) != stockFisico.end()){
+        if (stockFisico[produto] < quantidade) stockFisico[produto] = 0;
+        else stockFisico[produto] -= quantidade;
+    }
+    else stockFisico[produto] = 0;
+}
+
+/*
  * Removes a Product from vector of LojaFisica
  * @param produto Product to be removed
  * @param quantidade Quantity to be removed
- */
 void LojaFisica::removeProduto(Produto *produto, int quantidade) {
     vector<Produto*>::iterator it =find(produtos.begin(), produtos.end(), produto);
     if (it != produtos.end()){
         if (stockFisico[produto] < quantidade) produtos.erase(it);
         else stockFisico[produto] -= quantidade;
     }
-}
+}*/
 
-/**
+/*
  * @return vector of Pointers that points to Produtos of LojaFisica
- */
 vector<Produto *> LojaFisica::getProdutos() const {
     return produtos;
-}
+}*/
 
 /**
  * Gets the StockFisico of a Produto
@@ -75,29 +60,32 @@ vector<Produto *> LojaFisica::getProdutos() const {
  * @return 0 if there is no product, stock of Produto otherwise
  */
 int LojaFisica::getStockFisico(Produto *p) {
-    if (find(produtos.begin(), produtos.end(), p) != produtos.end()) return stockFisico[p];
+    if (stockFisico.find(p) != stockFisico.end()) return stockFisico[p];
     return 0;
 }
 
-/**
+/*
  * Sets produtos of LojaFisica
  * @param produtos Vector with Produtos of LojaFisica
- */
 void LojaFisica::setProdutos(vector<Produto *> produtos) {
     this->produtos = produtos;
-}
+}*/
 
-/**
+/*
  * Displays Produtos of LojaFisica
- */
 void LojaFisica::showProdutos() {
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
     cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << endl;
     for (auto i: produtos){
         cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
     }
-}
+}*/
 
+/**
+ * Operator == to compare 2 LojaFisica
+ * @param l2 Second LojaFisica to compare
+ * @return true if they are in the same location (there is just 1 LojaFisica for location)
+ */
 bool LojaFisica::operator==(const LojaFisica &l2) {
     return this->localidade == l2.localidade;
 }

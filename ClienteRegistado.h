@@ -12,7 +12,7 @@ private:
     string email;
 public:
     ClienteRegistado();
-    ClienteRegistado(string nome, int numContribuint, string email);
+    ClienteRegistado(string nome, int numContribuinte, string email);
     void setId(int id);
     int getId() const;
     string getEmail() const;

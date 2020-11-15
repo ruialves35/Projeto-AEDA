@@ -1,7 +1,3 @@
-//
-// Created by ruial on 24/10/2020.
-//
-
 #include "Cliente.h"
 #include <iostream>
 
@@ -57,7 +53,7 @@ void Cliente::setNumContribuinte(int numContribuinte){
  * Compare 2 clientes and checks if they are the same client
  * @param c1 first client to compare
  * @param c2 second client to compare
- * @return true if they are the same, false otherwise
+ * @return true if they are the same (same name and numContribuinte), false otherwise
  */
 bool operator == (Cliente &c1, Cliente &c2){
     if (c1.numContribuinteCliente == c2.numContribuinteCliente && c1.nomeCliente == c2.nomeCliente){
@@ -75,9 +71,9 @@ string Cliente::getInfo() const {
 /**
  * Overloading operator << to get to a ostream the information of a Client.
  * This information is his Name and Numero de Contribuinte
- * @param o
- * @param c1
- * @return
+ * @param o ostream with information of Cliente
+ * @param c1 Cliente that we want to get information
+ * @return ostream with information
  */
 ostream& operator << (ostream& o, Cliente &c1){
     o << c1.getInfo() << endl;

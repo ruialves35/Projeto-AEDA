@@ -17,8 +17,8 @@ ClienteRegistado::ClienteRegistado(): Cliente(), id(1), email("") {
  * @param numContribuinte numero de contribuinte of Cliente
  * @param email email of Cliente
  */
-ClienteRegistado::ClienteRegistado(string nome, int numContribuinte, string email): Cliente(nome, numContribuinte),
-                                                                                    email(email){
+ClienteRegistado::ClienteRegistado(string nome, int numContribuinte, string email):
+        Cliente(nome, numContribuinte), email(email){
     numeroClientesRegistados++;
     id = numeroClientesRegistados;
 }
@@ -37,17 +37,13 @@ int ClienteRegistado::getId() const {return id;}
 /**
  * @return number of ClientesRegistados of online shop
  */
-int ClienteRegistado::getNumeroClientesRegistados() const {
-    return numeroClientesRegistados;
-}
+int ClienteRegistado::getNumeroClientesRegistados() const {return numeroClientesRegistados;}
 
 /**
  * Sets number of ClientesRegsitados of Online Shop
  * @param ncr new number of ClientesRegistados
  */
-void ClienteRegistado::setNumeroClientesRegistados(int ncr) {
-    numeroClientesRegistados = ncr;
-}
+void ClienteRegistado::setNumeroClientesRegistados(int ncr) { numeroClientesRegistados = ncr;}
 
 /**
  * @return email of ClienteRegistado
@@ -58,9 +54,7 @@ string ClienteRegistado::getEmail() const {return email;}
  * Sets email of ClienteRegistado
  * @param email new email
  */
-void ClienteRegistado::setEmail(string email) {
-    this->email= email;
-}
+void ClienteRegistado::setEmail(string email) { this->email= email;}
 
 /**
  * Gets the information of a ClienteRegistado (nome, numero contribuinte, id, email)

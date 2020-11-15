@@ -14,8 +14,8 @@ public:
     string getNome() const;
     void setNome(string nome);
     int getNumContribuinte() const;
-    virtual string getInfo() const;
     void setNumContribuinte(int numContribuinte);
+    virtual string getInfo() const;
     friend bool operator == (Cliente& c1, Cliente& c2);
     friend ostream& operator << (ostream &o, Cliente &c1);
 };

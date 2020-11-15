@@ -13,6 +13,7 @@ public:
     Categoria(string nome);
     string getNomeCategoria() const;
     void setNome(string nome);
+    bool operator == (Categoria &c2);
 };
 
 
