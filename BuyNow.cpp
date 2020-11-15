@@ -308,9 +308,10 @@ void BuyNow::removeProdutoLojaFisica(LojaFisica &lf, Produto *p, int quantidade)
  * @param c Categoria to be added
  */
 void BuyNow::addCategoria(Categoria &c) {
-    vector<Categoria>::iterator it = find(categorias.begin(), categorias.end(), c);
-    if (it == categorias.end())
-        categorias.push_back(c);
+    for (auto i : categorias){
+        if (i.getNomeCategoria() == c.getNomeCategoria()) return;
+    }
+    categorias.push_back(c);
 }
 
 /**
@@ -326,6 +327,18 @@ bool BuyNow::checkCliente(Cliente &cliente) {
 }
 
 /**
+ * Gets Fornecedor of BuyNow
+ * @return Fornecedor
+ */
+Fornecedor BuyNow::getFornecedor() const{ return fornecedor; }
+
+/**
+ * Sets fornecedor of Buy Now
+ * @param f Fornecedor
+ */
+void BuyNow::setFornecedor(Fornecedor &f) { fornecedor = f; }
+
+/**
  * Shows Transacoes of LojaOnline of BuyNow
  */
 void BuyNow::showTransacoes() {
@@ -337,9 +350,11 @@ void BuyNow::showTransacoes() {
  * @param c Categoria
  */
 void BuyNow::removeCategoria(Categoria &c) {
-    vector<Categoria>::iterator it = find(categorias.begin(), categorias.end(), c);
-    if (it != categorias.end())
-        categorias.erase(it);
+    vector<Categoria>::iterator it;
+    for (it = categorias.begin(); it != categorias.end(); it++){
+        if (it->getNomeCategoria() == c.getNomeCategoria())
+            categorias.erase(it);
+    }
 }
 /**
  * Shows Produto of a Categoria

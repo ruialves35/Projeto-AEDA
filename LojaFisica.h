@@ -12,17 +12,18 @@ private:
     string localidade;
     map<Produto*, int> stockFisico;
     //vector<Produto*> produtos;
+
 public:
     LojaFisica();
     LojaFisica(string localidade); //mudar
     void addProduto(Produto* produto, int quantidade = 1);
     void removeProduto(Produto *produto, int quantidade = 1);
     int getStockFisico(Produto *p);
+    bool operator == (const LojaFisica &l2);
 
     //vector<Produto*> getProdutos() const;
     //void setProdutos(vector <Produto*> produtos);
     //void showProdutos();
-    bool operator == (const LojaFisica &l2);
 };
 
 
