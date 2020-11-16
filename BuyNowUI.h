@@ -11,8 +11,8 @@ public:
     void UI();
     void Cliente();
     void Administrador();
-    void guardarCategorias();
-    void guardarProdutos();
+    void lerCategorias();
+    void lerProdutos();
 };
 
 

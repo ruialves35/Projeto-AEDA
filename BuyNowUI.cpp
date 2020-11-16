@@ -11,7 +11,8 @@ void Cliente();
 using namespace std;
 
 BuyNowUI::BuyNowUI() {
-    guardarCategorias();
+    lerCategorias();
+    lerProdutos();
     UI();
 }
 
@@ -92,6 +93,8 @@ void BuyNowUI::Cliente() {
 
     if(result==1){
 
+
+
     }
 
     if(result==2){
@@ -101,6 +104,8 @@ void BuyNowUI::Cliente() {
     }
 
     if(result==3){
+
+        
 
     }
 
@@ -139,9 +144,11 @@ void BuyNowUI::Administrador() {
     if(result==2){
         bn.showTransacoes();
     }
+
+
 }
 
-void BuyNowUI::guardarCategorias() {
+void BuyNowUI::lerCategorias() {
 
     ifstream fin;
     string categoria,line;
@@ -156,24 +163,24 @@ void BuyNowUI::guardarCategorias() {
         getline(fin,line);
         istringstream format1line(line);
         format1line >> categoria;
-        Categoria *cat = new Categoria(categoria);
-        bn.addCategoria(*cat);
+        Categoria cat(categoria);
+        bn.addCategoria(cat);
     }
 
     cout << "lidas as categorias" << endl;
 
-    //PRECISO DE UM SHOWCATEGORIAS NA BUYNOW PARA VERIFICAR SE ISTO ESTA CERTO
+    bn.showCategorias();
 
 }
 
-void BuyNowUI::guardarProdutos() {
+void BuyNowUI::lerProdutos() {
 
     ifstream fin;
     string stringProduto, stringCategoria, line;
     int codigo;
     double preco;
 
-    fin.open("C:\\Users\\Sara\\Desktop\\AEDATreino\\Categorias.txt");
+    fin.open("C:\\Users\\Sara\\Desktop\\AEDATreino\\Produtos.txt");
     if(!fin.is_open()){
         cerr << "Ficheiro dos produtos nao encontrado\n";
         exit(1);
@@ -200,11 +207,16 @@ void BuyNowUI::guardarProdutos() {
 
         //PRECISO DE UM GETCATEGORIA NA BUYNOW
 
-        //Produto *prod = new Produto();
-        //bn.addCategoria(*prod);
+        Categoria cat = bn.getCategoria(stringCategoria);
+
+        Produto *prod = new Produto(stringProduto,codigo,preco,cat);
+        bn.addProduto(prod);
+
     }
 
     cout << "lidos os produtos" << endl;
+
+    bn.showProdutos();
 
 }
 
