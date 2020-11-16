@@ -57,10 +57,13 @@ public:
     LojaOnline getLojaOnline() const;
     vector<Transacao*> getTransacoes() const;
     vector<Transferencia*> getTransferencias() const;
+    Categoria getCategoria(string categoria) const;
     void reporStock();
     void showTransacoes();
     void showProdutos();
-    void showProdutosCategoria(Categoria &c);
+    void showProdutosCategoria(string categoria);
+    void showCategorias();
+
 
     //void showAllProdutosOnline();
     //void showAllProdutosFisico();

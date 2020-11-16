@@ -67,10 +67,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Sara\Desktop\AEDATreino
+CMAKE_SOURCE_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Sara\Desktop\AEDATreino\cmake-build-debug
+CMAKE_BINARY_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Desktop\AEDATreino\cmake-build-debug\CMakeFiles C:\Users\Sara\Desktop\AEDATreino\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles" "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Desktop\AEDATreino\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -141,6 +141,19 @@ Projeto: cmake_check_build_system
 Projeto/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/build
 .PHONY : Projeto/fast
+
+#=============================================================================
+# Target rules for targets named Doxygen
+
+# Build rule for target.
+Doxygen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Doxygen
+.PHONY : Doxygen
+
+# fast build rule for target.
+Doxygen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Doxygen.dir\build.make CMakeFiles/Doxygen.dir/build
+.PHONY : Doxygen/fast
 
 BuyNow.obj: BuyNow.cpp.obj
 
@@ -609,6 +622,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Doxygen
 	@echo ... Projeto
 	@echo ... BuyNow.obj
 	@echo ... BuyNow.i

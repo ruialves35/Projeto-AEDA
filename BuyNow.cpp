@@ -192,6 +192,18 @@ vector<Transacao *> BuyNow::getTransacoes() const { return lojaOnline.getTransac
  */
 vector<Transferencia *> BuyNow::getTransferencias() const { return transferencias;}
 
+
+/**
+ * Shows categorias available in BuyNow
+ */
+void BuyNow::showCategorias() {
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+    cout << setfill(' ') << setw(15) << "Categoria" << endl;
+    for (auto i : categorias){
+        cout << setfill(' ') << setw(15) << i.getNomeCategoria() << endl;
+    }
+}
+
 /**
  * Repoe o stock de todos os produtos da lojaOnline
  * Procura nas lojas fisicas e retira da lojaFisica com maior stock, caso esta continue a ter um stock
@@ -358,13 +370,13 @@ void BuyNow::removeCategoria(Categoria &c) {
 }
 /**
  * Shows Produto of a Categoria
- * @param cat Categoria to show produto
+ * @param categoria string with name of Categoria of which we want to show Produtos
  */
-void BuyNow::showProdutosCategoria(Categoria &c) {
+void BuyNow::showProdutosCategoria(string categoira) {
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
     cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << endl;
     for (auto i: produtos){
-        if (i->getCategoria() == c){
+        if (i->getCategoria().getNomeCategoria() == categoira){
             cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
         }
     }
