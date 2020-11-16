@@ -11,7 +11,10 @@ void Cliente();
 using namespace std;
 
 BuyNowUI::BuyNowUI() {
-    guardarCategorias();
+    lerCategorias();
+    lerProdutos();
+    lerProdutosLojaOnline();
+    lerProdutosLojaFisica();
     UI();
 }
 
@@ -92,6 +95,8 @@ void BuyNowUI::Cliente() {
 
     if(result==1){
 
+
+
     }
 
     if(result==2){
@@ -101,6 +106,8 @@ void BuyNowUI::Cliente() {
     }
 
     if(result==3){
+
+        
 
     }
 
@@ -139,14 +146,16 @@ void BuyNowUI::Administrador() {
     if(result==2){
         bn.showTransacoes();
     }
+
+
 }
 
-void BuyNowUI::guardarCategorias() {
+void BuyNowUI::lerCategorias() {
 
     ifstream fin;
     string categoria,line;
 
-    fin.open("C:\\Users\\Sara\\Desktop\\AEDATreino\\Categorias.txt");
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Categorias.txt)");
     if(!fin.is_open()){
         cerr << "Ficheiro das categorias nao encontrado\n";
         exit(1);
@@ -156,24 +165,24 @@ void BuyNowUI::guardarCategorias() {
         getline(fin,line);
         istringstream format1line(line);
         format1line >> categoria;
-        Categoria *cat = new Categoria(categoria);
-        bn.addCategoria(*cat);
+        Categoria cat(categoria);
+        bn.addCategoria(cat);
     }
 
     cout << "lidas as categorias" << endl;
 
-    //PRECISO DE UM SHOWCATEGORIAS NA BUYNOW PARA VERIFICAR SE ISTO ESTA CERTO
+    bn.showCategorias();
 
 }
 
-void BuyNowUI::guardarProdutos() {
+void BuyNowUI::lerProdutos() {
 
     ifstream fin;
     string stringProduto, stringCategoria, line;
     int codigo;
     double preco;
 
-    fin.open("C:\\Users\\Sara\\Desktop\\AEDATreino\\Categorias.txt");
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Produtos.txt)");
     if(!fin.is_open()){
         cerr << "Ficheiro dos produtos nao encontrado\n";
         exit(1);
@@ -200,11 +209,100 @@ void BuyNowUI::guardarProdutos() {
 
         //PRECISO DE UM GETCATEGORIA NA BUYNOW
 
-        //Produto *prod = new Produto();
-        //bn.addCategoria(*prod);
+        Categoria cat = bn.getCategoria(stringCategoria);
+
+        Produto *prod = new Produto(stringProduto,codigo,preco,cat);
+        bn.addProduto(prod);
+
     }
 
     cout << "lidos os produtos" << endl;
+
+    bn.showProdutos();
+
+}
+
+void BuyNowUI::lerProdutosLojaOnline() {
+
+    ifstream fin;
+    string line;
+    int codigo,quantidade;
+
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Online.txt)");
+    if(!fin.is_open()){
+        cerr << "Ficheiro dos produtos online nao encontrado\n";
+        exit(1);
+    }
+
+    while(!fin.eof()){
+
+        getline(fin,line);
+        istringstream format1line(line);
+        format1line >> codigo;
+
+        getline(fin,line);
+        istringstream format2line(line);
+        format2line >> quantidade;
+
+        //PRECISO DE UM GETPRODUTO QUE ME RETORNE O PRODUTO DA BUYNOW COLOCANDO O CODIGO
+
+        /*Produto prod;
+        prod = bn.getProduto(codigo);
+        bn.getLojaOnline().addProduto(*prod,quantidade);*/
+
+    }
+
+}
+
+void BuyNowUI::lerProdutosLojaFisica() {
+
+    //criar 3 lojas: porto, lisboa e braga
+    string stringPorto = "porto";
+    string stringLisboa = "lisboa";
+    string stringBraga = "braga";
+    LojaFisica lojaPorto(stringPorto);
+    LojaFisica lojaLisboa(stringLisboa);
+    LojaFisica lojaBraga(stringBraga);
+    bn.addLojaFisica(lojaPorto);
+    bn.addLojaFisica(lojaLisboa);
+    bn.addLojaFisica(lojaBraga);
+
+    //ler os produtos e adiciona-los as respetivas lojas
+    ifstream fin;
+    string line,localidadeLoja;
+    int codigo,quantidade;
+
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Fisica.txt)");
+    if(!fin.is_open()){
+        cerr << "Ficheiro dos produtos online nao encontrado\n";
+        exit(1);
+    }
+
+    while(!fin.eof()){
+
+        getline(fin,line);
+        istringstream format1line(line);
+        format1line >> localidadeLoja;
+
+        getline(fin,line);
+        istringstream format2line(line);
+        format2line >> codigo;
+
+        getline(fin,line);
+        istringstream format3line(line);
+        format2line >> quantidade;
+
+        //PRECISO DE UM GETLOJAFISICA QUE ME DE A LOJA INTRODUZINDO A STRING DO NOME DA MESMA
+        /*LojaFisica loja;
+        loja = bn.getLojaFisica(localidadeLoja);
+
+        Produto prod;
+        prod = bn.getProduto(codigo);
+
+        loja.addProduto(prod,quantidade);*/
+
+    }
+
 
 }
 
