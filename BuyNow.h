@@ -12,6 +12,21 @@
 #include "Categoria.h"
 using namespace std;
 
+/**
+ * Exception Categoria Does Not Exist, on getCategoria of BuyNow
+ */
+class CategoriaDoesNotExist{
+public:
+    string nome;
+    CategoriaDoesNotExist(string name){ nome = name; }
+};
+
+template <class N>
+std::ostream& operator<<(std::ostream &out, const CategoriaDoesNotExist cat){
+    out << "Categoria does not exist: " << cat.nome << endl;
+    return out;
+}
+//-----------------------------------------------------------------------
 class BuyNow {
 private:
     vector<Produto *> produtos;

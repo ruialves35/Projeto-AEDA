@@ -384,6 +384,19 @@ void BuyNow::showProdutosCategoria(string categoira) {
 }
 
 /**
+ * Gets Categoria with name categoria.
+ * If Categoria does not exist in BuyNow, throw error
+ * @param categoria Categoria to show
+ * @return Categoria
+ */
+Categoria BuyNow::getCategoria(string categoria) const {
+    for (auto i: categorias){
+        if (i.getNomeCategoria() == categoria) return i;
+    }
+    throw CategoriaDoesNotExist(categoria);
+}
+
+/**
  * Displays all Produtos of BuyNow and each price
  */
 void BuyNow::showProdutos() {
