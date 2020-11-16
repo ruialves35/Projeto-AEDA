@@ -225,6 +225,8 @@ void BuyNow::reporStock() {
             if (lojasFisicas[idxLojaMaiorStock].getStockFisico(i) - repor > stockOk){   //a loja tem stockSuficiente
                 lojasFisicas[idxLojaMaiorStock].removeProduto(i, repor);    //retirar da lojaFisica
                 lojaOnline.addProduto(i, repor);    //adicionar na lojaOnline
+                Reposicao reposicao(lojasFisicas[idxLojaMaiorStock], i, repor);
+                reposicoes.push_back(reposicao);
             }
             else{//nao encontrou nenhuma loja com stock Suficiente, buscar ao fornecedor
                 Transferencia* t = new Transferencia (fornecedor, i, repor); //fornecedor, produto, quantidade

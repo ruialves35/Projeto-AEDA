@@ -10,6 +10,7 @@
 #include "Fornecedor.h"
 #include "Transferencia.h"
 #include "Categoria.h"
+#include "Reposicao.h"
 using namespace std;
 
 /**
@@ -32,6 +33,7 @@ private:
     vector<Produto *> produtos;
     vector<Cliente *> clientes;
     vector<Categoria> categorias;
+    vector<Reposicao> reposicoes;
 
     vector<LojaFisica> lojasFisicas;
     LojaOnline lojaOnline;
