@@ -20,6 +20,7 @@ public:
     int getQuantidade() const;
     Date getData() const;
     void setData(Date &data);
+    string getInfo() const;
 };
 
 
