@@ -13,6 +13,8 @@ using namespace std;
 BuyNowUI::BuyNowUI() {
     lerCategorias();
     lerProdutos();
+    lerProdutosLojaOnline();
+    lerProdutosLojaFisica();
     UI();
 }
 
@@ -153,7 +155,7 @@ void BuyNowUI::lerCategorias() {
     ifstream fin;
     string categoria,line;
 
-    fin.open("C:\\Users\\Sara\\Desktop\\AEDATreino\\Categorias.txt");
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Categorias.txt)");
     if(!fin.is_open()){
         cerr << "Ficheiro das categorias nao encontrado\n";
         exit(1);
@@ -180,7 +182,7 @@ void BuyNowUI::lerProdutos() {
     int codigo;
     double preco;
 
-    fin.open("C:\\Users\\Sara\\Desktop\\AEDATreino\\Produtos.txt");
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Produtos.txt)");
     if(!fin.is_open()){
         cerr << "Ficheiro dos produtos nao encontrado\n";
         exit(1);
@@ -217,6 +219,90 @@ void BuyNowUI::lerProdutos() {
     cout << "lidos os produtos" << endl;
 
     bn.showProdutos();
+
+}
+
+void BuyNowUI::lerProdutosLojaOnline() {
+
+    ifstream fin;
+    string line;
+    int codigo,quantidade;
+
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Online.txt)");
+    if(!fin.is_open()){
+        cerr << "Ficheiro dos produtos online nao encontrado\n";
+        exit(1);
+    }
+
+    while(!fin.eof()){
+
+        getline(fin,line);
+        istringstream format1line(line);
+        format1line >> codigo;
+
+        getline(fin,line);
+        istringstream format2line(line);
+        format2line >> quantidade;
+
+        //PRECISO DE UM GETPRODUTO QUE ME RETORNE O PRODUTO DA BUYNOW COLOCANDO O CODIGO
+
+        /*Produto prod;
+        prod = bn.getProduto(codigo);
+        bn.getLojaOnline().addProduto(*prod,quantidade);*/
+
+    }
+
+}
+
+void BuyNowUI::lerProdutosLojaFisica() {
+
+    //criar 3 lojas: porto, lisboa e braga
+    string stringPorto = "porto";
+    string stringLisboa = "lisboa";
+    string stringBraga = "braga";
+    LojaFisica lojaPorto(stringPorto);
+    LojaFisica lojaLisboa(stringLisboa);
+    LojaFisica lojaBraga(stringBraga);
+    bn.addLojaFisica(lojaPorto);
+    bn.addLojaFisica(lojaLisboa);
+    bn.addLojaFisica(lojaBraga);
+
+    //ler os produtos e adiciona-los as respetivas lojas
+    ifstream fin;
+    string line,localidadeLoja;
+    int codigo,quantidade;
+
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Fisica.txt)");
+    if(!fin.is_open()){
+        cerr << "Ficheiro dos produtos online nao encontrado\n";
+        exit(1);
+    }
+
+    while(!fin.eof()){
+
+        getline(fin,line);
+        istringstream format1line(line);
+        format1line >> localidadeLoja;
+
+        getline(fin,line);
+        istringstream format2line(line);
+        format2line >> codigo;
+
+        getline(fin,line);
+        istringstream format3line(line);
+        format2line >> quantidade;
+
+        //PRECISO DE UM GETLOJAFISICA QUE ME DE A LOJA INTRODUZINDO A STRING DO NOME DA MESMA
+        /*LojaFisica loja;
+        loja = bn.getLojaFisica(localidadeLoja);
+
+        Produto prod;
+        prod = bn.getProduto(codigo);
+
+        loja.addProduto(prod,quantidade);*/
+
+    }
+
 
 }
 

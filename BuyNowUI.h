@@ -13,6 +13,9 @@ public:
     void Administrador();
     void lerCategorias();
     void lerProdutos();
+    void lerProdutosLojaOnline();
+    void lerProdutosLojaFisica();
+
 };
 
 
