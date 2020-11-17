@@ -215,6 +215,12 @@ void BuyNow::addReposicao(Reposicao &reposicao) {
 }
 
 /**
+ * Gets Produtos Of BuyNow
+ * @return vector with Produtos
+ */
+vector<Produto *> BuyNow::getProdutos() const { return produtos; }
+
+/**
  * Gets a Produto of BuyNow.
  * In case the Produto does not exist in BuyNow throws an error
  * @param codigo Id Of produto

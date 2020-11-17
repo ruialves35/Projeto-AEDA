@@ -71,6 +71,7 @@ public:
     void addProduto(Produto* p);
     void removeProduto(Produto* p);
     Produto* getProduto(int codigo) const;
+    vector<Produto*> getProdutos() const;
     void addReposicao(Reposicao &reposicao);
     void addLojaFisica(LojaFisica &lf);
     void removeLojaFisica(LojaFisica &lf);
