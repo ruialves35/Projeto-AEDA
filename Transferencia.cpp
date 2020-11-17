@@ -15,13 +15,25 @@ Transferencia::Transferencia() {}
  * @param p Produto that BuyNow bought to Fornecedor
  * @param quantidade quantity of Produto
  */
-Transferencia::Transferencia(Fornecedor &f, Produto *p, int quantidade): fornecedor(f), produto(p), quantidade(quantidade) {}
+Transferencia::Transferencia(Fornecedor &f, Produto *p, int quantidade, Date data):
+fornecedor(f), produto(p), quantidade(quantidade), data(data) {}
 
 /**
  * Gets the fornecedor
  * @return Fornecedor
  */
 Fornecedor Transferencia::getFornecedor() const { return fornecedor;}
+
+/**
+ * @return Date of Transferencia
+ */
+Date Transferencia::getData() const { return data; }
+
+/**
+ * Sets Date of Transferencia
+ * @param data new Date
+ */
+void Transferencia::setData(Date &data) { this->data = data;}
 
 /**
  * Sets the Fornecedor

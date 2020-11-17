@@ -57,6 +57,8 @@ public:
     void removeTransacao(Transacao *t);
     void addProduto(Produto* p);
     void removeProduto(Produto* p);
+    Produto* getProduto(int codigo) const;
+    void addReposicao(Reposicao reposicao);
     void addLojaFisica(LojaFisica &lf);
     void removeLojaFisica(LojaFisica &lf);
     void addProdutoLojaFisica(LojaFisica &lf, Produto* p, int quantidade = 1);
