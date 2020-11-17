@@ -2,6 +2,7 @@
 #define AEDA_BUYNOW_H
 
 #include <iostream>
+#include <Windows.h>
 #include "LojaFisica.h"
 #include "LojaOnline.h"
 #include "Cliente.h"
@@ -13,6 +14,18 @@
 #include "Reposicao.h"
 using namespace std;
 
+class ProdutoDoesNotExist{
+public:
+    int codigo;
+    ProdutoDoesNotExist(int codigo){ this->codigo = codigo;}
+};
+
+std::ostream& operator<<(std::ostream &out, const ProdutoDoesNotExist prod){
+    out << "O Produto com o codigo " << prod.codigo << "nao existe." << endl;
+    Sleep(600);
+    return out;
+}
+
 /**
  * Exception Categoria Does Not Exist, on getCategoria of BuyNow
  */
@@ -22,9 +35,9 @@ public:
     CategoriaDoesNotExist(string name){ nome = name; }
 };
 
-template <class N>
 std::ostream& operator<<(std::ostream &out, const CategoriaDoesNotExist cat){
-    out << "Categoria does not exist: " << cat.nome << endl;
+    out << "A categoria " << cat.nome << " nao existe." << endl;
+    Sleep(600);
     return out;
 }
 //-----------------------------------------------------------------------
@@ -58,7 +71,7 @@ public:
     void addProduto(Produto* p);
     void removeProduto(Produto* p);
     Produto* getProduto(int codigo) const;
-    void addReposicao(Reposicao reposicao);
+    void addReposicao(Reposicao &reposicao);
     void addLojaFisica(LojaFisica &lf);
     void removeLojaFisica(LojaFisica &lf);
     void addProdutoLojaFisica(LojaFisica &lf, Produto* p, int quantidade = 1);

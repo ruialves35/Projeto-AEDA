@@ -206,6 +206,28 @@ void BuyNow::showCategorias() {
 }
 
 /**
+ * Adds a Reposicao if is not already in vector of Reposicoes
+ * @param reposicao to be added
+ */
+void BuyNow::addReposicao(Reposicao &reposicao) {
+    if (find(reposicoes.begin(), reposicoes.end(), reposicao) != reposicoes.end())
+        reposicoes.push_back(reposicao);
+}
+
+/**
+ * Gets a Produto of BuyNow.
+ * In case the Produto does not exist in BuyNow throws an error
+ * @param codigo Id Of produto
+ * @return Produto
+ */
+Produto * BuyNow::getProduto(int codigo) const {
+    for (auto i : produtos){
+        if (i->getId() == codigo)
+            return i;
+    }
+    throw ProdutoDoesNotExist(codigo);
+}
+/**
  * Repoe o stock de todos os produtos da lojaOnline
  * Procura nas lojas fisicas e retira da lojaFisica com maior stock, caso esta continue a ter um stock
  * do produto > do que stockOK
