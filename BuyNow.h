@@ -91,6 +91,7 @@ public:
     LojaOnline getLojaOnline() const;
     vector<Transacao*> getTransacoes() const;
     vector<Transferencia*> getTransferencias() const;
+    vector<Reposicao> getReposicoes() const;
     Categoria getCategoria(string categoria) const;
     vector<Categoria> getCategorias() const;
     void reporStock();
