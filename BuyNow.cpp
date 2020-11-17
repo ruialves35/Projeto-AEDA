@@ -193,6 +193,10 @@ vector<Transacao *> BuyNow::getTransacoes() const { return lojaOnline.getTransac
  */
 vector<Transferencia *> BuyNow::getTransferencias() const { return transferencias;}
 
+/**
+ * @return vector with all categorias of BuyNow
+ */
+vector<Categoria> BuyNow::getCategorias() const { return categorias;}
 
 /**
  * Shows categorias available in BuyNow
