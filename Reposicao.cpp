@@ -13,13 +13,25 @@ Reposicao::Reposicao() {}
  * @param p Produto of Reposicao
  * @param quantidade Quantity of Produto
  */
-Reposicao::Reposicao(LojaFisica lf, Produto *p, int quantidade): lojaFisica(lf), produto(p), quantidade(quantidade) {}
+Reposicao::Reposicao(LojaFisica lf, Produto *p, int quantidade, Date data):
+lojaFisica(lf), produto(p), quantidade(quantidade), data(data) {}
 
 /**
  * Sets Produto of Reposicao
  * @param p new Produto
  */
 void Reposicao::setProduto(Produto *p) { this->produto = p; }
+
+/**
+ * @return Date of Transferencia
+ */
+Date Reposicao::getData() const { return data; }
+
+/**
+ * Sets Date of Transferencia
+ * @param data new Date
+ */
+void Reposicao::setData(Date &data) { this->data = data;}
 
 /**
  * Gets Produto of Reposicao

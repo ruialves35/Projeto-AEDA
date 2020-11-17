@@ -1,5 +1,6 @@
 #include "BuyNow.h"
 #include <iomanip>
+#include <time.h>   //Get current Date
 
 /**
  * Default constructor
@@ -225,11 +226,25 @@ void BuyNow::reporStock() {
             if (lojasFisicas[idxLojaMaiorStock].getStockFisico(i) - repor > stockOk){   //a loja tem stockSuficiente
                 lojasFisicas[idxLojaMaiorStock].removeProduto(i, repor);    //retirar da lojaFisica
                 lojaOnline.addProduto(i, repor);    //adicionar na lojaOnline
-                Reposicao reposicao(lojasFisicas[idxLojaMaiorStock], i, repor);
+                time_t theTime = time(NULL);
+                struct tm *aTime = localtime(&theTime);
+
+                int day = aTime->tm_mday;
+                int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
+                int year = aTime->tm_year + 1900; // Year is # years since 1900
+                Date data(day, month, year);
+                Reposicao reposicao(lojasFisicas[idxLojaMaiorStock], i, repor, data);
                 reposicoes.push_back(reposicao);
             }
             else{//nao encontrou nenhuma loja com stock Suficiente, buscar ao fornecedor
-                Transferencia* t = new Transferencia (fornecedor, i, repor); //fornecedor, produto, quantidade
+                time_t theTime = time(NULL);
+                struct tm *aTime = localtime(&theTime);
+
+                int day = aTime->tm_mday;
+                int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
+                int year = aTime->tm_year + 1900; // Year is # years since 1900
+                Date data(day, month, year);
+                Transferencia* t = new Transferencia (fornecedor, i, repor, data); //fornecedor, produto, quantidade
                 lojaOnline.addProduto(i, repor);
                 transferencias.push_back(t);
             }

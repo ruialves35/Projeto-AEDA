@@ -15,7 +15,7 @@ private:
 
 public:
     LojaFisica();
-    LojaFisica(string localidade); //mudar
+    LojaFisica(string localidade);
     void addProduto(Produto* produto, int quantidade = 1);
     void removeProduto(Produto *produto, int quantidade = 1);
     int getStockFisico(Produto *p);
