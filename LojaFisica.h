@@ -19,6 +19,8 @@ public:
     void addProduto(Produto* produto, int quantidade = 1);
     void removeProduto(Produto *produto, int quantidade = 1);
     int getStockFisico(Produto *p);
+    void setLocalidade(string localidade);
+    string getLocalidade() const;
     bool operator == (const LojaFisica &l2);
 
     //vector<Produto*> getProdutos() const;

@@ -64,6 +64,19 @@ int LojaFisica::getStockFisico(Produto *p) {
     return 0;
 }
 
+/**
+ * Sets localidade of LojaFisica
+ * @param localidade new Localidade
+ */
+void LojaFisica::setLocalidade(string localidade) { this -> localidade = localidade; }
+
+/**
+ * Gets localidade of Loja fisica
+ * @return string with localidade
+ */
+string LojaFisica::getLocalidade() const { return localidade;}
+
+
 /*
  * Sets produtos of LojaFisica
  * @param produtos Vector with Produtos of LojaFisica

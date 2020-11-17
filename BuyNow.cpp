@@ -304,6 +304,19 @@ void BuyNow::addProdutoLojaFisica(LojaFisica &lf, Produto *p, int quantidade) {
 }
 
 /**
+ * Adds a Produto to LojaFisica
+ * @param localidade localidade of LojaFisica
+ * @param p Produto to be added
+ * @param quantidade Quantity of Produto
+ */
+void BuyNow::addProdutoLojaFisica(string localidade, Produto *p, int quantidade) {
+    for (auto i : lojasFisicas ){
+        if (i.getLocalidade() == localidade)
+            i.addProduto(p, quantidade);
+    }
+}
+
+/**
  * Removes a Produto to a specific LojaFisica
  * @param lf LojaFisica from which we want to remove the Produto
  * @param p Produto

@@ -60,6 +60,7 @@ public:
     void addLojaFisica(LojaFisica &lf);
     void removeLojaFisica(LojaFisica &lf);
     void addProdutoLojaFisica(LojaFisica &lf, Produto* p, int quantidade = 1);
+    void addProdutoLojaFisica(string localidade, Produto* p, int quantidade = 1);
     void removeProdutoLojaFisica(LojaFisica &lf, Produto* p, int quantidade = 1);
     void addProdutoOnline(Produto* p, int quantidade = 1);
     void removeProdutoOnline(Produto* p, int quantidade = 1);
