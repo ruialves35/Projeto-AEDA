@@ -409,15 +409,3 @@ void BuyNow::showProdutos() {
     }
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
 }
-
-vector<Categorias> BuyNow::getCategorias() const{
-    return categorias;
-}
-
-vector<Produtos> BuyNow::getProdutos() const{
-    return produtos;
-}
-
-void BuyNow::setLojaOnline(LojaOnline loja){
-    lojaOnline=loja;
-}

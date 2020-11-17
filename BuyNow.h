@@ -5,7 +5,6 @@
 #include "LojaFisica.h"
 #include "LojaOnline.h"
 #include "Cliente.h"
-#include "ClienteRegistado.h"
 #include "Transacao.h"
 #include <vector>
 #include "Fornecedor.h"
@@ -68,7 +67,6 @@ public:
     int getStockMin() const;
     void setStockOk(unsigned int stockOk);
     void setStockMin(unsigned int stockMin);
-
     void addTransferencia(Transferencia * t);
     void removeTransferencia(Transferencia * t);
     vector<LojaFisica> getLojasFisicas() const;
@@ -76,16 +74,12 @@ public:
     LojaOnline getLojaOnline() const;
     vector<Transacao*> getTransacoes() const;
     vector<Transferencia*> getTransferencias() const;
-    vector<Categorias> getCategorias() const;
-    vector<Produtos> getProdutos() const;
     Categoria getCategoria(string categoria) const;
     void reporStock();
     void showTransacoes();
     void showProdutos();
     void showProdutosCategoria(string categoria);
     void showCategorias();
-
-    void setLojaOnline(LojaOnline loja);
 
 
     //void showAllProdutosOnline();

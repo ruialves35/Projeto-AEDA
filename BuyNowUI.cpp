@@ -68,13 +68,6 @@ void BuyNowUI::Cliente() {
     int contribuinteNumero=0;
     streamContribuinte >> contribuinteNumero;
 
-
-    bool clienteRegistado=false;
-    Cliente cliente= Cliente(nome,contribuinte);
-    ClienteRegistado clienteR =ClienteRegistado(nome,contribuinte,"");
-
-    vector <Produto> produtos = bn.getProdutos();
-    vector<Produto*> carrinho = {};
     //pede para o cliente escolher a opcao
     string input;
     bool validInput = true;
@@ -102,126 +95,18 @@ void BuyNowUI::Cliente() {
 
     if(result==1){
 
-        bool exit =false;
-        while(!exit) {
-            bool validInput2 = false;
-            cout << "Por favor introduza o número da categoria" << endl;
-            vector <Categoria> categorias = bn.getCategorias();
-            for (int i = 0; i < categorias.size(); i++) {
-                cout << i << " - " << categorias[i].getNomeCategoria() << endl;
-            }
-            cout << endl <<categorias.size() << " - terminar compra\n";
-            while (!validInput2) {
-                getline(cin, input);
-                istringstream checkinput2(input);
-                if (cin.eof()) {
-                    validInput2 = false;
-                    cin.clear();
-                    cout << "Por favor introduza um valor" << endl;
 
-                } else if (!(checkinput2 >> result)) {        //is not a number or a number with letters/symbols.
-                    cout << "Por favor introduza um valor" << endl;
-                    validInput2 = false;
-                } else if (result < 0 || result > categorias.size()) {
-                    cout << "O numero introduzido nao e correto" << endl;
-                    validInput2 = false;
-                } else
-                    validInput2 = true;
-            }
-            if(input==categorias.size()){
-                exit=true;
-                break;
-            }
-            string categoria = categorias[input];
-
-            cout << "Por favor introduza o número do produto" << endl;
-            for (int i = 0; i < produtos.size(); i++) {
-                cout << produtos[i].getId() << " - " << produtos[i].getNomeProduto() << endl;
-            }
-            validInput2 = false;
-            while (!validInput2) {
-                getline(cin, input);
-                istringstream checkinput2(input);
-                if (cin.eof()) {
-                    validInput2 = false;
-                    cin.clear();
-                    cout << "Por favor introduza um valor" << endl;
-
-                } else if (!(checkinput2 >> result)) {        //is not a number or a number with letters/symbols.
-                    cout << "Por favor introduza um valor" << endl;
-                    validInput2 = false;
-                } else if (result < 0 || result >= categorias.size()) {
-                    cout << "O numero introduzido nao e correto" << endl;
-                    validInput2 = false;
-                } else
-                    validInput2 = true;
-            }
-            int idProd;
-            for (int i = 0; i < produtos.size(); i++) {
-                if (produtos[i].getId() == input) {
-                    idProd = i;
-                    break;
-                }
-
-            }
-
-            carrinho.push_back(&produtos[idProd]);
-
-        }
 
     }
 
     if(result==2){
-        int total = 0;
-        for (auto i :carrinho){
-            total+=i.getValor();
-        }
-        int pag;
-        cout << "Como deseja efetuar o pagamento?" << endl;
-        cout <<"1 - Mbway" << endl;
-        cout <<"2 - Transferencia" << endl;
-        cout <<"3 - Multibanco" << endl;
-        cout << endl << "Total a pagar: "<<total <<endl;
 
-        cout << "Escreva o numero da opcao com que deseja pagar"<< endl;
-        bool validInput3=false;
-        while (!validInput3) {
-            getline(cin, input);
-            istringstream checkinput2(input);
-            if (cin.eof()) {
-                validInput3 = false;
-                cin.clear();
-                cout << "Por favor introduza um valor" << endl;
+        cout << "efetuacao de pagamento" << endl;
 
-            } else if (!(checkinput3 >> result)) {        //is not a number or a number with letters/symbols.
-                cout << "Por favor introduza um valor" << endl;
-                validInput3 = false;
-            } else if (result < 0 || result > categorias.size()) {
-                cout << "O numero introduzido nao e correto" << endl;
-                validInput3 = false;
-            } else
-                validInput3 = true;
-        }
-
-
-        LojaOnline loja= bn.getLojaOnline();
-
-        //********** VER ISTO`***********
-        //verifica se o cliente esta registado ou nao e mete o apontador para o cliente na transacao (falta verificar como estao a ser guardados os clientes para o apontador ser o mesmo que esta no vetor da loja)
-        //para resolver isso é só comparar o contribuinte com o do vetor de clientes (mas falta saber como estao a ser adicionados)
-        //tratar do dinamic cast do cliente registado qnd é adicionado à transacao
-        if(clienteRegistado)
-            loja.addTransacao(new Transacao(new ClienteRegistado(clienteR), Date(), carrinho, new Pagamento(total)));
-        else
-            loja.addTransacao(new Transacao(new Client(cliente), Date(), carrinho, new Pagamento(total)));
-
-        //seria melhor guardar a loja online como pointer para n ser preciso dar get e set para alterar!
-        bn.setLojaOnline(loja);
     }
 
     if(result==3){
 
-        //cliente registado ja criado em cima, falta so adicionar o email que tem que ser lido e adicionalo ao vetor
         
 
     }
@@ -255,6 +140,7 @@ void BuyNowUI::Administrador() {
     } while (!validInput);
 
     if(result==1){
+
     }
 
     if(result==2){
