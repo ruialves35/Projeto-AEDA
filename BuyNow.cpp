@@ -210,6 +210,16 @@ void BuyNow::showCategorias() {
 }
 
 /**
+ * Shows information of Clientes
+ */
+void BuyNow::showClientes() {
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+    for (auto i : clientes){
+        cout << i << endl;
+    }
+}
+
+/**
  * Adds a Reposicao if is not already in vector of Reposicoes
  * @param reposicao to be added
  */
