@@ -15,6 +15,8 @@ BuyNowUI::BuyNowUI() {
     lerProdutos();
     lerProdutosLojaOnline();
     lerProdutosLojaFisica();
+    lerReposicoes();
+    lerTransferencias();
     UI();
 }
 
@@ -244,11 +246,7 @@ void BuyNowUI::lerProdutosLojaOnline() {
         istringstream format2line(line);
         format2line >> quantidade;
 
-        //PRECISO DE UM GETPRODUTO QUE ME RETORNE O PRODUTO DA BUYNOW COLOCANDO O CODIGO
-
-        /*Produto prod;
-        prod = bn.getProduto(codigo);
-        bn.getLojaOnline().addProduto(*prod,quantidade);*/
+        //bn.getLojaOnline().addProduto(*bn.getProduto(codigo),quantidade);
 
     }
 
@@ -303,6 +301,93 @@ void BuyNowUI::lerProdutosLojaFisica() {
 
     }
 
+
+}
+
+void BuyNowUI::lerReposicoes() {
+
+    ifstream fin;
+    string line, stringLocalidade;
+    int codigo, quantidade,dia,mes,ano;
+
+
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Reposicoes.txt)");
+    if(!fin.is_open()){
+        cerr << "Ficheiro das reposicoes nao encontrado\n";
+        exit(1);
+    }
+
+    while(!fin.eof()){
+
+        getline(fin,line);
+        istringstream format1line(line);
+        format1line >> dia;
+
+        getline(fin,line);
+        istringstream format2line(line);
+        format2line >> mes;
+
+        getline(fin,line);
+        istringstream format3line(line);
+        format2line >> ano;
+
+        getline(fin,line);
+        istringstream format4line(line);
+        format4line >> codigo;
+
+        getline(fin,line);
+        istringstream format5line(line);
+        format5line >> quantidade;
+
+        getline(fin,line);
+        istringstream format6line(line);
+        format6line >> stringLocalidade;
+
+    }
+
+}
+
+void BuyNowUI::lerTransferencias() {
+
+    ifstream fin;
+    string line;
+    int codigo, quantidade,dia,mes,ano;
+
+
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Reposicoes.txt)");
+    if(!fin.is_open()){
+        cerr << "Ficheiro das reposicoes nao encontrado\n";
+        exit(1);
+    }
+
+    while(!fin.eof()){
+
+        getline(fin,line);
+        istringstream format1line(line);
+        format1line >> dia;
+
+        getline(fin,line);
+        istringstream format2line(line);
+        format2line >> mes;
+
+        getline(fin,line);
+        istringstream format3line(line);
+        format2line >> ano;
+
+        getline(fin,line);
+        istringstream format4line(line);
+        format4line >> codigo;
+
+        getline(fin,line);
+        istringstream format5line(line);
+        format5line >> quantidade;
+
+        /*Fornecedor f;
+        Date d1(dia,mes,ano);
+        Transferencia t1 = new Transferencia()
+        bn.addTransferencia();*/
+
+    }
 
 }
 

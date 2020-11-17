@@ -15,7 +15,8 @@ public:
     void lerProdutos();
     void lerProdutosLojaOnline();
     void lerProdutosLojaFisica();
-
+    void lerReposicoes();
+    void lerTransferencias();
 };
 
 
