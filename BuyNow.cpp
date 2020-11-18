@@ -193,7 +193,15 @@ vector<Transacao *> BuyNow::getTransacoes() const { return lojaOnline.getTransac
  */
 vector<Transferencia *> BuyNow::getTransferencias() const { return transferencias;}
 
+/**
+ * @return vector with all categorias of BuyNow
+ */
+vector<Categoria> BuyNow::getCategorias() const { return categorias;}
 
+/**
+ * @return vector with all reposicoes of BuyNow
+ */
+vector<Reposicao> BuyNow::getReposicoes() const { return reposicoes;}
 /**
  * Shows categorias available in BuyNow
  */
@@ -202,6 +210,16 @@ void BuyNow::showCategorias() {
     cout << setfill(' ') << setw(15) << "Categoria" << endl;
     for (auto i : categorias){
         cout << setfill(' ') << setw(15) << i.getNomeCategoria() << endl;
+    }
+}
+
+/**
+ * Shows information of Clientes
+ */
+void BuyNow::showClientes() {
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+    for (auto i : clientes){
+        cout << i << endl;
     }
 }
 
@@ -219,6 +237,28 @@ void BuyNow::addReposicao(Reposicao &reposicao) {
  * @return vector with Produtos
  */
 vector<Produto *> BuyNow::getProdutos() const { return produtos; }
+
+
+/**
+ * sort Produtos of Transacao by name
+ */
+void BuyNow::sortProdutosByName() {
+    sort(produtos.begin(), produtos.end(), compareProdutosByName);
+}
+
+/**
+ * sort Produtos of Transacao by Id
+ */
+void BuyNow::sortProdutosById() {
+    sort(produtos.begin(), produtos.end(), compareProdutosById);
+}
+
+/**
+ * sort Produtos of Transacao by value
+ */
+void BuyNow::sortProdutosByValue() {
+    sort(produtos.begin(), produtos.end(), compareProdutosByValue);
+}
 
 /**
  * Gets a Produto of BuyNow.

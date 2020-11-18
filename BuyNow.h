@@ -91,13 +91,31 @@ public:
     LojaOnline getLojaOnline() const;
     vector<Transacao*> getTransacoes() const;
     vector<Transferencia*> getTransferencias() const;
+    vector<Reposicao> getReposicoes() const;
     Categoria getCategoria(string categoria) const;
+    vector<Categoria> getCategorias() const;
     void reporStock();
     void showTransacoes();
     void showProdutos();
     void showProdutosCategoria(string categoria);
     void showCategorias();
+    void showClientes();
 
+    void sortProdutosByValue();
+    void sortProdutosByName();
+    void sortProdutosById();
+
+    static bool compareProdutosByValue(const Produto* p1, const Produto* p2){
+        return (*p1).getValor() < (*p2).getValor();
+    }
+
+    static bool compareProdutosById(const Produto* p1, const Produto *p2){
+        return (*p1).getId() == (*p2).getId();
+    }
+
+    static bool compareProdutosByName(const Produto* p1, const Produto *p2){
+        return (*p1).getNomeProduto() < (*p2).getNomeProduto();
+    }
 
     //void showAllProdutosOnline();
     //void showAllProdutosFisico();
