@@ -201,3 +201,22 @@ bool operator < (const Date &d1, const Date &d2){
 }
 
 
+
+/**
+ * Compares 2 dates (Days, months, years)
+ * @param d1 first date to be compared
+ * @param d2 second date to be compared
+ * @return true if d1 = d2, false otherwise
+ */
+bool operator == (const Date &d1, const Date &d2){
+    if (d1.year == d2.year){
+        if (d1.month == d2.month){
+            if (d1.day == d2.day){
+                return true;
+            }
+            else return false;
+        }
+        else return false;
+    }
+    else return false;
+}

@@ -73,3 +73,26 @@ string Reposicao::getInfo() const {
  * @param lf new LojaFisica
  */
 void Reposicao::setLojaFisica(LojaFisica lf) { this->lojaFisica = lf; }
+
+
+/**
+ * Says if 2 reposicoes are the same
+ * @param r1
+ * @return
+ */
+bool Reposicao::operator==(Reposicao r1) {
+    if (lojaFisica == r1.lojaFisica){
+        if (produto == r1.produto){
+            if (quantidade == r1.quantidade){
+                if (data == r1.data){
+                    return true;
+                }
+                else return false;
+            }
+            else return false;
+        }
+        else return false;
+    }
+    else return false;
+}
+

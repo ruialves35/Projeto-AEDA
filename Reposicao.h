@@ -21,6 +21,7 @@ public:
     Date getData() const;
     void setData(Date &data);
     string getInfo() const;
+    bool operator == (const Reposicao r1);
 };
 
 

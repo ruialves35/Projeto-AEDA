@@ -119,7 +119,7 @@ void BuyNowUI::Cliente() {
  * Setup of Administrador
  */
 void BuyNowUI::Administrador() {
-    //pede para o cliente escolher a opcao 
+    //pede para o cliente escolher a opcao
     string input;
     bool validInput = true;
     bool endProgram = false;

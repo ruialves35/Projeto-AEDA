@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Sara/Documents/GitHub/Projeto-AEDA
+# Install script for directory: D:/2 ano/AEDA/CLionProjects/Projeto AEDA
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Sara/Documents/GitHub/Projeto-AEDA/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/2 ano/AEDA/CLionProjects/Projeto AEDA/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
