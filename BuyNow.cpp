@@ -233,7 +233,7 @@ void BuyNow::showCategorias() {
 void BuyNow::showClientes() {
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
     for (auto i : clientes){
-        cout << i << endl;
+        cout << (*i) << endl;
     }
 }
 
