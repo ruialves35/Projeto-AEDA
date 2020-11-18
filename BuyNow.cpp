@@ -484,12 +484,12 @@ void BuyNow::removeCategoria(Categoria &c) {
  * Shows Produto of a Categoria
  * @param categoria string with name of Categoria of which we want to show Produtos
  */
-void BuyNow::showProdutosCategoria(string categoira) {
+void BuyNow::showProdutosCategoria(string categoria) {
     cout << "-------------------------------------------------------------------------------" << endl;
-    cout << setfill(' ') << setw(15) << "Produto" << setfill(' ') << setw(15) << "Preco" << endl;
+    cout << setfill(' ') << setw(30) << "Produto" << setfill(' ') << setw(30) << "Preco" << endl;
     for (auto i: produtos){
-        if (i->getCategoria().getNomeCategoria() == categoira){
-            cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
+        if (i->getCategoria().getNomeCategoria() == categoria){
+            cout << setfill(' ') << setw(30) << i->getNomeProduto() << setfill(' ') << setw(30) << i->getValor() << endl;
         }
     }
     cout << "-------------------------------------------------------------------------------" << endl;
@@ -539,9 +539,9 @@ LojaFisica BuyNow::getLojaFisica(string localidade) const {
  */
 void BuyNow::showProdutos() {
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
-    cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << endl;
+    cout << setfill(' ') << setw(30) << "Produto " << setfill(' ') << setw(30) << "Preco" << endl;
     for (auto i : produtos){
-        cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
+        cout << setfill(' ') << setw(30) << i->getNomeProduto() << setfill(' ') << setw(30) << i->getValor() << endl;
     }
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
 }
