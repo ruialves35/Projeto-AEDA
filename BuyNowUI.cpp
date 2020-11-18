@@ -196,11 +196,12 @@ void BuyNowUI::administrador() {
             bool validSortOption = false;
             string ordenarInput;
             do{
+                cout << endl;
                 cout << "1: Ordenar por Valor" << endl;
                 cout << "2: Ordenar por ID" << endl;
                 cout << "3: Ordenar por Nome" << endl;
                 cout << "4: Mostrar Produtos" << endl;
-                cout << "5: Enter option" << endl;
+                cout << "   Enter option: " << endl;
                 getline(cin, ordenarInput);
                 if (ordenarInput == "1")
                     bn.sortProdutosByValue();
