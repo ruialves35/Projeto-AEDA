@@ -9,8 +9,8 @@ private:
 public:
     BuyNowUI();
     void UI();
-    void Cliente();
-    void Administrador();
+    void cliente();
+    void administrador();
     void lerCategorias();
     void lerProdutos();
     void lerProdutosLojaOnline();

@@ -92,6 +92,7 @@ public:
     vector<LojaFisica> getLojasFisicas() const;
     LojaFisica getLojaFisica(string localidade) const;
     vector<Cliente*> getClientes() const;
+    Cliente* getCliente(string nome, int numContribuinte) const;
     LojaOnline getLojaOnline() const;
     vector<Transacao*> getTransacoes() const;
     vector<Transferencia*> getTransferencias() const;

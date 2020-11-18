@@ -45,6 +45,20 @@ void BuyNow::addCliente(Cliente *cliente) {
         clientes.push_back(cliente);
 }
 
+
+/**
+ * Gets a Cliente
+ * @param nome Nome of Cliente
+ * @param numContribuinte numero de contribuinte of Cliente
+ * @return pointer that points to Cliente
+ */
+Cliente * BuyNow::getCliente(string nome, int numContribuinte) const {
+    for (auto i : clientes){
+        if ( i->getNome() == nome && i->getNumContribuinte() == numContribuinte)
+            return i;
+    }
+}
+
 /**
  * Removes a Cliente from Clientes of the BuyNow
  * @param cliente Cliente to be removed

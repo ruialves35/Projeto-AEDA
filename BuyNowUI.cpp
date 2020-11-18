@@ -4,9 +4,6 @@
 #include <sstream>
 #include <fstream>
 
-void Administrador();
-
-void Cliente();
 
 using namespace std;
 
@@ -46,16 +43,16 @@ void BuyNowUI::UI() {
     } while (!validInput);
 
     if(result==1){
-        Administrador();
+        administrador();
     }
 
     if(result==2){
-        Cliente();
+        cliente();
     }
 
 }
 
-void BuyNowUI::Cliente() {
+void BuyNowUI::cliente() {
 
     //Pede nome ao cliente
     cout << "Por favor insira o seu nome" << endl;
