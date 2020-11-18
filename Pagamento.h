@@ -13,6 +13,7 @@ public:
     void setValor(double val);
     double getValor() const;
     virtual void getInfo(ostream &o) const;
+    virtual string getTipo() const;
 };
 
 

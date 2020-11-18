@@ -242,6 +242,13 @@ void Transacao::sortByValue() {
 }
 
 /**
+ * @return vector with produtos of Transacao
+ */
+vector<Produto *> Transacao::getProdutos() const {
+    return produtos;
+}
+
+/**
  * Overloading of operator << that shows the Nome of the Cliente of the Transacao,
  * the Data of the Transacao, All Products of Transacao (including each value, quantity and total Value);
  * @param o ostream to get the Information of the Transacao

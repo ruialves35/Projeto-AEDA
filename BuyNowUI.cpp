@@ -925,3 +925,41 @@ void BuyNowUI::lerLojasOnline() {
     }
 
 }
+
+/**
+ * Escreve a informacao das Transacoes em ficheiros
+ */
+void BuyNowUI::escreverTransacoes() {
+    ofstream out;
+    out.open("Transacoes.txt");
+    for (auto i : bn.getTransacoes()){
+        out << i->getDate() << endl;
+        out << i->getCliente()->getNome() << endl;
+        out << i->getCliente()->getNumContribuinte() << endl;
+        Multibanco *pag = dynamic_cast<Multibanco*>(i->getPagamento());
+        if (pag != NULL){
+            out << "multibanco" << endl;
+            out << pag->getReferencia() << endl;
+        }
+        else{
+            CartaoCredito *pag2 = dynamic_cast<CartaoCredito*>(i->getPagamento());
+            if (pag2 != NULL ){
+                out << "cartao de credito" << endl;
+                out << pag2->getNumCartao() << endl;
+                out << pag2->getValidade() << endl;
+            }
+            else{
+                MbWay *pag3 = dynamic_cast<MbWay*>(i->getPagamento());
+                if (pag3 != NULL){
+                    out << "mbway" << endl;
+                    out << pag3->getNumTelemovel() << endl;
+                }
+            }
+        }
+        for (auto j : i->getProdutos()){
+            out << j->getId() << endl;
+            out << i->getQuantidade(j) << endl;
+        }
+    }
+    out << "-" << endl;
+}

@@ -64,3 +64,8 @@ void CartaoCredito::getInfo(ostream& o) const {
     o << "Cartao de Credito.\nNumero do Cartao: " << numCartao;
     o << "\nValidade: " + validade.getInfo() + "\n";
 }
+
+/**
+ * @return information of payment
+ */
+string CartaoCredito::getTipo() const {return "cartao de credito";}

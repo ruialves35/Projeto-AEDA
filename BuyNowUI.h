@@ -25,6 +25,7 @@ public:
     void lerReposicoes();
     void lerTransferencias();
     void LerTransacoes();
+    void escreverTransacoes();
 };
 
 

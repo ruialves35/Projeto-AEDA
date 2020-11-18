@@ -36,6 +36,7 @@ public:
     void addProduto(Produto* p, int quantidade = 1);
     void removeProduto(Produto *p);
     void removeProduto(Produto *p, int quantidade);
+    vector<Produto*> getProdutos() const;
     int getQuantidade(Produto *p) const;
     void setPagamento(Pagamento* p);
     Pagamento* getPagamento() const;

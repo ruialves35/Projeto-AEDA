@@ -31,3 +31,8 @@ void Pagamento::setValor(double val) {
 
 }
 
+/**
+ * Gets tipo of pagamento ("pagamento", "multibanco", "cartao de credito", "mbway")
+ * @return string with information
+ */
+string Pagamento::getTipo() const { return "pagamento";}

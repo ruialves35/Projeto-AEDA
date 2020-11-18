@@ -17,6 +17,7 @@ public:
     void setValidade(Date validade);
     Date getValidade() const;
     void getInfo(ostream& o) const;
+    string getTipo() const;
 };
 
 

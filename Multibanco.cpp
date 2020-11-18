@@ -43,6 +43,10 @@ void Multibanco::setReferencia(int referencia) {
     }
 }
 
+/**
+ * @return string with type of payment
+ */
+string Multibanco::getTipo() const { return "multibanco";}
 
 /**
  * returns a string with information of Multibanco

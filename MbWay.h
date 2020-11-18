@@ -16,6 +16,7 @@ public:
     int getNumTelemovel() const;
     void setNumTelemovel(int num);
     void getInfo(ostream& o) const;
+    string getTipo() const;
 };
 
 

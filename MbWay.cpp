@@ -46,3 +46,8 @@ void MbWay::getInfo(ostream& o) const {
     o << "MbWay\n";
     o << "Numero de Telemovel: " + to_string(numTelemovel);
 }
+
+/**
+ * @return string with information
+ */
+string MbWay::getTipo() const { return "mbway";}
