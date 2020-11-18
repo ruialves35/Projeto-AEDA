@@ -92,7 +92,6 @@ public:
     vector<Transacao*> getTransacoes() const;
     vector<Transferencia*> getTransferencias() const;
     Categoria getCategoria(string categoria) const;
-    vector<Categoria> getCategorias() const;
     void reporStock();
     void showTransacoes();
     void showProdutos();
