@@ -67,6 +67,7 @@ public:
     Fornecedor getFornecedor() const;
     void setFornecedor(Fornecedor &f);
     void addCliente(Cliente *cliente);
+    void removeCliente(string nome, int numContribuinte);
     void removeCliente(Cliente *cliente);
     bool checkCliente(Cliente &cliente);
     void addTransacao(Transacao *t);

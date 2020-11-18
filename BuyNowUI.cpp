@@ -141,8 +141,7 @@ void BuyNowUI::cliente() {
                     validInput = false;
                     cin.clear();
                     cout << endl << "Categoria Inválida" << endl;
-                    Sleep(700);
-                    cout << string(50, '\n'); //Clear Screen
+                    Sleep(7000);
                 }
                 else{
                     for (auto i : bn.getCategorias()){
@@ -152,14 +151,14 @@ void BuyNowUI::cliente() {
                 }
                 if (!validCategoria){
                     cout << endl << "Categoria Inválida" << endl;
-                    Sleep(700);
-                    cout << string(50, '\n'); //Clear Screen
+                    Sleep(7000);
                 }
             }while(!validCategoria);
 
             bool validSortOption = false;
             string ordenarInput;
             do{
+                cout << endl;
                 cout << "1: Ordenar por Valor" << endl;
                 cout << "2: Ordenar por ID" << endl;
                 cout << "3: Ordenar por Nome" << endl;
@@ -181,7 +180,7 @@ void BuyNowUI::cliente() {
                 }
             }while(!validSortOption);
             bn.showProdutosCategoria(inputCategoria);
-            Sleep(5000);
+            Sleep(7000);
         }
 
         else if (result == 2) {  //adicionar produto ao carrinho
@@ -224,11 +223,12 @@ void BuyNowUI::cliente() {
             } while(!validOption);
         }
 
-        else if (result == 3) {
+        else if (result == 3) { //efetuar pagamento
             string opcaoPagar;
             int opcao;
             bool validOptionPagar = false;
             while(!validOptionPagar) {
+                cout << endl;
                 cout << "0: Retroceder" << endl;
                 cout << "1: Multibanco" << endl;
                 cout << "2: MbWay " << endl;
@@ -388,6 +388,30 @@ void BuyNowUI::cliente() {
                 }
             }
         }
+        else if (result == 4){  //registar um cliente
+            bool alreadyExist = false;
+            for (auto i : bn.getClientes()){
+                Cliente *c = dynamic_cast<ClienteRegistado*>(i);
+                if (c != NULL){
+                    if (c->getNome() == nome && c->getNumContribuinte() == contribuinteNumero){
+                        alreadyExist = true;
+                        break;
+                    }
+                }
+            }
+            if (alreadyExist){
+                cout << "Ja estas registado no sistema. " << endl;
+                Sleep(3000);
+            }
+            else{
+                string email;
+                cout << "Introduz o teu endereco de email (so a parte antes do arroba): ";
+                getline(cin, email);
+                bn.removeCliente(nome, contribuinteNumero);
+                Cliente* c = new ClienteRegistado(nome, contribuinteNumero, email);
+                bn.addCliente(c);
+            }
+        }
     }
 }
 
@@ -403,6 +427,7 @@ void BuyNowUI::administrador() {
     int result;
     while(!endProgram) {
         do {
+            input = "";
             validInput = true;
             cout << "0: End Program" << endl;
             cout << "1: Ver Produtos da Empresa" << endl;
@@ -415,20 +440,32 @@ void BuyNowUI::administrador() {
             cout << "Enter option: ";
             getline(cin, input);
             istringstream checkinput(input); // get into a strinsgtream
-            if (cin.eof()) {
+            bool isNumber = true;
+            for (auto i:input){
+                if (!(isdigit(i))) {
+                    isNumber = false;
+                    break;
+                }
+            }
+            if (!isNumber){
+                validInput = false;
+                cout << endl << "Introduza apenas um numero. "  << endl;
+                Sleep(2000);
+            }
+            else if (cin.eof()) {
                 validInput = false;
                 cin.clear();
                 cout << endl << "Opção Inválida" << endl;
-                Sleep(700);
+                Sleep(2000);
                 cout << string(50, '\n'); //Clear Screen
             } else if (!(checkinput >> result)) {        //is not a number or a number with letters/symbols.
                 cout << endl << "Opção Inválida" << endl;
-                Sleep(700);
+                Sleep(2000);
                 cout << string(50, '\n'); //Clear Screen
                 validInput = false;
             } else if (result < 0 || result > 6) {
                 cout << endl << "O numero introduzido nao e correto" << endl;
-                Sleep(700);
+                Sleep(2000);
                 cout << string(50, '\n'); //Clear Screen
                 validInput = false;
             }

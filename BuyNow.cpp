@@ -485,14 +485,29 @@ void BuyNow::removeCategoria(Categoria &c) {
  * @param categoria string with name of Categoria of which we want to show Produtos
  */
 void BuyNow::showProdutosCategoria(string categoira) {
-    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+    cout << "-------------------------------------------------------------------------------" << endl;
     cout << setfill(' ') << setw(15) << "Produto" << setfill(' ') << setw(15) << "Preco" << endl;
     for (auto i: produtos){
         if (i->getCategoria().getNomeCategoria() == categoira){
             cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
         }
     }
-    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+    cout << "-------------------------------------------------------------------------------" << endl;
+}
+
+/**
+ * Removes a Cliente of BuyNow database
+ * @param nome of cliente
+ * @param numContribuinte Numero de contribuinte of Cliente
+ */
+void BuyNow::removeCliente(string nome, int numContribuinte) {
+    vector<Cliente*>::iterator it;
+    for (it = clientes.begin(); it != clientes.end(); it++){
+        if ((*it)->getNome() == nome && (*it)->getNumContribuinte() == numContribuinte){
+            clientes.erase(it);
+            break;
+        }
+    }
 }
 
 /**
