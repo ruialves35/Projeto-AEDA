@@ -199,10 +199,6 @@ vector<Transferencia *> BuyNow::getTransferencias() const { return transferencia
 vector<Categoria> BuyNow::getCategorias() const { return categorias;}
 
 /**
- * @return vector with all reposicoes of BuyNow
- */
-vector<Reposicao> BuyNow::getReposicoes() const { return reposicoes;}
-/**
  * Shows categorias available in BuyNow
  */
 void BuyNow::showCategorias() {
