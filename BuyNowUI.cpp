@@ -476,7 +476,7 @@ void BuyNowUI::administrador() {
                 cout << "2: Ordenar por ID" << endl;
                 cout << "3: Ordenar por Nome" << endl;
                 cout << "4: Mostrar Produtos" << endl;
-                cout << "   Introduza a opcao que pretender: " << endl;
+                cout << "   Introduza a opcao que pretender: ";
                 getline(cin, ordenarInput);
                 if (ordenarInput == "1")
                     bn.sortProdutosByValue();
