@@ -220,28 +220,6 @@ void BuyNow::addReposicao(Reposicao &reposicao) {
  */
 vector<Produto *> BuyNow::getProdutos() const { return produtos; }
 
-
-/**
- * sort Produtos of Transacao by name
- */
-void BuyNow::sortProdutosByName() {
-    sort(produtos.begin(), produtos.end(), compareProdutosByName);
-}
-
-/**
- * sort Produtos of Transacao by Id
- */
-void BuyNow::sortProdutosById() {
-    sort(produtos.begin(), produtos.end(), compareProdutosById);
-}
-
-/**
- * sort Produtos of Transacao by value
- */
-void BuyNow::sortProdutosByValue() {
-    sort(produtos.begin(), produtos.end(), compareProdutosByValue);
-}
-
 /**
  * Gets a Produto of BuyNow.
  * In case the Produto does not exist in BuyNow throws an error
