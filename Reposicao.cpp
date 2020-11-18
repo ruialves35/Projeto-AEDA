@@ -28,6 +28,18 @@ void Reposicao::setProduto(Produto *p) { this->produto = p; }
 Date Reposicao::getData() const { return data; }
 
 /**
+ * @return string with Information of Reposicao
+ */
+string Reposicao::getInfo() const {
+    string info = "Loja Fisica: ";
+    info += lojaFisica.getLocalidade() + "\n";
+    info += "Produto: " + produto->getNomeProduto();
+    info += "Quantidade: " + to_string(quantidade);
+    info += "Data: " + data.getInfo();
+    return info;
+}
+
+/**
  * Sets Date of Transferencia
  * @param data new Date
  */

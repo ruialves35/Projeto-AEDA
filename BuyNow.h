@@ -18,13 +18,11 @@ class ProdutoDoesNotExist{
 public:
     int codigo;
     ProdutoDoesNotExist(int codigo){ this->codigo = codigo;}
+    void showError() { cout << "O Produto com o codigo " << codigo << "nao existe." << endl;
+    Sleep(600);
+    }
 };
 
-std::ostream& operator<<(std::ostream &out, const ProdutoDoesNotExist prod){
-    out << "O Produto com o codigo " << prod.codigo << "nao existe." << endl;
-    Sleep(600);
-    return out;
-}
 
 /**
  * Exception Categoria Does Not Exist, on getCategoria of BuyNow
@@ -33,13 +31,10 @@ class CategoriaDoesNotExist{
 public:
     string nome;
     CategoriaDoesNotExist(string name){ nome = name; }
+    void showError(){ cout << "A categoria " << nome << " nao existe." << endl; Sleep(600);}
+
 };
 
-std::ostream& operator<<(std::ostream &out, const CategoriaDoesNotExist cat){
-    out << "A categoria " << cat.nome << " nao existe." << endl;
-    Sleep(600);
-    return out;
-}
 //-----------------------------------------------------------------------
 class BuyNow {
 private:

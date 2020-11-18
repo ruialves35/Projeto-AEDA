@@ -233,7 +233,7 @@ void BuyNowUI::Administrador() {
 
         else if (result == 4){   //reposicoes feitas a loja online
             for (auto i : bn.getReposicoes()){
-                i.getInfo();
+                cout << i.getInfo() << endl;
             }
         }
 
