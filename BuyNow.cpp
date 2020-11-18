@@ -495,6 +495,17 @@ Categoria BuyNow::getCategoria(string categoria) const {
 }
 
 /**
+ * Gets Loja fisica in a localidade
+ * @param localidade of Loja Fisica
+ * @return LojaFisica
+ */
+LojaFisica BuyNow::getLojaFisica(string localidade) const {
+    for (auto i: lojasFisicas){
+        if (i.getLocalidade() == localidade) return i;
+    }
+    //throw exception
+}
+/**
  * Displays all Produtos of BuyNow and each price
  */
 void BuyNow::showProdutos() {

@@ -23,6 +23,14 @@ public:
     }
 };
 
+class LojaFisicaDoesNotExist{
+public:
+    string localidade;
+    LojaFisicaDoesNotExist(string localidade){ this->localidade = localidade;}
+    void showError() { cout << "Não existe nenhuma loja fisica em " << localidade << endl;
+        Sleep(600);
+    }
+};
 
 /**
  * Exception Categoria Does Not Exist, on getCategoria of BuyNow
@@ -82,6 +90,7 @@ public:
     void addTransferencia(Transferencia * t);
     void removeTransferencia(Transferencia * t);
     vector<LojaFisica> getLojasFisicas() const;
+    LojaFisica getLojaFisica(string localidade) const;
     vector<Cliente*> getClientes() const;
     LojaOnline getLojaOnline() const;
     vector<Transacao*> getTransacoes() const;
