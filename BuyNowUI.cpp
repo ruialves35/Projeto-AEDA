@@ -9,13 +9,21 @@ using namespace std;
 
 BuyNowUI::BuyNowUI() {
     lerCategorias();
+    cout << "categorias correu" << endl;
     lerProdutos();
+    cout << "produtos correu" << endl;
     lerClientes();
+    cout << "clientes correu" << endl;
     lerProdutosLojaOnline();
+    cout << "produtosonline correu" << endl;
     lerProdutosLojaFisica();
+    cout << "produtosfisica correu" << endl;
     lerReposicoes();
+    cout << "reposicoes correu" << endl;
     lerTransferencias();
+    cout << "transferencias correu" << endl;
     LerTransacoes();
+    cout << "transacoes correu" << endl;
     UI();
 }
 
