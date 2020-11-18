@@ -11,6 +11,7 @@ BuyNowUI::BuyNowUI() {
     lerCategorias();
     lerProdutos();
     lerClientes();
+    lerLojasOnline();
     lerProdutosLojaOnline();
     lerProdutosLojaFisica();
     lerReposicoes();
@@ -164,7 +165,6 @@ void BuyNowUI::administrador() {
             bool validCategoria = false;
             string inputCategoria;
             do {
-                cout << string(50, '\n'); //Clear Screen
                 cout << "CATEGORIAS DISPONIVEIS" << endl;
                 bn.showCategorias();
                 Sleep(1000);
@@ -201,7 +201,7 @@ void BuyNowUI::administrador() {
                 cout << "2: Ordenar por ID" << endl;
                 cout << "3: Ordenar por Nome" << endl;
                 cout << "4: Mostrar Produtos" << endl;
-                cout << "   Enter option: " << endl;
+                cout << "   Introduza a opcao que pretender: " << endl;
                 getline(cin, ordenarInput);
                 if (ordenarInput == "1")
                     bn.sortProdutosByValue();
@@ -226,21 +226,26 @@ void BuyNowUI::administrador() {
         }
 
         else if (result == 3){   //ver compras feitas pela empresa ao fornecedor
+            cout << endl;
             for (auto i : bn.getTransferencias()){
                 cout << i->getInfo() << endl;
             }
+            cout << endl;
         }
 
         else if (result == 4){   //reposicoes feitas a loja online
+            cout << endl;
             for (auto i : bn.getReposicoes()){
                 cout << i.getInfo() << endl;
             }
         }
 
         else if (result == 5){   //Ver lojas fisicas da empresa
+            cout << endl;
             for (auto i : bn.getLojasFisicas()){
                 cout << i.getLocalidade() << endl;
             }
+            cout << endl;
         }
 
         else if (result == 6){
@@ -341,17 +346,6 @@ void BuyNowUI::lerProdutosLojaOnline() {
 
 void BuyNowUI::lerProdutosLojaFisica() {
 
-    //criar 3 lojas: porto, lisboa e braga
-    string stringPorto = "porto";
-    string stringLisboa = "lisboa";
-    string stringBraga = "braga";
-    LojaFisica lojaPorto(stringPorto);
-    LojaFisica lojaLisboa(stringLisboa);
-    LojaFisica lojaBraga(stringBraga);
-    bn.addLojaFisica(lojaPorto);
-    bn.addLojaFisica(lojaLisboa);
-    bn.addLojaFisica(lojaBraga);
-
     //ler os produtos e adiciona-los as respetivas lojas
     ifstream fin;
     string line,localidadeLoja;
@@ -359,7 +353,7 @@ void BuyNowUI::lerProdutosLojaFisica() {
 
     fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Fisica.txt)");
     if(!fin.is_open()){
-        cerr << "Ficheiro dos produtos online nao encontrado\n";
+        cerr << "Ficheiro dos produtos fisica nao encontrado\n";
         exit(1);
     }
 
@@ -407,6 +401,8 @@ void BuyNowUI::lerReposicoes() {
         istringstream format1line(line);
         format1line >> dia >> caracter >> mes >> caracter >> ano;
 
+        Date d1(dia,mes,ano);
+
         getline(fin,line);
         istringstream format2line(line);
         format2line >> codigo;
@@ -419,7 +415,13 @@ void BuyNowUI::lerReposicoes() {
         istringstream format4line(line);
         format4line >> stringLocalidade;
 
-        Reposicao rep(bn.getLojaFisica(stringLocalidade),bn.getProduto(codigo),quantidade,Date(dia,mes,ano));
+        LojaFisica l1;
+        l1=bn.getLojaFisica(stringLocalidade);
+
+        Produto *prod;
+        prod = bn.getProduto(codigo);
+
+        Reposicao rep(l1,prod,quantidade,d1);
         bn.addReposicao(rep);
     }
 
@@ -433,9 +435,9 @@ void BuyNowUI::lerTransferencias() {
     char caracter;
 
 
-    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Reposicoes.txt)");
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Transferencias.txt)");
     if(!fin.is_open()){
-        cerr << "Ficheiro das reposicoes nao encontrado\n";
+        cerr << "Ficheiro das transferencias nao encontrado\n";
         exit(1);
     }
 
@@ -580,7 +582,6 @@ void BuyNowUI::LerTransacoes() {
 
         while (line!="-"){
 
-            getline(fin,line);
             istringstream format11line(line);
             format11line >> codigo;
 
@@ -594,7 +595,29 @@ void BuyNowUI::LerTransacoes() {
 
         }
 
+        bn.addTransacao(tran);
 
+    }
+
+}
+
+void BuyNowUI::lerLojasOnline() {
+
+    ifstream fin;
+    string localidade,line;
+
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\NomesFisicas.txt)");
+    if(!fin.is_open()){
+        cerr << "Ficheiro das lojas online (suas localizacoes) nao encontrado\n";
+        exit(1);
+    }
+
+    while(!fin.eof()){
+        getline(fin,line);
+        istringstream format1line(line);
+        format1line >> localidade;
+        LojaFisica loja(localidade);
+        bn.addLojaFisica(loja);
     }
 
 }

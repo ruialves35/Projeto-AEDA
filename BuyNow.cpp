@@ -242,7 +242,7 @@ void BuyNow::showClientes() {
  * @param reposicao to be added
  */
 void BuyNow::addReposicao(Reposicao &reposicao) {
-    if (find(reposicoes.begin(), reposicoes.end(), reposicao) != reposicoes.end())
+    if (find(reposicoes.begin(), reposicoes.end(), reposicao) == reposicoes.end())
         reposicoes.push_back(reposicao);
 }
 
@@ -527,6 +527,17 @@ void BuyNow::showProdutos() {
     cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << endl;
     for (auto i : produtos){
         cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;
+    }
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+}
+
+/**
+ * Displays all Reposicoes of BuyNow
+ */
+void BuyNow::showReposicoes() {
+    cout << "---------------------------------------------------------------------------------------------------------" << endl;
+    for (auto i : reposicoes){
+        cout << i.getInfo() << endl;
     }
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
 }
