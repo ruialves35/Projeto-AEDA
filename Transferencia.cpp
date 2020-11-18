@@ -59,7 +59,7 @@ void Transferencia::setProduto(Produto *p) { produto = p; }
 string Transferencia::getInfo() const {
     string info = "Fornecedor: ";
     info += fornecedor.getNomeFornecedor() + "\n";
-    info += "Produto: " + produto->getNomeProduto();
-    info += "Quantidade: " + to_string(quantidade);
+    info += "Produto: " + produto->getNomeProduto() + "\n";
+    info += "Quantidade: " + to_string(quantidade) + "\n";
     return info;
 }

@@ -486,7 +486,7 @@ void BuyNow::removeCategoria(Categoria &c) {
  */
 void BuyNow::showProdutosCategoria(string categoira) {
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
-    cout << setfill(' ') << setw(15) << "Produto " << setfill(' ') << setw(15) << "Preco" << endl;
+    cout << setfill(' ') << setw(15) << "Produto" << setfill(' ') << setw(15) << "Preco" << endl;
     for (auto i: produtos){
         if (i->getCategoria().getNomeCategoria() == categoira){
             cout << setfill(' ') << setw(15) << i->getNomeProduto() << setfill(' ') << setw(15) << i->getValor() << endl;

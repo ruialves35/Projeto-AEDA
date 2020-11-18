@@ -7,6 +7,8 @@
 using namespace std;
 
 BuyNowUI::BuyNowUI() {
+    Fornecedor f("Manel");
+    bn.setFornecedor(f);
     lerCategorias();
     lerProdutos();
     lerClientes();
@@ -730,7 +732,7 @@ void BuyNowUI::lerTransferencias() {
         istringstream format3line(line);
         format3line >> quantidade;
 
-        Fornecedor f;
+        Fornecedor f = bn.getFornecedor();
         Produto *prod = bn.getProduto(codigo);
         Date d1(dia,mes,ano);
         Transferencia *t1 = new Transferencia(f,prod,quantidade,d1);
