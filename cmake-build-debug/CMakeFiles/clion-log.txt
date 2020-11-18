@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Sara\Documents\GitHub\Projeto-AEDA
+"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Sara\Desktop\AEDAcomtodoscommits
 -- The C compiler identification is GNU 8.1.0
 -- The CXX compiler identification is GNU 8.1.0
 -- Check for working C compiler: C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/gcc.exe
@@ -17,4 +17,4 @@
 Doxygen needs to be installed to generate the documentation.
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Sara/Documents/GitHub/Projeto-AEDA/cmake-build-debug
+-- Build files have been written to: C:/Users/Sara/Desktop/AEDAcomtodoscommits/cmake-build-debug
