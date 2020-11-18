@@ -1,6 +1,4 @@
-25
-9
-2018
+25/9/2018
 rui pinto
 241012369
 multibanco
@@ -12,9 +10,7 @@ multibanco
 25
 26
 -
-12
-12
-2019
+12/12/2019
 jose monteiro
 256541021
 mbway
@@ -26,16 +22,12 @@ mbway
 7
 8
 -
-1
-1
-2020
+1/1/2020
 margarida neto
 230245871
 cartao de credito
 123456789123456
-25
-11
-2021
+25/11/2021
 5
 12
 9
@@ -43,9 +35,7 @@ cartao de credito
 17
 21
 -
-5
-4
-2020
+5/4/2020
 sara costa
 241246578
 mbway
@@ -59,16 +49,12 @@ mbway
 21
 126
 -
-18
-10
-2019
+18/10/2019
 carlos martins
 259685471
 cartao de credito
 789456123789456
-14
-2
-2022
+14/2/2022
 9
 12
 25
@@ -78,9 +64,7 @@ cartao de credito
 20
 30
 -
-8
-8
-2019
+8/8/2019
 carlos martins
 259685471
 multibanco
@@ -92,9 +76,7 @@ multibanco
 24
 3
 -
-9
-19
-2018
+9/19/2018
 joao rodrigues
 250214520
 multibanco
