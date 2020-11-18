@@ -105,7 +105,7 @@ public:
     void showProdutosCategoria(string categoria);
     void showCategorias();
     void showClientes();
-
+    void showReposicoes();
     void sortProdutosByValue();
     void sortProdutosByName();
     void sortProdutosById();

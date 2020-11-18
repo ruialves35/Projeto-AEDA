@@ -148,7 +148,7 @@ void LojaOnline::removeCliente(Cliente *c) {
  */
 void LojaOnline::showAllTransacoes() const {
     for (auto i : transacoes){
-        cout << i << endl;
+        cout << (*i) << endl;
     }
 }
 
