@@ -187,9 +187,11 @@ void BuyNowUI::cliente() {
             string input;
             bool validOption = false;
             do {
+                cout << endl;
                 cout << "Caso queira voltar para traz, introduza 0." << endl;
                 cout << "Caso contrario, introduza o nome do produto. (Sensivel a Maiusculas, espacos e minusculas, certifique-se de que escreveu da forma correta)" << endl;
-                cout << "Opcao: " << endl;
+                cout << endl;
+                cout << "Opcao: ";
                 getline(cin, input);
                 if (input == "0") break;
                 for (auto i : bn.getProdutos()) {
@@ -233,7 +235,7 @@ void BuyNowUI::cliente() {
                 cout << "1: Multibanco" << endl;
                 cout << "2: MbWay " << endl;
                 cout << "3: Cartao de Credito" << endl;
-                cout << "   Introduza a opcao de pagamento: " << endl;
+                cout << "   Introduza a opcao de pagamento: ";
                 getline(cin, opcaoPagar);
                 istringstream checkInput(opcaoPagar); // get into a strinsgtream
                 if (cin.eof()) {
