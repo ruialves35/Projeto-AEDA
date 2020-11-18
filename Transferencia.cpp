@@ -63,3 +63,14 @@ string Transferencia::getInfo() const {
     info += "Quantidade: " + to_string(quantidade) + "\n";
     return info;
 }
+
+/**
+ * sets quantity of produto reposto
+ * @param quantidade new quantity
+ */
+void Transferencia::setQuantidade(int quantidade) { this->quantidade = quantidade;}
+
+/**
+ * @return quantidade de produto reposto
+ */
+int Transferencia::getQuantidade() const {return quantidade;}

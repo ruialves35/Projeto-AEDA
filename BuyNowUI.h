@@ -19,13 +19,16 @@ public:
     void lerCategorias();
     void lerProdutos();
     void lerClientes();
-    void lerLojasOnline();
+    void lerLojasFisicas();
     void lerProdutosLojaOnline();
     void lerProdutosLojaFisica();
     void lerReposicoes();
     void lerTransferencias();
     void LerTransacoes();
     void escreverTransacoes();
+    void escreverTransferencias();
+    void escreverReposicoes();
+    void escreverLojaOnline();
 };
 
 

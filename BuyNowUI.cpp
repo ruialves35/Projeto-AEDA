@@ -12,7 +12,7 @@ BuyNowUI::BuyNowUI() {
     lerCategorias();
     lerProdutos();
     lerClientes();
-    lerLojasOnline();
+    lerLojasFisicas();
     lerProdutosLojaOnline();
     lerProdutosLojaFisica();
     lerReposicoes();
@@ -906,7 +906,7 @@ void BuyNowUI::LerTransacoes() {
 
 }
 
-void BuyNowUI::lerLojasOnline() {
+void BuyNowUI::lerLojasFisicas() {
 
     ifstream fin;
     string localidade,line;
@@ -924,6 +924,51 @@ void BuyNowUI::lerLojasOnline() {
         bn.addLojaFisica(loja);
     }
 
+}
+
+/**
+ * Escreve a informacao das Reposicoes em ficheiro Reposicoes.txt
+ */
+void BuyNowUI::escreverReposicoes() {
+    ofstream out;
+    out.open("Reposicoes.txt");
+    for (auto i : bn.getReposicoes()){
+        out << i.getData() << endl;
+        out << i.getProduto()->getId() << endl;
+        out << i.getQuantidade() << endl;
+        out << i.getLojaFisica().getLocalidade() << endl;
+    }
+    out.close();
+}
+
+/**
+ * Escreve a informaçao da Loja Online no ficheiro Online.txt
+ * escreve na forma id\n quantidade \n id \n quantidade.....
+ */
+void BuyNowUI::escreverLojaOnline() {
+    ofstream out;
+    out.open("Online.txt");
+    for (auto i : bn.getProdutos()){    //percorrer produtos e ver se algum tem stock na Online
+        if (bn.getLojaOnline().getStockOnline(i) != 0){
+            out << i->getId() << endl;
+            out << bn.getLojaOnline().getStockOnline(i) << endl;
+        }
+    }
+    out.close();
+}
+
+/**
+ * Escreve a informacao das Transferencias em ficheiro Transferencias.txt
+ */
+void BuyNowUI::escreverTransferencias() {
+    ofstream out;
+    out.open("Transferencias.txt");
+    for (auto i : bn.getTransferencias()){
+        out << i->getData() << endl;
+        out << i->getProduto()->getId() << endl;
+        out << i->getQuantidade() << endl;
+    }
+    out.close();
 }
 
 /**
@@ -962,4 +1007,5 @@ void BuyNowUI::escreverTransacoes() {
         }
     }
     out << "-" << endl;
+    out.close();
 }
