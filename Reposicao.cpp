@@ -14,7 +14,7 @@ Reposicao::Reposicao() {}
  * @param quantidade Quantity of Produto
  */
 Reposicao::Reposicao(LojaFisica lf, Produto *p, int quantidade, Date data):
-        lojaFisica(lf), produto(p), quantidade(quantidade), data(data) {}
+lojaFisica(lf), produto(p), quantidade(quantidade), data(data) {}
 
 /**
  * Sets Produto of Reposicao
@@ -57,16 +57,6 @@ void Reposicao::setQuantidade(int quantidade) { this->quantidade = quantidade; }
  */
 LojaFisica Reposicao::getLojaFisica() const { return lojaFisica; }
 
-/**
- * @return string with Information of Reposicao
- */
-string Reposicao::getInfo() const {
-    string info = "Loja Fisica: ";
-    info += lojaFisica.getLocalidade() + "\n";
-    info += "Produto: " + produto->getNomeProduto();
-    info += "Quantidade: " + to_string(quantidade);
-    info += "Data: " + data.getInfo();
-}
 
 /**
  * Sets LojaFisica of Reposicao
