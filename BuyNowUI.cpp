@@ -9,13 +9,21 @@ using namespace std;
 
 BuyNowUI::BuyNowUI() {
     lerCategorias();
+    cout << "categorias correu" << endl;
     lerProdutos();
+    cout << "produtos correu" << endl;
     lerClientes();
+    cout << "clientes correu" << endl;
     lerProdutosLojaOnline();
+    cout << "produtosonline correu" << endl;
     lerProdutosLojaFisica();
+    cout << "produtosfisica correu" << endl;
     lerReposicoes();
+    cout << "reposicoes correu" << endl;
     lerTransferencias();
+    cout << "transferencias correu" << endl;
     LerTransacoes();
+    cout << "transacoes correu" << endl;
     UI();
 }
 
@@ -196,12 +204,11 @@ void BuyNowUI::administrador() {
             bool validSortOption = false;
             string ordenarInput;
             do{
-                cout << endl;
                 cout << "1: Ordenar por Valor" << endl;
                 cout << "2: Ordenar por ID" << endl;
                 cout << "3: Ordenar por Nome" << endl;
                 cout << "4: Mostrar Produtos" << endl;
-                cout << "   Enter option: " << endl;
+                cout << "5: Enter option" << endl;
                 getline(cin, ordenarInput);
                 if (ordenarInput == "1")
                     bn.sortProdutosByValue();
@@ -359,7 +366,7 @@ void BuyNowUI::lerProdutosLojaFisica() {
 
     fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Fisica.txt)");
     if(!fin.is_open()){
-        cerr << "Ficheiro dos produtos online nao encontrado\n";
+        cerr << "Ficheiro dos produtos fisica nao encontrado\n";
         exit(1);
     }
 
@@ -433,9 +440,9 @@ void BuyNowUI::lerTransferencias() {
     char caracter;
 
 
-    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Reposicoes.txt)");
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Transferencias.txt)");
     if(!fin.is_open()){
-        cerr << "Ficheiro das reposicoes nao encontrado\n";
+        cerr << "Ficheiro das transferencias nao encontrado\n";
         exit(1);
     }
 
@@ -580,7 +587,6 @@ void BuyNowUI::LerTransacoes() {
 
         while (line!="-"){
 
-            getline(fin,line);
             istringstream format11line(line);
             format11line >> codigo;
 
