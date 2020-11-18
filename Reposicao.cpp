@@ -33,9 +33,9 @@ Date Reposicao::getData() const { return data; }
 string Reposicao::getInfo() const {
     string info = "Loja Fisica: ";
     info += lojaFisica.getLocalidade() + "\n";
-    info += "Produto: " + produto->getNomeProduto();
-    info += "Quantidade: " + to_string(quantidade);
-    info += "Data: " + data.getInfo();
+    info += "Produto: " + produto->getNomeProduto() + "\n";
+    info += "Quantidade: " + to_string(quantidade) + "\n";
+    info += "Data: " + data.getInfo() + "\n";
     return info;
 }
 

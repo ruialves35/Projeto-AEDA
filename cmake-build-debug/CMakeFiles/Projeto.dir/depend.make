@@ -18,12 +18,16 @@ CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Transferencia.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../BuyNow.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../BuyNowUI.cpp
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../BuyNowUI.h
+CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../CartaoCredito.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Categoria.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Cliente.h
+CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../ClienteRegistado.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Date.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Fornecedor.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../LojaFisica.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../LojaOnline.h
+CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../MbWay.h
+CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Multibanco.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Pagamento.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Reposicao.h
@@ -123,12 +127,16 @@ CMakeFiles/Projeto.dir/Transferencia.cpp.obj: ../Transferencia.h
 
 CMakeFiles/Projeto.dir/main.cpp.obj: ../BuyNow.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../BuyNowUI.h
+CMakeFiles/Projeto.dir/main.cpp.obj: ../CartaoCredito.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Categoria.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Cliente.h
+CMakeFiles/Projeto.dir/main.cpp.obj: ../ClienteRegistado.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Date.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Fornecedor.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../LojaFisica.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../LojaOnline.h
+CMakeFiles/Projeto.dir/main.cpp.obj: ../MbWay.h
+CMakeFiles/Projeto.dir/main.cpp.obj: ../Multibanco.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Pagamento.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Reposicao.h

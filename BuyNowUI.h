@@ -19,6 +19,7 @@ public:
     void lerCategorias();
     void lerProdutos();
     void lerClientes();
+    void lerLojasOnline();
     void lerProdutosLojaOnline();
     void lerProdutosLojaFisica();
     void lerReposicoes();
