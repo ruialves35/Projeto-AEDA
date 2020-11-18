@@ -6,33 +6,33 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Sara/Desktop/AEDATreino/BuyNow.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/BuyNow.h
 iostream
 -
 Windows.h
 -
 LojaFisica.h
-C:/Users/Sara/Desktop/AEDATreino/LojaFisica.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/LojaFisica.h
 LojaOnline.h
-C:/Users/Sara/Desktop/AEDATreino/LojaOnline.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/LojaOnline.h
 Cliente.h
-C:/Users/Sara/Desktop/AEDATreino/Cliente.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Cliente.h
 Transacao.h
-C:/Users/Sara/Desktop/AEDATreino/Transacao.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Transacao.h
 vector
 -
 Fornecedor.h
-C:/Users/Sara/Desktop/AEDATreino/Fornecedor.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Fornecedor.h
 Transferencia.h
-C:/Users/Sara/Desktop/AEDATreino/Transferencia.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Transferencia.h
 Categoria.h
-C:/Users/Sara/Desktop/AEDATreino/Categoria.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Categoria.h
 Reposicao.h
-C:/Users/Sara/Desktop/AEDATreino/Reposicao.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Reposicao.h
 
-C:/Users/Sara/Desktop/AEDATreino/BuyNowUI.cpp
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/BuyNowUI.cpp
 BuyNowUI.h
-C:/Users/Sara/Desktop/AEDATreino/BuyNowUI.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/BuyNowUI.h
 string
 -
 iostream
@@ -42,43 +42,43 @@ sstream
 fstream
 -
 
-C:/Users/Sara/Desktop/AEDATreino/BuyNowUI.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/BuyNowUI.h
 BuyNow.h
-C:/Users/Sara/Desktop/AEDATreino/BuyNow.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/BuyNow.h
 ClienteRegistado.h
-C:/Users/Sara/Desktop/AEDATreino/ClienteRegistado.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/ClienteRegistado.h
 Cliente.h
-C:/Users/Sara/Desktop/AEDATreino/Cliente.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Cliente.h
 Pagamento.h
-C:/Users/Sara/Desktop/AEDATreino/Pagamento.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Pagamento.h
 Multibanco.h
-C:/Users/Sara/Desktop/AEDATreino/Multibanco.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Multibanco.h
 MbWay.h
-C:/Users/Sara/Desktop/AEDATreino/MbWay.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/MbWay.h
 CartaoCredito.h
-C:/Users/Sara/Desktop/AEDATreino/CartaoCredito.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/CartaoCredito.h
 
-C:/Users/Sara/Desktop/AEDATreino/CartaoCredito.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/CartaoCredito.h
 Transacao.h
-C:/Users/Sara/Desktop/AEDATreino/Transacao.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Transacao.h
 Date.h
-C:/Users/Sara/Desktop/AEDATreino/Date.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Date.h
 
-C:/Users/Sara/Desktop/AEDATreino/Categoria.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Categoria.h
 iostream
 -
 
-C:/Users/Sara/Desktop/AEDATreino/Cliente.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Cliente.h
 iostream
 -
 
-C:/Users/Sara/Desktop/AEDATreino/ClienteRegistado.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/ClienteRegistado.h
 iostream
 -
 Cliente.h
-C:/Users/Sara/Desktop/AEDATreino/Cliente.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Cliente.h
 
-C:/Users/Sara/Desktop/AEDATreino/Date.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Date.h
 iostream
 -
 iomanip
@@ -90,79 +90,79 @@ vector
 map
 -
 
-C:/Users/Sara/Desktop/AEDATreino/Fornecedor.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Fornecedor.h
 iostream
 -
 
-C:/Users/Sara/Desktop/AEDATreino/LojaFisica.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/LojaFisica.h
 iostream
 -
 vector
 -
 Produto.h
-C:/Users/Sara/Desktop/AEDATreino/Produto.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Produto.h
 map
 -
 
-C:/Users/Sara/Desktop/AEDATreino/LojaOnline.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/LojaOnline.h
 iostream
 -
 Produto.h
-C:/Users/Sara/Desktop/AEDATreino/Produto.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Produto.h
 Transacao.h
-C:/Users/Sara/Desktop/AEDATreino/Transacao.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Transacao.h
 vector
 -
 
-C:/Users/Sara/Desktop/AEDATreino/MbWay.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/MbWay.h
 iostream
 -
 Transacao.h
-C:/Users/Sara/Desktop/AEDATreino/Transacao.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Transacao.h
 
-C:/Users/Sara/Desktop/AEDATreino/Multibanco.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Multibanco.h
 iostream
 -
 Transacao.h
-C:/Users/Sara/Desktop/AEDATreino/Transacao.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Transacao.h
 
-C:/Users/Sara/Desktop/AEDATreino/Pagamento.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Pagamento.h
 iostream
 -
 
-C:/Users/Sara/Desktop/AEDATreino/Produto.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Produto.h
 iostream
 -
 Categoria.h
-C:/Users/Sara/Desktop/AEDATreino/Categoria.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Categoria.h
 
-C:/Users/Sara/Desktop/AEDATreino/Reposicao.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Reposicao.h
 LojaFisica.h
-C:/Users/Sara/Desktop/AEDATreino/LojaFisica.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/LojaFisica.h
 Date.h
-C:/Users/Sara/Desktop/AEDATreino/Date.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Date.h
 
-C:/Users/Sara/Desktop/AEDATreino/Transacao.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Transacao.h
 iostream
 -
 algorithm
 -
 Date.h
-C:/Users/Sara/Desktop/AEDATreino/Date.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Date.h
 Produto.h
-C:/Users/Sara/Desktop/AEDATreino/Produto.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Produto.h
 Cliente.h
-C:/Users/Sara/Desktop/AEDATreino/Cliente.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Cliente.h
 Pagamento.h
-C:/Users/Sara/Desktop/AEDATreino/Pagamento.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Pagamento.h
 Fornecedor.h
-C:/Users/Sara/Desktop/AEDATreino/Fornecedor.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Fornecedor.h
 
-C:/Users/Sara/Desktop/AEDATreino/Transferencia.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Transferencia.h
 Fornecedor.h
-C:/Users/Sara/Desktop/AEDATreino/Fornecedor.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Fornecedor.h
 Produto.h
-C:/Users/Sara/Desktop/AEDATreino/Produto.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Produto.h
 Date.h
-C:/Users/Sara/Desktop/AEDATreino/Date.h
+C:/Users/Sara/Documents/GitHub/Projeto-AEDA/Date.h
 

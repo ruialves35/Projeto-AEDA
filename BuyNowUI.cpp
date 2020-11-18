@@ -4,7 +4,6 @@
 #include <sstream>
 #include <fstream>
 
-
 using namespace std;
 
 BuyNowUI::BuyNowUI() {
@@ -61,59 +60,335 @@ void BuyNowUI::cliente() {
     cout << "Por favor insira o seu nome" << endl;
     string nome;
     getline(cin,nome);
+    int contribuinteNumero = 0;
 
     //Pede contribuinte ao cliente
-    cout << "Por favor insira o seu numero de contribuinte" << endl;
-    string contribuinte;
-    getline(cin,contribuinte);
-    stringstream streamContribuinte(contribuinte);
-    int contribuinteNumero=0;
-    streamContribuinte >> contribuinteNumero;
-
-    //pede para o cliente escolher a opcao
-    string input;
-    bool validInput = true;
-    int result;
-    do {
-        validInput = true;
-        cout << "Por favor insira 1 se desejar adicionar produtos ao carrinho, 2 se deseja efetuar o pagamento e 3 se desejar se registar no sistema" << endl;
-        getline(cin, input);
-        istringstream checkinput(input); // get into a strinsgtream
+    bool validNumeroContribuinte = false;
+    while(!validNumeroContribuinte) {
+        cout << "Por favor insira o seu numero de contribuinte" << endl;
+        string contribuinte;
+        getline(cin, contribuinte);
+        stringstream streamContribuinte(contribuinte);
         if (cin.eof()) {
-            validInput = false;
+            validNumeroContribuinte = false;
             cin.clear();
             cout << "Por favor introduza um valor" << endl;
         }
-        else if (!(checkinput >> result)) {		//is not a number or a number with letters/symbols.
+        else if (!(streamContribuinte >> contribuinteNumero)) {		//is not a number or a number with letters/symbols.
             cout << "Por favor introduza um valor" << endl;
-            validInput = false;
+            validNumeroContribuinte = false;
+            Sleep(1000);
         }
-        else if (result < 1 || result > 3) {
-            cout << "O numero introduzido nao e correto" << endl;
-            validInput = false;
+        else{
+            validNumeroContribuinte = true;
         }
-    } while (!validInput);
-
-
-    if(result==1){
-
-
-
     }
 
-    if(result==2){
+    //pede para o cliente escolher a opcao
+    string input;
+    bool endClient = false;
 
-        cout << "efetuacao de pagamento" << endl;
+    while(!endClient) {
+        vector<Produto*> carrinho;
 
+        int result;
+        bool validInput = true;
+        do {
+            validInput = true;
+            cout << "0: Terminar Programa" << endl;
+            cout << "1: Ver Produtos" << endl;
+            cout << "2: Adicionar Produto ao Carrinho "<< endl;
+            cout << "3: Efetuar Pagamento" << endl;
+            cout << "4: Efetuar registo no sistema" << endl;
+            cout << "   Enter option: ";
+            getline(cin, input);
+            istringstream checkinput(input); // get into a strinsgtream
+            if (cin.eof()) {
+                validInput = false;
+                cin.clear();
+                cout << "Por favor introduza um valor" << endl;
+
+            } else if (!(checkinput >> result)) {        //is not a number or a number with letters/symbols.
+                cout << "Por favor introduza um valor" << endl;
+                validInput = false;
+
+            } else if (result < 0 || result > 4) {
+                cout << "O numero introduzido nao e correto. Tem de ser entre 0 e 4" << endl;
+                validInput = false;
+            }
+            else validInput = true;
+        } while (!validInput);
+
+        if (result == 0) {  //terminar
+            endClient = true;
+        }
+        else if (result == 1) { //ver produtos
+            bool validCategoria = false;
+            string inputCategoria;
+            do {
+                cout << string(50, '\n'); //Clear Screen
+                cout << "CATEGORIAS DISPONIVEIS" << endl;
+                bn.showCategorias();
+                Sleep(1000);
+                cout << endl;
+                cout << "Introduza a Categoria dos Produtos que deseja ver (uma das indicadas acima)" << endl;
+                cout << "Categoria: ";
+                getline(cin, inputCategoria);
+                istringstream checkinput(inputCategoria); // get into a strinsgtream
+                if (cin.eof()) {
+                    validInput = false;
+                    cin.clear();
+                    cout << endl << "Categoria Inválida" << endl;
+                    Sleep(700);
+                    cout << string(50, '\n'); //Clear Screen
+                }
+                else{
+                    for (auto i : bn.getCategorias()){
+                        if (i.getNomeCategoria() == inputCategoria)
+                            validCategoria = true;
+                    }
+                }
+                if (!validCategoria){
+                    cout << endl << "Categoria Inválida" << endl;
+                    Sleep(700);
+                    cout << string(50, '\n'); //Clear Screen
+                }
+            }while(!validCategoria);
+
+            bool validSortOption = false;
+            string ordenarInput;
+            do{
+                cout << "1: Ordenar por Valor" << endl;
+                cout << "2: Ordenar por ID" << endl;
+                cout << "3: Ordenar por Nome" << endl;
+                cout << "4: Mostrar Produtos" << endl;
+                cout << "   Enter option: " << endl;
+                getline(cin, ordenarInput);
+                if (ordenarInput == "1")
+                    bn.sortProdutosByValue();
+                else if ( ordenarInput == "2")
+                    bn.sortProdutosById();
+                else if (ordenarInput == "3")
+                    bn.sortProdutosByName();
+                else if (ordenarInput == "4")
+                    validSortOption = true;
+                else{
+                    cout << endl << "Opção Inválida" << endl;
+                    Sleep(1000);
+                    cout << string(50, '\n'); //Clear Screen
+                }
+            }while(!validSortOption);
+            bn.showProdutosCategoria(inputCategoria);
+            Sleep(5000);
+        }
+
+        else if (result == 2) {  //adicionar produto ao carrinho
+            string input;
+            bool validOption = false;
+            do {
+                cout << "Caso queira voltar para traz, introduza 0." << endl;
+                cout << "Caso contrario, introduza o nome do produto. (Sensivel a Maiusculas, espacos e minusculas, certifique-se de que escreveu da forma correta)" << endl;
+                cout << "Opcao: " << endl;
+                getline(cin, input);
+                if (input == "0") break;
+                for (auto i : bn.getProdutos()) {
+                    if (i->getNomeProduto() == input){
+                        string quantInput;
+                        int quantidade;
+                        cout << "Introduza a Quantidade de" << i->getNomeProduto() << " que deseja adicionar: ";
+                        getline(cin, quantInput);
+                        istringstream checkQuantidade(quantInput); // get into a strinsgtream
+
+                        if (cin.eof()){
+                            cin.clear();
+                            cout << "Por favor introduza um valor correto para a quantidade " << endl;
+                            Sleep(3000);
+                            break;
+                        }
+                        else if (!(checkQuantidade >> quantidade)){
+                            cout << "Por favor introduza um valor correto para a quantidade" << endl;
+                            Sleep(3000);
+                            break;
+                        }
+                        else {
+                            validOption = true;
+                            while (quantidade > 0) {
+                                carrinho.push_back(i);
+                                quantidade--;
+                            }
+                        }
+                    }
+                }
+            } while(!validOption);
+        }
+
+        else if (result == 3) {
+            string opcaoPagar;
+            int opcao;
+            bool validOptionPagar = false;
+            while(!validOptionPagar) {
+                cout << "0: Retroceder" << endl;
+                cout << "1: Multibanco" << endl;
+                cout << "2: MbWay " << endl;
+                cout << "3: Cartao de Credito" << endl;
+                cout << "   Introduza a opcao de pagamento: " << endl;
+                getline(cin, opcaoPagar);
+                istringstream checkInput(opcaoPagar); // get into a strinsgtream
+                if (cin.eof()) {
+                    cin.clear();
+                    cout << endl << "Opcao Invalida" << endl;
+                    Sleep(5000);
+                    cout << string(50, '\n'); //Clear Screen
+                } else if (!(checkInput >> opcao)) {
+                    cout << "Opcao Invalida" << endl;
+                } else if (opcao < 0 || opcao > 3) {
+                    cout << "Opcao Invalida" << endl;
+                }
+                else{
+                    //se opcao for 0 ele volta para tras
+                    if (opcao == 0) validOptionPagar = true;
+
+                    else if (opcao ==1){    //Multibanco
+                        string referencia;
+                        int ref;
+                        cout << "Introduza a referencia multibanco: ";
+                        getline(cin, referencia);
+                        istringstream checkRef(referencia);
+                        if (referencia.size() != 9){
+                            cout << endl << "Referencia Invalida." << endl;
+                            Sleep(5000);
+                            cout << string(50, '\n'); //Clear Screen
+                        }
+                        else if (cin.eof()){
+                            cin.clear();
+                            cout << endl << "Numero de referencia Invalida" << endl;
+                            Sleep(5000);
+                            cout << string(50, '\n');   //Clear Screen
+                        }
+                        else if (!(checkRef >> ref)){
+                            cout << endl << "Numero de referencia Invalida" << endl;
+                            Sleep(5000);
+                            cout << string(50, '\n');
+                        }
+                        else{
+                            Cliente c(nome, contribuinteNumero);
+
+                            validOptionPagar = true;
+                            Multibanco multi(ref);
+
+                            time_t theTime = time(NULL);
+                            struct tm *aTime = localtime(&theTime);
+                            int day = aTime->tm_mday;
+                            int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
+                            int year = aTime->tm_year + 1900; // Year is # years since 1900
+                            Date data(day, month, year);
+
+                            Transacao *t = new Transacao(&c, data, carrinho, &multi);
+                            bn.addTransacao(t);
+                        }
+                    }
+                    else if (opcao == 2){    //MbWay
+                        string inputNum;
+                        int numTelemovel;
+                        cout << "Introduza o seu numero de telemovel: ";
+                        getline(cin, inputNum);
+                        istringstream checkNum(inputNum);
+                        if (inputNum.size() != 9){
+                            cout << endl << "Numero de telemovel invalido" << endl;
+                            Sleep(5000);
+                            cout << string(50, '\n');
+                        }
+                        else if (cin.eof()){
+                            cin.clear();
+                            cout << endl << "Numero de telemovel Invalido" << endl;
+                            Sleep(5000);
+                            cout << string(50, '\n');   //Clear Screen
+                        }
+                        else if (!(checkNum >> numTelemovel)){
+                            cout << endl << "Numero de telemovel Invalido" << endl;
+                            Sleep(5000);
+                            cout << string(50, '\n');
+                        }
+                        else{
+                            Cliente c(nome, contribuinteNumero);
+                            validOptionPagar = true;
+                            MbWay mb(numTelemovel);
+
+                            time_t theTime = time(NULL);
+                            struct tm *aTime = localtime(&theTime);
+                            int day = aTime->tm_mday;
+                            int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
+                            int year = aTime->tm_year + 1900; // Year is # years since 1900
+                            Date data(day, month, year);
+
+                            Transacao *t = new Transacao(&c, data, carrinho, &mb);
+                            bn.addTransacao(t);
+                        }
+
+                    }
+                    else if (opcao == 3){   //cartao credito
+                        string numCartao;
+                        cout << "Introduza numero do cartao: ";
+                        getline(cin, numCartao);
+                        bool isNumber = true;
+                        for (auto i : numCartao){
+                            if (!isdigit(i)) {
+                                isNumber = false;
+                                break;
+                            }
+                        }
+                        if (numCartao.size() != 15 && numCartao.size() != 16){
+                            cout << endl << "Numero do Cartao Invalida. O numero do cartao tem de ter 15 ou 16 numeros." << endl;
+                            Sleep(5000);
+                            cout << string(50, '\n');   //Clear Screen
+                        }
+                        else if(cin.eof()){
+                            cin.clear();
+                            cout << endl << "Numero de Cartao Invalido" << endl;
+                            Sleep(5000);
+                            cout << string(50, '\n');   //Clear Screen
+                        }
+                        else if (!isNumber){
+                            cout << endl << "O valor que introduziu nao e um numero de Cartao de Credito" << endl;
+                            Sleep(5000);
+                            cout << string(50, '\n'); //clear screen
+                        }
+                        else{
+                            Cliente c(nome, contribuinteNumero);
+                            string data;
+                            int day, month, year;
+                            char carater;
+                            cout << "Introduza a data de validade do cartao de credito (deve ser da forma DD/MM/AAAA): ";
+                            getline(cin, data);
+                            istringstream validData(data);
+                            if (!(validData >> day >> carater >> month >>carater >> year)){
+                                cout << "Data de Cartao Invalida" << endl;
+                                Sleep(5000);
+                                cout << string(50, '\n');
+                            }
+                            else {
+                                validOptionPagar = true;
+                                Date d1(day, month, year);
+
+                                time_t theTime = time(NULL);
+                                struct tm *aTime = localtime(&theTime);
+                                int day2 = aTime->tm_mday;
+                                int month2 = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
+                                int year2 = aTime->tm_year + 1900; // Year is # years since 1900
+                                Date data(day2, month2, year2);
+
+                                CartaoCredito cc(numCartao, d1);
+                                Transacao *t = new Transacao(&c, data, carrinho, &cc);
+                                bn.addTransacao(t);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-
-    if(result==3){
-
-        
-
-    }
-
 }
+
 
 /**
  * Setup of Administrador
