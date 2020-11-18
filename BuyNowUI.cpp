@@ -19,6 +19,15 @@ BuyNowUI::BuyNowUI() {
     lerTransferencias();
     LerTransacoes();
     UI();
+    escreverCategorias();
+    escreverProdutos();
+    escreverClientes();
+    escreverLojasFisicas();
+    escreverProdutosLojaFisica();
+    escreverTransacoes();
+    escreverTransferencias();
+    escreverReposicoes();
+    escreverLojaOnline();
 }
 
 void BuyNowUI::UI() {
@@ -1008,4 +1017,77 @@ void BuyNowUI::escreverTransacoes() {
     }
     out << "-" << endl;
     out.close();
+}
+
+void BuyNowUI::escreverCategorias() {
+
+    ofstream outStream;
+    outStream.open("Categorias.txt");
+    for(auto i: bn.getCategorias()){
+        outStream << i.getNomeCategoria() << endl;
+    }
+
+    outStream.close();
+
+}
+
+void BuyNowUI::escreverProdutos() {
+
+    ofstream outStream;
+    outStream.open("Produtos.txt");
+    for(auto i: bn.getProdutos()){
+        outStream << i->getNomeProduto() << endl;
+        outStream << i->getCategoria().getNomeCategoria() << endl;
+        outStream << i->getId() << endl;
+        outStream << i->getValor() << endl;
+    }
+
+    outStream.close();
+
+}
+
+void BuyNowUI::escreverClientes() {
+
+    ofstream outStream;
+    outStream.open("Clientes.txt");
+    for(auto i: bn.getClientes()){
+        outStream << i->getNome() << endl;
+        outStream << i->getNumContribuinte() << endl;
+        ClienteRegistado *cr = dynamic_cast<ClienteRegistado*>(i);
+        if(cr!=NULL){
+            outStream << cr->getEmail() << endl;
+        }
+    }
+
+    outStream.close();
+
+}
+
+void BuyNowUI::escreverLojasFisicas() {
+
+    ofstream outStream;
+    outStream.open("NomesFisicas.txt");
+    for(auto i: bn.getLojasFisicas()){
+        outStream << i.getLocalidade() << endl;
+    }
+
+    outStream.close();
+
+}
+
+void BuyNowUI::escreverProdutosLojaFisica() {
+
+    ofstream outStream;
+    outStream.open("Fisica.txt");
+    for(auto i: bn.getLojasFisicas()){
+        outStream << i.getLocalidade() << endl;
+        for (auto j : bn.getProdutos()){
+            if (i.getStockFisico(j) != 0){
+                outStream << j->getId() << endl;
+                outStream << i.getStockFisico(j) << endl;
+            }
+        }
+    }
+
+    outStream.close();
 }

@@ -17,11 +17,16 @@ public:
     void cliente();
     void administrador();
     void lerCategorias();
+    void escreverCategorias();
     void lerProdutos();
+    void escreverProdutos();
     void lerClientes();
+    void escreverClientes();
     void lerLojasFisicas();
+    void escreverLojasFisicas();
     void lerProdutosLojaOnline();
     void lerProdutosLojaFisica();
+    void escreverProdutosLojaFisica();
     void lerReposicoes();
     void lerTransferencias();
     void LerTransacoes();
