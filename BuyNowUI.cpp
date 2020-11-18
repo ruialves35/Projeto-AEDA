@@ -10,10 +10,12 @@ using namespace std;
 BuyNowUI::BuyNowUI() {
     lerCategorias();
     lerProdutos();
+    lerClientes();
     lerProdutosLojaOnline();
     lerProdutosLojaFisica();
     lerReposicoes();
     lerTransferencias();
+    LerTransacoes();
     UI();
 }
 
@@ -115,7 +117,7 @@ void BuyNowUI::cliente() {
 /**
  * Setup of Administrador
  */
-void BuyNowUI::Administrador() {
+void BuyNowUI::administrador() {
     //pede para o cliente escolher a opcao
     string input;
     bool validInput = true;
@@ -265,10 +267,6 @@ void BuyNowUI::lerCategorias() {
         bn.addCategoria(cat);
     }
 
-    cout << "lidas as categorias" << endl;
-
-    bn.showCategorias();
-
 }
 
 void BuyNowUI::lerProdutos() {
@@ -303,18 +301,12 @@ void BuyNowUI::lerProdutos() {
         istringstream format4line(line);
         format4line >> preco;
 
-        //PRECISO DE UM GETCATEGORIA NA BUYNOW
-
         Categoria cat = bn.getCategoria(stringCategoria);
 
         Produto *prod = new Produto(stringProduto,codigo,preco,cat);
         bn.addProduto(prod);
 
     }
-
-    cout << "lidos os produtos" << endl;
-
-    bn.showProdutos();
 
 }
 
@@ -340,7 +332,7 @@ void BuyNowUI::lerProdutosLojaOnline() {
         istringstream format2line(line);
         format2line >> quantidade;
 
-        //bn.getLojaOnline().addProduto(*bn.getProduto(codigo),quantidade);
+        bn.addProdutoOnline(bn.getProduto(codigo),quantidade);
 
     }
 
@@ -384,14 +376,10 @@ void BuyNowUI::lerProdutosLojaFisica() {
         istringstream format3line(line);
         format2line >> quantidade;
 
-        //PRECISO DE UM GETLOJAFISICA QUE ME DE A LOJA INTRODUZINDO A STRING DO NOME DA MESMA
-        /*LojaFisica loja;
-        loja = bn.getLojaFisica(localidadeLoja);
-
-        Produto prod;
+        Produto *prod;
         prod = bn.getProduto(codigo);
 
-        loja.addProduto(prod,quantidade);*/
+        bn.addProdutoLojaFisica(localidadeLoja,prod,quantidade);
 
     }
 
@@ -403,6 +391,7 @@ void BuyNowUI::lerReposicoes() {
     ifstream fin;
     string line, stringLocalidade;
     int codigo, quantidade,dia,mes,ano;
+    char caracter;
 
 
     fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Reposicoes.txt)");
@@ -415,28 +404,22 @@ void BuyNowUI::lerReposicoes() {
 
         getline(fin,line);
         istringstream format1line(line);
-        format1line >> dia;
+        format1line >> dia >> caracter >> mes >> caracter >> ano;
 
         getline(fin,line);
         istringstream format2line(line);
-        format2line >> mes;
+        format2line >> codigo;
 
         getline(fin,line);
         istringstream format3line(line);
-        format2line >> ano;
+        format3line >> quantidade;
 
         getline(fin,line);
         istringstream format4line(line);
-        format4line >> codigo;
+        format4line >> stringLocalidade;
 
-        getline(fin,line);
-        istringstream format5line(line);
-        format5line >> quantidade;
-
-        getline(fin,line);
-        istringstream format6line(line);
-        format6line >> stringLocalidade;
-
+        Reposicao rep(bn.getLojaFisica(stringLocalidade),bn.getProduto(codigo),quantidade,Date(dia,mes,ano));
+        bn.addReposicao(rep);
     }
 
 }
@@ -446,6 +429,7 @@ void BuyNowUI::lerTransferencias() {
     ifstream fin;
     string line;
     int codigo, quantidade,dia,mes,ano;
+    char caracter;
 
 
     fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Reposicoes.txt)");
@@ -458,28 +442,157 @@ void BuyNowUI::lerTransferencias() {
 
         getline(fin,line);
         istringstream format1line(line);
-        format1line >> dia;
+        format1line >> dia >> caracter >> mes >> caracter >> ano;
 
         getline(fin,line);
         istringstream format2line(line);
-        format2line >> mes;
+        format2line >> codigo;
 
         getline(fin,line);
         istringstream format3line(line);
-        format2line >> ano;
+        format3line >> quantidade;
+
+        Fornecedor f;
+        Produto *prod = bn.getProduto(codigo);
+        Date d1(dia,mes,ano);
+        Transferencia *t1 = new Transferencia(f,prod,quantidade,d1);
+        bn.addTransferencia(t1);
+
+    }
+
+}
+
+void BuyNowUI::lerClientes() {
+
+    ifstream fin;
+    string line, stringNome,stringEmail;
+    int numContribuinte;
+
+
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Clientes.txt)");
+    if(!fin.is_open()){
+        cerr << "Ficheiro das reposicoes nao encontrado\n";
+        exit(1);
+    }
+
+    while(!fin.eof()){
+
+        getline(fin,line);
+        istringstream format1line(line);
+        format1line >> stringNome;
+
+        getline(fin,line);
+        istringstream format2line(line);
+        format2line >> numContribuinte;
+
+        getline(fin,line);
+        istringstream format3line(line);
+        format2line >> stringEmail;
+
+        Cliente *c1 = new ClienteRegistado(stringNome,numContribuinte,stringEmail);
+        bn.addCliente(c1);
+
+    }
+
+}
+
+void BuyNowUI::LerTransacoes() {
+
+    ifstream fin;
+    string line, stringNome,numCartao,multibanco,mbway,cartao;
+    int diaA,diaB,mesA,mesB,anoA,anoB,contribuinte,stringTipoPagamento,numTelemovel,referencia,codigo,quantidade;
+    char caracter;
+    multibanco="multibanco";
+    mbway="mbway";
+    cartao="cartao de credito";
+
+
+    fin.open(R"(C:\Users\Sara\Desktop\AEDATreino\Transacoes.txt)");
+    if(!fin.is_open()){
+        cerr << "Ficheiro das reposicoes nao encontrado\n";
+        exit(1);
+    }
+
+    while(!fin.eof()){
+
+        getline(fin,line);
+        istringstream format1line(line);
+        format1line >> diaA >> caracter >> mesA >> caracter >> anoA;
+
+        Date d1(diaA,mesA,anoA);
+
+        getline(fin,line);
+        istringstream format2line(line);
+        format2line >> stringNome;
+
+        getline(fin,line);
+        istringstream format3line(line);
+        format3line >> contribuinte;
 
         getline(fin,line);
         istringstream format4line(line);
-        format4line >> codigo;
+        format4line >> stringTipoPagamento;
+
+        Transacao *tran = new Transacao();
+        Cliente *c1 = bn.getCliente(stringNome,contribuinte);
+        tran->setCliente(c1);
+        tran->setDate(d1);
+
+        if(line==multibanco){
+
+            getline(fin,line);
+            istringstream format5line(line);
+            format5line >> referencia;
+
+            Pagamento *pag = new Multibanco(referencia);
+            tran->setPagamento(pag);
+
+        }
+        else if(line==mbway){
+
+            getline(fin,line);
+            istringstream format5line(line);
+            format5line >> numTelemovel;
+
+            Pagamento *pag = new MbWay(numTelemovel);
+            tran->setPagamento(pag);
+
+        }
+        else if(line==cartao){
+
+            getline(fin,line);
+            istringstream format5line(line);
+            format5line >> numCartao;
+
+            getline(fin,line);
+            istringstream format6line(line);
+            format6line >> diaB >> caracter >> mesB >> caracter >> anoB;
+
+            Date d2(diaB,mesB,anoB);
+
+            Pagamento *pag = new CartaoCredito(numCartao,d2);
+            tran->setPagamento(pag);
+
+        }
 
         getline(fin,line);
-        istringstream format5line(line);
-        format5line >> quantidade;
 
-        /*Fornecedor f;
-        Date d1(dia,mes,ano);
-        Transferencia t1 = new Transferencia()
-        bn.addTransferencia();*/
+        while (line!="-"){
+
+            getline(fin,line);
+            istringstream format11line(line);
+            format11line >> codigo;
+
+            getline(fin,line);
+            istringstream format12line(line);
+            format12line >> quantidade;
+
+            tran->addProduto(bn.getProduto(codigo),quantidade);
+
+            getline(fin,line);
+
+        }
+
 
     }
 
