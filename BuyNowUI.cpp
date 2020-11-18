@@ -581,8 +581,7 @@ void BuyNowUI::lerCategorias() {
 
     while(!fin.eof()){
         getline(fin,line);
-        istringstream format1line(line);
-        format1line >> categoria;
+        categoria = line;
         Categoria cat(categoria);
         bn.addCategoria(cat);
     }
@@ -606,12 +605,10 @@ void BuyNowUI::lerProdutos() {
 
 
         getline(fin,line);
-        istringstream format1line(line);
-        format1line >> stringProduto;
+        stringProduto=line;
 
         getline(fin,line);
-        istringstream format2line(line);
-        format2line >> stringCategoria;
+        stringCategoria=line;
 
         getline(fin,line);
         istringstream format3line(line);
@@ -674,8 +671,7 @@ void BuyNowUI::lerProdutosLojaFisica() {
     while(!fin.eof()){
 
         getline(fin,line);
-        istringstream format1line(line);
-        format1line >> localidadeLoja;
+        localidadeLoja=line;
 
         getline(fin,line);
         istringstream format2line(line);
@@ -726,8 +722,7 @@ void BuyNowUI::lerReposicoes() {
         format3line >> quantidade;
 
         getline(fin,line);
-        istringstream format4line(line);
-        format4line >> stringLocalidade;
+        stringLocalidade=line;
 
         LojaFisica l1;
         l1=bn.getLojaFisica(stringLocalidade);
@@ -795,16 +790,14 @@ void BuyNowUI::lerClientes() {
     while(!fin.eof()){
 
         getline(fin,line);
-        istringstream format1line(line);
-        format1line >> stringNome;
+        stringNome=line;
 
         getline(fin,line);
         istringstream format2line(line);
         format2line >> numContribuinte;
 
         getline(fin,line);
-        istringstream format3line(line);
-        format2line >> stringEmail;
+        stringEmail=line;
 
         Cliente *c1 = new ClienteRegistado(stringNome,numContribuinte,stringEmail);
         bn.addCliente(c1);
@@ -816,8 +809,8 @@ void BuyNowUI::lerClientes() {
 void BuyNowUI::LerTransacoes() {
 
     ifstream fin;
-    string line, stringNome,numCartao,multibanco,mbway,cartao;
-    int diaA,diaB,mesA,mesB,anoA,anoB,contribuinte,stringTipoPagamento,numTelemovel,referencia,codigo,quantidade;
+    string line, stringNome,numCartao,multibanco,mbway,cartao,stringTipoPagamento;
+    int diaA,diaB,mesA,mesB,anoA,anoB,contribuinte,numTelemovel,referencia,codigo,quantidade;
     char caracter;
     multibanco="multibanco";
     mbway="mbway";
@@ -839,16 +832,13 @@ void BuyNowUI::LerTransacoes() {
         Date d1(diaA,mesA,anoA);
 
         getline(fin,line);
-        istringstream format2line(line);
-        format2line >> stringNome;
+        stringNome=line;
 
         getline(fin,line);
         istringstream format3line(line);
         format3line >> contribuinte;
 
         getline(fin,line);
-        istringstream format4line(line);
-        format4line >> stringTipoPagamento;
 
         Transacao *tran = new Transacao();
         Cliente *c1 = bn.getCliente(stringNome,contribuinte);
@@ -878,8 +868,7 @@ void BuyNowUI::LerTransacoes() {
         else if(line==cartao){
 
             getline(fin,line);
-            istringstream format5line(line);
-            format5line >> numCartao;
+            numCartao=line;
 
             getline(fin,line);
             istringstream format6line(line);
@@ -928,16 +917,9 @@ void BuyNowUI::lerLojasOnline() {
 
     while(!fin.eof()){
         getline(fin,line);
-        istringstream format1line(line);
-        format1line >> localidade;
+        localidade=line;
         LojaFisica loja(localidade);
         bn.addLojaFisica(loja);
     }
 
 }
-
-
-
-
-
-
