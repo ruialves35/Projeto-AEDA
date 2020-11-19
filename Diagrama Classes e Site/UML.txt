@@ -1,0 +1,340 @@
+@startuml
+class CartaoCredito {
+  - string numCartao
+  - Date validade
+  + CartaoCredito()
+  + CartaoCredito(string numCartao, Date val)
+  + CartaoCredito(double valor, string numCartao, Date val)
+  + string getNumCartao() const
+  + void setNumCartao(string numCartao)
+  + void setValidade(Date validade)
+  + Date getValidade() const
+  + void getInfo(ostream& o) const
+}
+
+class Categoria{
+  - string nomeCategoria
+  + Categoria()
+  + Categoria(string nome)
+  + string getNomeCategoria() const
+  + void setNome(string nome)
+  + bool operator == (Categoria &c2)
+}
+
+class Cliente{
+  - string nomeCliente
+  - int numContribuinteCliente
+  + Cliente()
+  + Cliente(string nome, int num)
+  + string getNome() const
+  + void setNome(string nome)
+  + int getNumContribuinte() const
+  + void setNumContribuinte(int numContribuinte)
+  + virtual string getInfo() const
+  + friend bool operator == (Cliente& c1, Cliente& c2)
+  + friend ostream& operator << (ostream &o, Cliente &c1)
+}
+
+class ClienteRegistado{
+  - static int numeroClientesRegistados
+  - int id
+  - string email
+  + ClienteRegistado()
+  + ClienteRegistado(string nome, int numContribuinte, string email)
+  + void setId(int id)
+  + int getId() const
+  + string getEmail() const
+  + void setEmail(string email)
+  + string getInfo() const
+  + void setNumeroClientesRegistados(int ncr)
+  + int getNumeroClientesRegistados() const
+}
+
+class Date{
+  - unsigned int year
+  - unsigned int month
+  - unsigned int day
+  - map<int, int> months_map
+  +  Date()
+  +  Date(unsigned int day, unsigned int month, unsigned int year)
+  +  void setMap()
+  +  bool isValid()
+  +  bool isLeap() const
+  +  map<int, int> getMonthsMap() const
+  +  unsigned int getYear() const
+  +  void setYear(int year)
+  +  unsigned int getMonth() const
+  +  void setMonth(int month)
+  +  unsigned int getDay() const
+  +  void setDay(int day)
+  +  string getInfo() const
+  +  friend ostream& operator << (ostream& o, const Date &d)
+  +  friend bool operator < (const Date &d1, const Date &d2)
+  +  friend bool operator == (const Date &d1, const Date &d2)   
+}
+
+class Fornecedor {
+  - string nomeFornecedor
+  +  Fornecedor()
+  +  Fornecedor(string nome)
+  +  string getNomeFornecedor() const
+  +  void setNome(string nome)
+}
+
+class LojaFisica {
+  - string localidade
+  - map<Produto*, int> stockFisico
+  +  LojaFisica()
+  +  LojaFisica(string localidade)
+  +  void addProduto(Produto* produto, int quantidade = 1)
+  +  void removeProduto(Produto *produto, int quantidade = 1)
+  +  int getStockFisico(Produto *p)
+  +  void setLocalidade(string localidade)
+  +  string getLocalidade() const
+  +  bool operator == (const LojaFisica &l2)
+}
+
+class LojaOnline {
+  - map<Produto*, int> stockOnline
+  - vector<Transacao*> transacoes
+  +  LojaOnline()
+  +  LojaOnline(vector<Transacao*> t)
+  +  void showAllTransacoes() const
+  +  void addProduto(Produto *p, int quantidade = 1)
+  +  void removeProduto(Produto *p, int quantidade = 1)
+  +  int getStockOnline(Produto* p)
+  +  vector<Transacao*> getTransacoes() const
+  +  void addTransacao(Transacao *t)
+  +  void removeTransacao(Transacao *t)
+  +  void addProdutoToTransacao(Transacao* t, Produto* p, int quantidade = 1)
+  +  void removeProdutoOfTransacao(Transacao* t, Produto* p, int quantidade = 1)
+  +  void sortTransacaoByDate()
+  +  static bool compareTransacoesByDate(const Transacao* t1, const Transacao *t2)
+}
+
+class MbWay {
+  - int numTelemovel
+  +  MbWay()
+  +  MbWay(int num)
+  +  MbWay(double valor, int num)
+  +  int getNumTelemovel() const
+  +  void setNumTelemovel(int num)
+  +  void getInfo(ostream& o) const
+}
+
+class Multibanco {
+  - int referencia
+  +  Multibanco()
+  +  Multibanco(int referencia)
+  +  Multibanco(double valorTotal, int referencia)
+  +  void setReferencia(int referencia)
+  +  int getReferencia() const
+  +  void getInfo(ostream &o) const
+}
+
+class Pagamento {
+  - double valor
+  +  Pagamento()
+  +  Pagamento(double valorTotal)
+  +  void setValor(double val)
+  +  double getValor() const
+  +  virtual void getInfo(ostream &o) const
+}
+
+class Produto {
+  -  int id
+  -  string nomeProduto
+  -  double valor
+  -  Categoria categoria
+  +  Produto()
+  +  Produto(string nome, int id, double val, Categoria categoria)
+  +  int getId() const
+  +  void setId(int newId)
+  +  string getNomeProduto() const
+  +  void setNomeProduto(string nome)
+  +  double getValor() const
+  +  void setValor(double val)
+  +  Categoria getCategoria() const
+  +  void setCategoria(Categoria &cat)
+  +  friend bool operator < (const Produto &p1, const Produto &p2)
+  +  friend bool operator == (const Produto &p1, const Produto &p2)
+}
+
+class Reposicao {
+  -  LojaFisica lojaFisica
+  -  Produto* produto
+  -  int quantidade
+  -  Date data
+  +  Reposicao()
+  +  Reposicao(LojaFisica lf, Produto* p, int quantidade, Date data)
+  +  void setLojaFisica(LojaFisica lf)
+  +  LojaFisica getLojaFisica() const
+  +  void setProduto(Produto* p)
+  +  Produto* getProduto() const
+  +  void setQuantidade(int quantidade)
+  +  int getQuantidade() const
+  +  Date getData() const
+  +  void setData(Date &data)
+  +  string getInfo() const
+  +  bool operator == (const Reposicao r1)
+}
+
+class Transacao {
+  -  static int numberOfTransacoes
+  -  int number
+  -  map<Produto*, int> quantidade
+  -  Date data
+  -  vector<Produto*> produtos
+  -  double valorTotal
+  -  Cliente* cliente
+  -  Pagamento* tipoPagamento
+  +  Transacao()
+  +  Transacao(Cliente *c, Date &d)
+  +  Transacao(Cliente *c, Date &d, vector<Produto*> &v)
+  +  Transacao(Cliente *c, Date &d, vector<Produto*> &v, Pagamento *p)
+  +  Date getDate() const
+  +  void setDate(Date &d)
+  +  void setCliente(Cliente *c)
+  +  Cliente* getCliente() const
+  +  void addProduto(Produto* p, int quantidade = 1)
+  +  void removeProduto(Produto *p)
+  +  void removeProduto(Produto *p, int quantidade)
+  +  int getQuantidade(Produto *p) const
+  +  void setPagamento(Pagamento* p)
+  +  Pagamento* getPagamento() const
+  +  int getNumber() const
+  +  double getValorTotal() const
+  +  void sortByValue()
+  +  void sortByName()
+  +  void sortById()
+  +  int getNumberOfTransacoes() const
+  + static bool compareProdutosByValue(const Produto* p1, const Produto* p2)
+  + static bool compareProdutosById(const Produto* p1, const Produto *p2)
+  + static bool compareProdutosByName(const Produto* p1, const Produto *p2)
+  + friend ostream& operator << (ostream &o, const Transacao &t)
+  +  friend bool operator == (const Transacao &t1, const Transacao &t2)
+}
+
+class Transferencia {
+  -  Fornecedor fornecedor
+  -  Produto* produto
+  -  int quantidade
+  -  Date data
+  +  Transferencia()
+  +  Transferencia(Fornecedor &f, Produto* p, int quantidade, Date data)
+  +  Fornecedor getFornecedor() const
+  +  void setFornecedor(Fornecedor &f)
+  +  Produto* getProduto() const
+  +  void setProduto(Produto* p)
+  +  Date getData() const
+  +  void setData(Date &data)
+  +  string getInfo() const
+}
+
+class BuyNow {
+  -  vector<Produto *> produtos
+  -  vector<Cliente *> clientes
+  -  vector<Categoria> categorias
+  -  vector<Reposicao> reposicoes
+  -  vector<LojaFisica> lojasFisicas
+  -  LojaOnline lojaOnline
+  -  Fornecedor fornecedor
+  -  int stockOk
+  -  int stockMin
+  -  vector<Transferencia*> transferencias
+  +  BuyNow()
+  +  BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin)
+  +  BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia*> tranferencias, int stockOk, int stockMin)
+  +  ~BuyNow()
+  +  void addCategoria(Categoria &c)
+  +  void removeCategoria(Categoria &c)
+  +  Fornecedor getFornecedor() const
+  +  void setFornecedor(Fornecedor &f)
+  +  void addCliente(Cliente *cliente)
+  +  void removeCliente(string nome, int numContribuinte)
+  +  void removeCliente(Cliente *cliente)
+  +  bool checkCliente(Cliente &cliente)
+  +  void addTransacao(Transacao *t)
+  +  void removeTransacao(Transacao *t)
+  +  void addProduto(Produto* p)
+  +  void removeProduto(Produto* p)
+  +  Produto* getProduto(int codigo) const
+  +  vector<Produto*> getProdutos() const
+  +  void addReposicao(Reposicao &reposicao)
+  +  void addLojaFisica(LojaFisica &lf)
+  +  void removeLojaFisica(LojaFisica &lf)
+  +  void addProdutoLojaFisica(LojaFisica &lf, Produto* p, int quantidade = 1)
+  +  void addProdutoLojaFisica(string localidade, Produto* p, int quantidade = 1)
+  +  void removeProdutoLojaFisica(LojaFisica &lf, Produto* p, int quantidade = 1)
+  +  void addProdutoOnline(Produto* p, int quantidade = 1)
+  +  void removeProdutoOnline(Produto* p, int quantidade = 1)
+  +  int getStockOk() const
+  +  int getStockMin() const
+  +  void setStockOk(unsigned int stockOk)
+  +  void setStockMin(unsigned int stockMin)
+  +  void addTransferencia(Transferencia * t)
+  +  void removeTransferencia(Transferencia * t)
+  +  vector<LojaFisica> getLojasFisicas() const
+  +  LojaFisica getLojaFisica(string localidade) const
+  +  vector<Cliente*> getClientes() const
+  +  Cliente* getCliente(string nome, int numContribuinte) const
+  +  LojaOnline getLojaOnline() const
+  +  vector<Transacao*> getTransacoes() const
+  +  vector<Transferencia*> getTransferencias() const
+  +  vector<Reposicao> getReposicoes() const
+  +  Categoria getCategoria(string categoria) const
+  +  vector<Categoria> getCategorias() const
+  +  void reporStock()
+  +  void showTransacoes()
+  +  void showProdutos()
+  +  void showProdutosCategoria(string categoria) 
+  +  void showCategorias()
+  +  void showClientes()
+  +  void showReposicoes()
+  +  void sortProdutosByValue()
+  +  void sortProdutosByName()
+  +  void sortProdutosById()
+}
+
+class BuyNowUI {
+  - BuyNow bn
+  +  BuyNowUI()
+  +  void UI()
+  +  void cliente()
+  +  void administrador()
+  +  void lerCategorias()
+  +  void escreverCategorias()
+  +  void lerProdutos()
+  +  void escreverProdutos()
+  +  void lerClientes()
+  +  void escreverClientes()
+  +  void lerLojasFisicas()
+  +  void escreverLojasFisicas()
+  +  void lerProdutosLojaOnline()
+  +  void lerProdutosLojaFisica()
+  +  void escreverProdutosLojaFisica()
+  +  void lerReposicoes()
+  +  void lerTransferencias()
+  +  void LerTransacoes()
+}
+
+BuyNowUI -- BuyNow
+BuyNow -- LojaFisica
+BuyNow -- LojaOnline
+BuyNow -- Categoria
+BuyNow -- Cliente
+BuyNow -- Fornecedor
+BuyNow -- Reposicao
+BuyNow -- Transferencia
+Transferencia -- Date
+Reposicao -- Date
+Categoria -- Produto
+LojaOnline -- Transacao
+Pagamento <|-- MbWay
+Pagamento <|-- CartaoCredito
+Pagamento <|-- Multibanco
+Transacao -- Date
+Transacao -- Pagamento
+CartaoCredito -- Date
+Cliente <|-- ClienteRegistado
+@enduml
