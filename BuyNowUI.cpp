@@ -673,6 +673,13 @@ void BuyNowUI::lerProdutosLojaOnline() {
         exit(1);
     }
 
+    getline(fin, line);
+    int stockMin = stoi(line);
+    bn.setStockMin(stockMin);
+    getline(fin, line);
+    int stockOk = stoi(line);
+    bn.setStockOk(stockOk);
+
     getline(fin,line);
     while(!fin.eof()){
 
@@ -1119,6 +1126,8 @@ void BuyNowUI::escreverProdutosLojaFisica() {
 void BuyNowUI::escreverLojaOnline() {
     ofstream out;
     out.open("Online.txt");
+    out << bn.getStockMin() << endl;
+    out << bn.getStockOk() << endl;
     for (auto i : bn.getProdutos()){    //percorrer produtos e ver se algum tem stock na Online
         if (bn.getLojaOnline().getStockOnline(i) != 0){
             out << i->getId() << endl;

@@ -2,34 +2,6 @@ leite magro
 laticinios
 1
 0.2
-queijo
-laticinios
-2
-2.5
-chocolate
-doces
-3
-1.2
-mesa de madeira
-mobilia
-4
-30
-mesa de luxo
-mobilia
-5
-150
-telemovel
-eletronica
-6
-300
-camisola
-roupa
-7
-50
-armario
-mobilia
-8
-120
 rebucado de morango
 doces
 9
@@ -38,63 +10,91 @@ rebucado de menta
 doces
 10
 0.5
-calcas de ganga
-roupa
-11
-67
-computador
-eletronica
-12
-1200
-cama de casal
-mobilia
-13
-700
-saco de gomas
-doces
-14
-1
-pastel de nata
-doces
-15
-1.2
-casaco
-roupa
-16
-80
-leite gordo
-laticinios
-17
-2
-leite meio gordo
-laticinios
-18
-2
-tablet
-eletronica
-19
-200
-router
-eletronica
-20
-20
-rato
-eletronica
-21
-12
-iogurte
-laticinios
-22
-1.5
-sapatilhas
-roupa
-23
-60
-secretaria
-mobilia
-24
-50
 par de meias
 roupa
 25
 1
+saco de gomas
+doces
+14
+1
+chocolate
+doces
+3
+1.2
+pastel de nata
+doces
+15
+1.2
+iogurte
+laticinios
+22
+1.5
+leite meio gordo
+laticinios
+18
+2
+leite gordo
+laticinios
+17
+2
+queijo
+laticinios
+2
+2.5
+rato
+eletronica
+21
+12
+router
+eletronica
+20
+20
+mesa de madeira
+mobilia
+4
+30
+camisola
+roupa
+7
+50
+secretaria
+mobilia
+24
+50
+sapatilhas
+roupa
+23
+60
+calcas de ganga
+roupa
+11
+67
+casaco
+roupa
+16
+80
+armario
+mobilia
+8
+120
+mesa de luxo
+mobilia
+5
+150
+tablet
+eletronica
+19
+200
+telemovel
+eletronica
+6
+300
+cama de casal
+mobilia
+13
+700
+computador
+eletronica
+12
+1200
