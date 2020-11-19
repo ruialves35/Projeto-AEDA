@@ -281,7 +281,7 @@ void BuyNow::sortProdutosByValue() {
  * @return Produto
  */
 Produto * BuyNow::getProduto(int codigo) const {
-    for (auto i : produtos){
+    for (auto i : produtos) {
         if (i->getId() == codigo)
             return i;
     }
@@ -407,9 +407,12 @@ void BuyNow::addProdutoLojaFisica(LojaFisica &lf, Produto *p, int quantidade) {
  * @param quantidade Quantity of Produto
  */
 void BuyNow::addProdutoLojaFisica(string localidade, Produto *p, int quantidade) {
-    for (auto i : lojasFisicas ){
-        if (i.getLocalidade() == localidade)
-            i.addProduto(p, quantidade);
+    vector<LojaFisica>::iterator it;
+    for (it = lojasFisicas.begin(); it != lojasFisicas.end(); it++){
+        if (it->getLocalidade() == localidade) {
+            it->addProduto(p, quantidade);
+            break;
+        }
     }
 }
 

@@ -10,14 +10,23 @@ BuyNowUI::BuyNowUI() {
     Fornecedor f("Manel");
     bn.setFornecedor(f);
     lerCategorias();
+    cout << "categorias ok" << endl;
     lerProdutos();
+    cout << "produtos ok" << endl;
     lerClientes();
+    cout << "clientes ok" << endl;
     lerLojasFisicas();
+    cout << "lojasfisicas ok" << endl;
     lerProdutosLojaOnline();
+    cout << "produtos loja online ok" << endl;
     lerProdutosLojaFisica();
+    cout << "produtos loja fisica ok" << endl;
     lerReposicoes();
+    cout << "reposicoes ok" << endl;
     lerTransferencias();
+    cout << "transferencias ok" << endl;
     LerTransacoes();
+    cout << "transacoes ok" << endl;
     UI();
     escreverCategorias();
     escreverProdutos();
@@ -28,6 +37,7 @@ BuyNowUI::BuyNowUI() {
     escreverTransferencias();
     escreverReposicoes();
     escreverLojaOnline();
+
 }
 
 void BuyNowUI::UI() {
@@ -98,10 +108,10 @@ void BuyNowUI::cliente() {
     //pede para o cliente escolher a opcao
     string input;
     bool endClient = false;
+    vector<Produto*> carrinho;
 
     while(!endClient) {
-        vector<Produto*> carrinho;
-
+        cout << "TAMANHOOOO::" << bn.getClientes().size() << endl;
         int result;
         bool validInput = true;
         do {
@@ -172,7 +182,7 @@ void BuyNowUI::cliente() {
                 cout << "2: Ordenar por ID" << endl;
                 cout << "3: Ordenar por Nome" << endl;
                 cout << "4: Mostrar Produtos" << endl;
-                cout << "   Enter option: " << endl;
+                cout << "   Enter option: ";
                 getline(cin, ordenarInput);
                 if (ordenarInput == "1")
                     bn.sortProdutosByValue();
@@ -207,7 +217,7 @@ void BuyNowUI::cliente() {
                     if (i->getNomeProduto() == input){
                         string quantInput;
                         int quantidade;
-                        cout << "Introduza a Quantidade de" << i->getNomeProduto() << " que deseja adicionar: ";
+                        cout << "Introduza a Quantidade de " << i->getNomeProduto() << " que deseja adicionar: ";
                         getline(cin, quantInput);
                         istringstream checkQuantidade(quantInput); // get into a strinsgtream
 
@@ -225,15 +235,16 @@ void BuyNowUI::cliente() {
                         else {
                             validOption = true;
                             while (quantidade > 0) {
+                                cout << "Adding " << i->getNomeProduto() << " ao carrinho" << endl;
                                 carrinho.push_back(i);
                                 quantidade--;
                             }
                         }
                     }
                 }
+                if (!validOption) cout << "Produto invalido." << endl;
             } while(!validOption);
         }
-
         else if (result == 3) { //efetuar pagamento
             string opcaoPagar;
             int opcao;
@@ -284,10 +295,10 @@ void BuyNowUI::cliente() {
                             cout << string(50, '\n');
                         }
                         else{
-                            Cliente c(nome, contribuinteNumero);
+                            Cliente *c = new Cliente(nome, contribuinteNumero);
 
                             validOptionPagar = true;
-                            Multibanco multi(ref);
+                            Multibanco *multi = new Multibanco(ref);
 
                             time_t theTime = time(NULL);
                             struct tm *aTime = localtime(&theTime);
@@ -296,8 +307,13 @@ void BuyNowUI::cliente() {
                             int year = aTime->tm_year + 1900; // Year is # years since 1900
                             Date data(day, month, year);
 
-                            Transacao *t = new Transacao(&c, data, carrinho, &multi);
+                            Transacao *t = new Transacao(c, data, carrinho, multi);
                             bn.addTransacao(t);
+                            for (auto i : carrinho){
+                                bn.removeProdutoOnline(i);
+                            }
+                            bn.reporStock();
+                            carrinho.clear();
                         }
                     }
                     else if (opcao == 2){    //MbWay
@@ -323,9 +339,9 @@ void BuyNowUI::cliente() {
                             cout << string(50, '\n');
                         }
                         else{
-                            Cliente c(nome, contribuinteNumero);
+                            Cliente* c = new Cliente(nome, contribuinteNumero);
                             validOptionPagar = true;
-                            MbWay mb(numTelemovel);
+                            MbWay *mb = new MbWay(numTelemovel);
 
                             time_t theTime = time(NULL);
                             struct tm *aTime = localtime(&theTime);
@@ -334,8 +350,13 @@ void BuyNowUI::cliente() {
                             int year = aTime->tm_year + 1900; // Year is # years since 1900
                             Date data(day, month, year);
 
-                            Transacao *t = new Transacao(&c, data, carrinho, &mb);
+                            Transacao *t = new Transacao(c, data, carrinho, mb);
                             bn.addTransacao(t);
+                            for (auto i : carrinho){
+                                bn.removeProdutoOnline(i);
+                            }
+                            bn.reporStock();
+                            carrinho.clear();
                         }
 
                     }
@@ -367,7 +388,7 @@ void BuyNowUI::cliente() {
                             cout << string(50, '\n'); //clear screen
                         }
                         else{
-                            Cliente c(nome, contribuinteNumero);
+                            Cliente *c = new Cliente(nome, contribuinteNumero);
                             string data;
                             int day, month, year;
                             char carater;
@@ -390,9 +411,17 @@ void BuyNowUI::cliente() {
                                 int year2 = aTime->tm_year + 1900; // Year is # years since 1900
                                 Date data(day2, month2, year2);
 
-                                CartaoCredito cc(numCartao, d1);
-                                Transacao *t = new Transacao(&c, data, carrinho, &cc);
+                                CartaoCredito *cc = new CartaoCredito(numCartao, d1);
+                                Transacao *t = new Transacao(c, data, carrinho, cc);
                                 bn.addTransacao(t);
+                                for (auto i : bn.getTransacoes()){
+                                    cout << i << endl;
+                                }
+                                for (auto i : carrinho){
+                                    bn.removeProdutoOnline(i);
+                                }
+                                bn.reporStock();
+                                carrinho.clear();
                             }
                         }
                     }
@@ -415,8 +444,9 @@ void BuyNowUI::cliente() {
                 Sleep(3000);
             }
             else{
+                cout << "O CLIENTE JA EXISTE PAH N QUEREMOS ENTRAR AQUI" << endl;
                 string email;
-                cout << "Introduz o teu endereco de email (so a parte antes do arroba): ";
+                cout << "Introduz o teu endereco de email: ";
                 getline(cin, email);
                 bn.removeCliente(nome, contribuinteNumero);
                 Cliente* c = new ClienteRegistado(nome, contribuinteNumero, email);
@@ -661,9 +691,7 @@ void BuyNowUI::lerProdutosLojaOnline() {
         format2line >> quantidade;
 
         bn.addProdutoOnline(bn.getProduto(codigo),quantidade);
-
     }
-
 }
 
 void BuyNowUI::lerProdutosLojaFisica() {
@@ -671,7 +699,7 @@ void BuyNowUI::lerProdutosLojaFisica() {
     //ler os produtos e adiciona-los as respetivas lojas
     ifstream fin;
     string line,localidadeLoja;
-    int codigo,quantidade;
+    int codigo, quantidade;
 
     fin.open("Fisica.txt");
     if(!fin.is_open()){
@@ -682,7 +710,7 @@ void BuyNowUI::lerProdutosLojaFisica() {
     while(!fin.eof()){
 
         getline(fin,line);
-        localidadeLoja=line;
+        localidadeLoja = line;
 
         getline(fin,line);
         istringstream format2line(line);
@@ -690,12 +718,13 @@ void BuyNowUI::lerProdutosLojaFisica() {
 
         getline(fin,line);
         istringstream format3line(line);
-        format2line >> quantidade;
+        format3line >> quantidade;
 
-        Produto *prod;
-        prod = bn.getProduto(codigo);
+        //Produto *prod;
+        //prod = bn.getProduto(codigo);
 
-        bn.addProdutoLojaFisica(localidadeLoja,prod,quantidade);
+        bn.addProdutoLojaFisica(localidadeLoja, bn.getProduto(codigo), quantidade);
+        //cout << bn.getLojaFisica(localidadeLoja).getStockFisico(bn.getProduto(codigo));
 
     }
 
@@ -798,9 +827,10 @@ void BuyNowUI::lerClientes() {
         exit(1);
     }
 
+    getline(fin,line);
+
     while(!fin.eof()){
 
-        getline(fin,line);
         stringNome=line;
 
         getline(fin,line);
@@ -812,6 +842,7 @@ void BuyNowUI::lerClientes() {
 
         Cliente *c1 = new ClienteRegistado(stringNome,numContribuinte,stringEmail);
         bn.addCliente(c1);
+        getline(fin, line);
 
     }
 
@@ -834,9 +865,10 @@ void BuyNowUI::LerTransacoes() {
         exit(1);
     }
 
-    while(!fin.eof()){
+    getline(fin,line);
 
-        getline(fin,line);
+    while(!fin.eof()){
+        cout << "Reading transacoes" << endl;
         istringstream format1line(line);
         format1line >> diaA >> caracter >> mesA >> caracter >> anoA;
 
@@ -910,6 +942,7 @@ void BuyNowUI::LerTransacoes() {
         }
 
         bn.addTransacao(tran);
+        getline(fin,line);
 
     }
 
@@ -950,21 +983,6 @@ void BuyNowUI::escreverReposicoes() {
     out.close();
 }
 
-/**
- * Escreve a informaçao da Loja Online no ficheiro Online.txt
- * escreve na forma id\n quantidade \n id \n quantidade.....
- */
-void BuyNowUI::escreverLojaOnline() {
-    ofstream out;
-    out.open("Online.txt");
-    for (auto i : bn.getProdutos()){    //percorrer produtos e ver se algum tem stock na Online
-        if (bn.getLojaOnline().getStockOnline(i) != 0){
-            out << i->getId() << endl;
-            out << bn.getLojaOnline().getStockOnline(i) << endl;
-        }
-    }
-    out.close();
-}
 
 /**
  * Escreve a informacao das Transferencias em ficheiro Transferencias.txt
@@ -1014,8 +1032,8 @@ void BuyNowUI::escreverTransacoes() {
             out << j->getId() << endl;
             out << i->getQuantidade(j) << endl;
         }
+        out << "-" << endl;
     }
-    out << "-" << endl;
     out.close();
 }
 
@@ -1050,11 +1068,12 @@ void BuyNowUI::escreverClientes() {
 
     ofstream outStream;
     outStream.open("Clientes.txt");
+    cout << "TAMANBH::" << bn.getClientes().size() << endl;
     for(auto i: bn.getClientes()){
-        outStream << i->getNome() << endl;
-        outStream << i->getNumContribuinte() << endl;
         ClienteRegistado *cr = dynamic_cast<ClienteRegistado*>(i);
         if(cr!=NULL){
+            outStream << cr->getNome() << endl;
+            outStream << cr->getNumContribuinte() << endl;
             outStream << cr->getEmail() << endl;
         }
     }
@@ -1080,9 +1099,9 @@ void BuyNowUI::escreverProdutosLojaFisica() {
     ofstream outStream;
     outStream.open("Fisica.txt");
     for(auto i: bn.getLojasFisicas()){
-        outStream << i.getLocalidade() << endl;
         for (auto j : bn.getProdutos()){
-            if (i.getStockFisico(j) != 0){
+            if (bn.getLojaFisica(i.getLocalidade()).getStockFisico(j) != 0) {
+                outStream << i.getLocalidade() << endl;
                 outStream << j->getId() << endl;
                 outStream << i.getStockFisico(j) << endl;
             }
@@ -1090,4 +1109,20 @@ void BuyNowUI::escreverProdutosLojaFisica() {
     }
 
     outStream.close();
+}
+
+/**
+ * Escreve a informaçao da Loja Online no ficheiro Online.txt
+ * escreve na forma id\n quantidade \n id \n quantidade.....
+ */
+void BuyNowUI::escreverLojaOnline() {
+    ofstream out;
+    out.open("Online.txt");
+    for (auto i : bn.getProdutos()){    //percorrer produtos e ver se algum tem stock na Online
+        if (bn.getLojaOnline().getStockOnline(i) != 0){
+            out << i->getId() << endl;
+            out << bn.getLojaOnline().getStockOnline(i) << endl;
+        }
+    }
+    out.close();
 }

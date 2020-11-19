@@ -60,8 +60,8 @@ vector<Produto *> LojaFisica::getProdutos() const {
  * @return 0 if there is no product, stock of Produto otherwise
  */
 int LojaFisica::getStockFisico(Produto *p) {
-    if (stockFisico.find(p) != stockFisico.end()) return stockFisico[p];
-    return 0;
+    if (stockFisico.find(p) == stockFisico.end()) return 0;
+    return stockFisico[p];
 }
 
 /**

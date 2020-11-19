@@ -54,11 +54,24 @@ Transacao::Transacao(Cliente *c, Date &d, vector<Produto *> &v, Pagamento *p): c
                                                                                valorTotal(0), tipoPagamento(p){
     numberOfTransacoes++;
     number = numberOfTransacoes;
+    for (int i = 0; i < produtos.size(); i++){
+        Produto* p = produtos[i];
+        if (quantidade.find(p) == quantidade.end()) quantidade[p] = 1;
+        else{
+            quantidade[p]++;
+            i--;
+            produtos.erase(produtos.begin()+i);
+        }
+        valorTotal += p->getValor();
+    }
+    /*
     for (auto i : produtos){
         if (quantidade.find(i) == quantidade.end() ) quantidade[i] = 1;
-        else quantidade[i]++;
+        else {
+            quantidade[i] = quantidade[i]+1;
+        }
         valorTotal += i->getValor();
-    }
+    }*/
     p->setValor(valorTotal);
 }
 

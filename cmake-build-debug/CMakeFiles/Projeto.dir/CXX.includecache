@@ -6,64 +6,6 @@
 
 #IncludeRegexTransform: 
 
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/BuyNow.h
-iostream
--
-Windows.h
--
-LojaFisica.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaFisica.h
-LojaOnline.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaOnline.h
-Cliente.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Cliente.h
-Transacao.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
-vector
--
-Fornecedor.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
-Transferencia.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transferencia.h
-Categoria.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Categoria.h
-Reposicao.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Reposicao.h
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/BuyNowUI.cpp
-BuyNowUI.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/BuyNowUI.h
-string
--
-iostream
--
-sstream
--
-fstream
--
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/BuyNowUI.h
-BuyNow.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/BuyNow.h
-ClienteRegistado.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/ClienteRegistado.h
-Cliente.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Cliente.h
-Pagamento.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Pagamento.h
-Multibanco.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Multibanco.h
-MbWay.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/MbWay.h
-CartaoCredito.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/CartaoCredito.h
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/CartaoCredito.h
-Transacao.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
-Date.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Date.h
-
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Categoria.h
 iostream
 -
@@ -71,12 +13,6 @@ iostream
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Cliente.h
 iostream
 -
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/ClienteRegistado.h
-iostream
--
-Cliente.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Cliente.h
 
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Date.h
 iostream
@@ -94,38 +30,6 @@ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
 iostream
 -
 
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaFisica.h
-iostream
--
-vector
--
-Produto.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
-map
--
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaOnline.h
-iostream
--
-Produto.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
-Transacao.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
-vector
--
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/MbWay.h
-iostream
--
-Transacao.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Multibanco.h
-iostream
--
-Transacao.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
-
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Pagamento.h
 iostream
 -
@@ -136,11 +40,13 @@ iostream
 Categoria.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Categoria.h
 
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Reposicao.h
-LojaFisica.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaFisica.h
-Date.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Date.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.cpp
+Transacao.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
+algorithm
+-
+iomanip
+-
 
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
 iostream
@@ -157,12 +63,4 @@ Pagamento.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Pagamento.h
 Fornecedor.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
-
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transferencia.h
-Fornecedor.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
-Produto.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
-Date.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Date.h
 
