@@ -10,23 +10,14 @@ BuyNowUI::BuyNowUI() {
     Fornecedor f("Manel");
     bn.setFornecedor(f);
     lerCategorias();
-    cout << "categorias ok" << endl;
     lerProdutos();
-    cout << "produtos ok" << endl;
     lerClientes();
-    cout << "clientes ok" << endl;
     lerLojasFisicas();
-    cout << "lojasfisicas ok" << endl;
     lerProdutosLojaOnline();
-    cout << "produtos loja online ok" << endl;
     lerProdutosLojaFisica();
-    cout << "produtos loja fisica ok" << endl;
     lerReposicoes();
-    cout << "reposicoes ok" << endl;
     lerTransferencias();
-    cout << "transferencias ok" << endl;
     LerTransacoes();
-    cout << "transacoes ok" << endl;
     UI();
     escreverCategorias();
     escreverProdutos();
@@ -111,7 +102,6 @@ void BuyNowUI::cliente() {
     vector<Produto*> carrinho;
 
     while(!endClient) {
-        cout << "TAMANHOOOO::" << bn.getClientes().size() << endl;
         int result;
         bool validInput = true;
         do {
@@ -170,7 +160,7 @@ void BuyNowUI::cliente() {
                 }
                 if (!validCategoria){
                     cout << endl << "Categoria Inválida" << endl;
-                    Sleep(7000);
+                    Sleep(1000);
                 }
             }while(!validCategoria);
 
@@ -235,7 +225,6 @@ void BuyNowUI::cliente() {
                         else {
                             validOption = true;
                             while (quantidade > 0) {
-                                cout << "Adding " << i->getNomeProduto() << " ao carrinho" << endl;
                                 carrinho.push_back(i);
                                 quantidade--;
                             }
@@ -246,6 +235,12 @@ void BuyNowUI::cliente() {
             } while(!validOption);
         }
         else if (result == 3) { //efetuar pagamento
+            if (carrinho.size() == 0){
+                cout << endl;
+                cout << "Nao tens nada no carrinho. Introduz la produtos. " << endl;
+                Sleep(1000);
+                continue;
+            }
             string opcaoPagar;
             int opcao;
             bool validOptionPagar = false;
@@ -414,9 +409,6 @@ void BuyNowUI::cliente() {
                                 CartaoCredito *cc = new CartaoCredito(numCartao, d1);
                                 Transacao *t = new Transacao(c, data, carrinho, cc);
                                 bn.addTransacao(t);
-                                for (auto i : bn.getTransacoes()){
-                                    cout << i << endl;
-                                }
                                 for (auto i : carrinho){
                                     bn.removeProdutoOnline(i);
                                 }
@@ -444,7 +436,6 @@ void BuyNowUI::cliente() {
                 Sleep(3000);
             }
             else{
-                cout << "O CLIENTE JA EXISTE PAH N QUEREMOS ENTRAR AQUI" << endl;
                 string email;
                 cout << "Introduz o teu endereco de email: ";
                 getline(cin, email);
@@ -619,12 +610,14 @@ void BuyNowUI::lerCategorias() {
         cerr << "Ficheiro das categorias nao encontrado\n";
         exit(1);
     }
+    getline(fin,line);
 
     while(!fin.eof()){
-        getline(fin,line);
         categoria = line;
         Categoria cat(categoria);
         bn.addCategoria(cat);
+        getline(fin,line);
+
     }
 
 }
@@ -642,10 +635,10 @@ void BuyNowUI::lerProdutos() {
         exit(1);
     }
 
+    getline(fin,line);
+
     while(!fin.eof()){
 
-
-        getline(fin,line);
         stringProduto=line;
 
         getline(fin,line);
@@ -663,7 +656,7 @@ void BuyNowUI::lerProdutos() {
 
         Produto *prod = new Produto(stringProduto,codigo,preco,cat);
         bn.addProduto(prod);
-
+        getline(fin,line);
     }
 
 }
@@ -680,9 +673,9 @@ void BuyNowUI::lerProdutosLojaOnline() {
         exit(1);
     }
 
+    getline(fin,line);
     while(!fin.eof()){
 
-        getline(fin,line);
         istringstream format1line(line);
         format1line >> codigo;
 
@@ -691,6 +684,8 @@ void BuyNowUI::lerProdutosLojaOnline() {
         format2line >> quantidade;
 
         bn.addProdutoOnline(bn.getProduto(codigo),quantidade);
+        getline(fin,line);
+
     }
 }
 
@@ -707,9 +702,10 @@ void BuyNowUI::lerProdutosLojaFisica() {
         exit(1);
     }
 
+    getline(fin,line);
+
     while(!fin.eof()){
 
-        getline(fin,line);
         localidadeLoja = line;
 
         getline(fin,line);
@@ -725,6 +721,7 @@ void BuyNowUI::lerProdutosLojaFisica() {
 
         bn.addProdutoLojaFisica(localidadeLoja, bn.getProduto(codigo), quantidade);
         //cout << bn.getLojaFisica(localidadeLoja).getStockFisico(bn.getProduto(codigo));
+        getline(fin,line);
 
     }
 
@@ -745,9 +742,10 @@ void BuyNowUI::lerReposicoes() {
         exit(1);
     }
 
+    getline(fin,line);
+
     while(!fin.eof()){
 
-        getline(fin,line);
         istringstream format1line(line);
         format1line >> dia >> caracter >> mes >> caracter >> ano;
 
@@ -772,6 +770,8 @@ void BuyNowUI::lerReposicoes() {
 
         Reposicao rep(l1,prod,quantidade,d1);
         bn.addReposicao(rep);
+        getline(fin,line);
+
     }
 
 }
@@ -790,9 +790,10 @@ void BuyNowUI::lerTransferencias() {
         exit(1);
     }
 
+    getline(fin,line);
+
     while(!fin.eof()){
 
-        getline(fin,line);
         istringstream format1line(line);
         format1line >> dia >> caracter >> mes >> caracter >> ano;
 
@@ -809,6 +810,7 @@ void BuyNowUI::lerTransferencias() {
         Date d1(dia,mes,ano);
         Transferencia *t1 = new Transferencia(f,prod,quantidade,d1);
         bn.addTransferencia(t1);
+        getline(fin,line);
 
     }
 
@@ -868,7 +870,6 @@ void BuyNowUI::LerTransacoes() {
     getline(fin,line);
 
     while(!fin.eof()){
-        cout << "Reading transacoes" << endl;
         istringstream format1line(line);
         format1line >> diaA >> caracter >> mesA >> caracter >> anoA;
 
@@ -958,12 +959,13 @@ void BuyNowUI::lerLojasFisicas() {
         cerr << "Ficheiro das lojas online (suas localizacoes) nao encontrado\n";
         exit(1);
     }
+    getline(fin,line);
 
     while(!fin.eof()){
-        getline(fin,line);
         localidade=line;
         LojaFisica loja(localidade);
         bn.addLojaFisica(loja);
+        getline(fin,line);
     }
 
 }
@@ -1068,7 +1070,6 @@ void BuyNowUI::escreverClientes() {
 
     ofstream outStream;
     outStream.open("Clientes.txt");
-    cout << "TAMANBH::" << bn.getClientes().size() << endl;
     for(auto i: bn.getClientes()){
         ClienteRegistado *cr = dynamic_cast<ClienteRegistado*>(i);
         if(cr!=NULL){

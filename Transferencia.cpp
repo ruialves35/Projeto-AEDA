@@ -60,6 +60,7 @@ string Transferencia::getInfo() const {
     string info = "Fornecedor: ";
     info += fornecedor.getNomeFornecedor() + "\n";
     info += "Produto: " + produto->getNomeProduto() + "\n";
+    info += "Data: " + data.getInfo() + "\n";
     info += "Quantidade: " + to_string(quantidade) + "\n";
     return info;
 }
