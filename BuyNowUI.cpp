@@ -18,6 +18,7 @@ BuyNowUI::BuyNowUI() {
     lerReposicoes();
     lerTransferencias();
     LerTransacoes();
+
     UI();
     escreverCategorias();
     escreverProdutos();

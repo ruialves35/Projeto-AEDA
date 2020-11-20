@@ -14,8 +14,17 @@ BuyNow::BuyNow() {}
  * MUST COMPLETE THIS DESTRUCTOR
  */
 BuyNow::~BuyNow() {
-    for (auto i: transferencias){   //transferencias sao alocadas dinamicamente, temos de libertar o espaço reservado
-        delete i;
+    vector<Produto *>::iterator it;
+    for (it = produtos.begin(); it != produtos.end(); it++){
+        delete(*it);
+    }
+    vector<Cliente *>::iterator it2;
+    for (it2 = clientes.begin(); it2 != clientes.end(); it2++){
+        delete(*it2);
+    }
+    vector<Transferencia*>::iterator it3;
+    for (it3 = transferencias.begin(); it3 != transferencias.end(); it3++){   //transferencias sao alocadas dinamicamente, temos de libertar o espaço reservado
+        delete(*it3);
     }
 }
 /**
