@@ -318,23 +318,23 @@ class BuyNowUI {
   +  void LerTransacoes()
 }
 
-BuyNowUI -- BuyNow
-BuyNow -- LojaFisica
-BuyNow -- LojaOnline
-BuyNow -- Categoria
-BuyNow -- Cliente
-BuyNow -- Fornecedor
-BuyNow -- Reposicao
-BuyNow -- Transferencia
-Transferencia -- Date
-Reposicao -- Date
+BuyNowUI "1" -- BuyNow
+BuyNow "1..*" *-- LojaFisica
+BuyNow "1" *-- LojaOnline
+BuyNow "1..*" o-- Categoria
+BuyNow "1..*" *-- Cliente
+BuyNow "1" *-- Fornecedor
+BuyNow "0..*" *-- Reposicao
+BuyNow "0..*" *-- Transferencia
+Transferencia "1" -- Date
+Reposicao "1" -- Date
 Categoria -- Produto
-LojaOnline -- Transacao
+LojaOnline "0..*" -- Transacao
 Pagamento <|-- MbWay
 Pagamento <|-- CartaoCredito
 Pagamento <|-- Multibanco
-Transacao -- Date
-Transacao -- Pagamento
-CartaoCredito -- Date
+Transacao "1" -- Date
+Transacao "1" -- Pagamento
+CartaoCredito "1" -- Date
 Cliente <|-- ClienteRegistado
 @enduml
