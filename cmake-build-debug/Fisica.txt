@@ -1,6 +1,12 @@
 porto
+1
+7
+porto
 9
 78
+porto
+10
+50
 porto
 22
 6
@@ -21,7 +27,7 @@ porto
 2
 porto
 24
-6
+4
 porto
 11
 9

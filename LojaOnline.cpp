@@ -83,8 +83,7 @@ void LojaOnline::removeProduto(Produto *p) {
  */
 void LojaOnline::removeProduto(Produto *p, int quantidade) {
     if (stockOnline.find(p) != stockOnline.end()){
-        if (stockOnline[p] < quantidade) stockOnline[p] = 0;
-        else stockOnline[p] -= quantidade;
+        stockOnline[p] -= quantidade;
     }
     else stockOnline[p] = 0;
 }
