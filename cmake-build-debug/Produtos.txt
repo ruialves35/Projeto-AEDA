@@ -2,21 +2,21 @@ leite magro
 laticinios
 1
 0.2
-rebucado de morango
-doces
-9
-0.5
 rebucado de menta
 doces
 10
 0.5
-par de meias
-roupa
-25
-1
+rebucado de morango
+doces
+9
+0.5
 saco de gomas
 doces
 14
+1
+par de meias
+roupa
+25
 1
 chocolate
 doces
@@ -30,13 +30,13 @@ iogurte
 laticinios
 22
 1.5
-leite meio gordo
-laticinios
-18
-2
 leite gordo
 laticinios
 17
+2
+leite meio gordo
+laticinios
+18
 2
 queijo
 laticinios
