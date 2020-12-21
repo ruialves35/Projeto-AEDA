@@ -103,6 +103,7 @@ CMakeFiles/Projeto.dir/Pagamento.cpp.obj: ../Pagamento.cpp
 CMakeFiles/Projeto.dir/Pagamento.cpp.obj: ../Pagamento.h
 
 CMakeFiles/Projeto.dir/Produto.cpp.obj: ../Categoria.h
+CMakeFiles/Projeto.dir/Produto.cpp.obj: ../Fornecedor.h
 CMakeFiles/Projeto.dir/Produto.cpp.obj: ../Produto.cpp
 CMakeFiles/Projeto.dir/Produto.cpp.obj: ../Produto.h
 

@@ -69,6 +69,8 @@ MbWay.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/MbWay.h
 CartaoCredito.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/CartaoCredito.h
+Fornecedor.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
 
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/CartaoCredito.cpp
 CartaoCredito.h
@@ -111,12 +113,12 @@ map
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.cpp
 Fornecedor.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
+Produto.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
 
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
 iostream
 -
-Produto.h
-D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
 
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaFisica.cpp
 LojaFisica.h
@@ -185,12 +187,16 @@ iostream
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.cpp
 Produto.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
+Fornecedor.h
+D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
 
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
 iostream
 -
 Categoria.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Categoria.h
+set
+-
 
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Reposicao.cpp
 Reposicao.h

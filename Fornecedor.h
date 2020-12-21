@@ -2,9 +2,10 @@
 #define AEDA_FORNECEDOR_H
 
 #include <iostream>
-#include "Produto.h"
 
 using namespace std;
+
+class Produto;
 
 class Fornecedor{
 private:
@@ -15,7 +16,6 @@ private:
     int quantidade;
 public:
     Fornecedor();
-    Fornecedor(string nome);
     Fornecedor(string nome, int nif, Produto* prod, double preco, int quantidade);
     string getNomeFornecedor() const;
     void setNome(string nome);

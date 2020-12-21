@@ -675,31 +675,23 @@ void BuyNowUI::lerFornecedores() {
         formatline4 >> quantidade;
         //cout << "QUANTIDADE: " << quantidade << endl;
 
-        Produto* produto;
-
-        bool found = false;
-        for (const auto &i : bn.getProdutos()){
+        for (auto &i : bn.getProdutos()){
             if (i->getId() == idProduto){
-                produto = i;
-                found = true;
+                Fornecedor *fornecedor = new Fornecedor(nome, nif, i, preco, quantidade);
+                i->addFornecedor(fornecedor);   //adicionar este fornecedor neste produto
+                bn.addFornecedor(fornecedor);   //adicionar este fornecedor a bst com todos os fornecedores
+
+                //cout << "MAIS UM FORNECEDOR: " << fornecedor->getNomeFornecedor() << fornecedor->getNif() << fornecedor->getProduto()->getId() << fornecedor->getPreco() << fornecedor->getQuantidade()<< endl;
+                //++n;
+
+                /*
+                set<Fornecedor*>::const_iterator it2 = bn.getFornecedores().begin();
+                while(it2 != bn.getFornecedores().end()){
+                    cout << "NOME:: " << (*it2)->getNomeFornecedor() << endl;
+                    it2++;
+                }*/
                 break;
             }
-        }
-
-        if (found) {
-            Fornecedor *fornecedor = new Fornecedor(nome, nif, produto, preco, quantidade);
-
-            bn.addFornecedor(fornecedor);
-            //cout << "MAIS UM FORNECEDOR: " << fornecedor->getNomeFornecedor() << fornecedor->getNif() << fornecedor->getProduto()->getId() << fornecedor->getPreco() << fornecedor->getQuantidade()<< endl;
-            //++n;
-
-            /*
-            set<Fornecedor*>::const_iterator it2 = bn.getFornecedores().begin();
-            while(it2 != bn.getFornecedores().end()){
-                cout << "NOME:: " << (*it2)->getNomeFornecedor() << endl;
-                it2++;
-            }*/
-
         }
 
         getline(fin, line);

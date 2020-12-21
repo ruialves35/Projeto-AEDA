@@ -1,11 +1,12 @@
 #include "Produto.h"
+#include "Fornecedor.h"
 
 /**
  * Default Constructor of Produto
  * Sets to "" the nomeProduto and sets to 0 the value of the Produto
  */
 
-Produto::Produto(): nomeProduto(""), valor(0), categoria() {}
+Produto::Produto(): nomeProduto(""), valor(0), categoria() { fornecedores.clear(); }
 
 /**
  * Constructor of Produto
@@ -14,7 +15,9 @@ Produto::Produto(): nomeProduto(""), valor(0), categoria() {}
  * @param val value of Produto
  * @param cat Categoria of Produto
  */
-Produto::Produto(string nome, int id, double val, Categoria cat): nomeProduto(nome), valor(val), id(id), categoria(cat){}
+Produto::Produto(string nome, int id, double val, Categoria cat): nomeProduto(nome), valor(val), id(id), categoria(cat){
+    fornecedores.clear();
+}
 /*
 /**
  * sets Stock Fisico of Produto
@@ -96,6 +99,22 @@ string Produto::getNomeProduto() const {return nomeProduto; }
 double Produto::getValor() const {
     return valor;
 }
+
+/**
+ * Adds a fornecedor of this product
+ * @param fornecedor
+ */
+void Produto::addFornecedor(Fornecedor *fornecedor) {
+    if (fornecedor->getProduto()->getId() == id) {
+        FornecedorPtr fptr(fornecedor);
+        fornecedores.insert(fptr);
+    }
+}
+
+/**
+ * @return set with FornecedorPtr of fornecedores of this produto
+ */
+set<FornecedorPtr> Produto::getFornecedores() const {return fornecedores;}
 
 /**
  * overloading of operator == to compare 2 products.

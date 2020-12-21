@@ -2,11 +2,13 @@
 #define AEDA_PRODUTO_H
 
 #include <iostream>
-
 #include "Categoria.h"
-
+#include <set>
 using namespace std;
 
+
+class FornecedorPtr;
+class Fornecedor;
 class Produto{
 private:
     int id;
@@ -15,7 +17,7 @@ private:
     //int stockOnline;
     double valor;
     Categoria categoria;
-
+    set<FornecedorPtr> fornecedores;
 public:
     Produto();
     Produto(string nome, int id, double val, Categoria categoria);
@@ -23,6 +25,8 @@ public:
     //void setStockFisico(int stockFisico);
     //int getStockOnline() const;
     //void setStockOnline(int stockOnline);
+    void addFornecedor(Fornecedor * fornecedor);
+    set<FornecedorPtr> getFornecedores() const;
     int getId() const;
     void setId(int newId);
     string getNomeProduto() const;

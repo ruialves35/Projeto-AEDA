@@ -7,6 +7,7 @@
 #include "Multibanco.h"
 #include "MbWay.h"
 #include "CartaoCredito.h"
+#include "Fornecedor.h"
 
 class BuyNowUI {
 private:

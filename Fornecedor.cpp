@@ -1,12 +1,11 @@
 #include "Fornecedor.h"
+#include "Produto.h"
 
 /**
  * Constructor of derived Class
  * Sets to "" the nomeFornecedor
  */
 Fornecedor::Fornecedor(): nomeFornecedor(""), nif(0), produto(), preco(0), quantidade(0){}
-
-Fornecedor::Fornecedor(string nome): nomeFornecedor(nome){}
 
 /**
  * Constructor with all parameters of Fornecedor
@@ -16,7 +15,8 @@ Fornecedor::Fornecedor(string nome): nomeFornecedor(nome){}
  * @param preco Price of selling
  * @param quantidade Quantity that he's selling
  */
-Fornecedor::Fornecedor(string nome, int nif, Produto* prod, double preco, int quantidade): nomeFornecedor(nome), nif(nif), produto(prod), preco(preco), quantidade(quantidade){}
+Fornecedor::Fornecedor(string nome, int nif, Produto* prod, double preco, int quantidade):
+        nomeFornecedor(nome), nif(nif), produto(prod), preco(preco), quantidade(quantidade){}
 
 /**
  * sets nome of Fornecedor
@@ -129,6 +129,7 @@ bool Fornecedor::operator==(const Fornecedor &f1) const {
  * Empty constructor
  */
 FornecedorPtr::FornecedorPtr() {}
+
 /**
  * Constructor of FornecedorPtr
  * @param fornecedor

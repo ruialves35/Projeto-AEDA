@@ -13,6 +13,17 @@ BuyNow::BuyNow(): fornecedores(){}
  * MUST COMPLETE THIS DESTRUCTOR
  */
 BuyNow::~BuyNow() {
+    /*
+    set<FornecedorPtr>::iterator iter;
+    set<FornecedorPtr> forn = produtos[2]->getFornecedores();
+    cout << "PRODUTO NAME" << produtos[2]->getNomeProduto() << endl;
+    cout << "SIZE:" << forn.size() << endl;
+    int n = 0;
+    for (iter = forn.begin(); iter != forn.end(); iter++){
+        cout << ++n << endl;
+        cout << "FORNECEDORES:" << iter->getNomeFornecedor() << endl;
+    }*/
+
     vector<Produto *>::iterator it;
     for (it = produtos.begin(); it != produtos.end(); it++){
         delete(*it);
@@ -30,6 +41,7 @@ BuyNow::~BuyNow() {
         delete it4->getFornecedor();
     }
     //cout << "Oioioi" << endl;
+
 
 }
 /**
@@ -345,8 +357,24 @@ void BuyNow::reporStock() {
                 int year = aTime->tm_year + 1900; // Year is # years since 1900
                 Date data(day, month, year);
 
-                set<FornecedorPtr>::iterator it = fornecedores.begin();
+                set<FornecedorPtr> fornecedoresProd = i->getFornecedores();
+                set<FornecedorPtr>::iterator prodIter;
                 FornecedorPtr forn;
+                //use BST of each product to find the best Fornecedor to restore the stock
+                bool found = false;
+                for (prodIter = fornecedoresProd.begin(); prodIter != fornecedoresProd.end(); prodIter++){
+                    if (prodIter->getQuantidade() >= repor ){
+                        forn = (*prodIter);
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found){
+                    cout << "THERE IS NO FORNECEDOR WITH THAT QUANITTY OF PRODUCT AND STOCK HAS NOT BEEN REPLACED" << endl;
+                    continue;
+                }
+                /*
+                set<FornecedorPtr>::iterator it = fornecedores.begin();
                 while(it != fornecedores.end()){   //search for fornecedor, BST ta por ordem busca o mais barato
                     //cout << "NOME: " << (*it).getNomeFornecedor() << endl;
                     if ((*it).getQuantidade() >= repor && (*it).getProduto()->getId() == i->getId()){ //is selling it
@@ -356,7 +384,7 @@ void BuyNow::reporStock() {
                         break;
                     }
                     it++;
-                }
+                }*/
                 Transferencia* t = new Transferencia (forn, i, repor, data); //fornecedor, produto, quantidade
                 lojaOnline.addProduto(i, repor);
                 transferencias.push_back(t);
