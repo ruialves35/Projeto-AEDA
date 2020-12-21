@@ -12,13 +12,15 @@
 #include "Transferencia.h"
 #include "Categoria.h"
 #include "Reposicao.h"
+#include "bst.h"
+#include <set>
 using namespace std;
 
 class ProdutoDoesNotExist{
 public:
     int codigo;
     ProdutoDoesNotExist(int codigo){ this->codigo = codigo;}
-    void showError() { cout << "O Produto com o codigo " << codigo << "nao existe." << endl;
+    void showError() { cout << "O Produto com o codigo " << to_string(codigo) << "nao existe." << endl;
     Sleep(600);
     }
 };
@@ -43,6 +45,27 @@ public:
 
 };
 
+/**
+ * Exception ClienteDoesNotExist, throwed on getCliente of BuyNow
+ */
+class ClienteDoesNotExist{
+public:
+    string nome;
+    int numContribuinte;
+    ClienteDoesNotExist(string nome, int numContribuinte){this->nome = nome; this->numContribuinte = numContribuinte;}
+    void showError(){ cout << "O cliente de nome " << nome << " e numero de contribuinte " << to_string(numContribuinte) << " nao existe." << endl; Sleep(600);}
+};
+
+/**
+ * Exception FornecedorDoesNotExist, throwed on getFornecedor of BuyNow
+ */
+class FornecedorDoesNotExist{
+public:
+    int nif;
+    FornecedorDoesNotExist(int nif){this->nif = nif;}
+    void showError(){ cout << "O fornecedor com nif " << to_string(nif) << " nao existe. " << endl;     Sleep(600);}
+
+};
 //-----------------------------------------------------------------------
 class BuyNow {
 private:
@@ -51,9 +74,11 @@ private:
     vector<Categoria> categorias;
     vector<Reposicao> reposicoes;
 
+    set<FornecedorPtr> fornecedores;
+
     vector<LojaFisica> lojasFisicas;
     LojaOnline lojaOnline;
-    Fornecedor fornecedor;
+    //Fornecedor fornecedor;
     int stockOk;
     int stockMin;
     vector<Transferencia*> transferencias;  //entre Fornecedor e loja
@@ -62,10 +87,13 @@ public:
     BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin);
     BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia*> tranferencias, int stockOk, int stockMin);
     ~BuyNow();
+    void addFornecedor(Fornecedor* f);
+    set<FornecedorPtr> getFornecedores() const;
+    Fornecedor* getFornecedor(int nif) const;
     void addCategoria(Categoria &c);
     void removeCategoria(Categoria &c);
-    Fornecedor getFornecedor() const;
-    void setFornecedor(Fornecedor &f);
+    //Fornecedor getFornecedor() const;
+    //void setFornecedor(Fornecedor &f);
     void addCliente(Cliente *cliente);
     void removeCliente(string nome, int numContribuinte);
     void removeCliente(Cliente *cliente);

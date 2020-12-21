@@ -15,14 +15,16 @@ Transferencia::Transferencia() {}
  * @param p Produto that BuyNow bought to Fornecedor
  * @param quantidade quantity of Produto
  */
-Transferencia::Transferencia(Fornecedor &f, Produto *p, int quantidade, Date data):
-fornecedor(f), produto(p), quantidade(quantidade), data(data) {}
+Transferencia::Transferencia(FornecedorPtr &f, Produto *p, int quantidade, Date data):
+fornecedor(f), produto(p), quantidade(quantidade), data(data) {
+    preco = f.getPreco() * quantidade;
+}
 
 /**
  * Gets the fornecedor
  * @return Fornecedor
  */
-Fornecedor Transferencia::getFornecedor() const { return fornecedor;}
+Fornecedor* Transferencia::getFornecedor() const { return fornecedor.getFornecedor();}
 
 /**
  * @return Date of Transferencia
@@ -39,7 +41,7 @@ void Transferencia::setData(Date &data) { this->data = data;}
  * Sets the Fornecedor
  * @param f new Fornecedor
  */
-void Transferencia::setFornecedor(Fornecedor &f) {fornecedor = f;}
+void Transferencia::setFornecedor(FornecedorPtr &f) { fornecedor = f; }
 
 /**
  * @return Produto
@@ -57,11 +59,14 @@ void Transferencia::setProduto(Produto *p) { produto = p; }
  * @return string with all information of Transferencia
  */
 string Transferencia::getInfo() const {
-    string info = "Fornecedor: ";
+    string info = "Data: " + data.getInfo() + "\n";
+    info += "Fornecedor: ";
     info += fornecedor.getNomeFornecedor() + "\n";
+    info += "NIF: ";
+    info += to_string(fornecedor.getNif()) + "\n";
     info += "Produto: " + produto->getNomeProduto() + "\n";
-    info += "Data: " + data.getInfo() + "\n";
     info += "Quantidade: " + to_string(quantidade) + "\n";
+    info += "Preco Total: " + to_string(quantidade * fornecedor.getPreco()) + "\n";
     return info;
 }
 
@@ -75,3 +80,13 @@ void Transferencia::setQuantidade(int quantidade) { this->quantidade = quantidad
  * @return quantidade de produto reposto
  */
 int Transferencia::getQuantidade() const {return quantidade;}
+
+/**
+ * @return Nif of Fornecedor
+ */
+int Transferencia::getNifFornecedor() const { return fornecedor.getNif();}
+
+/**
+ * @return Preco of Transferencia
+ */
+double Transferencia::getPreco() const { return fornecedor.getPreco() * quantidade; }

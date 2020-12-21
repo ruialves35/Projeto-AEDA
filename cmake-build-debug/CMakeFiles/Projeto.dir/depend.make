@@ -14,6 +14,7 @@ CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Reposicao.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Transacao.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Transferencia.h
+CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../bst.h
 
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../BuyNow.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../BuyNowUI.cpp
@@ -33,6 +34,7 @@ CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Reposicao.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Transacao.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Transferencia.h
+CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../bst.h
 
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../CartaoCredito.cpp
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../CartaoCredito.h
@@ -57,8 +59,10 @@ CMakeFiles/Projeto.dir/ClienteRegistado.cpp.obj: ../ClienteRegistado.h
 CMakeFiles/Projeto.dir/Date.cpp.obj: ../Date.cpp
 CMakeFiles/Projeto.dir/Date.cpp.obj: ../Date.h
 
+CMakeFiles/Projeto.dir/Fornecedor.cpp.obj: ../Categoria.h
 CMakeFiles/Projeto.dir/Fornecedor.cpp.obj: ../Fornecedor.cpp
 CMakeFiles/Projeto.dir/Fornecedor.cpp.obj: ../Fornecedor.h
+CMakeFiles/Projeto.dir/Fornecedor.cpp.obj: ../Produto.h
 
 CMakeFiles/Projeto.dir/LojaFisica.cpp.obj: ../Categoria.h
 CMakeFiles/Projeto.dir/LojaFisica.cpp.obj: ../LojaFisica.cpp
@@ -142,5 +146,6 @@ CMakeFiles/Projeto.dir/main.cpp.obj: ../Produto.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Reposicao.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Transacao.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Transferencia.h
+CMakeFiles/Projeto.dir/main.cpp.obj: ../bst.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../main.cpp
 

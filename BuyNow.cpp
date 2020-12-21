@@ -2,11 +2,10 @@
 #include <iomanip>
 #include <time.h>   //Get current Date
 
-
 /**
  * Default constructor
  */
-BuyNow::BuyNow() {}
+BuyNow::BuyNow(): fornecedores(){}
 
 /**
  * Liberta o espaço reservado dinamicamente para as transferencias, clientes e transacoes.
@@ -26,6 +25,12 @@ BuyNow::~BuyNow() {
     for (it3 = transferencias.begin(); it3 != transferencias.end(); it3++){   //transferencias sao alocadas dinamicamente, temos de libertar o espaço reservado
         delete(*it3);
     }
+    set<FornecedorPtr>::iterator it4;
+    for (it4 = fornecedores.begin(); it4 != fornecedores.end(); it4++){
+        delete it4->getFornecedor();
+    }
+    //cout << "Oioioi" << endl;
+
 }
 /**
  * Constructor with all the information
@@ -34,7 +39,8 @@ BuyNow::~BuyNow() {
  * @param stockOk stockOk of Produtos of
  */
 BuyNow::BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin):
-        lojasFisicas(lf), lojaOnline(lo), stockOk(stockOk), stockMin(stockMin){}
+        lojasFisicas(lf), lojaOnline(lo), stockOk(stockOk), stockMin(stockMin), fornecedores()
+        {}
 
 
 /**
@@ -44,7 +50,8 @@ BuyNow::BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin
  * @param tranferencias vector with all Transferencias Between Fornecedores and buyNow
  */
 BuyNow::BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia *> tranferencias, int stockOk, int stockMin):
-        lojasFisicas(lf), lojaOnline(lo), transferencias(tranferencias),stockOk(stockOk), stockMin(stockMin) {}
+        lojasFisicas(lf), lojaOnline(lo), transferencias(tranferencias),stockOk(stockOk), stockMin(stockMin),
+        fornecedores() {}
 
 /**
  * Adds a cliente to Clientes of BuyNow
@@ -67,6 +74,7 @@ Cliente * BuyNow::getCliente(string nome, int numContribuinte) const {
         if ( i->getNome() == nome && i->getNumContribuinte() == numContribuinte)
             return i;
     }
+    throw ClienteDoesNotExist(nome, numContribuinte);
 }
 
 /**
@@ -336,7 +344,20 @@ void BuyNow::reporStock() {
                 int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
                 int year = aTime->tm_year + 1900; // Year is # years since 1900
                 Date data(day, month, year);
-                Transferencia* t = new Transferencia (fornecedor, i, repor, data); //fornecedor, produto, quantidade
+
+                set<FornecedorPtr>::iterator it = fornecedores.begin();
+                FornecedorPtr forn;
+                while(it != fornecedores.end()){   //search for fornecedor, BST ta por ordem busca o mais barato
+                    //cout << "NOME: " << (*it).getNomeFornecedor() << endl;
+                    if ((*it).getQuantidade() >= repor && (*it).getProduto()->getId() == i->getId()){ //is selling it
+                        //cout << "Produto: " << (*it).getProduto()->getId() << endl;
+                        //cout << "FORNECEDOR: " << (*it).getNomeFornecedor() << endl;
+                        forn = (*it);
+                        break;
+                    }
+                    it++;
+                }
+                Transferencia* t = new Transferencia (forn, i, repor, data); //fornecedor, produto, quantidade
                 lojaOnline.addProduto(i, repor);
                 transferencias.push_back(t);
             }
@@ -467,13 +488,13 @@ bool BuyNow::checkCliente(Cliente &cliente) {
  * Gets Fornecedor of BuyNow
  * @return Fornecedor
  */
-Fornecedor BuyNow::getFornecedor() const{ return fornecedor; }
+//Fornecedor BuyNow::getFornecedor() const{ return fornecedor; }
 
 /**
  * Sets fornecedor of Buy Now
  * @param f Fornecedor
  */
-void BuyNow::setFornecedor(Fornecedor &f) { fornecedor = f; }
+//void BuyNow::setFornecedor(Fornecedor &f) { fornecedor = f; }
 
 /**
  * Shows Transacoes of LojaOnline of BuyNow
@@ -546,6 +567,7 @@ LojaFisica BuyNow::getLojaFisica(string localidade) const {
         if (i.getLocalidade() == localidade) return i;
     }
     //throw exception
+    throw LojaFisicaDoesNotExist(localidade);
 }
 /**
  * Displays all Produtos of BuyNow and each price
@@ -568,4 +590,34 @@ void BuyNow::showReposicoes() {
         cout << i.getInfo() << endl;
     }
     cout << "---------------------------------------------------------------------------------------------------------" << endl;
+}
+
+/**
+ * Adds a fornecedor to BST of fornecedores
+ * @param f fornecedor to be added
+ */
+void BuyNow::addFornecedor(Fornecedor *f) {
+    fornecedores.insert(f);
+}
+
+/**
+ * Gets all fornecedores of BuyNow
+ * @return Bst with pointers to all fornecedores
+ */
+set<FornecedorPtr> BuyNow::getFornecedores() const { return fornecedores; }
+
+/**
+ * Gets fornecedor with this nif
+ * @param nif of Fornecedor
+ * @return Pointer to fornecedor
+ */
+Fornecedor * BuyNow::getFornecedor(int nif) const {
+    set<FornecedorPtr>::iterator it = fornecedores.begin();
+    while(it != fornecedores.end()){
+        if ((*it).getNif() == nif){
+            return (*it).getFornecedor();
+        }
+        it++;
+    }
+    throw FornecedorDoesNotExist(nif);
 }

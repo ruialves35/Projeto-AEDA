@@ -7,17 +7,22 @@
 using namespace std;
 
 BuyNowUI::BuyNowUI() {
-    Fornecedor f("Manel");
-    bn.setFornecedor(f);
+    //Fornecedor f;
+    //f.setNome("Manel");
+    //bn.setFornecedor(f);
     lerCategorias();
     lerProdutos();
     lerClientes();
     lerLojasFisicas();
     lerProdutosLojaOnline();
     lerProdutosLojaFisica();
+    lerFornecedores();
     lerReposicoes();
+
     lerTransferencias();
+
     LerTransacoes();
+
 
     UI();
     escreverCategorias();
@@ -29,8 +34,9 @@ BuyNowUI::BuyNowUI() {
     escreverTransferencias();
     escreverReposicoes();
     escreverLojaOnline();
-
+    //cout << "ooooo" << endl;
 }
+
 
 void BuyNowUI::UI() {
 
@@ -623,6 +629,84 @@ void BuyNowUI::lerCategorias() {
 
 }
 
+
+/**
+ * Ler fornecedores da BuyNow
+ */
+void BuyNowUI::lerFornecedores() {
+    ifstream fin;
+    fin.open("Fornecedores.txt");
+    if (!fin.is_open()){
+        cerr << "Ficheiro dos Fornecedores nao encontrado\n";
+        exit(1);
+    }
+
+    string nome, line;
+    int nif, idProduto;
+    double preco;
+    int quantidade;
+
+    //int n = 0;
+
+    getline(fin, line);
+    while(!fin.eof()){
+
+        nome = line;
+
+        getline(fin, line);
+        stringstream formatline(line);
+
+        string show;
+        formatline >> show;
+        nif = stoi(show);
+
+        getline(fin, line);
+        stringstream formatline2(line);
+        formatline2 >> idProduto;
+        //cout << "ID: " << idProduto << endl;
+
+        getline(fin, line);
+        stringstream formatline3(line);
+        formatline3 >> preco;
+        //cout << "PRECO: " << preco << endl;
+
+        getline(fin, line);
+        stringstream formatline4(line);
+        formatline4 >> quantidade;
+        //cout << "QUANTIDADE: " << quantidade << endl;
+
+        Produto* produto;
+
+        bool found = false;
+        for (const auto &i : bn.getProdutos()){
+            if (i->getId() == idProduto){
+                produto = i;
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            Fornecedor *fornecedor = new Fornecedor(nome, nif, produto, preco, quantidade);
+
+            bn.addFornecedor(fornecedor);
+            //cout << "MAIS UM FORNECEDOR: " << fornecedor->getNomeFornecedor() << fornecedor->getNif() << fornecedor->getProduto()->getId() << fornecedor->getPreco() << fornecedor->getQuantidade()<< endl;
+            //++n;
+
+            /*
+            set<Fornecedor*>::const_iterator it2 = bn.getFornecedores().begin();
+            while(it2 != bn.getFornecedores().end()){
+                cout << "NOME:: " << (*it2)->getNomeFornecedor() << endl;
+                it2++;
+            }*/
+
+        }
+
+        getline(fin, line);
+    }
+
+
+}
 void BuyNowUI::lerProdutos() {
 
     ifstream fin;
@@ -640,10 +724,10 @@ void BuyNowUI::lerProdutos() {
 
     while(!fin.eof()){
 
-        stringProduto=line;
+        stringProduto = line;
 
         getline(fin,line);
-        stringCategoria=line;
+        stringCategoria = line;
 
         getline(fin,line);
         istringstream format3line(line);
@@ -785,11 +869,19 @@ void BuyNowUI::lerReposicoes() {
 }
 
 void BuyNowUI::lerTransferencias() {
+    /*
+    BSTItrIn<Fornecedor*> it3(bn.getFornecedores());
+    int n = 0;
+    while(!it3.isAtEnd()){
+        cout << "NUMERO: " << ++n << endl;
+        it3.advance();
+    }*/
 
     ifstream fin;
     string line;
-    int codigo, quantidade,dia,mes,ano;
+    int codigo, quantidade, dia, mes, ano;
     char caracter;
+    int nifFornecedor;
 
 
     fin.open("Transferencias.txt");
@@ -804,24 +896,43 @@ void BuyNowUI::lerTransferencias() {
 
         istringstream format1line(line);
         format1line >> dia >> caracter >> mes >> caracter >> ano;
+        //cout << "ANO: " << ano << endl;
+
+        getline(fin,line);
+        istringstream fline(line);
+        fline >> nifFornecedor;
+        //cout << "NIF: " << nifFornecedor << endl;
 
         getline(fin,line);
         istringstream format2line(line);
         format2line >> codigo;
+        //cout << "CODIGO Produto: " << codigo << endl;
 
         getline(fin,line);
         istringstream format3line(line);
         format3line >> quantidade;
+        //cout << "QUANTIDADE: " << to_string(quantidade) << endl;
 
-        Fornecedor f = bn.getFornecedor();
-        Produto *prod = bn.getProduto(codigo);
-        Date d1(dia,mes,ano);
-        Transferencia *t1 = new Transferencia(f,prod,quantidade,d1);
-        bn.addTransferencia(t1);
+        try {
+            Produto *prod = bn.getProduto(codigo);
+            FornecedorPtr f(bn.getFornecedor(nifFornecedor));
+            Date d1(dia,mes,ano);
+            Transferencia *t1 = new Transferencia(f,prod,quantidade,d1);
+            bn.addTransferencia(t1);
+        } catch (FornecedorDoesNotExist f) {
+            f.showError();
+        } catch (ProdutoDoesNotExist p){
+            p.showError();
+        }
         getline(fin,line);
 
     }
-
+    /*
+    set<Fornecedor*>::iterator it = bn.getFornecedores().begin();
+    while(it != bn.getFornecedores().end()){
+        cout << (*it)->getNomeFornecedor() << endl;
+        it++;
+    }*/
 }
 
 void BuyNowUI::lerClientes() {
@@ -1002,6 +1113,7 @@ void BuyNowUI::escreverTransferencias() {
     out.open("Transferencias.txt");
     for (auto i : bn.getTransferencias()){
         out << i->getData() << endl;
+        out << i->getNifFornecedor() << endl;
         out << i->getProduto()->getId() << endl;
         out << i->getQuantidade() << endl;
     }

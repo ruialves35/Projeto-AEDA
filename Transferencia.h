@@ -6,15 +6,16 @@
 #include "Date.h"
 class Transferencia {
 private:
-    Fornecedor fornecedor;
+    FornecedorPtr fornecedor;
     Produto* produto;
     int quantidade;
     Date data;
+    int preco;
 public:
     Transferencia();
-    Transferencia(Fornecedor &f, Produto* p, int quantidade, Date data);
-    Fornecedor getFornecedor() const;
-    void setFornecedor(Fornecedor &f);
+    Transferencia(FornecedorPtr &f, Produto* p, int quantidade, Date data);
+    Fornecedor* getFornecedor() const;
+    void setFornecedor(FornecedorPtr &f);
     Produto* getProduto() const;
     void setProduto(Produto* p);
     Date getData() const;
@@ -22,6 +23,8 @@ public:
     string getInfo() const;
     int getQuantidade() const;
     void setQuantidade(int quantidade);
+    int getNifFornecedor() const;
+    double getPreco() const;
 };
 
 

@@ -15,6 +15,7 @@ CMakeFiles/Projeto.dir/BuyNow.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Reposicao.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transferencia.h
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/bst.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/BuyNow.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/BuyNowUI.cpp
@@ -34,6 +35,7 @@ CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Reposicao.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transferencia.h
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/bst.h
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/CartaoCredito.cpp
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/CartaoCredito.h
@@ -58,8 +60,10 @@ CMakeFiles/Projeto.dir/Date.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Date.cpp
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Date.h
 CMakeFiles/Projeto.dir/Fornecedor.cpp.obj
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Categoria.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.cpp
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
 CMakeFiles/Projeto.dir/LojaFisica.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Categoria.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaFisica.cpp
@@ -143,4 +147,5 @@ CMakeFiles/Projeto.dir/main.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Reposicao.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transferencia.h
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/bst.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/main.cpp
