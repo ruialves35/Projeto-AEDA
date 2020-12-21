@@ -4,11 +4,24 @@
 #include <iostream>
 #include "Categoria.h"
 #include <set>
+
+#include <windows.h>
+
 using namespace std;
 
 
 class FornecedorPtr;
+
 class Fornecedor;
+
+
+class FornecedorProdutoDoesNotExist{
+public:
+    string nome;
+    FornecedorProdutoDoesNotExist(string nome){ this->nome = nome;}
+    void showError() { cout << "O Fornecedor de nome " << nome << " nao existe." << endl; Sleep(600);}
+};
+
 class Produto{
 private:
     int id;
@@ -26,6 +39,8 @@ public:
     //int getStockOnline() const;
     //void setStockOnline(int stockOnline);
     void addFornecedor(Fornecedor * fornecedor);
+    void removeFornecedor(string nome);
+    FornecedorPtr getFornecedor(string nome) const;
     set<FornecedorPtr> getFornecedores() const;
     int getId() const;
     void setId(int newId);

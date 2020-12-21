@@ -317,6 +317,21 @@ Produto * BuyNow::getProduto(int codigo) const {
     }
     throw ProdutoDoesNotExist(codigo);
 }
+
+/**
+ * Gets a Produto of Buy Now.
+ * In case the Produto Does not exist in Buy Now throws an error
+ * @param nome Nome of Produto
+ * @return Pointer to Produto
+ */
+Produto* BuyNow::getProduto(string nome) const {
+    for (auto i : produtos){
+        if (i->getNomeProduto() == nome)
+            return i;
+    }
+    throw ProdutoDoesNotExistNome(nome);
+}
+
 /**
  * Repoe o stock de todos os produtos da lojaOnline
  * Procura nas lojas fisicas e retira da lojaFisica com maior stock, caso esta continue a ter um stock
@@ -648,4 +663,22 @@ Fornecedor * BuyNow::getFornecedor(int nif) const {
         it++;
     }
     throw FornecedorDoesNotExist(nif);
+}
+
+/**
+ * Removes a Fornecedor of BuyNow
+ * Removes the Fornecedor from produtos database.
+ * @param f fornecedor to be removed
+ */
+void BuyNow::removeFornecedor(Fornecedor *f) {
+    set<FornecedorPtr>::iterator it;
+    for (it = fornecedores.begin(); it != fornecedores.end(); it++){
+        if ((*it) == f){
+            fornecedores.erase(it);
+            break;
+        }
+    }
+    for (auto &i : produtos){
+        i->removeFornecedor(f->getNomeFornecedor());
+    }
 }

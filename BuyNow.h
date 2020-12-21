@@ -16,6 +16,9 @@
 #include <set>
 using namespace std;
 
+/**
+ * Exception ProdutoDoesNotExistNome throwed on bn.getProduto, shows produto's id
+ */
 class ProdutoDoesNotExist{
 public:
     int codigo;
@@ -25,6 +28,19 @@ public:
     }
 };
 
+/**
+ * Exception ProdutoDoesNotExistNome throwed on bn.getProduto, shows produto's name
+ */
+class ProdutoDoesNotExistNome{
+public:
+    string nome;
+    ProdutoDoesNotExistNome(string nome) { this->nome = nome; }
+    void showError(){ cout << "O Produto " << nome << " nao existe na loja." << endl; Sleep(300); }
+};
+
+/**
+ * Exception LojaFisicaDoesNotExist throwed on getLojaFisica
+ */
 class LojaFisicaDoesNotExist{
 public:
     string localidade;
@@ -88,6 +104,7 @@ public:
     BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia*> tranferencias, int stockOk, int stockMin);
     ~BuyNow();
     void addFornecedor(Fornecedor* f);
+    void removeFornecedor(Fornecedor* f);
     set<FornecedorPtr> getFornecedores() const;
     Fornecedor* getFornecedor(int nif) const;
     void addCategoria(Categoria &c);
@@ -103,6 +120,7 @@ public:
     void addProduto(Produto* p);
     void removeProduto(Produto* p);
     Produto* getProduto(int codigo) const;
+    Produto* getProduto(string nome) const;
     vector<Produto*> getProdutos() const;
     void addReposicao(Reposicao &reposicao);
     void addLojaFisica(LojaFisica &lf);

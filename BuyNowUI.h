@@ -36,6 +36,7 @@ public:
     void escreverReposicoes();
     void escreverLojaOnline();
     void lerFornecedores();
+    void escreverFornecedores();
 };
 
 

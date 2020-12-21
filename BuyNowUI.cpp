@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <set>
 
 using namespace std;
 
@@ -18,13 +19,11 @@ BuyNowUI::BuyNowUI() {
     lerProdutosLojaFisica();
     lerFornecedores();
     lerReposicoes();
-
     lerTransferencias();
-
     LerTransacoes();
 
-
     UI();
+
     escreverCategorias();
     escreverProdutos();
     escreverClientes();
@@ -34,6 +33,7 @@ BuyNowUI::BuyNowUI() {
     escreverTransferencias();
     escreverReposicoes();
     escreverLojaOnline();
+    escreverFornecedores();
     //cout << "ooooo" << endl;
 }
 
@@ -475,6 +475,9 @@ void BuyNowUI::administrador() {
             cout << "4: Ver Reposicoes feitas a Loja Online" << endl;
             cout << "5: Ver Lojas Fisicas da Empresa" << endl;
             cout << "6: Ver Transacoes feitas pelos Clientes a Loja Online" << endl;
+            cout << "7: Ver Todos os Fornecedores da Empresa" << endl;
+            cout << "8: Comprar Produto a Fornecedor" << endl;
+            cout << "9: Remover Fornecedor" << endl;
             cout << endl;
             cout << "Enter option: ";
             getline(cin, input);
@@ -502,7 +505,7 @@ void BuyNowUI::administrador() {
                 Sleep(2000);
                 cout << string(50, '\n'); //Clear Screen
                 validInput = false;
-            } else if (result < 0 || result > 6) {
+            } else if (result < 0 || result > 9) {
                 cout << endl << "O numero introduzido nao e correto" << endl;
                 Sleep(2000);
                 cout << string(50, '\n'); //Clear Screen
@@ -601,8 +604,114 @@ void BuyNowUI::administrador() {
             cout << endl;
         }
 
-        else if (result == 6){
+        else if (result == 6){  //display all transacoes
             bn.showTransacoes();
+        }
+
+        else if (result == 7){  //display all fornecedores
+            set<FornecedorPtr> fornecedores = bn.getFornecedores();
+            cout << setfill(' ') << setw(30) << "NOME" << setfill(' ') << setw(30)  << "PRODUTO" << setfill(' ') << setw(30) << "PRECO" << endl;
+            for (set<FornecedorPtr>::iterator it = fornecedores.begin(); it != fornecedores.end(); it++){
+                cout << setfill(' ') << setw(30) << it->getNomeFornecedor() << setfill(' ') << setw(30) << it->getProduto()->getNomeProduto() << setfill(' ') << setw(30) << it->getPreco() << endl;
+            }
+        }
+
+        else if (result == 8){
+            bn.showProdutos();
+            cout << endl;
+            string nomeProduto;
+            cout << "Qual destes produtos deseja comprar? " << endl;
+            getline(cin, nomeProduto);
+            try{
+                string nomeFornecedor;
+                Produto* prod = bn.getProduto(nomeProduto);
+                set<FornecedorPtr> fornecedores = prod->getFornecedores();
+
+                cout << setfill(' ') << setw(30) << "NOME" << setfill(' ') << setw(30)  << "PRODUTO"
+                << setfill(' ') << setw(30) << "PRECO" << setfill(' ') << setw(30) << "STOCK";
+
+                for (set<FornecedorPtr>::iterator it = fornecedores.begin(); it != fornecedores.end(); it++){
+                    cout << setfill(' ') << setw(30) << it->getNomeFornecedor() << setfill(' ') << setw(30)
+                    << it->getProduto()->getNomeProduto() << setfill(' ') << setw(30)
+                    << it->getPreco() << setfill(' ') << setw(30) << it->getFornecedor()->getQuantidade();
+                }
+                cout << "\nA qual fornecedor quer comprar o produto?" << endl;
+                cout << "Nome do Fornecedor:";
+                getline(cin, nomeFornecedor);
+
+                FornecedorPtr fptr = prod->getFornecedor(nomeFornecedor);
+                int quantity;
+                cout << "\nQue quantidade desse produto quer comprar?" << endl;
+                string inputQuantidade;
+                getline(cin, inputQuantidade);
+                istringstream checkinput(inputQuantidade); // get into a strinsgtream
+                if (cin.eof()) {
+                    cin.clear();
+                    cout << endl << "Quantidade Invalida" << endl;
+                    Sleep(300);
+                    cout << string(50, '\n'); //Clear Screen
+                }else if (!(checkinput >> quantity)){
+                    cout << "Quantidade Invalida" << endl;
+                    Sleep(300);
+                    cout << string(50, '\n'); //Clear Screen
+                }else if (quantity > fptr.getQuantidade()){
+                    cout << "O Fornecedor nao tem stock suficiente" << endl;
+                }
+                else {
+                    time_t theTime = time(NULL);
+                    struct tm *aTime = localtime(&theTime);
+                    int day = aTime->tm_mday;
+                    int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
+                    int year = aTime->tm_year + 1900; // Year is # years since 1900
+                    Date data(day, month, year);
+                    cout << "QUANTIDADE:" << quantity << endl;
+                    Transferencia* transferencia = new Transferencia(fptr, prod, quantity, data);
+                    bn.addTransferencia(transferencia);
+                    bn.addProdutoOnline(prod, quantity);
+                }
+
+            }
+            catch(ProdutoDoesNotExistNome pd){
+                pd.showError();
+            }
+            catch(FornecedorProdutoDoesNotExist f){
+                f.showError();
+            }
+            catch(...){
+                cout << "Nome invalido." << endl;
+            }
+        }
+        else if (result == 9){
+            string inputNif;
+            int nif;
+            cout << "Introduza o nif do Fornecedor: ";
+            getline(cin, inputNif);
+            istringstream checkNif(inputNif);
+            if (cin.eof()) {
+                cin.clear();
+                cout << endl << "Nif Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }else if (!(checkNif >> nif)){
+                cout << "Nif Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }else{
+                try {
+                    Fornecedor* f = bn.getFornecedor(nif);
+                    bn.removeFornecedor(f);
+
+                }
+                catch(FornecedorDoesNotExist fornecedor){
+                    fornecedor.showError();
+                    cout << "O fornecedor nao foi removido." << endl;
+                    Sleep(300);
+                }
+                catch(...){
+                    cout << "Nao foi possivel remover o fornecedor" << endl;
+                    Sleep(300);
+                }
+            }
         }
     }
 }
@@ -1108,6 +1217,23 @@ void BuyNowUI::escreverTransferencias() {
         out << i->getNifFornecedor() << endl;
         out << i->getProduto()->getId() << endl;
         out << i->getQuantidade() << endl;
+    }
+    out.close();
+}
+
+/**
+ * Escreve a informacao dos Fornecedores no ficheiro Fornecedores.txt
+ */
+void BuyNowUI::escreverFornecedores() {
+    ofstream out;
+    out.open("Fornecedores.txt");
+    set<FornecedorPtr> f = bn.getFornecedores();
+    for (set<FornecedorPtr>::iterator it = f.begin(); it != f.end(); it++){
+        out << it->getNomeFornecedor() << endl;
+        out << it->getNif() << endl;
+        out << it->getProduto()->getId() << endl;
+        out << it->getPreco() << endl;
+        out << it->getQuantidade() << endl;
     }
     out.close();
 }

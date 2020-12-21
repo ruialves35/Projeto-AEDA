@@ -117,6 +117,32 @@ void Produto::addFornecedor(Fornecedor *fornecedor) {
 set<FornecedorPtr> Produto::getFornecedores() const {return fornecedores;}
 
 /**
+ * Gets fornecedor of Produto
+ * @param nome Name of Fornecedor
+ * @return Pointer to Fornecedor
+ */
+FornecedorPtr Produto::getFornecedor(string nome) const {
+    for (set<FornecedorPtr>::iterator it = fornecedores.begin(); it != fornecedores.end(); it++){
+        if (it->getNomeFornecedor() == nome){
+            return (*it);
+        }
+    }
+    throw FornecedorProdutoDoesNotExist(nome);
+}
+/**
+ * Removes a fornecedor from BST of Fornecedores of Produto
+ * @param nome Name of Fornecedor to be removed
+ */
+void Produto::removeFornecedor(string nome) {
+    for (set<FornecedorPtr>::iterator it = fornecedores.begin(); it != fornecedores.end(); it++){
+        if (it->getNomeFornecedor() == nome){
+            fornecedores.erase(it);
+            break;
+        }
+    }
+}
+
+/**
  * overloading of operator == to compare 2 products.
  * Products are equal if they have same id, nome, stock in online shop, stock in fisical shop and value.
  * @param p1 product to compare

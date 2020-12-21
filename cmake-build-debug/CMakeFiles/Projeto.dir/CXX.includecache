@@ -53,6 +53,8 @@ sstream
 -
 fstream
 -
+set
+-
 
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/BuyNowUI.h
 BuyNow.h
@@ -196,6 +198,8 @@ iostream
 Categoria.h
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Categoria.h
 set
+-
+windows.h
 -
 
 D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Reposicao.cpp
