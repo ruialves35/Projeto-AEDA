@@ -9,8 +9,6 @@ BuyNow::BuyNow(): fornecedores(){}
 
 /**
  * Liberta o espaço reservado dinamicamente para as transferencias, clientes e transacoes.
- * Pensar em colocar aqui a parte em que escreve em ficheiros toda a informaçao da BuyNow
- * MUST COMPLETE THIS DESTRUCTOR
  */
 BuyNow::~BuyNow() {
     /*
@@ -28,21 +26,23 @@ BuyNow::~BuyNow() {
     for (it = produtos.begin(); it != produtos.end(); it++){
         delete(*it);
     }
+
     vector<Cliente *>::iterator it2;
     for (it2 = clientes.begin(); it2 != clientes.end(); it2++){
         delete(*it2);
     }
+
     vector<Transferencia*>::iterator it3;
     for (it3 = transferencias.begin(); it3 != transferencias.end(); it3++){   //transferencias sao alocadas dinamicamente, temos de libertar o espaço reservado
         delete(*it3);
     }
+
     set<FornecedorPtr>::iterator it4;
     for (it4 = fornecedores.begin(); it4 != fornecedores.end(); it4++){
         delete it4->getFornecedor();
     }
+
     //cout << "Oioioi" << endl;
-
-
 }
 /**
  * Constructor with all the information
@@ -52,7 +52,7 @@ BuyNow::~BuyNow() {
  */
 BuyNow::BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin):
         lojasFisicas(lf), lojaOnline(lo), stockOk(stockOk), stockMin(stockMin), fornecedores()
-        {}
+{}
 
 
 /**
@@ -681,4 +681,67 @@ void BuyNow::removeFornecedor(Fornecedor *f) {
     for (auto &i : produtos){
         i->removeFornecedor(f->getNomeFornecedor());
     }
+}
+
+/**
+ * Adds a message to hash with messages
+ * @param msg Message to be added
+ */
+void BuyNow::addMensagem(Mensagem &msg) { mensagens.insert(msg);}
+
+/**
+ * Checks if a Mensagem was responded or not.
+ * @param msg Mensagem to be responded
+ * @return True if was responded, False if wasnt or wasnt sent yet
+ */
+bool BuyNow::checkMensagem(Mensagem &msg) const {
+    cout << "IS THIS DOING IT RIGHT?" << endl;
+    for (auto i : mensagens){
+        if (i == msg){
+            cout << "YES" << endl;
+            return i.getRespondida();
+        }
+    }
+    return false;
+}
+
+/**
+ * Responds to a Mensagem
+ * @param msg Message to be responded
+ */
+void BuyNow::answerMensagem(Mensagem &msg) {
+    cout << "IS THIS DOING IT RIGHT?" << endl;
+    for (HashTableMensagem::iterator it = mensagens.begin(); it != mensagens.end(); it++){
+        if ((*it) == msg){
+            Mensagem newMsg = (*it);
+            it = mensagens.erase(it);
+            newMsg.setRespondida();
+            mensagens.insert(newMsg);
+        }
+    }
+    cout << "YES" << endl;
+}
+
+/**
+ * @return HashTable with all mensagens
+ */
+HashTableMensagem BuyNow::getMensagens() const {
+    return mensagens;
+}
+
+/**
+ * Removes a message of BuyNow
+ * @param msg Message to be removed
+ * @return true if removed, false otherwise
+ */
+bool BuyNow::removeMensagem(Mensagem msg) {
+    cout << "IS THIS DOING IT RIGHT?" << endl;
+    for( HashTableMensagem::iterator it = mensagens.begin(); it != mensagens.end(); it++){
+        if (it->getNumero() == msg.getNumero()){
+            mensagens.erase(it);
+            return true;
+        }
+    }
+    cout << "YES" << endl;
+    return false;
 }

@@ -3,17 +3,22 @@
 
 #include <iostream>
 #include <Windows.h>
+#include <set>
+#include <vector>
+#include <unordered_set>
+#include <string>
+
 #include "LojaFisica.h"
 #include "LojaOnline.h"
 #include "Cliente.h"
 #include "Transacao.h"
-#include <vector>
 #include "Fornecedor.h"
 #include "Transferencia.h"
 #include "Categoria.h"
 #include "Reposicao.h"
+#include "Mensagem.h"
 #include "bst.h"
-#include <set>
+
 using namespace std;
 
 /**
@@ -24,7 +29,7 @@ public:
     int codigo;
     ProdutoDoesNotExist(int codigo){ this->codigo = codigo;}
     void showError() { cout << "O Produto com o codigo " << to_string(codigo) << "nao existe." << endl;
-    Sleep(600);
+        Sleep(600);
     }
 };
 
@@ -83,6 +88,25 @@ public:
 
 };
 //-----------------------------------------------------------------------
+
+struct MensagemHash {
+
+    int operator()(const Mensagem& msg) const {
+        int result = 0;
+        for (auto i : to_string(msg.getCliente().getNumContribuinte())){
+            result += stoi(&i);
+        }
+        return result + msg.getNumero();    //numContribuinte identifica o cliente + Numero da mensagem
+    }
+
+    bool operator()(const Mensagem& msg1, const Mensagem& msg2) const {
+        return msg1.getNumero() == msg2.getNumero() && msg1.getCliente().getNumContribuinte() == msg2.getCliente().getNumContribuinte();
+    }
+};
+
+
+typedef unordered_set<Mensagem, MensagemHash, MensagemHash> HashTableMensagem;
+
 class BuyNow {
 private:
     vector<Produto *> produtos;
@@ -91,6 +115,7 @@ private:
     vector<Reposicao> reposicoes;
 
     set<FornecedorPtr> fornecedores;
+    HashTableMensagem mensagens;
 
     vector<LojaFisica> lojasFisicas;
     LojaOnline lojaOnline;
@@ -103,10 +128,18 @@ public:
     BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin);
     BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, vector<Transferencia*> tranferencias, int stockOk, int stockMin);
     ~BuyNow();
+
     void addFornecedor(Fornecedor* f);
     void removeFornecedor(Fornecedor* f);
     set<FornecedorPtr> getFornecedores() const;
     Fornecedor* getFornecedor(int nif) const;
+
+    void addMensagem(Mensagem &msg);
+    bool removeMensagem(Mensagem msg);
+    bool checkMensagem(Mensagem &msg) const;
+    void answerMensagem(Mensagem &msg);
+    HashTableMensagem getMensagens() const;
+
     void addCategoria(Categoria &c);
     void removeCategoria(Categoria &c);
     //Fornecedor getFornecedor() const;

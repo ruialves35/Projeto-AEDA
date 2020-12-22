@@ -10,6 +10,7 @@ CMakeFiles/Projeto.dir/BuyNow.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Fornecedor.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaFisica.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaOnline.h
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Mensagem.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Pagamento.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Reposicao.h
@@ -29,6 +30,7 @@ CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaFisica.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaOnline.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/MbWay.h
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Mensagem.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Multibanco.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Pagamento.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
@@ -89,6 +91,10 @@ CMakeFiles/Projeto.dir/MbWay.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Pagamento.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.h
+CMakeFiles/Projeto.dir/Mensagem.cpp.obj
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Cliente.h
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Mensagem.cpp
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Mensagem.h
 CMakeFiles/Projeto.dir/Multibanco.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Categoria.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Cliente.h
@@ -142,6 +148,7 @@ CMakeFiles/Projeto.dir/main.cpp.obj
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaFisica.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/LojaOnline.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/MbWay.h
+ D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Mensagem.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Multibanco.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Pagamento.h
  D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.h

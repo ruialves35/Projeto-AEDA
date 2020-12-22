@@ -156,6 +156,12 @@
 		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA/MbWay.h">
 			<Option target="Projeto"/>
 		</Unit>
+		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Mensagem.cpp">
+			<Option target="Projeto"/>
+		</Unit>
+		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Mensagem.h">
+			<Option target="Projeto"/>
+		</Unit>
 		<Unit filename="D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Multibanco.cpp">
 			<Option target="Projeto"/>
 		</Unit>

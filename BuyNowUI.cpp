@@ -20,10 +20,12 @@ BuyNowUI::BuyNowUI() {
     lerFornecedores();
     lerReposicoes();
     lerTransferencias();
-    LerTransacoes();
+    lerTransacoes();
+    lerMensagens();
 
     UI();
 
+    escreverMensagens();
     escreverCategorias();
     escreverProdutos();
     escreverClientes();
@@ -34,6 +36,7 @@ BuyNowUI::BuyNowUI() {
     escreverReposicoes();
     escreverLojaOnline();
     escreverFornecedores();
+
     //cout << "ooooo" << endl;
 }
 
@@ -118,6 +121,7 @@ void BuyNowUI::cliente() {
             cout << "2: Adicionar Produto ao Carrinho "<< endl;
             cout << "3: Efetuar Pagamento" << endl;
             cout << "4: Efetuar registo no sistema" << endl;
+            cout << "5: Enviar Mensagem Eletronica" << endl;
             cout << "   Enter option: ";
             getline(cin, input);
             istringstream checkinput(input); // get into a strinsgtream
@@ -130,7 +134,7 @@ void BuyNowUI::cliente() {
                 cout << "Por favor introduza um valor" << endl;
                 validInput = false;
 
-            } else if (result < 0 || result > 4) {
+            } else if (result < 0 || result > 5) {
                 cout << "O numero introduzido nao e correto. Tem de ser entre 0 e 4" << endl;
                 validInput = false;
             }
@@ -451,6 +455,31 @@ void BuyNowUI::cliente() {
                 bn.addCliente(c);
             }
         }
+        else if (result == 5){  //Enviar uma mensagem eletronica
+            bool isRegistered = false;
+            Cliente *client;
+            for (auto i : bn.getClientes()){
+                client = dynamic_cast<ClienteRegistado*>(i);
+                if (client != NULL){
+                    if (client->getNome() == nome && client->getNumContribuinte() == contribuinteNumero){
+                        isRegistered = true;
+                        client = new Cliente(i->getNome(), i->getNumContribuinte());
+                        break;
+                    }
+                }
+            }
+            if (!isRegistered){ //Ainda nao esta registado
+                cout << "Tem de se registar primeiro no sistema." << endl;
+                Sleep(1000);
+            }
+            else{   //Ja esta registado, pode enviar mensagens
+                string mensagem;
+                cout << "Introduza a mensagem que quer enviar." << endl;
+                getline(cin, mensagem);
+                Mensagem msg(mensagem, *client);
+                bn.addMensagem(msg);
+            }
+        }
     }
 }
 
@@ -479,6 +508,8 @@ void BuyNowUI::administrador() {
             cout << "8: Comprar Produto a Fornecedor" << endl;
             cout << "9: Remover Fornecedor" << endl;
             cout << "10: Adicionar Fornecedor" << endl;
+            cout << "11: Ver todas as Mensagens" << endl;
+            cout << "12: Responder a uma Mensagem" << endl;
             cout << endl;
             cout << "Enter option: ";
             getline(cin, input);
@@ -506,7 +537,7 @@ void BuyNowUI::administrador() {
                 Sleep(1000);
                 cout << string(50, '\n'); //Clear Screen
                 validInput = false;
-            } else if (result < 0 || result > 10) {
+            } else if (result < 0 || result > 12) {
                 cout << endl << "O numero introduzido nao e correto" << endl;
                 Sleep(1000);
                 cout << string(50, '\n'); //Clear Screen
@@ -629,12 +660,12 @@ void BuyNowUI::administrador() {
                 set<FornecedorPtr> fornecedores = prod->getFornecedores();
 
                 cout << setfill(' ') << setw(30) << "NOME" << setfill(' ') << setw(30)  << "PRODUTO"
-                << setfill(' ') << setw(30) << "PRECO" << setfill(' ') << setw(30) << "STOCK";
+                     << setfill(' ') << setw(30) << "PRECO" << setfill(' ') << setw(30) << "STOCK";
 
                 for (set<FornecedorPtr>::iterator it = fornecedores.begin(); it != fornecedores.end(); it++){
                     cout << setfill(' ') << setw(30) << it->getNomeFornecedor() << setfill(' ') << setw(30)
-                    << it->getProduto()->getNomeProduto() << setfill(' ') << setw(30)
-                    << it->getPreco() << setfill(' ') << setw(30) << it->getFornecedor()->getQuantidade();
+                         << it->getProduto()->getNomeProduto() << setfill(' ') << setw(30)
+                         << it->getPreco() << setfill(' ') << setw(30) << it->getFornecedor()->getQuantidade();
                 }
                 cout << "\nA qual fornecedor quer comprar o produto?" << endl;
                 cout << "Nome do Fornecedor:";
@@ -822,9 +853,46 @@ void BuyNowUI::administrador() {
                 }
             }
         }
+        else if (result == 11){//Ver todas as Mensagens
+            for (auto i : bn.getMensagens()){
+                cout << i << endl;
+            }
+        }
+        else if (result == 12){
+            string numeroMsg;
+            cout << "Introduza o Numero da Mensagem a qual quer responder: ";
+            getline(cin, numeroMsg);
+
+            int numMsg;
+            istringstream checkNumeroMsg(numeroMsg);
+            if (cin.eof()) {
+                cin.clear();
+                cout << endl << "Numero da Mensagem Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }
+            else if (!(checkNumeroMsg >> numMsg)) {
+                cout << "Numero da Mensagem Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }
+            else {   //everything ok
+                for (auto &i : bn.getMensagens()) {
+                    if (i.getNumero() == numMsg) {
+                        Mensagem newMsg = i;
+                        bn.removeMensagem(i);   //remover
+                        newMsg.setRespondida(); //alterar
+                        bn.addMensagem(newMsg); //voltar a adicionar
+                    }
+                }
+            }
+        }
     }
 }
 
+/**
+ * Le as categorias da Loja, guardadas no ficheiro Categorias.txt
+ */
 void BuyNowUI::lerCategorias() {
 
     ifstream fin;
@@ -1179,7 +1247,7 @@ void BuyNowUI::lerClientes() {
 
 }
 
-void BuyNowUI::LerTransacoes() {
+void BuyNowUI::lerTransacoes() {
 
     ifstream fin;
     string line, stringNome,numCartao,multibanco,mbway,cartao,stringTipoPagamento;
@@ -1278,6 +1346,9 @@ void BuyNowUI::LerTransacoes() {
 
 }
 
+/**
+ * Le informacao Das lojas fisicas do ficheiro NomesFisicas.txt
+ */
 void BuyNowUI::lerLojasFisicas() {
 
     ifstream fin;
@@ -1476,3 +1547,68 @@ void BuyNowUI::escreverLojaOnline() {
     }
     out.close();
 }
+
+/**
+ * Escreve a Informacao das Mensagnes no ficheiro Mensagens.txt
+ * escreve na forma NumContribuinte Cliente\n Mensagem \n 0(nao respondida) ou 1(respondida)
+ */
+void BuyNowUI::escreverMensagens() {
+    ofstream out;
+    out.open("Mensagens.txt");
+    //cout << "SIZE:" << bn.getMensagens().size() << endl;
+    for (auto i : bn.getMensagens()){
+        out << i.getCliente().getNumContribuinte() << endl;
+        out << i.getMensagem() << endl;
+        if (i.getRespondida()){
+            out << 1 << endl;
+        }
+        else
+            out << 0 << endl;
+    }
+}
+
+/**
+ * Le as mensagens existentes no ficheiro "Mensagens.txt"
+ */
+void BuyNowUI::lerMensagens() {
+    ifstream fin;
+    string line;
+    fin.open("Mensagens.txt");
+
+    if(!fin.is_open()){
+        cerr << "Ficheiro das Mensagens nao encontrado\n";
+        exit(1);
+    }
+
+    getline(fin, line);
+    while(!fin.eof()){
+        int numContribuinte;
+        string mensagem;
+        bool respondida;
+
+        stringstream getNumContr(line);
+        getNumContr >> numContribuinte;
+
+        getline(fin, mensagem);
+
+        getline(fin, line);
+        if (line == "0"){
+            respondida = false;
+        }else respondida = true;
+
+        Cliente cliente;
+        for (auto i : bn.getClientes()){
+            if (i->getNumContribuinte() == numContribuinte){
+                cliente = *i;
+                break;
+            }
+        }
+
+        Mensagem msg(mensagem, cliente, respondida);
+        bn.addMensagem(msg);
+
+        getline(fin, line);
+    }
+}
+
+

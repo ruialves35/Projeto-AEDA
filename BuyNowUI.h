@@ -8,6 +8,8 @@
 #include "MbWay.h"
 #include "CartaoCredito.h"
 #include "Fornecedor.h"
+#include "Mensagem.h"
+
 
 class BuyNowUI {
 private:
@@ -30,13 +32,15 @@ public:
     void escreverProdutosLojaFisica();
     void lerReposicoes();
     void lerTransferencias();
-    void LerTransacoes();
+    void lerTransacoes();
     void escreverTransacoes();
     void escreverTransferencias();
     void escreverReposicoes();
     void escreverLojaOnline();
     void lerFornecedores();
     void escreverFornecedores();
+    void escreverMensagens();
+    void lerMensagens();
 };
 
 

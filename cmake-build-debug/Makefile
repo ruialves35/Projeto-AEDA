@@ -452,6 +452,33 @@ MbWay.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/MbWay.cpp.s
 .PHONY : MbWay.cpp.s
 
+Mensagem.obj: Mensagem.cpp.obj
+
+.PHONY : Mensagem.obj
+
+# target to build an object file
+Mensagem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Mensagem.cpp.obj
+.PHONY : Mensagem.cpp.obj
+
+Mensagem.i: Mensagem.cpp.i
+
+.PHONY : Mensagem.i
+
+# target to preprocess a source file
+Mensagem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Mensagem.cpp.i
+.PHONY : Mensagem.cpp.i
+
+Mensagem.s: Mensagem.cpp.s
+
+.PHONY : Mensagem.s
+
+# target to generate assembly for a file
+Mensagem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/Mensagem.cpp.s
+.PHONY : Mensagem.cpp.s
+
 Multibanco.obj: Multibanco.cpp.obj
 
 .PHONY : Multibanco.obj
@@ -684,6 +711,9 @@ help:
 	@echo ... MbWay.obj
 	@echo ... MbWay.i
 	@echo ... MbWay.s
+	@echo ... Mensagem.obj
+	@echo ... Mensagem.i
+	@echo ... Mensagem.s
 	@echo ... Multibanco.obj
 	@echo ... Multibanco.i
 	@echo ... Multibanco.s
