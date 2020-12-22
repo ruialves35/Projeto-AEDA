@@ -478,6 +478,7 @@ void BuyNowUI::administrador() {
             cout << "7: Ver Todos os Fornecedores da Empresa" << endl;
             cout << "8: Comprar Produto a Fornecedor" << endl;
             cout << "9: Remover Fornecedor" << endl;
+            cout << "10: Adicionar Fornecedor" << endl;
             cout << endl;
             cout << "Enter option: ";
             getline(cin, input);
@@ -498,16 +499,16 @@ void BuyNowUI::administrador() {
                 validInput = false;
                 cin.clear();
                 cout << endl << "Opção Inválida" << endl;
-                Sleep(2000);
+                Sleep(1000);
                 cout << string(50, '\n'); //Clear Screen
             } else if (!(checkinput >> result)) {        //is not a number or a number with letters/symbols.
                 cout << endl << "Opção Inválida" << endl;
-                Sleep(2000);
+                Sleep(1000);
                 cout << string(50, '\n'); //Clear Screen
                 validInput = false;
-            } else if (result < 0 || result > 9) {
+            } else if (result < 0 || result > 10) {
                 cout << endl << "O numero introduzido nao e correto" << endl;
-                Sleep(2000);
+                Sleep(1000);
                 cout << string(50, '\n'); //Clear Screen
                 validInput = false;
             }
@@ -533,7 +534,7 @@ void BuyNowUI::administrador() {
                     validInput = false;
                     cin.clear();
                     cout << endl << "Categoria Inválida" << endl;
-                    Sleep(700);
+                    Sleep(500);
                     cout << string(50, '\n'); //Clear Screen
                 }
                 else{
@@ -544,7 +545,7 @@ void BuyNowUI::administrador() {
                 }
                 if (!validCategoria){
                     cout << endl << "Categoria Inválida" << endl;
-                    Sleep(700);
+                    Sleep(500);
                     cout << string(50, '\n'); //Clear Screen
                 }
             }while(!validCategoria);
@@ -616,7 +617,7 @@ void BuyNowUI::administrador() {
             }
         }
 
-        else if (result == 8){
+        else if (result == 8){ //Comprar Produto a Fornecedor
             bn.showProdutos();
             cout << endl;
             string nomeProduto;
@@ -681,22 +682,26 @@ void BuyNowUI::administrador() {
                 cout << "Nome invalido." << endl;
             }
         }
-        else if (result == 9){
+        else if (result == 9){  //remover Fornecedor
             string inputNif;
             int nif;
             cout << "Introduza o nif do Fornecedor: ";
             getline(cin, inputNif);
             istringstream checkNif(inputNif);
+
             if (cin.eof()) {
                 cin.clear();
                 cout << endl << "Nif Invalido" << endl;
                 Sleep(300);
                 cout << string(50, '\n'); //Clear Screen
-            }else if (!(checkNif >> nif)){
+            }
+            else if (!(checkNif >> nif)){
                 cout << "Nif Invalido" << endl;
                 Sleep(300);
                 cout << string(50, '\n'); //Clear Screen
-            }else{
+            }
+            else{
+
                 try {
                     Fornecedor* f = bn.getFornecedor(nif);
                     bn.removeFornecedor(f);
@@ -710,6 +715,110 @@ void BuyNowUI::administrador() {
                 catch(...){
                     cout << "Nao foi possivel remover o fornecedor" << endl;
                     Sleep(300);
+                }
+            }
+        }
+        else if (result == 10){
+            string inputNif;
+            int nif;
+            cout << "Introduza o nif do Fornecedor: ";
+            getline(cin, inputNif);
+            istringstream checkNif(inputNif);
+
+            if (cin.eof()) {
+                cin.clear();
+                cout << endl << "Nif Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }
+            else if (!(checkNif >> nif)){
+                cout << "Nif Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }
+            else{
+                try{    //Ja existe fornecedor
+                    Fornecedor* fornecedor = bn.getFornecedor(nif);
+                    cout << "Ja existe um fornecedor com esse nif, como tal nao pode ser adicionado denovo." << endl;
+                    Sleep(500);
+                }
+                catch(FornecedorDoesNotExist f) {   //nao existe fornecedor, pode se adicionar
+                    string nome;
+                    cout << "Introduza o nome do Fornecedor: ";
+                    getline(cin, nome);
+                    if (cin.eof()) {
+                        cin.clear();
+                        cout << endl << "Nome Invalido" << endl;
+                        Sleep(300);
+                        cout << string(50, '\n'); //Clear Screen
+                    }
+                    else {
+                        string sId;
+                        int id;
+                        cout << "Introduza o ID do Produto a vender: ";
+                        getline(cin, sId);
+                        istringstream checkId(sId);
+                        if (cin.eof()) {
+                            cin.clear();
+                            cout << endl << "Nif Invalido" << endl;
+                            Sleep(300);
+                            cout << string(50, '\n'); //Clear Screen
+                        }
+                        else if (!(checkId >> id)) {
+                            cout << "ID Invalido" << endl;
+                            Sleep(300);
+                            cout << string(50, '\n'); //Clear Screen
+                        }
+                        else {
+                            try {   //O produto existe
+                                Produto *prod = bn.getProduto(id);  //BUSCAR O PRODUTO
+                                string inputPreco;
+                                cout << "\nIntroduza o preco a que o Fornecedor vende o Produto: ";
+                                getline(cin, inputPreco);
+                                double preco;           //PRECO DO PRODUTO
+                                istringstream checkPreco(inputPreco);
+                                if (cin.eof()) {
+                                    cin.clear();
+                                    cout << endl << "Preco Invalido" << endl;
+                                    Sleep(300);
+                                    cout << string(50, '\n'); //Clear Screen
+                                }
+                                else if (!(checkPreco >> preco)) {
+                                    cout << "Preco Invalido" << endl;
+                                    Sleep(300);
+                                    cout << string(50, '\n'); //Clear Screen
+                                }
+                                else{
+                                    string inputQuantidade;
+                                    cout << "Introduza a Quantidade de Produto que o Fornecedor tem: ";
+                                    getline(cin, inputQuantidade);
+                                    int quantidade;         //QUANTIDADE A QUE VENDE
+                                    istringstream checkQuantidade(inputQuantidade);
+                                    if (cin.eof()) {
+                                        cin.clear();
+                                        cout << endl << "Preco Invalido" << endl;
+                                        Sleep(300);
+                                        cout << string(50, '\n'); //Clear Screen
+                                    }
+                                    else if (!(checkQuantidade >> quantidade)) {
+                                        cout << "Quantidade Invalida" << endl;
+                                        Sleep(300);
+                                        cout << string(50, '\n'); //Clear Screen
+                                    }
+                                    else{
+                                        Fornecedor* fo = new Fornecedor(nome, nif, prod, preco, quantidade);
+                                        bn.addFornecedor(fo);   //ADICIONAR O FORNECEDOR À BUYNOW E AO PRODUTO
+                                        prod->addFornecedor(fo);
+                                        cout << "Fornecedor adicionado com sucesso. " << endl << endl;
+                                    }
+                                }
+                            }
+                            catch (ProdutoDoesNotExist prod) {  //O produto nao existe entao o fornecedor nao o pode vender, pelo menos à BuyNow
+                                prod.showError();
+                                cout << "\nO Fornecedor nao foi adicionado." << endl;
+                            }
+                        }
+                    }
                 }
             }
         }
