@@ -7,6 +7,7 @@
 #include <vector>
 #include <unordered_set>
 #include <string>
+#include <queue>
 
 #include "LojaFisica.h"
 #include "LojaOnline.h"
@@ -18,6 +19,7 @@
 #include "Reposicao.h"
 #include "Mensagem.h"
 #include "bst.h"
+#include "Carrinha.h"
 
 using namespace std;
 
@@ -123,6 +125,13 @@ private:
     int stockOk;
     int stockMin;
     vector<Transferencia*> transferencias;  //entre Fornecedor e loja
+
+    //----------------------------------------------------------------
+
+    priority_queue<Carrinha> pqA; //lista de prioridade de carrinhas
+
+    //-----------------------------------------------------------------
+
 public:
     BuyNow();
     BuyNow(vector<LojaFisica> &lf, LojaOnline &lo, int stockOk, int stockMin);
@@ -204,6 +213,13 @@ public:
 
     //void showAllProdutosOnline();
     //void showAllProdutosFisico();
+
+
+    priority_queue<Carrinha> adicionarEncomenda(int tamanhoEncomenda, priority_queue<Carrinha> original); // FALTA PÔR A QUEUE POR ORDEM NO FIM DA CLASSE
+    priority_queue<Carrinha> despacharCarrinhas(priority_queue<Carrinha> original); // FALTA PÔR A QUEUE POR ORDEM NO FIM DA CLASSE
+    priority_queue<Carrinha> despacharCarrinhaPorID(priority_queue<Carrinha> original, int id);
+    void adicionarCarrinha(Carrinha carr);
+    priority_queue<Carrinha> queueAtual() const;
 };
 
 

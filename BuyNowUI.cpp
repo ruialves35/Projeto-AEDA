@@ -22,6 +22,7 @@ BuyNowUI::BuyNowUI() {
     lerTransferencias();
     lerTransacoes();
     lerMensagens();
+    lerCarrinhas();
 
     UI();
 
@@ -36,6 +37,7 @@ BuyNowUI::BuyNowUI() {
     escreverReposicoes();
     escreverLojaOnline();
     escreverFornecedores();
+    escreverCarrinhas();
 
     //cout << "ooooo" << endl;
 }
@@ -1609,6 +1611,64 @@ void BuyNowUI::lerMensagens() {
 
         getline(fin, line);
     }
+}
+
+void BuyNowUI::lerCarrinhas() {
+
+    ifstream fin;
+    string line;
+    int id,ocupacao,ocupacaoMaxima;
+    double preco;
+
+    fin.open("Carrinhas.txt");
+    if(!fin.is_open()){
+        cerr << "Ficheiro das carrinhas nao encontrado\n";
+        exit(1);
+    }
+
+    getline(fin,line);
+
+    while(!fin.eof()){
+
+        istringstream format3line(line);
+        format3line >> id;
+
+        getline(fin,line);
+        istringstream format4line(line);
+        format4line >> ocupacao;
+
+        getline(fin,line);
+        istringstream format5line(line);
+        format5line >> ocupacaoMaxima;
+
+        Carrinha *carr=new Carrinha (id,ocupacao,ocupacaoMaxima);
+        bn.adicionarCarrinha(*carr);
+
+        getline(fin,line);
+    }
+
+}
+
+void BuyNowUI::escreverCarrinhas() {
+
+
+
+    ofstream outStream;
+    outStream.open("Carrinhas.txt");
+
+    priority_queue<Carrinha> pqB = bn.queueAtual();
+
+    while(!pqB.empty()){
+        Carrinha carr = pqB.top();
+        pqB.pop();
+        cout << carr.getID() << endl;
+        outStream << carr.getID() << endl;
+        outStream << carr.getOcupacao() << endl;
+        outStream << carr.getOcupacaoMaxima() << endl;
+    }
+
+    outStream.close();
+
 }
 
 

@@ -745,3 +745,112 @@ bool BuyNow::removeMensagem(Mensagem msg) {
     cout << "YES" << endl;
     return false;
 }
+
+//--------------------------------------------------------------------------------------------------
+
+
+
+priority_queue<Carrinha> BuyNow::adicionarEncomenda(int tamanhoEncomenda, priority_queue<Carrinha> original) {
+
+    priority_queue<Carrinha> carr;
+    priority_queue<Carrinha> carr2;
+
+    //Caso caiba numa carrinha
+
+    while(!original.empty()){
+
+        Carrinha carrinhaNova = original.top();
+        original.pop();
+
+        if(carrinhaNova.calcularEspacoLivre() > tamanhoEncomenda){
+
+            carrinhaNova.addOcupacao(tamanhoEncomenda);
+
+            while(!original.empty()){
+                Carrinha carrinhaNova = original.top();
+                original.pop();
+                carr.push(carrinhaNova);
+            }
+
+            return carr;
+        }
+
+        carr.push(carrinhaNova);
+
+    }
+
+    //Caso fique separado em diferentes carrinhas
+
+
+
+    while(tamanhoEncomenda!=0){
+
+        Carrinha carrinhaNova = carr.top();
+        carr.pop();
+
+        if(tamanhoEncomenda> carrinhaNova.calcularEspacoLivre()){
+            carrinhaNova.addOcupacao(carrinhaNova.calcularEspacoLivre());
+            tamanhoEncomenda-= carrinhaNova.calcularEspacoLivre();
+        } else {
+            carrinhaNova.addOcupacao(tamanhoEncomenda);
+            tamanhoEncomenda=0;
+        }
+
+        carr2.push(carrinhaNova);
+
+    }
+
+    while(!original.empty()){
+        Carrinha carrinhaNova = carr.top();
+        carr.pop();
+        carr2.push(carrinhaNova);
+    }
+
+    return carr2;
+
+}
+
+priority_queue<Carrinha> BuyNow::despacharCarrinhas(priority_queue<Carrinha> original) {
+
+    priority_queue<Carrinha> carr;
+
+    while(!original.empty()){
+        Carrinha carrinhaNova = original.top();
+        original.pop();
+        if(carrinhaNova.prontaDespachar()){
+            carrinhaNova.SetOcupacao(0);
+        }
+        carr.push(carrinhaNova);
+    }
+
+    return carr;
+
+}
+
+priority_queue<Carrinha> BuyNow::despacharCarrinhaPorID(priority_queue<Carrinha> original, int id) {
+
+    priority_queue<Carrinha> carr;
+
+    while(!original.empty()){
+        Carrinha carrinhaNova = original.top();
+        original.pop();
+        if(carrinhaNova.getID()==id){
+            carrinhaNova.SetOcupacao(0);
+        }
+        carr.push(carrinhaNova);
+    }
+
+    return carr;
+}
+
+void BuyNow::adicionarCarrinha(Carrinha carr) {
+
+    pqA.push(carr);
+
+}
+
+priority_queue<Carrinha> BuyNow::queueAtual() const {
+    return pqA;
+}
+
+
