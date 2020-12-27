@@ -119,9 +119,78 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aecfd90f5f11490fb657efb0fe0c751da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b5ffa6e5aa311c4c06ead778d78cccd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transacao.html#a4b5ffa6e5aa311c4c06ead778d78cccd">getNumberOfTransacoes</a> () const</td></tr>
 <tr class="separator:a4b5ffa6e5aa311c4c06ead778d78cccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a175f5c25159fc19e1a349fee8d884658"><td class="memItemLeft" align="right" valign="top"><a id="a175f5c25159fc19e1a349fee8d884658"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Transacao</b> (<a class="el" href="class_cliente.html">Cliente</a> *c, <a class="el" href="class_date.html">Date</a> &amp;d)</td></tr>
+<tr class="separator:a175f5c25159fc19e1a349fee8d884658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a323728c7fd0386d240d09d5ae908af17"><td class="memItemLeft" align="right" valign="top"><a id="a323728c7fd0386d240d09d5ae908af17"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Transacao</b> (<a class="el" href="class_cliente.html">Cliente</a> *c, <a class="el" href="class_date.html">Date</a> &amp;d, vector&lt; <a class="el" href="class_produto.html">Produto</a> * &gt; &amp;v)</td></tr>
+<tr class="separator:a323728c7fd0386d240d09d5ae908af17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a07d5fdef4e30d92102e1a2591d669b"><td class="memItemLeft" align="right" valign="top"><a id="a3a07d5fdef4e30d92102e1a2591d669b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Transacao</b> (<a class="el" href="class_cliente.html">Cliente</a> *c, <a class="el" href="class_date.html">Date</a> &amp;d, vector&lt; <a class="el" href="class_produto.html">Produto</a> * &gt; &amp;v, <a class="el" href="class_pagamento.html">Pagamento</a> *p)</td></tr>
+<tr class="separator:a3a07d5fdef4e30d92102e1a2591d669b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2ad13eb91792e44e194369147b4d3c"><td class="memItemLeft" align="right" valign="top"><a id="a6f2ad13eb91792e44e194369147b4d3c"></a>
+<a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getDate</b> () const</td></tr>
+<tr class="separator:a6f2ad13eb91792e44e194369147b4d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18e44ff634e0c936eb3b4bad80922adb"><td class="memItemLeft" align="right" valign="top"><a id="a18e44ff634e0c936eb3b4bad80922adb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setDate</b> (<a class="el" href="class_date.html">Date</a> &amp;d)</td></tr>
+<tr class="separator:a18e44ff634e0c936eb3b4bad80922adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1378a7b1f99aafca12be37c821bcdc8c"><td class="memItemLeft" align="right" valign="top"><a id="a1378a7b1f99aafca12be37c821bcdc8c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setCliente</b> (<a class="el" href="class_cliente.html">Cliente</a> *c)</td></tr>
+<tr class="separator:a1378a7b1f99aafca12be37c821bcdc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d52e1bb836a2d55576927dd225d572c"><td class="memItemLeft" align="right" valign="top"><a id="a8d52e1bb836a2d55576927dd225d572c"></a>
+<a class="el" href="class_cliente.html">Cliente</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getCliente</b> () const</td></tr>
+<tr class="separator:a8d52e1bb836a2d55576927dd225d572c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad251beccb20635c2ed2b8a2d07b8ca5c"><td class="memItemLeft" align="right" valign="top"><a id="ad251beccb20635c2ed2b8a2d07b8ca5c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addProduto</b> (<a class="el" href="class_produto.html">Produto</a> *p, int quantidade=1)</td></tr>
+<tr class="separator:ad251beccb20635c2ed2b8a2d07b8ca5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42c70db0855046c1f343cfb6d47c1d0a"><td class="memItemLeft" align="right" valign="top"><a id="a42c70db0855046c1f343cfb6d47c1d0a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeProduto</b> (<a class="el" href="class_produto.html">Produto</a> *p)</td></tr>
+<tr class="separator:a42c70db0855046c1f343cfb6d47c1d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28790c24a89b0544c8ae6a195deed2a4"><td class="memItemLeft" align="right" valign="top"><a id="a28790c24a89b0544c8ae6a195deed2a4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeProduto</b> (<a class="el" href="class_produto.html">Produto</a> *p, int quantidade)</td></tr>
+<tr class="separator:a28790c24a89b0544c8ae6a195deed2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e8a7a8e00abab1b737293f85c4b814a"><td class="memItemLeft" align="right" valign="top"><a id="a5e8a7a8e00abab1b737293f85c4b814a"></a>
+vector&lt; <a class="el" href="class_produto.html">Produto</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getProdutos</b> () const</td></tr>
+<tr class="separator:a5e8a7a8e00abab1b737293f85c4b814a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a9cb062d24ec66602b4b495688e45d"><td class="memItemLeft" align="right" valign="top"><a id="ad1a9cb062d24ec66602b4b495688e45d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getQuantidade</b> (<a class="el" href="class_produto.html">Produto</a> *p) const</td></tr>
+<tr class="separator:ad1a9cb062d24ec66602b4b495688e45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50557f9b1b530d0169be2b7f66e06df5"><td class="memItemLeft" align="right" valign="top"><a id="a50557f9b1b530d0169be2b7f66e06df5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setPagamento</b> (<a class="el" href="class_pagamento.html">Pagamento</a> *p)</td></tr>
+<tr class="separator:a50557f9b1b530d0169be2b7f66e06df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0de6937d4ca6362b5d2926efc5e5d07"><td class="memItemLeft" align="right" valign="top"><a id="ac0de6937d4ca6362b5d2926efc5e5d07"></a>
+<a class="el" href="class_pagamento.html">Pagamento</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getPagamento</b> () const</td></tr>
+<tr class="separator:ac0de6937d4ca6362b5d2926efc5e5d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf61322ba99ec0ff132c8d7336aa9c7"><td class="memItemLeft" align="right" valign="top"><a id="aecf61322ba99ec0ff132c8d7336aa9c7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getNumber</b> () const</td></tr>
+<tr class="separator:aecf61322ba99ec0ff132c8d7336aa9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e314f64aabcfacaa952d6885c6b27d"><td class="memItemLeft" align="right" valign="top"><a id="a64e314f64aabcfacaa952d6885c6b27d"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getValorTotal</b> () const</td></tr>
+<tr class="separator:a64e314f64aabcfacaa952d6885c6b27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea4a42722a6bea07138f615010fdf12f"><td class="memItemLeft" align="right" valign="top"><a id="aea4a42722a6bea07138f615010fdf12f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sortByValue</b> ()</td></tr>
+<tr class="separator:aea4a42722a6bea07138f615010fdf12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97c06423bf591662899056d7dc4c4753"><td class="memItemLeft" align="right" valign="top"><a id="a97c06423bf591662899056d7dc4c4753"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sortByName</b> ()</td></tr>
+<tr class="separator:a97c06423bf591662899056d7dc4c4753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecfd90f5f11490fb657efb0fe0c751da"><td class="memItemLeft" align="right" valign="top"><a id="aecfd90f5f11490fb657efb0fe0c751da"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sortById</b> ()</td></tr>
+<tr class="separator:aecfd90f5f11490fb657efb0fe0c751da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b5ffa6e5aa311c4c06ead778d78cccd"><td class="memItemLeft" align="right" valign="top"><a id="a4b5ffa6e5aa311c4c06ead778d78cccd"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getNumberOfTransacoes</b> () const</td></tr>
+<tr class="separator:a4b5ffa6e5aa311c4c06ead778d78cccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a472447c44383b465e46996c811d69e57"><td class="memItemLeft" align="right" valign="top"><a id="a472447c44383b465e46996c811d69e57"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>compareProdutosByValue</b> (const <a class="el" href="class_produto.html">Produto</a> *p1, const <a class="el" href="class_produto.html">Produto</a> *p2)</td></tr>
+<tr class="separator:a472447c44383b465e46996c811d69e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01760847dd171e3afecda3a7d2706831"><td class="memItemLeft" align="right" valign="top"><a id="a01760847dd171e3afecda3a7d2706831"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>compareProdutosById</b> (const <a class="el" href="class_produto.html">Produto</a> *p1, const <a class="el" href="class_produto.html">Produto</a> *p2)</td></tr>
+<tr class="separator:a01760847dd171e3afecda3a7d2706831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099b374a3115937006796a39754e4008"><td class="memItemLeft" align="right" valign="top"><a id="a099b374a3115937006796a39754e4008"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>compareProdutosByName</b> (const <a class="el" href="class_produto.html">Produto</a> *p1, const <a class="el" href="class_produto.html">Produto</a> *p2)</td></tr>
+<tr class="separator:a099b374a3115937006796a39754e4008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a472447c44383b465e46996c811d69e57"><td class="memItemLeft" align="right" valign="top"><a id="a472447c44383b465e46996c811d69e57"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>compareProdutosByValue</b> (const <a class="el" href="class_produto.html">Produto</a> *p1, const <a class="el" href="class_produto.html">Produto</a> *p2)</td></tr>
 <tr class="separator:a472447c44383b465e46996c811d69e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,33 +206,37 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a8952c0c3f736e993cd30620b234c2f79"><td class="memItemLeft" align="right" valign="top"><a id="a8952c0c3f736e993cd30620b234c2f79"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>number</b></td></tr>
 <tr class="separator:a8952c0c3f736e993cd30620b234c2f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadf414b9c80e09ac0b14e9efea73b0d9"><td class="memItemLeft" align="right" valign="top"><a id="aadf414b9c80e09ac0b14e9efea73b0d9"></a>
+<tr class="memitem:aaf4532e4ef0e9d045aae2a9da322b0a9"><td class="memItemLeft" align="right" valign="top"><a id="aaf4532e4ef0e9d045aae2a9da322b0a9"></a>
 map&lt; <a class="el" href="class_produto.html">Produto</a> *, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>quantidade</b></td></tr>
-<tr class="separator:aadf414b9c80e09ac0b14e9efea73b0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aaf4532e4ef0e9d045aae2a9da322b0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5dfb1883af6bb99c3bff56b811f0320"><td class="memItemLeft" align="right" valign="top"><a id="ad5dfb1883af6bb99c3bff56b811f0320"></a>
 <a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
 <tr class="separator:ad5dfb1883af6bb99c3bff56b811f0320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25a2038821c2658cdfbd1522ce1a7257"><td class="memItemLeft" align="right" valign="top"><a id="a25a2038821c2658cdfbd1522ce1a7257"></a>
+<tr class="memitem:a294fc8910ea81251f11532c22307fe15"><td class="memItemLeft" align="right" valign="top"><a id="a294fc8910ea81251f11532c22307fe15"></a>
 vector&lt; <a class="el" href="class_produto.html">Produto</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>produtos</b></td></tr>
-<tr class="separator:a25a2038821c2658cdfbd1522ce1a7257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a294fc8910ea81251f11532c22307fe15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4560746d8168187754e8f2748d00449d"><td class="memItemLeft" align="right" valign="top"><a id="a4560746d8168187754e8f2748d00449d"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>valorTotal</b></td></tr>
 <tr class="separator:a4560746d8168187754e8f2748d00449d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71852ede75c4d0fb0ab2db099621518"><td class="memItemLeft" align="right" valign="top"><a id="af71852ede75c4d0fb0ab2db099621518"></a>
+<tr class="memitem:abfcdb8f3a6a69470983779206710f42e"><td class="memItemLeft" align="right" valign="top"><a id="abfcdb8f3a6a69470983779206710f42e"></a>
 <a class="el" href="class_cliente.html">Cliente</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>cliente</b></td></tr>
-<tr class="separator:af71852ede75c4d0fb0ab2db099621518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a040eb532c1b129481b991eecb8323db0"><td class="memItemLeft" align="right" valign="top"><a id="a040eb532c1b129481b991eecb8323db0"></a>
+<tr class="separator:abfcdb8f3a6a69470983779206710f42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77c9a130121a388e16c3d80e21f5f922"><td class="memItemLeft" align="right" valign="top"><a id="a77c9a130121a388e16c3d80e21f5f922"></a>
 <a class="el" href="class_pagamento.html">Pagamento</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>tipoPagamento</b></td></tr>
-<tr class="separator:a040eb532c1b129481b991eecb8323db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a77c9a130121a388e16c3d80e21f5f922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a0ae1913eb9d2b437b3affb712875e9f6"><td class="memItemLeft" align="right" valign="top"><a id="a0ae1913eb9d2b437b3affb712875e9f6"></a>
+<tr class="memitem:af86bf57c517fece820b791ddc60b1c37"><td class="memItemLeft" align="right" valign="top"><a id="af86bf57c517fece820b791ddc60b1c37"></a>
 static int&#160;</td><td class="memItemRight" valign="bottom"><b>numberOfTransacoes</b> = 0</td></tr>
-<tr class="separator:a0ae1913eb9d2b437b3affb712875e9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:af86bf57c517fece820b791ddc60b1c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
+<tr class="memitem:a2973bf11ada41082500f7c5dc156892d"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transacao.html#a2973bf11ada41082500f7c5dc156892d">operator&lt;&lt;</a> (ostream &amp;o, const <a class="el" href="class_transacao.html">Transacao</a> &amp;t)</td></tr>
+<tr class="separator:a2973bf11ada41082500f7c5dc156892d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd7b51e5d89b29b54ceea9f19ceb924"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transacao.html#aebd7b51e5d89b29b54ceea9f19ceb924">operator==</a> (const <a class="el" href="class_transacao.html">Transacao</a> &amp;t1, const <a class="el" href="class_transacao.html">Transacao</a> &amp;t2)</td></tr>
+<tr class="separator:aebd7b51e5d89b29b54ceea9f19ceb924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2973bf11ada41082500f7c5dc156892d"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transacao.html#a2973bf11ada41082500f7c5dc156892d">operator&lt;&lt;</a> (ostream &amp;o, const <a class="el" href="class_transacao.html">Transacao</a> &amp;t)</td></tr>
 <tr class="separator:a2973bf11ada41082500f7c5dc156892d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebd7b51e5d89b29b54ceea9f19ceb924"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transacao.html#aebd7b51e5d89b29b54ceea9f19ceb924">operator==</a> (const <a class="el" href="class_transacao.html">Transacao</a> &amp;t1, const <a class="el" href="class_transacao.html">Transacao</a> &amp;t2)</td></tr>
@@ -688,7 +761,51 @@ Friends</h2></td></tr>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a id="a2973bf11ada41082500f7c5dc156892d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2973bf11ada41082500f7c5dc156892d">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2973bf11ada41082500f7c5dc156892d">&#9670;&nbsp;</a></span>operator&lt;&lt; <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>o</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_transacao.html">Transacao</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overloading of operator &lt;&lt; that shows the Nome of the <a class="el" href="class_cliente.html">Cliente</a> of the <a class="el" href="class_transacao.html">Transacao</a>, the Data of the <a class="el" href="class_transacao.html">Transacao</a>, All Products of <a class="el" href="class_transacao.html">Transacao</a> (including each value, quantity and total Value); </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>ostream to get the Information of the <a class="el" href="class_transacao.html">Transacao</a> </td></tr>
+    <tr><td class="paramname">t</td><td><a class="el" href="class_transacao.html">Transacao</a> of which we want to get the Information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ostream with all the information </dd></dl>
+
+</div>
+</div>
+<a id="a2973bf11ada41082500f7c5dc156892d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2973bf11ada41082500f7c5dc156892d">&#9670;&nbsp;</a></span>operator&lt;&lt; <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -732,7 +849,51 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a id="aebd7b51e5d89b29b54ceea9f19ceb924"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebd7b51e5d89b29b54ceea9f19ceb924">&#9670;&nbsp;</a></span>operator==</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd7b51e5d89b29b54ceea9f19ceb924">&#9670;&nbsp;</a></span>operator== <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_transacao.html">Transacao</a> &amp;&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_transacao.html">Transacao</a> &amp;&#160;</td>
+          <td class="paramname"><em>t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>operator == that says if a transacao is equal to another </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t1</td><td>one <a class="el" href="class_transacao.html">Transacao</a> to compare </td></tr>
+    <tr><td class="paramname">t2</td><td>the other <a class="el" href="class_transacao.html">Transacao</a> to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if <a class="el" href="class_transacao.html">Transacao</a> are the same(same identifier number), false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aebd7b51e5d89b29b54ceea9f19ceb924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd7b51e5d89b29b54ceea9f19ceb924">&#9670;&nbsp;</a></span>operator== <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -776,8 +937,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/<a class="el" href="_transacao_8h_source.html">Transacao.h</a></li>
-<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Transacao.cpp</li>
+<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/AEDA2021_Turma7_G7/Código/<a class="el" href="_a_e_d_a2021___turma7___g7_2_c_xC3_xB3digo_2_transacao_8h_source.html">Transacao.h</a></li>
+<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/AEDA2021_Turma7_G7/Código/Transacao.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

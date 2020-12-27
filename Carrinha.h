@@ -14,7 +14,7 @@ public:
     Carrinha();
     Carrinha(int idCarrinha, int ocupacaoCarrinha, int ocupacaoMaximaCarrinha);
     int getID() const;
-    int setID(int novoid);
+    void setID(int novoid);
     int getOcupacao() const;
     void SetOcupacao(int valor);
     int getOcupacaoMaxima() const;
@@ -22,7 +22,7 @@ public:
     int calcularEspacoLivre() const;
     void addOcupacao(int valorAdicionado);
     bool prontaDespachar() const;
-    bool operator<<(const Carrinha& c1) const;
+    bool operator < (const Carrinha& c1) const;
 };
 
 

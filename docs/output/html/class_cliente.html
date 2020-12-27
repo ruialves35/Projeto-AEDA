@@ -99,6 +99,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf7becd1cebf89f28b697c54f63cee48"><td class="memItemLeft" align="right" valign="top"><a id="aaf7becd1cebf89f28b697c54f63cee48"></a>
 virtual string&#160;</td><td class="memItemRight" valign="bottom"><b>getInfo</b> () const</td></tr>
 <tr class="separator:aaf7becd1cebf89f28b697c54f63cee48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915907916484ae4177a9ae4d64be6073"><td class="memItemLeft" align="right" valign="top"><a id="a915907916484ae4177a9ae4d64be6073"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Cliente</b> (string nome, int num)</td></tr>
+<tr class="separator:a915907916484ae4177a9ae4d64be6073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafbd233488a7e6f4e297b58cabb654bb"><td class="memItemLeft" align="right" valign="top"><a id="aafbd233488a7e6f4e297b58cabb654bb"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>getNome</b> () const</td></tr>
+<tr class="separator:aafbd233488a7e6f4e297b58cabb654bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a383af20fa7ace06d4f04fe26e82e0ca2"><td class="memItemLeft" align="right" valign="top"><a id="a383af20fa7ace06d4f04fe26e82e0ca2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setNome</b> (string nome)</td></tr>
+<tr class="separator:a383af20fa7ace06d4f04fe26e82e0ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ced93e70586dda18de99a376fbaa4cc"><td class="memItemLeft" align="right" valign="top"><a id="a3ced93e70586dda18de99a376fbaa4cc"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getNumContribuinte</b> () const</td></tr>
+<tr class="separator:a3ced93e70586dda18de99a376fbaa4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab863e44fa705cb3164554851bccf833"><td class="memItemLeft" align="right" valign="top"><a id="aab863e44fa705cb3164554851bccf833"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setNumContribuinte</b> (int numContribuinte)</td></tr>
+<tr class="separator:aab863e44fa705cb3164554851bccf833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a158c6fbcfbcea3ecb138fc4f843fbc52"><td class="memItemLeft" align="right" valign="top"><a id="a158c6fbcfbcea3ecb138fc4f843fbc52"></a>
+virtual string&#160;</td><td class="memItemRight" valign="bottom"><b>getInfo</b> () const</td></tr>
+<tr class="separator:a158c6fbcfbcea3ecb138fc4f843fbc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -111,6 +129,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>numContribuinteCliente
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
+<tr class="memitem:adabf7bb7a0e49886f8454323c1cf13f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cliente.html#adabf7bb7a0e49886f8454323c1cf13f0">operator==</a> (<a class="el" href="class_cliente.html">Cliente</a> &amp;c1, <a class="el" href="class_cliente.html">Cliente</a> &amp;c2)</td></tr>
+<tr class="separator:adabf7bb7a0e49886f8454323c1cf13f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49569c523c9eb4464d0a46fb3b048320"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cliente.html#a49569c523c9eb4464d0a46fb3b048320">operator&lt;&lt;</a> (ostream &amp;o, <a class="el" href="class_cliente.html">Cliente</a> &amp;c1)</td></tr>
+<tr class="separator:a49569c523c9eb4464d0a46fb3b048320"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adabf7bb7a0e49886f8454323c1cf13f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cliente.html#adabf7bb7a0e49886f8454323c1cf13f0">operator==</a> (<a class="el" href="class_cliente.html">Cliente</a> &amp;c1, <a class="el" href="class_cliente.html">Cliente</a> &amp;c2)</td></tr>
 <tr class="separator:adabf7bb7a0e49886f8454323c1cf13f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49569c523c9eb4464d0a46fb3b048320"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cliente.html#a49569c523c9eb4464d0a46fb3b048320">operator&lt;&lt;</a> (ostream &amp;o, <a class="el" href="class_cliente.html">Cliente</a> &amp;c1)</td></tr>
@@ -257,7 +279,51 @@ Friends</h2></td></tr>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a id="a49569c523c9eb4464d0a46fb3b048320"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49569c523c9eb4464d0a46fb3b048320">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a49569c523c9eb4464d0a46fb3b048320">&#9670;&nbsp;</a></span>operator&lt;&lt; <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>o</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_cliente.html">Cliente</a> &amp;&#160;</td>
+          <td class="paramname"><em>c1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overloading operator &lt;&lt; to get to a ostream the information of a Client. This information is his Name and Numero de Contribuinte </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>ostream with information of <a class="el" href="class_cliente.html">Cliente</a> </td></tr>
+    <tr><td class="paramname">c1</td><td><a class="el" href="class_cliente.html">Cliente</a> that we want to get information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ostream with information </dd></dl>
+
+</div>
+</div>
+<a id="a49569c523c9eb4464d0a46fb3b048320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49569c523c9eb4464d0a46fb3b048320">&#9670;&nbsp;</a></span>operator&lt;&lt; <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,7 +367,51 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a id="adabf7bb7a0e49886f8454323c1cf13f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adabf7bb7a0e49886f8454323c1cf13f0">&#9670;&nbsp;</a></span>operator==</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adabf7bb7a0e49886f8454323c1cf13f0">&#9670;&nbsp;</a></span>operator== <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cliente.html">Cliente</a> &amp;&#160;</td>
+          <td class="paramname"><em>c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_cliente.html">Cliente</a> &amp;&#160;</td>
+          <td class="paramname"><em>c2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compare 2 clientes and checks if they are the same client </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c1</td><td>first client to compare </td></tr>
+    <tr><td class="paramname">c2</td><td>second client to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if they are the same (same name and numContribuinte), false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="adabf7bb7a0e49886f8454323c1cf13f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adabf7bb7a0e49886f8454323c1cf13f0">&#9670;&nbsp;</a></span>operator== <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,8 +455,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/<a class="el" href="_cliente_8h_source.html">Cliente.h</a></li>
-<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Cliente.cpp</li>
+<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/AEDA2021_Turma7_G7/Código/<a class="el" href="_a_e_d_a2021___turma7___g7_2_c_xC3_xB3digo_2_cliente_8h_source.html">Cliente.h</a></li>
+<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/AEDA2021_Turma7_G7/Código/Cliente.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

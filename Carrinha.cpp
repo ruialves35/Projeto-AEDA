@@ -17,8 +17,8 @@ int Carrinha::getID() const{
     return id;
 }
 
-int Carrinha::setID(int novoid) {
-    id=novoid;
+void Carrinha::setID(int novoid) {
+    id = novoid;
 }
 
 int Carrinha::getOcupacao() const{
@@ -53,7 +53,7 @@ bool Carrinha::prontaDespachar() const {
     return true;
 }
 
-bool Carrinha::operator<<(const Carrinha& c1) const {
+bool Carrinha::operator <(const Carrinha& c1) const {
     return ocupacaoMaxima - ocupacao > ocupacaoMaxima - c1.getOcupacao();
 }
 

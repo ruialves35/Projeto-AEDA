@@ -690,6 +690,7 @@ void BuyNowUI::administrador() {
                     cout << string(50, '\n'); //Clear Screen
                 }else if (quantity > fptr.getQuantidade()){
                     cout << "O Fornecedor nao tem stock suficiente" << endl;
+                    Sleep(300);
                 }
                 else {
                     time_t theTime = time(NULL);
@@ -698,7 +699,7 @@ void BuyNowUI::administrador() {
                     int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
                     int year = aTime->tm_year + 1900; // Year is # years since 1900
                     Date data(day, month, year);
-                    cout << "QUANTIDADE:" << quantity << endl;
+                    //cout << "QUANTIDADE:" << quantity << endl;
                     Transferencia* transferencia = new Transferencia(fptr, prod, quantity, data);
                     bn.addTransferencia(transferencia);
                     bn.addProdutoOnline(prod, quantity);
@@ -713,6 +714,7 @@ void BuyNowUI::administrador() {
             }
             catch(...){
                 cout << "Nome invalido." << endl;
+                Sleep(300);
             }
         }
         else if (result == 9){  //remover Fornecedor
@@ -849,6 +851,7 @@ void BuyNowUI::administrador() {
                             catch (ProdutoDoesNotExist prod) {  //O produto nao existe entao o fornecedor nao o pode vender, pelo menos à BuyNow
                                 prod.showError();
                                 cout << "\nO Fornecedor nao foi adicionado." << endl;
+                                Sleep(300);
                             }
                         }
                     }
@@ -1282,11 +1285,21 @@ void BuyNowUI::lerTransacoes() {
         format3line >> contribuinte;
 
         getline(fin,line);
-
         Transacao *tran = new Transacao();
-        Cliente *c1 = bn.getCliente(stringNome,contribuinte);
-        tran->setCliente(c1);
-        tran->setDate(d1);
+        try {
+            Cliente *c1 = bn.getCliente(stringNome, contribuinte);
+            tran->setCliente(c1);
+            tran->setDate(d1);
+        }
+        catch(ClienteDoesNotExist c){
+            Cliente *c1 = new Cliente(c.nome, c.numContribuinte);
+            tran->setCliente(c1);
+            tran->setDate(d1);
+        }
+        catch(...){
+            cout << "Error on Ler Transacoes\n" << endl;
+            Sleep(300);
+        }
 
         if(line==multibanco){
 

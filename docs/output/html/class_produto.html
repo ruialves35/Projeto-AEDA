@@ -95,6 +95,41 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afcb0c481a490e4993b27463a7c51bd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5976f2eafea3bb1a0d8d4fa0189691a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a5976f2eafea3bb1a0d8d4fa0189691a3">setCategoria</a> (<a class="el" href="class_categoria.html">Categoria</a> &amp;cat)</td></tr>
 <tr class="separator:a5976f2eafea3bb1a0d8d4fa0189691a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed879ca30b7fbd9ea0af2c218f63a1e"><td class="memItemLeft" align="right" valign="top"><a id="aeed879ca30b7fbd9ea0af2c218f63a1e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Produto</b> (string nome, int id, double val, <a class="el" href="class_categoria.html">Categoria</a> categoria)</td></tr>
+<tr class="separator:aeed879ca30b7fbd9ea0af2c218f63a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af14853f629fd3a0fea368e051854a208"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#af14853f629fd3a0fea368e051854a208">addFornecedor</a> (<a class="el" href="class_fornecedor.html">Fornecedor</a> *fornecedor)</td></tr>
+<tr class="separator:af14853f629fd3a0fea368e051854a208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb287542d929802f36c0b87c89bb49ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#abb287542d929802f36c0b87c89bb49ab">removeFornecedor</a> (string nome)</td></tr>
+<tr class="separator:abb287542d929802f36c0b87c89bb49ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100e19d6b8b2f2017eaf9be38093d1c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fornecedor_ptr.html">FornecedorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#a100e19d6b8b2f2017eaf9be38093d1c3">getFornecedor</a> (string nome) const</td></tr>
+<tr class="separator:a100e19d6b8b2f2017eaf9be38093d1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeac29675b2fbcfae2cd76220c11ad25"><td class="memItemLeft" align="right" valign="top">set&lt; <a class="el" href="class_fornecedor_ptr.html">FornecedorPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#aeeac29675b2fbcfae2cd76220c11ad25">getFornecedores</a> () const</td></tr>
+<tr class="separator:aeeac29675b2fbcfae2cd76220c11ad25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f13ea3e288f52f94a05f09f0900639"><td class="memItemLeft" align="right" valign="top"><a id="a40f13ea3e288f52f94a05f09f0900639"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const</td></tr>
+<tr class="separator:a40f13ea3e288f52f94a05f09f0900639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b100826950ca4137291d8baecb5e57"><td class="memItemLeft" align="right" valign="top"><a id="ac3b100826950ca4137291d8baecb5e57"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setId</b> (int newId)</td></tr>
+<tr class="separator:ac3b100826950ca4137291d8baecb5e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02cec8ad0a6c40429dffde3348e9ebd"><td class="memItemLeft" align="right" valign="top"><a id="ab02cec8ad0a6c40429dffde3348e9ebd"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>getNomeProduto</b> () const</td></tr>
+<tr class="separator:ab02cec8ad0a6c40429dffde3348e9ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b66d44fdb98a338c8bafa7a50379f2"><td class="memItemLeft" align="right" valign="top"><a id="a51b66d44fdb98a338c8bafa7a50379f2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setNomeProduto</b> (string nome)</td></tr>
+<tr class="separator:a51b66d44fdb98a338c8bafa7a50379f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c494d380b49f85234b9871b931874c"><td class="memItemLeft" align="right" valign="top"><a id="a22c494d380b49f85234b9871b931874c"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getValor</b> () const</td></tr>
+<tr class="separator:a22c494d380b49f85234b9871b931874c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60c5e539e2f3ec5bec5d97a74bdacf4"><td class="memItemLeft" align="right" valign="top"><a id="ac60c5e539e2f3ec5bec5d97a74bdacf4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setValor</b> (double val)</td></tr>
+<tr class="separator:ac60c5e539e2f3ec5bec5d97a74bdacf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb0c481a490e4993b27463a7c51bd25"><td class="memItemLeft" align="right" valign="top"><a id="afcb0c481a490e4993b27463a7c51bd25"></a>
+<a class="el" href="class_categoria.html">Categoria</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getCategoria</b> () const</td></tr>
+<tr class="separator:afcb0c481a490e4993b27463a7c51bd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5976f2eafea3bb1a0d8d4fa0189691a3"><td class="memItemLeft" align="right" valign="top"><a id="a5976f2eafea3bb1a0d8d4fa0189691a3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setCategoria</b> (<a class="el" href="class_categoria.html">Categoria</a> &amp;cat)</td></tr>
+<tr class="separator:a5976f2eafea3bb1a0d8d4fa0189691a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -110,9 +145,16 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>valor</b></td></tr>
 <tr class="memitem:a020ac14f289136fb6647493c84504602"><td class="memItemLeft" align="right" valign="top"><a id="a020ac14f289136fb6647493c84504602"></a>
 <a class="el" href="class_categoria.html">Categoria</a>&#160;</td><td class="memItemRight" valign="bottom"><b>categoria</b></td></tr>
 <tr class="separator:a020ac14f289136fb6647493c84504602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5297cb9b3280c0787a39a24d992a06d8"><td class="memItemLeft" align="right" valign="top"><a id="a5297cb9b3280c0787a39a24d992a06d8"></a>
+set&lt; <a class="el" href="class_fornecedor_ptr.html">FornecedorPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>fornecedores</b></td></tr>
+<tr class="separator:a5297cb9b3280c0787a39a24d992a06d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
+<tr class="memitem:ac534b75622a50948de0c3dc9796a5054"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#ac534b75622a50948de0c3dc9796a5054">operator&lt;</a> (const <a class="el" href="class_produto.html">Produto</a> &amp;p1, const <a class="el" href="class_produto.html">Produto</a> &amp;p2)</td></tr>
+<tr class="separator:ac534b75622a50948de0c3dc9796a5054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addeac1d220a88dbb552508766ec0f85c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#addeac1d220a88dbb552508766ec0f85c">operator==</a> (const <a class="el" href="class_produto.html">Produto</a> &amp;p1, const <a class="el" href="class_produto.html">Produto</a> &amp;p2)</td></tr>
+<tr class="separator:addeac1d220a88dbb552508766ec0f85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac534b75622a50948de0c3dc9796a5054"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#ac534b75622a50948de0c3dc9796a5054">operator&lt;</a> (const <a class="el" href="class_produto.html">Produto</a> &amp;p1, const <a class="el" href="class_produto.html">Produto</a> &amp;p2)</td></tr>
 <tr class="separator:ac534b75622a50948de0c3dc9796a5054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addeac1d220a88dbb552508766ec0f85c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_produto.html#addeac1d220a88dbb552508766ec0f85c">operator==</a> (const <a class="el" href="class_produto.html">Produto</a> &amp;p1, const <a class="el" href="class_produto.html">Produto</a> &amp;p2)</td></tr>
@@ -187,6 +229,30 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af14853f629fd3a0fea368e051854a208"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af14853f629fd3a0fea368e051854a208">&#9670;&nbsp;</a></span>addFornecedor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Produto::addFornecedor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_fornecedor.html">Fornecedor</a> *&#160;</td>
+          <td class="paramname"><em>fornecedor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a fornecedor of this product </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fornecedor</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="afcb0c481a490e4993b27463a7c51bd25"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcb0c481a490e4993b27463a7c51bd25">&#9670;&nbsp;</a></span>getCategoria()</h2>
 
@@ -202,6 +268,49 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_categoria.html">Categoria</a> of <a class="el" href="class_produto.html">Produto</a> </dd></dl>
+
+</div>
+</div>
+<a id="a100e19d6b8b2f2017eaf9be38093d1c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100e19d6b8b2f2017eaf9be38093d1c3">&#9670;&nbsp;</a></span>getFornecedor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_fornecedor_ptr.html">FornecedorPtr</a> Produto::getFornecedor </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>nome</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets fornecedor of <a class="el" href="class_produto.html">Produto</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Name of <a class="el" href="class_fornecedor.html">Fornecedor</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to <a class="el" href="class_fornecedor.html">Fornecedor</a> </dd></dl>
+
+</div>
+</div>
+<a id="aeeac29675b2fbcfae2cd76220c11ad25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeac29675b2fbcfae2cd76220c11ad25">&#9670;&nbsp;</a></span>getFornecedores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">set&lt; <a class="el" href="class_fornecedor_ptr.html">FornecedorPtr</a> &gt; Produto::getFornecedores </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>set with <a class="el" href="class_fornecedor_ptr.html">FornecedorPtr</a> of fornecedores of this produto </dd></dl>
 
 </div>
 </div>
@@ -256,6 +365,30 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>value of <a class="el" href="class_produto.html">Produto</a> </dd></dl>
+
+</div>
+</div>
+<a id="abb287542d929802f36c0b87c89bb49ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb287542d929802f36c0b87c89bb49ab">&#9670;&nbsp;</a></span>removeFornecedor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Produto::removeFornecedor </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>nome</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes a fornecedor from <a class="el" href="class_b_s_t.html">BST</a> of Fornecedores of <a class="el" href="class_produto.html">Produto</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Name of <a class="el" href="class_fornecedor.html">Fornecedor</a> to be removed </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -357,7 +490,51 @@ Friends</h2></td></tr>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a id="ac534b75622a50948de0c3dc9796a5054"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac534b75622a50948de0c3dc9796a5054">&#9670;&nbsp;</a></span>operator&lt;</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac534b75622a50948de0c3dc9796a5054">&#9670;&nbsp;</a></span>operator&lt; <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_produto.html">Produto</a> &amp;&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_produto.html">Produto</a> &amp;&#160;</td>
+          <td class="paramname"><em>p2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>overloading of operator &lt; to compare 2 products. A product is smaller than other if his price is smaller than the price of the other </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1</td><td>product to compare </td></tr>
+    <tr><td class="paramname">p2</td><td>product to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if value of p1 &lt; p2 </dd></dl>
+
+</div>
+</div>
+<a id="ac534b75622a50948de0c3dc9796a5054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac534b75622a50948de0c3dc9796a5054">&#9670;&nbsp;</a></span>operator&lt; <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -401,7 +578,51 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a id="addeac1d220a88dbb552508766ec0f85c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addeac1d220a88dbb552508766ec0f85c">&#9670;&nbsp;</a></span>operator==</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#addeac1d220a88dbb552508766ec0f85c">&#9670;&nbsp;</a></span>operator== <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_produto.html">Produto</a> &amp;&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_produto.html">Produto</a> &amp;&#160;</td>
+          <td class="paramname"><em>p2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>overloading of operator == to compare 2 products. Products are equal if they have same id, nome, stock in online shop, stock in fisical shop and value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1</td><td>product to compare </td></tr>
+    <tr><td class="paramname">p2</td><td>product to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if they are the same, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="addeac1d220a88dbb552508766ec0f85c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addeac1d220a88dbb552508766ec0f85c">&#9670;&nbsp;</a></span>operator== <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,8 +666,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/<a class="el" href="_produto_8h_source.html">Produto.h</a></li>
-<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/Produto.cpp</li>
+<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/AEDA2021_Turma7_G7/Código/<a class="el" href="_a_e_d_a2021___turma7___g7_2_c_xC3_xB3digo_2_produto_8h_source.html">Produto.h</a></li>
+<li>D:/2 ano/AEDA/CLionProjects/Projeto AEDA/AEDA2021_Turma7_G7/Código/Produto.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

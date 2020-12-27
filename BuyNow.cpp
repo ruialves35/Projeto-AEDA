@@ -385,7 +385,7 @@ void BuyNow::reporStock() {
                     }
                 }
                 if (!found){
-                    cout << "THERE IS NO FORNECEDOR WITH THAT QUANITTY OF PRODUCT AND STOCK HAS NOT BEEN REPLACED" << endl;
+                    cout << "There is no Fornecedor with that quantity of Product and stock has not been replaced" << endl;
                     continue;
                 }
                 /*
@@ -695,10 +695,10 @@ void BuyNow::addMensagem(Mensagem &msg) { mensagens.insert(msg);}
  * @return True if was responded, False if wasnt or wasnt sent yet
  */
 bool BuyNow::checkMensagem(Mensagem &msg) const {
-    cout << "IS THIS DOING IT RIGHT?" << endl;
+    //cout << "IS THIS DOING IT RIGHT?" << endl;
     for (auto i : mensagens){
         if (i == msg){
-            cout << "YES" << endl;
+            //cout << "YES" << endl;
             return i.getRespondida();
         }
     }
@@ -710,7 +710,7 @@ bool BuyNow::checkMensagem(Mensagem &msg) const {
  * @param msg Message to be responded
  */
 void BuyNow::answerMensagem(Mensagem &msg) {
-    cout << "IS THIS DOING IT RIGHT?" << endl;
+    // << "IS THIS DOING IT RIGHT?" << endl;
     for (HashTableMensagem::iterator it = mensagens.begin(); it != mensagens.end(); it++){
         if ((*it) == msg){
             Mensagem newMsg = (*it);
@@ -719,7 +719,7 @@ void BuyNow::answerMensagem(Mensagem &msg) {
             mensagens.insert(newMsg);
         }
     }
-    cout << "YES" << endl;
+    //cout << "YES" << endl;
 }
 
 /**
@@ -735,14 +735,14 @@ HashTableMensagem BuyNow::getMensagens() const {
  * @return true if removed, false otherwise
  */
 bool BuyNow::removeMensagem(Mensagem msg) {
-    cout << "IS THIS DOING IT RIGHT?" << endl;
+    // << "IS THIS DOING IT RIGHT?" << endl;
     for( HashTableMensagem::iterator it = mensagens.begin(); it != mensagens.end(); it++){
         if (it->getNumero() == msg.getNumero()){
             mensagens.erase(it);
             return true;
         }
     }
-    cout << "YES" << endl;
+    //cout << "YES" << endl;
     return false;
 }
 
@@ -756,7 +756,6 @@ priority_queue<Carrinha> BuyNow::adicionarEncomenda(int tamanhoEncomenda, priori
     priority_queue<Carrinha> carr2;
 
     //Caso caiba numa carrinha
-
     while(!original.empty()){
 
         Carrinha carrinhaNova = original.top();
@@ -780,20 +779,17 @@ priority_queue<Carrinha> BuyNow::adicionarEncomenda(int tamanhoEncomenda, priori
     }
 
     //Caso fique separado em diferentes carrinhas
-
-
-
     while(tamanhoEncomenda!=0){
 
         Carrinha carrinhaNova = carr.top();
         carr.pop();
 
-        if(tamanhoEncomenda> carrinhaNova.calcularEspacoLivre()){
+        if(tamanhoEncomenda > carrinhaNova.calcularEspacoLivre()){
             carrinhaNova.addOcupacao(carrinhaNova.calcularEspacoLivre());
-            tamanhoEncomenda-= carrinhaNova.calcularEspacoLivre();
+            tamanhoEncomenda -= carrinhaNova.calcularEspacoLivre();
         } else {
             carrinhaNova.addOcupacao(tamanhoEncomenda);
-            tamanhoEncomenda=0;
+            tamanhoEncomenda = 0;
         }
 
         carr2.push(carrinhaNova);
@@ -807,7 +803,6 @@ priority_queue<Carrinha> BuyNow::adicionarEncomenda(int tamanhoEncomenda, priori
     }
 
     return carr2;
-
 }
 
 priority_queue<Carrinha> BuyNow::despacharCarrinhas(priority_queue<Carrinha> original) {
@@ -844,9 +839,7 @@ priority_queue<Carrinha> BuyNow::despacharCarrinhaPorID(priority_queue<Carrinha>
 }
 
 void BuyNow::adicionarCarrinha(Carrinha carr) {
-
     pqA.push(carr);
-
 }
 
 priority_queue<Carrinha> BuyNow::queueAtual() const {
