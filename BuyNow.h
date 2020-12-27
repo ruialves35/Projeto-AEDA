@@ -128,7 +128,7 @@ private:
 
     //----------------------------------------------------------------
 
-    priority_queue<Carrinha> pqA; //lista de prioridade de carrinhas
+    priority_queue<Carrinha> carrinhas; //lista de prioridade de carrinhas
 
     //-----------------------------------------------------------------
 
@@ -215,11 +215,13 @@ public:
     //void showAllProdutosFisico();
 
 
-    priority_queue<Carrinha> adicionarEncomenda(int tamanhoEncomenda, priority_queue<Carrinha> original); // FALTA PÔR A QUEUE POR ORDEM NO FIM DA CLASSE
-    priority_queue<Carrinha> despacharCarrinhas(priority_queue<Carrinha> original); // FALTA PÔR A QUEUE POR ORDEM NO FIM DA CLASSE
-    priority_queue<Carrinha> despacharCarrinhaPorID(priority_queue<Carrinha> original, int id);
+    void adicionarEncomenda(int tamanhoEncomenda); // FALTA PÔR A QUEUE POR ORDEM NO FIM DA CLASSE
+    void despacharCarrinhas(); // FALTA PÔR A QUEUE POR ORDEM NO FIM DA CLASSE
+    void despacharCarrinhaPorID(int id);
     void adicionarCarrinha(Carrinha carr);
     priority_queue<Carrinha> queueAtual() const;
+    void informacoesCarrinhas();
+    bool verificarCarrinhaID(int id);
 };
 
 
