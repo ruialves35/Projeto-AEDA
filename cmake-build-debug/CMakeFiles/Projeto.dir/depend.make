@@ -3,6 +3,7 @@
 
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../BuyNow.cpp
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../BuyNow.h
+CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Carrinha.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Categoria.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Cliente.h
 CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../Date.h
@@ -20,6 +21,7 @@ CMakeFiles/Projeto.dir/BuyNow.cpp.obj: ../bst.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../BuyNow.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../BuyNowUI.cpp
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../BuyNowUI.h
+CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Carrinha.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../CartaoCredito.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Categoria.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Cliente.h
@@ -37,6 +39,9 @@ CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Reposicao.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Transacao.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../Transferencia.h
 CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj: ../bst.h
+
+CMakeFiles/Projeto.dir/Carrinha.cpp.obj: ../Carrinha.cpp
+CMakeFiles/Projeto.dir/Carrinha.cpp.obj: ../Carrinha.h
 
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../CartaoCredito.cpp
 CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj: ../CartaoCredito.h
@@ -138,6 +143,7 @@ CMakeFiles/Projeto.dir/Transferencia.cpp.obj: ../Transferencia.h
 
 CMakeFiles/Projeto.dir/main.cpp.obj: ../BuyNow.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../BuyNowUI.h
+CMakeFiles/Projeto.dir/main.cpp.obj: ../Carrinha.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../CartaoCredito.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Categoria.h
 CMakeFiles/Projeto.dir/main.cpp.obj: ../Cliente.h

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ProjetoAEDAcopia"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProjetoAEDAcopia">
+				<Option output="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/ProjetoAEDAcopia.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjetoAEDAcopia"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProjetoAEDAcopia/fast">
+				<Option output="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/ProjetoAEDAcopia.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjetoAEDAcopia/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/BuyNow.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/BuyNow.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/BuyNowUI.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/BuyNowUI.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/CartaoCredito.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/CartaoCredito.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Categoria.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Categoria.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Cliente.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Cliente.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/ClienteRegistado.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/ClienteRegistado.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Date.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Date.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Fornecedor.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Fornecedor.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/LojaFisica.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/LojaFisica.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/LojaOnline.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/LojaOnline.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/MbWay.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/MbWay.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Multibanco.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Multibanco.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Pagamento.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Pagamento.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Produto.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Produto.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Reposicao.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Reposicao.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Transacao.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Transacao.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Transferencia.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/Transferencia.h">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/main.cpp">
+			<Option target="ProjetoAEDAcopia"/>
+		</Unit>
+		<Unit filename="C:/Users/Sara/Documents/GitHub/Projeto-AEDA/codigoErrado/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
