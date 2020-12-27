@@ -7,7 +7,7 @@ add_executable(Projeto main.cpp BuyNowUI.cpp BuyNow.cpp CartaoCredito.cpp
         Categoria.cpp  Cliente.cpp  ClienteRegistado.cpp Date.cpp Fornecedor.cpp
         LojaOnline.cpp  LojaFisica.cpp  MbWay.cpp  Multibanco.cpp
         Produto.cpp  Transacao.cpp  Pagamento.cpp Transferencia.cpp Reposicao.cpp
-        Mensagem.cpp)
+        Mensagem.cpp Carrinha.h Carrinha.cpp)
 
 find_package(Doxygen)
 if(DOXYGEN_FOUND)

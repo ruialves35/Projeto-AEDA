@@ -745,3 +745,147 @@ bool BuyNow::removeMensagem(Mensagem msg) {
     cout << "YES" << endl;
     return false;
 }
+
+//--------------------------------------------------------------------------------------------------
+
+void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
+
+    priority_queue<Carrinha> carr;
+    priority_queue<Carrinha> carr2;
+    priority_queue<Carrinha> copia = carrinhas;
+
+    //Caso caiba numa carrinha
+
+    while(!copia.empty()){
+
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
+
+        if(carrinhaNova.calcularEspacoLivre() > tamanhoEncomenda){
+
+            carrinhaNova.addOcupacao(tamanhoEncomenda);
+
+            while(!copia.empty()){
+                Carrinha carrinhaNova = copia.top();
+                copia.pop();
+                carr.push(carrinhaNova);
+            }
+
+            carrinhas = carr;
+
+            return;
+        }
+
+        carr.push(carrinhaNova);
+
+    }
+
+    //Caso fique separado em diferentes carrinhas
+
+
+
+    while(tamanhoEncomenda!=0){
+
+        Carrinha carrinhaNova = carr.top();
+        carr.pop();
+
+        if(tamanhoEncomenda> carrinhaNova.calcularEspacoLivre()){
+            carrinhaNova.addOcupacao(carrinhaNova.calcularEspacoLivre());
+            tamanhoEncomenda-= carrinhaNova.calcularEspacoLivre();
+        } else {
+            carrinhaNova.addOcupacao(tamanhoEncomenda);
+            tamanhoEncomenda=0;
+        }
+
+        carr2.push(carrinhaNova);
+
+    }
+
+    while(!copia.empty()){
+        Carrinha carrinhaNova = carr.top();
+        carr.pop();
+        carr2.push(carrinhaNova);
+    }
+
+    carrinhas = carr2;
+
+
+}
+
+void BuyNow::despacharCarrinhas() {
+
+    priority_queue<Carrinha> copia = carrinhas;
+    priority_queue<Carrinha> carr;
+
+    while(!copia.empty()){
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
+        if(carrinhaNova.prontaDespachar()){
+            carrinhaNova.SetOcupacao(0);
+        }
+        carr.push(carrinhaNova);
+    }
+
+    carrinhas = carr;
+
+}
+
+void BuyNow::despacharCarrinhaPorID(int id) {
+
+    priority_queue<Carrinha> copia = carrinhas;
+    priority_queue<Carrinha> carr;
+
+    while(!copia.empty()){
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
+        if(carrinhaNova.getID()==id){
+            carrinhaNova.SetOcupacao(0);
+        }
+        carr.push(carrinhaNova);
+    }
+
+    carrinhas=carr;
+}
+
+void BuyNow::adicionarCarrinha(Carrinha carr) {
+
+    carrinhas.push(carr);
+
+}
+
+priority_queue<Carrinha> BuyNow::queueAtual() const {
+    return carrinhas;
+}
+
+void BuyNow::informacoesCarrinhas() {
+
+    priority_queue<Carrinha> copia = carrinhas;
+
+    while(!copia.empty()){
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
+        cout << "ID: " << carrinhaNova.getID() << endl;
+        cout << "Espaco Ocupado: " << carrinhaNova.getOcupacao() << endl;
+        cout << "Espaco Maximo: " << carrinhaNova.getOcupacaoMaxima() << endl;
+        cout << "Espaco Livre: " << carrinhaNova.calcularEspacoLivre() << endl;
+        cout << "------------------------------------------------" << endl;
+    }
+
+}
+
+bool BuyNow::verificarCarrinhaID(int id) {
+
+    priority_queue<Carrinha> copia = carrinhas;
+
+    while(!copia.empty()) {
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
+        if(carrinhaNova.getID()==id){
+            return true;
+        }
+    }
+
+    return false;
+}
+
+

@@ -22,6 +22,7 @@ BuyNowUI::BuyNowUI() {
     lerTransferencias();
     lerTransacoes();
     lerMensagens();
+    lerCarrinhas();
 
     UI();
 
@@ -36,6 +37,7 @@ BuyNowUI::BuyNowUI() {
     escreverReposicoes();
     escreverLojaOnline();
     escreverFornecedores();
+    escreverCarrinhas();
 
     //cout << "ooooo" << endl;
 }
@@ -430,6 +432,9 @@ void BuyNowUI::cliente() {
                     }
                 }
             }
+            //---------------------------------------------------------------------------------------------------
+            bn.adicionarEncomenda(carrinho.size());
+            //---------------------------------------------------------------------------------------------------
         }
         else if (result == 4){  //registar um cliente
             bool alreadyExist = false;
@@ -510,6 +515,12 @@ void BuyNowUI::administrador() {
             cout << "10: Adicionar Fornecedor" << endl;
             cout << "11: Ver todas as Mensagens" << endl;
             cout << "12: Responder a uma Mensagem" << endl;
+            //---------------------------------------------------------------------
+            cout << "13: Districuicao das carrinhas com maior ocupacao" << endl;
+            cout << "14: Distribuicao de uma carrinha atraves do id da mesma" << endl;
+            cout << "15: Ver todas as carrinhas disponiveis" << endl;
+            cout << "16: Adicionar uma carrinha" << endl;
+            //----------------------------------------------------------------------
             cout << endl;
             cout << "Enter option: ";
             getline(cin, input);
@@ -537,7 +548,7 @@ void BuyNowUI::administrador() {
                 Sleep(1000);
                 cout << string(50, '\n'); //Clear Screen
                 validInput = false;
-            } else if (result < 0 || result > 12) {
+            } else if (result < 0 || result > 16) { //--------------ESTA-----------------------------------------------
                 cout << endl << "O numero introduzido nao e correto" << endl;
                 Sleep(1000);
                 cout << string(50, '\n'); //Clear Screen
@@ -887,6 +898,43 @@ void BuyNowUI::administrador() {
                 }
             }
         }
+        //---------------------------------------------------------------------------------------
+        else if (result == 13){
+            bn.despacharCarrinhas();
+            cout << "Carrinhas despachadas"<< endl;
+            cout << endl;
+        }
+
+        else if (result == 14){
+            cout << "Insira o id da carrinha que deseja despachar" << endl;
+            string valorIntroduzido;
+            getline(cin, valorIntroduzido);
+            int valorID = stoi(valorIntroduzido);
+            bn.despacharCarrinhaPorID(valorID);
+            cout << "Carrinha despachada" << endl;
+            cout << endl;
+        }
+
+        else if (result == 15){
+            bn.informacoesCarrinhas();
+        }
+
+        else if(result==16){
+            cout << "Insira o id da carrinha que deseja criar" << endl;
+            string valorIntroduzido;
+            getline(cin, valorIntroduzido);
+            int valorID = stoi(valorIntroduzido);
+            cout << "Insira a ocupacao da carrinha que deseja criar" << endl;
+            getline(cin, valorIntroduzido);
+            int valorOcupacao = stoi(valorIntroduzido);
+            cout << "Insira a ocupacao maxima da carrinha que deseja criar" << endl;
+            getline(cin, valorIntroduzido);
+            int valorOcupacaoMaxima = stoi(valorIntroduzido);
+            Carrinha *novaCar = new Carrinha(valorID,valorOcupacao,valorOcupacaoMaxima);
+            bn.adicionarCarrinha(*novaCar);
+            cout << "Carrinha adicionada" << endl;
+        }
+        //----------------------------------------------------------------------------------------------------------------
     }
 }
 
@@ -1609,6 +1657,61 @@ void BuyNowUI::lerMensagens() {
 
         getline(fin, line);
     }
+}
+
+void BuyNowUI::lerCarrinhas() {
+
+    ifstream fin;
+    string line;
+    int id,ocupacao,ocupacaoMaxima;
+    double preco;
+
+    fin.open("Carrinhas.txt");
+    if(!fin.is_open()){
+        cerr << "Ficheiro das carrinhas nao encontrado\n";
+        exit(1);
+    }
+
+    getline(fin,line);
+
+    while(!fin.eof()){
+
+        istringstream format3line(line);
+        format3line >> id;
+
+        getline(fin,line);
+        istringstream format4line(line);
+        format4line >> ocupacao;
+
+        getline(fin,line);
+        istringstream format5line(line);
+        format5line >> ocupacaoMaxima;
+
+        Carrinha *carr=new Carrinha (id,ocupacao,ocupacaoMaxima);
+        bn.adicionarCarrinha(*carr);
+
+        getline(fin,line);
+    }
+
+}
+
+void BuyNowUI::escreverCarrinhas() {
+
+    ofstream outStream;
+    outStream.open("Carrinhas.txt");
+
+    priority_queue<Carrinha> pqB = bn.queueAtual();
+
+    while(!pqB.empty()){
+        Carrinha carr = pqB.top();
+        pqB.pop();
+        outStream << carr.getID() << endl;
+        outStream << carr.getOcupacao() << endl;
+        outStream << carr.getOcupacaoMaxima() << endl;
+    }
+
+    outStream.close();
+
 }
 
 

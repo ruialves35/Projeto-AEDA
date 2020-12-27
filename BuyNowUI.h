@@ -41,6 +41,9 @@ public:
     void escreverFornecedores();
     void escreverMensagens();
     void lerMensagens();
+
+    void lerCarrinhas();
+    void escreverCarrinhas();
 };
 
 

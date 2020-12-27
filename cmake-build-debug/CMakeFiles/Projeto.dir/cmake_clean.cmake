@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Projeto.dir/BuyNow.cpp.obj"
   "CMakeFiles/Projeto.dir/BuyNowUI.cpp.obj"
+  "CMakeFiles/Projeto.dir/Carrinha.cpp.obj"
   "CMakeFiles/Projeto.dir/CartaoCredito.cpp.obj"
   "CMakeFiles/Projeto.dir/Categoria.cpp.obj"
   "CMakeFiles/Projeto.dir/Cliente.cpp.obj"
