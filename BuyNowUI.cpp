@@ -321,6 +321,7 @@ void BuyNowUI::cliente() {
                                 bn.removeProdutoOnline(i);
                             }
                             bn.reporStock();
+                            bn.adicionarEncomenda(carrinho.size());
                             carrinho.clear();
                         }
                     }
@@ -364,6 +365,7 @@ void BuyNowUI::cliente() {
                                 bn.removeProdutoOnline(i);
                             }
                             bn.reporStock();
+                            bn.adicionarEncomenda(carrinho.size());
                             carrinho.clear();
                         }
 
@@ -426,15 +428,13 @@ void BuyNowUI::cliente() {
                                     bn.removeProdutoOnline(i);
                                 }
                                 bn.reporStock();
+                                bn.adicionarEncomenda(carrinho.size());
                                 carrinho.clear();
                             }
                         }
                     }
                 }
             }
-            //---------------------------------------------------------------------------------------------------
-            bn.adicionarEncomenda(carrinho.size());
-            //---------------------------------------------------------------------------------------------------
         }
         else if (result == 4){  //registar um cliente
             bool alreadyExist = false;
