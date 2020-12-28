@@ -54,7 +54,7 @@ bool Carrinha::prontaDespachar() const {
 }
 
 bool Carrinha::operator <(const Carrinha& c1) const {
-    return ocupacaoMaxima - ocupacao > ocupacaoMaxima - c1.getOcupacao();
+    return ocupacaoMaxima - ocupacao > c1.getOcupacaoMaxima() - c1.getOcupacao();
 }
 
 
