@@ -755,13 +755,12 @@ bool BuyNow::removeMensagem(Mensagem msg) {
 
 //--------------------------------------------------------------------------------------------------
 
-
-
 void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
 
     priority_queue<Carrinha> carr;
     priority_queue<Carrinha> carr2;
     priority_queue<Carrinha> copia = carrinhas;
+    priority_queue<Carrinha> copia2 = carrinhas;
 
     //Caso caiba numa carrinha
 
@@ -773,8 +772,10 @@ void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
         if(carrinhaNova.calcularEspacoLivre() > tamanhoEncomenda){
 
             carrinhaNova.addOcupacao(tamanhoEncomenda);
+            carr.push(carrinhaNova);
 
             while(!copia.empty()){
+
                 Carrinha carrinhaNova = copia.top();
                 copia.pop();
                 carr.push(carrinhaNova);
@@ -791,33 +792,34 @@ void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
 
     //Caso fique separado em diferentes carrinhas
 
-
-
     while(tamanhoEncomenda!=0){
 
-        Carrinha carrinhaNova = carr.top();
-        carr.pop();
+        Carrinha carrinhaNova = copia2.top();
+        copia2.pop();
 
         if(tamanhoEncomenda> carrinhaNova.calcularEspacoLivre()){
+            tamanhoEncomenda = tamanhoEncomenda - carrinhaNova.calcularEspacoLivre();
             carrinhaNova.addOcupacao(carrinhaNova.calcularEspacoLivre());
-            tamanhoEncomenda-= carrinhaNova.calcularEspacoLivre();
         } else {
+
+            cout << "entrou aqui " << endl;
             carrinhaNova.addOcupacao(tamanhoEncomenda);
+            carr2.push(carrinhaNova);
             tamanhoEncomenda=0;
+
+            while(!copia2.empty()){
+
+                Carrinha carrinhaNova = copia2.top();
+                copia2.pop();
+                carr2.push(carrinhaNova);
+            }
+            carrinhas = carr2;
+            return;
         }
 
         carr2.push(carrinhaNova);
 
     }
-
-    while(!copia.empty()){
-        Carrinha carrinhaNova = carr.top();
-        carr.pop();
-        carr2.push(carrinhaNova);
-    }
-
-    carrinhas = carr2;
-
 
 }
 
