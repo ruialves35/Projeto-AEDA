@@ -365,7 +365,7 @@ void BuyNowUI::cliente() {
                                 bn.removeProdutoOnline(i);
                             }
                             bn.reporStock();
-                            bn.adicionarEncomenda(carrinho.size());
+                            //bn.adicionarEncomenda(carrinho.size());
                             carrinho.clear();
                         }
 

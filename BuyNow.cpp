@@ -341,7 +341,9 @@ Produto* BuyNow::getProduto(string nome) const {
 void BuyNow::reporStock() {
     for (auto i : produtos){
         if (lojaOnline.getStockOnline(i) < stockMin){
+            //cout << "ok\n";
             int repor = stockMin - lojaOnline.getStockOnline(i);   //quantidade que temos de repor
+            //cout << "ok2\n";
             int idxLojaMaiorStock = -1;
             int maiorStock = 0;
             for (int j = 0; j < lojasFisicas.size(); j++){
@@ -350,28 +352,19 @@ void BuyNow::reporStock() {
                     maiorStock = lojasFisicas[j].getStockFisico(i);
                 }
             }
-            if (lojasFisicas[idxLojaMaiorStock].getStockFisico(i) - repor > stockOk){   //a loja tem stockSuficiente
-                lojasFisicas[idxLojaMaiorStock].removeProduto(i, repor);    //retirar da lojaFisica
-                lojaOnline.addProduto(i, repor);    //adicionar na lojaOnline
+            //cout << "ok3\n";
+            //cout << idxLojaMaiorStock << ".n\n";
+            //cout << lojasFisicas[idxLojaMaiorStock].getStockFisico(i) <<"." << endl;
+            if (idxLojaMaiorStock == -1){//nao encontrou nenhuma loja com stock Suficiente, buscar ao fornecedor
+                //cout << "oi " << endl;
                 time_t theTime = time(NULL);
                 struct tm *aTime = localtime(&theTime);
-
                 int day = aTime->tm_mday;
                 int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
                 int year = aTime->tm_year + 1900; // Year is # years since 1900
+                //cout << "data?" << endl;
                 Date data(day, month, year);
-                Reposicao reposicao(lojasFisicas[idxLojaMaiorStock], i, repor, data);
-                reposicoes.push_back(reposicao);
-            }
-            else{//nao encontrou nenhuma loja com stock Suficiente, buscar ao fornecedor
-                time_t theTime = time(NULL);
-                struct tm *aTime = localtime(&theTime);
-
-                int day = aTime->tm_mday;
-                int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
-                int year = aTime->tm_year + 1900; // Year is # years since 1900
-                Date data(day, month, year);
-
+                //cout << "aqui" << endl;
                 set<FornecedorPtr> fornecedoresProd = i->getFornecedores();
                 set<FornecedorPtr>::iterator prodIter;
                 FornecedorPtr forn;
@@ -385,7 +378,7 @@ void BuyNow::reporStock() {
                     }
                 }
                 if (!found){
-                    cout << "There is no Fornecedor with that quantity of Product and stock has not been replaced" << endl;
+                    cout << "THERE IS NO FORNECEDOR WITH THAT QUANITTY OF PRODUCT AND STOCK HAS NOT BEEN REPLACED" << endl;
                     continue;
                 }
                 /*
@@ -403,6 +396,20 @@ void BuyNow::reporStock() {
                 Transferencia* t = new Transferencia (forn, i, repor, data); //fornecedor, produto, quantidade
                 lojaOnline.addProduto(i, repor);
                 transferencias.push_back(t);
+            }
+            else if (lojasFisicas[idxLojaMaiorStock].getStockFisico(i) - repor > stockOk){   //a loja tem stockSuficiente
+                //cout << "oi2" << endl;
+                lojasFisicas[idxLojaMaiorStock].removeProduto(i, repor);    //retirar da lojaFisica
+                lojaOnline.addProduto(i, repor);    //adicionar na lojaOnline
+                time_t theTime = time(NULL);
+                struct tm *aTime = localtime(&theTime);
+
+                int day = aTime->tm_mday;
+                int month = aTime->tm_mon + 1; // Month is 0 - 11, add 1 to get a jan-dec 1-12 concept
+                int year = aTime->tm_year + 1900; // Year is # years since 1900
+                Date data(day, month, year);
+                Reposicao reposicao(lojasFisicas[idxLojaMaiorStock], i, repor, data);
+                reposicoes.push_back(reposicao);
             }
         }
     }

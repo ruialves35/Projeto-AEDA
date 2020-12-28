@@ -63,17 +63,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< Updated upstream
 CMAKE_SOURCE_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA"
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug"
-=======
-CMAKE_SOURCE_DIR = C:\Users\Sara\Documents\GitHub\Projeto-AEDA
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug
->>>>>>> Stashed changes
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -102,24 +95,14 @@ clean: CMakeFiles/Doxygen.dir/clean
 CMakeFiles/Projeto.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/build
-<<<<<<< Updated upstream
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles" --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 "Built target Projeto"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 "Built target Projeto"
->>>>>>> Stashed changes
 .PHONY : CMakeFiles/Projeto.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Projeto.dir/rule: cmake_check_build_system
-<<<<<<< Updated upstream
 	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles" 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Projeto.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles" 0
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles 21
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Projeto.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles 0
->>>>>>> Stashed changes
 .PHONY : CMakeFiles/Projeto.dir/rule
 
 # Convenience name for target.
