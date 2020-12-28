@@ -750,28 +750,32 @@ bool BuyNow::removeMensagem(Mensagem msg) {
 
 
 
-priority_queue<Carrinha> BuyNow::adicionarEncomenda(int tamanhoEncomenda, priority_queue<Carrinha> original) {
+void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
 
     priority_queue<Carrinha> carr;
     priority_queue<Carrinha> carr2;
+    priority_queue<Carrinha> copia = carrinhas;
 
     //Caso caiba numa carrinha
-    while(!original.empty()){
 
-        Carrinha carrinhaNova = original.top();
-        original.pop();
+    while(!copia.empty()){
+
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
 
         if(carrinhaNova.calcularEspacoLivre() > tamanhoEncomenda){
 
             carrinhaNova.addOcupacao(tamanhoEncomenda);
 
-            while(!original.empty()){
-                Carrinha carrinhaNova = original.top();
-                original.pop();
+            while(!copia.empty()){
+                Carrinha carrinhaNova = copia.top();
+                copia.pop();
                 carr.push(carrinhaNova);
             }
 
-            return carr;
+            carrinhas = carr;
+
+            return;
         }
 
         carr.push(carrinhaNova);
@@ -779,71 +783,111 @@ priority_queue<Carrinha> BuyNow::adicionarEncomenda(int tamanhoEncomenda, priori
     }
 
     //Caso fique separado em diferentes carrinhas
+
+
+
     while(tamanhoEncomenda!=0){
 
         Carrinha carrinhaNova = carr.top();
         carr.pop();
 
-        if(tamanhoEncomenda > carrinhaNova.calcularEspacoLivre()){
+        if(tamanhoEncomenda> carrinhaNova.calcularEspacoLivre()){
             carrinhaNova.addOcupacao(carrinhaNova.calcularEspacoLivre());
-            tamanhoEncomenda -= carrinhaNova.calcularEspacoLivre();
+            tamanhoEncomenda-= carrinhaNova.calcularEspacoLivre();
         } else {
             carrinhaNova.addOcupacao(tamanhoEncomenda);
-            tamanhoEncomenda = 0;
+            tamanhoEncomenda=0;
         }
 
         carr2.push(carrinhaNova);
 
     }
 
-    while(!original.empty()){
+    while(!copia.empty()){
         Carrinha carrinhaNova = carr.top();
         carr.pop();
         carr2.push(carrinhaNova);
     }
 
-    return carr2;
+    carrinhas = carr2;
+
+
 }
 
-priority_queue<Carrinha> BuyNow::despacharCarrinhas(priority_queue<Carrinha> original) {
+void BuyNow::despacharCarrinhas() {
 
+    priority_queue<Carrinha> copia = carrinhas;
     priority_queue<Carrinha> carr;
 
-    while(!original.empty()){
-        Carrinha carrinhaNova = original.top();
-        original.pop();
+    while(!copia.empty()){
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
         if(carrinhaNova.prontaDespachar()){
             carrinhaNova.SetOcupacao(0);
         }
         carr.push(carrinhaNova);
     }
 
-    return carr;
+    carrinhas = carr;
 
 }
 
-priority_queue<Carrinha> BuyNow::despacharCarrinhaPorID(priority_queue<Carrinha> original, int id) {
+void BuyNow::despacharCarrinhaPorID(int id) {
 
+    priority_queue<Carrinha> copia = carrinhas;
     priority_queue<Carrinha> carr;
 
-    while(!original.empty()){
-        Carrinha carrinhaNova = original.top();
-        original.pop();
+    while(!copia.empty()){
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
         if(carrinhaNova.getID()==id){
             carrinhaNova.SetOcupacao(0);
         }
         carr.push(carrinhaNova);
     }
 
-    return carr;
+    carrinhas=carr;
 }
 
 void BuyNow::adicionarCarrinha(Carrinha carr) {
-    pqA.push(carr);
+
+    carrinhas.push(carr);
+
 }
 
 priority_queue<Carrinha> BuyNow::queueAtual() const {
-    return pqA;
+    return carrinhas;
+}
+
+void BuyNow::informacoesCarrinhas() {
+
+    priority_queue<Carrinha> copia = carrinhas;
+
+    while(!copia.empty()){
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
+        cout << "ID: " << carrinhaNova.getID() << endl;
+        cout << "Espaco Ocupado: " << carrinhaNova.getOcupacao() << endl;
+        cout << "Espaco Maximo: " << carrinhaNova.getOcupacaoMaxima() << endl;
+        cout << "Espaco Livre: " << carrinhaNova.calcularEspacoLivre() << endl;
+        cout << "------------------------------------------------" << endl;
+    }
+
+}
+
+bool BuyNow::verificarCarrinhaID(int id) {
+
+    priority_queue<Carrinha> copia = carrinhas;
+
+    while(!copia.empty()) {
+        Carrinha carrinhaNova = copia.top();
+        copia.pop();
+        if(carrinhaNova.getID()==id){
+            return true;
+        }
+    }
+
+    return false;
 }
 
 
