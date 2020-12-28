@@ -67,10 +67,17 @@ RM = "C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< Updated upstream
 CMAKE_SOURCE_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA"
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug"
+=======
+CMAKE_SOURCE_DIR = C:\Users\Sara\Documents\GitHub\Projeto-AEDA
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug
+>>>>>>> Stashed changes
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +106,15 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< Updated upstream
 	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles" "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 ano\AEDA\CLionProjects\Projeto AEDA\cmake-build-debug\CMakeFiles" 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles\progress.marks
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Sara\Documents\GitHub\Projeto-AEDA\cmake-build-debug\CMakeFiles 0
+>>>>>>> Stashed changes
 .PHONY : all
 
 # The main clean target
