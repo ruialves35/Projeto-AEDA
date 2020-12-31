@@ -110,6 +110,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeRCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
+  "../docs/Doxyfile"
   )
 
 # The corresponding makefile is:
@@ -126,10 +127,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.17.3/CMakeRCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
+  "Doxyfile"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Projeto.dir/DependInfo.cmake"
+  "CMakeFiles/Doxygen.dir/DependInfo.cmake"
   )
