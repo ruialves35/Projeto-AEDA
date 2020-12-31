@@ -550,7 +550,7 @@ void BuyNowUI::administrador() {
                 Sleep(1000);
                 cout << string(50, '\n'); //Clear Screen
                 validInput = false;
-            } else if (result < 0 || result > 16) { //--------------ESTA-----------------------------------------------
+            } else if (result < 0 || result > 18) { //--------------ESTA-----------------------------------------------
                 cout << endl << "O numero introduzido nao e correto" << endl;
                 Sleep(1000);
                 cout << string(50, '\n'); //Clear Screen
@@ -955,11 +955,34 @@ void BuyNowUI::administrador() {
                 cout << "Carrinha adicionada" << endl;
             }
 
-
-
         }
         else if (result == 18){ //Remover Carrinha
 
+            string numeroID;
+            cout << "Insira o id da carrinha que deseja apagar: ";
+            getline(cin, numeroID);
+
+            int numID;
+            istringstream checkNumeroMsg(numeroID);
+            if (cin.eof()) {
+                cin.clear();
+                cout << endl << "ID Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }else if (! (checkNumeroMsg >> numID)){
+                cout << "Id Invalido" << endl;
+                Sleep(500);
+                cout << string(50, '\n');
+            }
+            else if (!(bn.verificarCarrinhaID(numID))) {
+                cout << numID << endl;
+                cout << "ID da Carrinha Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }
+            else {
+                bn.eliminarCarrinha(numID);
+            }
         }
         //----------------------------------------------------------------------------------------------------------------
     }

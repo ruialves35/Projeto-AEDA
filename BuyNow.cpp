@@ -800,7 +800,7 @@ void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
             tamanhoEncomenda = tamanhoEncomenda - carrinhaNova.calcularEspacoLivre();
             carrinhaNova.addOcupacao(carrinhaNova.calcularEspacoLivre());
         } else {
-            
+
             carrinhaNova.addOcupacao(tamanhoEncomenda);
             carr2.push(carrinhaNova);
             tamanhoEncomenda=0;
@@ -840,12 +840,11 @@ void BuyNow::despacharCarrinhas() {
 
 void BuyNow::despacharCarrinhaPorID(int id) {
 
-    priority_queue<Carrinha> copia = carrinhas;
     priority_queue<Carrinha> carr;
 
-    while(!copia.empty()){
-        Carrinha carrinhaNova = copia.top();
-        copia.pop();
+    while(!carrinhas.empty()){
+        Carrinha carrinhaNova = carrinhas.top();
+        carrinhas.pop();
         if(carrinhaNova.getID()==id){
             carrinhaNova.SetOcupacao(0);
         }
@@ -896,4 +895,18 @@ bool BuyNow::verificarCarrinhaID(int id) {
     return false;
 }
 
-
+void BuyNow::eliminarCarrinha(int id){
+    priority_queue<Carrinha> carr;
+    bool encontrou = false;
+    while(!carrinhas.empty()) {
+        Carrinha carrinhaNova = carrinhas.top();
+        carrinhas.pop();
+        if(carrinhaNova.getID() == id && !encontrou){
+            encontrou = true;
+        }
+        else{
+            carr.push(carrinhaNova);
+        }
+    }
+    carrinhas = carr;
+}

@@ -218,6 +218,7 @@ public:
     priority_queue<Carrinha> queueAtual() const;
     void informacoesCarrinhas();
     bool verificarCarrinhaID(int id);
+    void eliminarCarrinha(int id);
 };
 
 
