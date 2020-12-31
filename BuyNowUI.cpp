@@ -965,6 +965,11 @@ void BuyNowUI::administrador() {
                 Sleep(300);
                 cout << string(50, '\n'); //Clear Screen
             }
+            else if (! (checkNumeroMsg >> numID)){
+                cout << "Id Invalido" << endl;
+                Sleep(500);
+                cout << string(50, '\n');
+            }
             else if (!(bn.verificarCarrinhaID(numID))) {
                 cout << "ID da Carrinha Invalido" << endl;
                 Sleep(300);
