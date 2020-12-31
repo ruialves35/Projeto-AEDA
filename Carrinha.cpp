@@ -42,22 +42,20 @@ int Carrinha::calcularEspacoLivre() const{
 }
 
 void Carrinha::addOcupacao(int valorAdicionado) {
-    ocupacao+=valorAdicionado;
+    ocupacao=ocupacao+valorAdicionado;
 }
 
 bool Carrinha::prontaDespachar() const {
     double percentagem = (double)ocupacao/ocupacaoMaxima;
-    cout << "Percentagem: " << percentagem << endl;
-    cout << "Oc.Maxima:" << ocupacaoMaxima << endl;
-    cout << "Ocupacao: " << ocupacao << endl;
     if(percentagem < 0.9) {
         return false;
     }
     return true;
 }
 
+
+
+
 bool Carrinha::operator <(const Carrinha& c1) const {
     return ocupacaoMaxima - ocupacao > c1.getOcupacaoMaxima() - c1.getOcupacao();
 }
-
-

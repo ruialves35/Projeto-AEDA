@@ -23,6 +23,7 @@ public:
     void addOcupacao(int valorAdicionado);
     bool prontaDespachar() const;
     bool operator < (const Carrinha& c1) const;
+
 };
 
 

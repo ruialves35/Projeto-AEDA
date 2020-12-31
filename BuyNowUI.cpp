@@ -365,7 +365,7 @@ void BuyNowUI::cliente() {
                                 bn.removeProdutoOnline(i);
                             }
                             bn.reporStock();
-                            //bn.adicionarEncomenda(carrinho.size());
+                            bn.adicionarEncomenda(carrinho.size());
                             carrinho.clear();
                         }
 
@@ -923,19 +923,39 @@ void BuyNowUI::administrador() {
         }
 
         else if(result==16){
-            cout << "Insira o id da carrinha que deseja criar" << endl;
-            string valorIntroduzido;
-            getline(cin, valorIntroduzido);
-            int valorID = stoi(valorIntroduzido);
-            cout << "Insira a ocupacao da carrinha que deseja criar" << endl;
-            getline(cin, valorIntroduzido);
-            int valorOcupacao = stoi(valorIntroduzido);
-            cout << "Insira a ocupacao maxima da carrinha que deseja criar" << endl;
-            getline(cin, valorIntroduzido);
-            int valorOcupacaoMaxima = stoi(valorIntroduzido);
-            Carrinha *novaCar = new Carrinha(valorID,valorOcupacao,valorOcupacaoMaxima);
-            bn.adicionarCarrinha(*novaCar);
-            cout << "Carrinha adicionada" << endl;
+
+            string numeroID;
+            cout << "Insira o id da carrinha que deseja criar: ";
+            getline(cin, numeroID);
+
+            int numID;
+            istringstream checkNumeroMsg(numeroID);
+            if (cin.eof()) {
+                cin.clear();
+                cout << endl << "ID da Carrinha Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }
+            else if (!(bn.verificarCarrinhaID(numID))) {
+                cout << "ID da Carrinha Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }
+            else {   //everything ok
+                string valorIntroduzido;
+                cout << "Insira a ocupacao da carrinha que deseja criar" << endl;
+                getline(cin, valorIntroduzido);
+                int valorOcupacao = stoi(valorIntroduzido);
+                cout << "Insira a ocupacao maxima da carrinha que deseja criar" << endl;
+                getline(cin, valorIntroduzido);
+                int valorOcupacaoMaxima = stoi(valorIntroduzido);
+                Carrinha *novaCar = new Carrinha(numID,valorOcupacao,valorOcupacaoMaxima);
+                bn.adicionarCarrinha(*novaCar);
+                cout << "Carrinha adicionada" << endl;
+            }
+
+
+
         }
         //----------------------------------------------------------------------------------------------------------------
     }

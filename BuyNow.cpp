@@ -759,25 +759,23 @@ void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
 
     priority_queue<Carrinha> carr;
     priority_queue<Carrinha> carr2;
-    priority_queue<Carrinha> copia = carrinhas;
-    priority_queue<Carrinha> copia2 = carrinhas;
 
     //Caso caiba numa carrinha
 
-    while(!copia.empty()){
+    while(!carrinhas.empty()){
 
-        Carrinha carrinhaNova = copia.top();
-        copia.pop();
+        Carrinha carrinhaNova = carrinhas.top();
+        carrinhas.pop();
 
         if(carrinhaNova.calcularEspacoLivre() > tamanhoEncomenda){
 
             carrinhaNova.addOcupacao(tamanhoEncomenda);
             carr.push(carrinhaNova);
 
-            while(!copia.empty()){
+            while(!carrinhas.empty()){
 
-                Carrinha carrinhaNova = copia.top();
-                copia.pop();
+                Carrinha carrinhaNova = carrinhas.top();
+                carrinhas.pop();
                 carr.push(carrinhaNova);
             }
 
@@ -790,27 +788,27 @@ void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
 
     }
 
+    carrinhas = carr;
     //Caso fique separado em diferentes carrinhas
 
     while(tamanhoEncomenda!=0){
 
-        Carrinha carrinhaNova = copia2.top();
-        copia2.pop();
+        Carrinha carrinhaNova = carrinhas.top();
+        carrinhas.pop();
 
         if(tamanhoEncomenda> carrinhaNova.calcularEspacoLivre()){
             tamanhoEncomenda = tamanhoEncomenda - carrinhaNova.calcularEspacoLivre();
             carrinhaNova.addOcupacao(carrinhaNova.calcularEspacoLivre());
         } else {
-
-            cout << "entrou aqui " << endl;
+            
             carrinhaNova.addOcupacao(tamanhoEncomenda);
             carr2.push(carrinhaNova);
             tamanhoEncomenda=0;
 
-            while(!copia2.empty()){
+            while(!carrinhas.empty()){
 
-                Carrinha carrinhaNova = copia2.top();
-                copia2.pop();
+                Carrinha carrinhaNova = carrinhas.top();
+                carrinhas.pop();
                 carr2.push(carrinhaNova);
             }
             carrinhas = carr2;
@@ -825,12 +823,11 @@ void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
 
 void BuyNow::despacharCarrinhas() {
 
-    priority_queue<Carrinha> copia = carrinhas;
     priority_queue<Carrinha> carr;
 
-    while(!copia.empty()){
-        Carrinha carrinhaNova = copia.top();
-        copia.pop();
+    while(!carrinhas.empty()){
+        Carrinha carrinhaNova = carrinhas.top();
+        carrinhas.pop();
         if(carrinhaNova.prontaDespachar()){
             carrinhaNova.SetOcupacao(0);
         }

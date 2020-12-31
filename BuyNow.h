@@ -211,12 +211,8 @@ public:
         return (*p1).getNomeProduto() < (*p2).getNomeProduto();
     }
 
-    //void showAllProdutosOnline();
-    //void showAllProdutosFisico();
-
-
-    void adicionarEncomenda(int tamanhoEncomenda); // FALTA PÔR A QUEUE POR ORDEM NO FIM DA CLASSE
-    void despacharCarrinhas(); // FALTA PÔR A QUEUE POR ORDEM NO FIM DA CLASSE
+    void adicionarEncomenda(int tamanhoEncomenda);
+    void despacharCarrinhas();
     void despacharCarrinhaPorID(int id);
     void adicionarCarrinha(Carrinha carr);
     priority_queue<Carrinha> queueAtual() const;

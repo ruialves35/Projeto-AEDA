@@ -95,7 +95,7 @@ ostream& operator << (ostream &o, const Mensagem &msg){
     o << "Estado: ";
     if (msg.getRespondida()) o << "Respondida" << endl;
     else o << "Por Responder" << endl;
-    o << "Nome Cliente:" << msg.getCliente().getNome() << endl;
+    o << "Nome Cliente: " << msg.getCliente().getNome() << endl;
     o << "Numero de Contribuinte do Cliente: " << msg.getCliente().getNumContribuinte() << endl << endl;
     o << "Mensagem:" << endl;
     o << msg.getMensagem() << endl;
