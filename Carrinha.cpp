@@ -46,7 +46,10 @@ void Carrinha::addOcupacao(int valorAdicionado) {
 }
 
 bool Carrinha::prontaDespachar() const {
-    double percentagem = (ocupacaoMaxima-ocupacao)/100;
+    double percentagem = (double)ocupacao/ocupacaoMaxima;
+    cout << "Percentagem: " << percentagem << endl;
+    cout << "Oc.Maxima:" << ocupacaoMaxima << endl;
+    cout << "Ocupacao: " << ocupacao << endl;
     if(percentagem < 0.9) {
         return false;
     }
