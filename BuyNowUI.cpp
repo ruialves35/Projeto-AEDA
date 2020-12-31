@@ -961,7 +961,7 @@ void BuyNowUI::administrador() {
             istringstream checkNumeroMsg(numeroID);
             if (cin.eof()) {
                 cin.clear();
-                cout << endl << "ID da Carrinha Invalido" << endl;
+                cout << endl << "Nao adicionou nada" << endl;
                 Sleep(300);
                 cout << string(50, '\n'); //Clear Screen
             }
@@ -970,22 +970,61 @@ void BuyNowUI::administrador() {
                 Sleep(500);
                 cout << string(50, '\n');
             }
-            else if (!(bn.verificarCarrinhaID(numID))) {
+            else if (bn.verificarCarrinhaID(numID)) {
                 cout << "ID da Carrinha Invalido" << endl;
                 Sleep(300);
                 cout << string(50, '\n'); //Clear Screen
             }
             else {   //everything ok
-                string valorIntroduzido;
+
+                string numeroOcupacao;
                 cout << "Insira a ocupacao da carrinha que deseja criar" << endl;
-                getline(cin, valorIntroduzido);
-                int valorOcupacao = stoi(valorIntroduzido);
-                cout << "Insira a ocupacao maxima da carrinha que deseja criar" << endl;
-                getline(cin, valorIntroduzido);
-                int valorOcupacaoMaxima = stoi(valorIntroduzido);
-                Carrinha *novaCar = new Carrinha(numID,valorOcupacao,valorOcupacaoMaxima);
-                bn.adicionarCarrinha(*novaCar);
-                cout << "Carrinha adicionada" << endl;
+                getline(cin, numeroOcupacao);
+                int numOcupacao;
+                istringstream checkOcupacao(numeroOcupacao);
+                if (cin.eof()) {
+                    cin.clear();
+                    cout << endl << "Ocupacao da Carrinha Invalida" << endl;
+                    Sleep(300);
+                    cout << string(50, '\n'); //Clear Screen
+                }
+                else if (! (checkOcupacao >> numOcupacao)){
+                    cout << "Ocupacao Invalida" << endl;
+                    Sleep(500);
+                    cout << string(50, '\n');
+                }
+                else{
+
+                    string numeroOcupacaoMaxima;
+                    cout << "Insira a ocupacao maxima da carrinha que deseja criar" << endl;
+                    getline(cin, numeroOcupacaoMaxima);
+                    int numOcupacaoMaxima;
+                    istringstream checkOcupacaoMaxima(numeroOcupacaoMaxima);
+                    if (cin.eof()) {
+                        cin.clear();
+                        cout << endl << "Ocupacao da Carrinha Invalida" << endl;
+                        Sleep(300);
+                        cout << string(50, '\n'); //Clear Screen
+                    }
+                    else if (! (checkOcupacaoMaxima >> numOcupacaoMaxima)){
+                        cout << numeroOcupacaoMaxima << endl;
+                        cout << "Ocupacao tem de ser um numero" << endl;
+                        Sleep(500);
+                        cout << string(50, '\n');
+                    }
+                    else if (numOcupacaoMaxima<numOcupacao){
+                        cout << "Ocupacao Invalida" << endl;
+                        Sleep(500);
+                        cout << string(50, '\n');
+                    }
+                    else {
+                        Carrinha *novaCar = new Carrinha(numID,numOcupacao,numOcupacaoMaxima);
+                        bn.adicionarCarrinha(*novaCar);
+                        cout << "Carrinha adicionada" << endl;
+                    }
+
+                }
+
             }
 
         }
