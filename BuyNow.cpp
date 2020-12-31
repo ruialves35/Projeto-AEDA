@@ -753,70 +753,64 @@ bool BuyNow::removeMensagem(Mensagem msg) {
     return false;
 }
 
+/**
+ * Removes a message of BuyNow
+ * @param id number of Message to be removed
+ * @return true if removed, false otherwise
+ */
+bool BuyNow::removeMensagem(int id) {
+    for( HashTableMensagem::iterator it = mensagens.begin(); it != mensagens.end(); it++){
+        if (it->getNumero() == id){
+            mensagens.erase(it);
+            return true;
+        }
+    }
+    return false;
+}
+
 //--------------------------------------------------------------------------------------------------
 
 void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
-
     priority_queue<Carrinha> carr;
-    priority_queue<Carrinha> carr2;
-
     //Caso caiba numa carrinha
-
     while(!carrinhas.empty()){
-
         Carrinha carrinhaNova = carrinhas.top();
         carrinhas.pop();
-
         if(carrinhaNova.calcularEspacoLivre() > tamanhoEncomenda){
-
             carrinhaNova.addOcupacao(tamanhoEncomenda);
             carr.push(carrinhaNova);
-
             while(!carrinhas.empty()){
-
                 Carrinha carrinhaNova = carrinhas.top();
                 carrinhas.pop();
                 carr.push(carrinhaNova);
             }
-
             carrinhas = carr;
-
             return;
         }
-
         carr.push(carrinhaNova);
-
     }
-
     carrinhas = carr;
+    carr.empty();
     //Caso fique separado em diferentes carrinhas
-
     while(tamanhoEncomenda!=0){
-
         Carrinha carrinhaNova = carrinhas.top();
         carrinhas.pop();
-
-        if(tamanhoEncomenda> carrinhaNova.calcularEspacoLivre()){
+        if(tamanhoEncomenda > carrinhaNova.calcularEspacoLivre()){
             tamanhoEncomenda = tamanhoEncomenda - carrinhaNova.calcularEspacoLivre();
             carrinhaNova.addOcupacao(carrinhaNova.calcularEspacoLivre());
-        } else {
-
+        }
+        else {
             carrinhaNova.addOcupacao(tamanhoEncomenda);
-            carr2.push(carrinhaNova);
-            tamanhoEncomenda=0;
-
+            carr.push(carrinhaNova);
             while(!carrinhas.empty()){
-
                 Carrinha carrinhaNova = carrinhas.top();
                 carrinhas.pop();
-                carr2.push(carrinhaNova);
+                carr.push(carrinhaNova);
             }
-            carrinhas = carr2;
+            carrinhas = carr;
             return;
         }
-
-        carr2.push(carrinhaNova);
-
+        carr.push(carrinhaNova);
     }
 
 }

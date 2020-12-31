@@ -145,6 +145,7 @@ public:
 
     void addMensagem(Mensagem &msg);
     bool removeMensagem(Mensagem msg);
+    bool removeMensagem(int id);
     bool checkMensagem(Mensagem &msg) const;
     void answerMensagem(Mensagem &msg);
     HashTableMensagem getMensagens() const;

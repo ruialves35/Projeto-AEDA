@@ -903,7 +903,35 @@ void BuyNowUI::administrador() {
                 }
             }
         }
-        //---------------------------------------------------------------------------------------
+        else if (result == 13) { //Remover Mensagem
+            string numero;
+            cout << "Insira o numero da mensagem que deseja apagar: ";
+            getline(cin, numero);
+
+            int numMsg;
+            istringstream checkNumero(numero);
+            if (cin.eof()) {
+                cin.clear();
+                cout << endl << "ID da Carrinha Invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }
+            else if (!(checkNumero >> numMsg)) {
+                cout << "Numero da Mensagem invalido" << endl;
+                Sleep(300);
+                cout << string(50, '\n'); //Clear Screen
+            }
+            else {   //apagar Mensagem
+                if (bn.removeMensagem(numMsg)){
+                    cout << "A Mensagem foi apagada com sucesso.\n\n";
+                    Sleep(500);
+                }
+                else{
+                    cout << "Erro ao apagar a mensagem\n\n";
+                    Sleep(500);
+                }
+            }
+        }
         else if (result == 14){ //Distribuicao das carrinhas com maior ocupacao
             bn.despacharCarrinhas();
             cout << "Carrinhas despachadas"<< endl;
