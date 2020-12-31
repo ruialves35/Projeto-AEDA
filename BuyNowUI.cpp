@@ -515,11 +515,13 @@ void BuyNowUI::administrador() {
             cout << "10: Adicionar Fornecedor" << endl;
             cout << "11: Ver todas as Mensagens" << endl;
             cout << "12: Responder a uma Mensagem" << endl;
+            cout << "13: Remover Mensagem" << endl;
             //---------------------------------------------------------------------
-            cout << "13: Districuicao das carrinhas com maior ocupacao" << endl;
-            cout << "14: Distribuicao de uma carrinha atraves do id da mesma" << endl;
-            cout << "15: Ver todas as carrinhas disponiveis" << endl;
-            cout << "16: Adicionar uma carrinha" << endl;
+            cout << "14: Districuicao das carrinhas com maior ocupacao" << endl;
+            cout << "15: Distribuicao de uma carrinha atraves do id da mesma" << endl;
+            cout << "16: Ver todas as carrinhas disponiveis" << endl;
+            cout << "17: Adicionar uma carrinha" << endl;
+            cout << "18: Remover Carrinha" << endl;
             //----------------------------------------------------------------------
             cout << endl;
             cout << "Enter option: ";
@@ -762,7 +764,7 @@ void BuyNowUI::administrador() {
                 }
             }
         }
-        else if (result == 10){
+        else if (result == 10){ //Adicionar Fornecedor
             string inputNif;
             int nif;
             cout << "Introduza o nif do Fornecedor: ";
@@ -872,7 +874,7 @@ void BuyNowUI::administrador() {
                 cout << i << endl;
             }
         }
-        else if (result == 12){
+        else if (result == 12){ //Responder a uma mensagem
             string numeroMsg;
             cout << "Introduza o Numero da Mensagem a qual quer responder: ";
             getline(cin, numeroMsg);
@@ -902,13 +904,13 @@ void BuyNowUI::administrador() {
             }
         }
         //---------------------------------------------------------------------------------------
-        else if (result == 13){
+        else if (result == 14){ //Distribuicao das carrinhas com maior ocupacao
             bn.despacharCarrinhas();
             cout << "Carrinhas despachadas"<< endl;
             cout << endl;
         }
 
-        else if (result == 14){
+        else if (result == 15){ //Distribuicao de uma carrinha com o id
             cout << "Insira o id da carrinha que deseja despachar" << endl;
             string valorIntroduzido;
             getline(cin, valorIntroduzido);
@@ -918,12 +920,11 @@ void BuyNowUI::administrador() {
             cout << endl;
         }
 
-        else if (result == 15){
+        else if (result == 16){ //Ver todas as carrinhas disponiveis
             bn.informacoesCarrinhas();
         }
 
-        else if(result==16){
-
+        else if(result==17){    //Adicionar uma carrinha
             string numeroID;
             cout << "Insira o id da carrinha que deseja criar: ";
             getline(cin, numeroID);
@@ -955,6 +956,9 @@ void BuyNowUI::administrador() {
             }
 
 
+
+        }
+        else if (result == 18){ //Remover Carrinha
 
         }
         //----------------------------------------------------------------------------------------------------------------
