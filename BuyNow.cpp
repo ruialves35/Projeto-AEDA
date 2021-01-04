@@ -770,6 +770,10 @@ bool BuyNow::removeMensagem(int id) {
 
 //--------------------------------------------------------------------------------------------------
 
+/**
+ * adiciona uma encomenda as carrinhas
+ * @param tamanhoEncomenda quantidade de produtos comprada
+ */
 void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
     priority_queue<Carrinha> carr;
     //Caso caiba numa carrinha
@@ -815,6 +819,9 @@ void BuyNow::adicionarEncomenda(int tamanhoEncomenda) {
 
 }
 
+/**
+ * Envia as carrinhas com mais de 90 por cento de ocupacao
+ */
 void BuyNow::despacharCarrinhas() {
 
     priority_queue<Carrinha> carr;
@@ -832,6 +839,10 @@ void BuyNow::despacharCarrinhas() {
 
 }
 
+/**
+ * Remove uma carrinha escolhida pelo utilizador
+ * @param id numero da carrinha
+ */
 void BuyNow::despacharCarrinhaPorID(int id) {
 
     priority_queue<Carrinha> carr;
@@ -848,16 +859,27 @@ void BuyNow::despacharCarrinhaPorID(int id) {
     carrinhas=carr;
 }
 
+/**
+ * adiciona uma carrinha na fila de prioridade
+ * @param carr carrinha que sera adicionada
+ */
 void BuyNow::adicionarCarrinha(Carrinha carr) {
 
     carrinhas.push(carr);
 
 }
 
+/**
+ * Obter a fila de prioridade de carrinhas
+ * @return fila de prioridade das carrinhas
+ */
 priority_queue<Carrinha> BuyNow::queueAtual() const {
     return carrinhas;
 }
 
+/**
+ * Apresenta as carrinhas na fila de prioridades
+ */
 void BuyNow::informacoesCarrinhas() {
 
     priority_queue<Carrinha> copia = carrinhas;
@@ -874,6 +896,11 @@ void BuyNow::informacoesCarrinhas() {
 
 }
 
+/**
+ * Verifica se uma carrinha com determinado id ja existe
+ * @param id numero da carrinha
+ * @return true se existe, false caso nao exista
+ */
 bool BuyNow::verificarCarrinhaID(int id) {
 
     priority_queue<Carrinha> copia = carrinhas;
@@ -889,6 +916,10 @@ bool BuyNow::verificarCarrinhaID(int id) {
     return false;
 }
 
+/**
+ * Elimina uma carrinha
+ * @param id numero da carrinha a remover
+ */
 void BuyNow::eliminarCarrinha(int id){
     priority_queue<Carrinha> carr;
     bool encontrou = false;
