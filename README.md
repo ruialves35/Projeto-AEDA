@@ -1,8 +1,9 @@
 # Projeto-AEDA
  
-A Empresa tem um Fornecedor que é universal a todos os produtos. Este Fornecedor foi pré-definido com o nome "Manel".
+Projeto para a cadeira de Algoritmos e Estruturas de Dados que consiste na representação de uma plataforma de Transações Online.
+Esta representação é feita com a utilização da consola de C++ do Clion.
+O projeto consiste em 2 partes: uma primeira Parte com a utilização de estruturas de dados lineares e uma segunda parte com estruturas de dados não lineares.
 
-Os produtos da Loja Online têm um stock minimo pré-definido (1ª linha do ficheiro Online.txt).
-Os produtos das Lojas Fisicas têm um stock Ok pré-definido (2ª linha do ficheiro Online.txt)
-
-Caso não esteja a dar para ler ficheiros, introduzir os mesmos na pasta cmake-build-debug.
+Notas:
+1ª Parte: 18.3
+2ª Parte: 18.0
