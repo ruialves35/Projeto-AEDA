@@ -6,4 +6,4 @@ O projeto consiste em 2 partes: uma primeira Parte com a utilização de estrutu
 
 Notas:
 1ª Parte: 18.3
-2ª Parte: 18.0
+2ª Parte: 18.9
